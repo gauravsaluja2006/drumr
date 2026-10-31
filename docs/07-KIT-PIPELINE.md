@@ -90,3 +90,24 @@ Unit tests under `scripts/kit-pipeline/__tests__/` run in the normal `pnpm test:
 - `verify` fails on: missing file, overlapping layers, over-budget size, unknown `chokedBy`.
 
 ffmpeg is invoked for real in these tests (it is a dev dependency); keep fixtures tiny so the job stays under 10 s.
+
+## 8. As built (Phase 2)
+
+Deviations from the plan above, all reflected in code:
+
+- **Normalise, then trim.** Trimming thresholds apply to the audio that ships. Trimming before the kit-wide gain made onsets drift by up to 40 ms in kits with negative gain.
+- **Clip guard.** If any sample would exceed 0.98 after normalisation, the kit gain is lowered to fit. `verify` then reports the reference peak below target as a warning, not an error (Big Rusty: reference at −7.4 dBFS because its kick is very loud).
+- **Peaks and onsets are measured in each file's native channel layout.** ffmpeg's mono→stereo upmix applies −3 dB, which skewed measurements.
+- **Resampling** uses ffmpeg's built-in `aresample` with `filter_size=64:phase_shift=10:cutoff=0.97`; the pinned `ffmpeg-static` build has no soxr.
+- **Per-articulation `maxVelocityLayers`** overrides the kit budget (e.g. 6 snare layers, 3 cymbal layers).
+- **Velocity ranges** are `floor(i·127/n)+1 … floor((i+1)·127/n)`; 4 layers → 1–31, 32–63, 64–95, 96–127.
+- **Multi-mic mixing** (`mix`) is implemented and used for Big Rusty (close mic 0 dB + overheads −4 dB, kick overheads −8 dB).
+- **Extra hi-hat ids.** Big Rusty exposes six openings: `hihat.closed, hihat.loose, hihat.quarter, hihat.half, hihat.threeQuarter, hihat.open`. Ids outside the voice vocabulary are allowed in manifests and reachable through `hihat.cc` via `hihat.openness`.
+- **Runtime balance offsets.** Virtuosity's room mic leaves kick and hats far below the snare; its recipe sets `gainDb` (+9 kick, +8 hats, +3 toms), applied at playback, not baked into audio.
+- Sources live in `~/drumr-sources/<libraryId>/` (override with `DRUMR_SOURCES`); download and unzip the archives listed in `KITS.md` there.
+
+| Kit | Samples | Size | Reference peak |
+|---|---|---|---|
+| avl-black-pearl | 113 (mono, 5 layers) | 5.8 MB | −6.0 dBFS |
+| virtuosity-jazz | 96 (stereo, 4–6 layers × 2 RR) | 8.6 MB | −6.0 dBFS |
+| big-rusty-rock | 168 (stereo, 3–5 layers × 2 RR) | 16.1 MB | −7.4 dBFS (clip guard) |
