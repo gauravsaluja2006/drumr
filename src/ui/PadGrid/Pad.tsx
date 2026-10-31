@@ -1,37 +1,69 @@
+import type React from 'react';
 import { keyHintFor } from './padLayout';
+import { registerPad } from './padFlash';
+import { velocityFromPosition } from '@/input/pointer';
+import { KEYBOARD_VELOCITY } from '@/input/keyboard';
 
 export interface PadProps {
   index: number;
   label?: string;
   note?: number;
+  disabled?: boolean;
+  unavailable?: boolean;
+  onHit?: (index: number, velocity: number, eventTime: number) => void;
 }
 
 /**
  * The accessible name is built from visible text plus screen-reader-only text
- * ("Pad 5: Snare center, note 25") so it always contains what sighted users see.
+ * ("Pad 5: Snare, note 25") so it always contains what sighted users see.
  */
-export function Pad({ index, label, note }: PadProps) {
+export function Pad({ index, label, note, disabled, unavailable, onHit }: PadProps) {
+  const onPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
+    if (disabled || e.button > 0) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    onHit?.(index, velocityFromPosition(e.clientY - rect.top, rect.height), performance.now());
+  };
+  // Pointer hits are handled on pointerdown for latency; click with detail 0 is keyboard activation.
+  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (e.detail === 0 && !disabled) onHit?.(index, KEYBOARD_VELOCITY, performance.now());
+  };
+
   return (
     <button
+      ref={(el) => registerPad(index, el)}
       type="button"
       data-pad={index}
-      className="pad group relative aspect-square min-h-11 rounded-m border border-line bg-bg-2 p-3 text-left transition-colors hover:bg-bg-3"
-      style={{ boxShadow: 'var(--shadow-pad)' }}
+      data-unavailable={unavailable || undefined}
+      disabled={disabled}
+      title={unavailable ? 'Not in this kit' : undefined}
+      onPointerDown={onPointerDown}
+      onClick={onClick}
+      className="pad relative aspect-square min-h-11 touch-manipulation rounded-m border border-line bg-bg-2 p-3 text-left transition-[background-color,opacity] select-none hover:bg-bg-3 disabled:opacity-50"
     >
-      <span className="absolute top-3 left-3 text-sm font-medium text-fg-1">
-        <span className="sr-only">Pad {index + 1}: </span>
+      <span className="pad-label absolute top-3 left-3 z-10 text-sm font-medium text-fg-0">
+        <span className="sr-only">{`Pad ${index + 1}:`}</span>{' '}
         {label ?? <span className="text-fg-2">{index + 1}</span>}
-        {label === undefined && <span className="sr-only"> unassigned</span>}
+        {label === undefined && (
+          <>
+            {' '}
+            <span className="sr-only">unassigned</span>
+          </>
+        )}
+        {unavailable && (
+          <>
+            {' '}
+            <span className="sr-only">(not in this kit)</span>
+          </>
+        )}
       </span>
       {note !== undefined && (
-        <span className="absolute bottom-3 left-3 font-mono text-xs text-fg-2">
-          <span className="sr-only">, note </span>
-          {note}
+        <span className="absolute bottom-3 left-3 z-10 font-mono text-xs text-fg-2">
+          <span className="sr-only">, note</span> {note}
         </span>
       )}
       <span
         aria-hidden="true"
-        className="absolute right-3 bottom-3 hidden font-mono text-[11px] text-fg-2 lg:inline"
+        className="absolute right-3 bottom-3 z-10 hidden font-mono text-[11px] text-fg-2 lg:inline"
       >
         {keyHintFor(index)}
       </span>

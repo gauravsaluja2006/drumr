@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "test-kit-b",
+  "name": "Test Kit B",
+  "description": "Second synthetic kit for kit-switching tests. Has toms, no hi-hat.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Drumr (generated)",
+    "url": "https://github.com/gauravsaluja2006/drumr"
+  },
+  "sampleRate": 44100,
+  "format": "wav",
+  "totalBytes": 24872,
+  "groups": [
+    "kick",
+    "snare",
+    "toms"
+  ],
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/kick.wav"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/snare.wav"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_high.wav"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_low.wav"
+          ]
+        }
+      ]
+    }
+  ]
+}

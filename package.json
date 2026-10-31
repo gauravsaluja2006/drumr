@@ -17,7 +17,8 @@
     "test:e2e": "playwright test",
     "size-limit": "size-limit",
     "check:required-tests": "tsx scripts/check-required-tests.ts",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "make:test-kit": "tsx scripts/make-test-kit.ts"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -58,7 +59,7 @@
     "vitest": "^5.0.5"
   },
   "drumr": {
-    "phase": 0
+    "phase": 1
   },
   "engines": {
     "node": ">=22"

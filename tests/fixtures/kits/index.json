@@ -1,0 +1,14 @@
+[
+  {
+    "id": "test-kit",
+    "name": "Test Kit",
+    "description": "Synthetic tones for tests and development. Not a real drum kit.",
+    "totalBytes": 55830
+  },
+  {
+    "id": "test-kit-b",
+    "name": "Test Kit B",
+    "description": "Second synthetic kit for kit-switching tests. Has toms, no hi-hat.",
+    "totalBytes": 24872
+  }
+]

@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const PORT = 4173;
+const PORT = 4179; // dedicated e2e port, distinct from the default preview port
 
 export default defineConfig({
   testDir: 'tests/e2e',
@@ -26,7 +26,7 @@ export default defineConfig({
   webServer: {
     command: `pnpm build --mode test && pnpm preview --mode test --port ${PORT} --strictPort`,
     port: PORT,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false, // never test against a stale build left running on the port
     timeout: 120_000,
   },
 });
