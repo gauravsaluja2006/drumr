@@ -43,9 +43,9 @@ export function Pad({ index, label, note, disabled, unavailable, selected, learn
       title={unavailable ? 'Not in this kit' : undefined}
       onPointerDown={onPointerDown}
       onClick={onClick}
-      className="pad relative aspect-square min-h-11 touch-manipulation rounded-m border border-line bg-bg-2 p-3 text-left transition-[background-color,opacity] select-none hover:bg-bg-3 disabled:cursor-wait disabled:bg-bg-1 disabled:hover:bg-bg-1"
+      className="pad relative aspect-square min-h-11 touch-manipulation rounded-m border border-line bg-bg-2 p-2 sm:p-3 text-left transition-[background-color,opacity] select-none hover:bg-bg-3 disabled:cursor-wait disabled:bg-bg-1 disabled:hover:bg-bg-1"
     >
-      <span className="pad-label absolute top-3 left-3 z-10 text-sm font-medium text-fg-0">
+      <span className="pad-label absolute inset-x-2 top-2 z-10 line-clamp-2 text-xs leading-tight font-medium text-fg-0 sm:inset-x-3 sm:top-3 sm:text-sm">
         <span className="sr-only">{`Pad ${index + 1}:`}</span>{' '}
         {label ?? <span className="text-fg-2">{index + 1}</span>}
         {label === undefined && (
@@ -68,7 +68,7 @@ export function Pad({ index, label, note, disabled, unavailable, selected, learn
         )}
       </span>
       {note !== undefined && (
-        <span className="absolute bottom-3 left-3 z-10 font-mono text-xs text-fg-2">
+        <span className="absolute bottom-2 left-2 z-10 font-mono text-xs text-fg-2 sm:bottom-3 sm:left-3">
           <span className="sr-only">, note</span> {note}
         </span>
       )}

@@ -9,7 +9,7 @@
   --line: #2b303a;
   --fg-0: #f3f4f6;
   --fg-1: #a6adbb;
-  --fg-2: #7d8595;
+  --fg-2: #8a92a2;
   --accent: #ff7a1a;
   --accent-2: #ffb86b;
   --ok: #3ddc84;
@@ -132,10 +132,18 @@ h3 {
 .pad[data-unavailable] .pad-label {
   color: var(--fg-2);
 }
-@media (prefers-reduced-motion: reduce) {
-  .pad[data-hit],
-  .pad[data-hit]::after {
-    animation-duration: 1ms;
+.pad[data-hit='reduced'] {
+  animation: none;
+}
+.pad[data-hit='reduced']::after {
+  animation: pad-flash-reduced 50ms steps(1, end);
+}
+@keyframes pad-flash-reduced {
+  from {
+    opacity: calc(0.35 + 0.65 * var(--v));
+  }
+  to {
+    opacity: 0;
   }
 }
 

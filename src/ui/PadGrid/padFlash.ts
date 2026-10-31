@@ -3,6 +3,8 @@
  * A hit is queued and applied on the next animation frame: sets --v (0..1), restarts the
  * data-hit animation, and bumps data-hit-count (used by e2e tests).
  */
+import { prefersReducedMotion } from '@/app/media';
+
 const elements = new Map<number, HTMLElement>();
 const pending = new Map<number, number>();
 const ringing = new Map<number, boolean>();
@@ -54,7 +56,8 @@ function flush(): void {
     el.style.setProperty('--v', (Math.max(0, Math.min(127, velocity)) / 127).toFixed(3));
     el.removeAttribute('data-hit');
     void el.offsetWidth; // restart the CSS animation
-    el.setAttribute('data-hit', '');
+    // Reduced motion: a one-frame colour change, no glow or scale (docs/03-DESIGN.md §5).
+    el.setAttribute('data-hit', prefersReducedMotion() ? 'reduced' : '');
     el.dataset.hitCount = String(Number(el.dataset.hitCount ?? '0') + 1);
   }
   pending.clear();

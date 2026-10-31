@@ -259,6 +259,13 @@ Tasks:
 5. Performance pass: code-split About/MappingEditor; verify S1/S2; verify F1 with the rAF counter; lazy decode (decode default kit first, others on demand).
 6. Visual regression baselines (Chromium) for: idle grid, hit pad, unavailable pad, editor open, phone layout.
 
+Implementation notes (as built):
+- PWA: precache app shell (Latin font subsets only), CacheFirst for kit audio, StaleWhileRevalidate for kit JSON, `warmKitCache()` after load, "Available offline" in the footer.
+- Debug panel (`` ` `` or footer "Debug"): audio state, base/output latency, event→schedule median/p95, voices, limiter reduction, buffers.
+- `pnpm make:icons` and `pnpm make:og-image` regenerate `public/icons/*` and `public/og-image.png`.
+- Visual baselines per platform; see `docs/05-TESTING.md` §7.
+- `--fg-2` lightened again to `#8a92a2` (hover-state contrast, found by an intermittent axe failure).
+
 Acceptance: All `06-METRICS.md` targets met in CI and logged; offline reload works; design review against `03-DESIGN.md` done by the author.
 
 Required tests:

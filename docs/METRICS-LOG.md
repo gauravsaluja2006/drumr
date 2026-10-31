@@ -38,3 +38,10 @@ One row per metric per phase. Values come from CI output or the manual checks de
 | 2026-10-31 | 5 | phase-5-mapping-editor | Tests | 105 unit, 57 e2e (+6 Chromium-only skips) | all pass | ✅ |
 | 2026-10-31 | 6 | phase-6-mixer | S1 JS bundle (gzip) | 110.1 KB | ≤ 180 KB | ✅ |
 | 2026-10-31 | 6 | phase-6-mixer | Tests | 110 unit, 60 e2e (+6 Chromium-only skips) | all pass | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | F1 frame rate during 200 hits / 5 s (Chromium) | 60.1 fps | ≥ 55 fps | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | S1 JS initial (gzip) | 109.4 KB | ≤ 180 KB | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | S1 JS all chunks (gzip) | 114.6 KB | ≤ 200 KB | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | S2 CSS (gzip) | 9.1 KB | ≤ 30 KB | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | PWA precache | 20 files, 584 KB uncompressed | — | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | Q4 coverage (all) | 98.1 % lines | ≥ 80 % | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | Tests | 116 unit, 69 e2e (+18 browser-specific skips) | all pass | ✅ |

@@ -283,7 +283,7 @@ Device selection, last device id, mapping, settings are persisted in `localStora
 | ADR-7 | Single-page, no router | React Router | One screen; About/Settings are panels |
 | ADR-8 | Pin TypeScript to `~6.0` | TypeScript 7 (native Go compiler) | typescript-eslint 8.x peer range is `<6.1`; lint is a CI gate. Revisit when typescript-eslint supports TS 7 |
 | ADR-9 | Self-host fonts with `@fontsource-variable/inter` and `jetbrains-mono` as dev dependencies | Google Fonts CDN | No third-party network calls (privacy constraint, offline PWA). Bundled at build time, so they are not runtime JS dependencies |
-| ADR-10 | `--fg-2` changed from `#6b7280` to `#7d8595` | Keep and avoid small text in `--fg-2` | Original failed 4.5:1 contrast on `--bg-2`; axe gate in Phase 0 |
+| ADR-10 | `--fg-2` changed from `#6b7280` to `#8a92a2` | Keep and avoid small text in `--fg-2` | Original failed 4.5:1 on `--bg-2` (Phase 0); `#7d8595` then failed on the `--bg-3` hover state (Phase 7, intermittent axe failure) |
 | ADR-11 | Current phase recorded as `drumr.phase` in `package.json` | Separate file | `check:required-tests` checks every phase `0..drumr.phase`; bump it in the PR that starts a phase |
 | ADR-12 | Velocity curve and hi-hat CC settings live in the mapping, not in global settings | `useSettingsStore` (roadmap Phase 3 task 7) | They are part of a player's setup for a controller and must travel with mapping export/import (US-10); the schema in §3.3 already contains them |
 | ADR-13 | "Generic pads" preset uses notes 36–51 chromatic with GM voice names for those notes | Exact GM layout | Most pad controllers (Akai MPD/MPC, Arturia) default to 36–51 bottom-left upward; GM names keep it familiar |
@@ -298,3 +298,8 @@ Device selection, last device id, mapping, settings are persisted in `localStora
 | ADR-22 | In edit mode, any hit (MIDI, keyboard, pointer) selects that pad and still plays it | Silent selection | Lets the player audition and pick pads straight from the controller |
 | ADR-23 | Engine records requested gains in `engine.gainDb` | Read `AudioParam.value` | `value` lags `setTargetAtTime` and never moves while the context is suspended (CI); tests and UI need the requested value |
 | ADR-24 | Group mix stored as `settings.mix[kitId][group] = { db, muted }`; mixer only lists groups the kit has | One global mix | Kits are balanced differently; per-kit memory is what US-11 asks for |
+| ADR-25 | Service worker registered with an injected script (`injectRegister: 'script-defer'`), not `virtual:pwa-register` | React hook from vite-plugin-pwa | Avoids adding `workbox-window` as a runtime dependency |
+| ADR-26 | After a kit loads, the app copies its files into the Workbox runtime caches (`warmKitCache`) | Rely on runtime caching only | The first kit load happens before the worker controls the page, so it would never be cached and US-15 would fail on first visit |
+| ADR-27 | Below 1024 px the side columns render as two tabs under the grid, chosen with `matchMedia` in JS | CSS-only hiding | Rendering both trees would duplicate controls (ids, tests, screen readers) |
+| ADR-28 | Reduced motion handled in JS: `data-hit="reduced"` gives a 50 ms colour step with no glow or scale | CSS media query only | Testable in jsdom, and the same code path in every browser |
+| ADR-29 | Size budget split: initial JS (`index-*.js`) ≤ 180 KB, all chunks ≤ 200 KB | One budget over all chunks | Lazy chunks (editor, About, debug) are not on the critical path |
