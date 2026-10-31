@@ -1,0 +1,8 @@
+pnpm-lock.yaml
+dist
+coverage
+public/kits
+playwright-report
+test-results
+logic.js
+*.md

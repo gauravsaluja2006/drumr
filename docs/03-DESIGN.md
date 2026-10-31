@@ -23,7 +23,7 @@ Principles:
   --line: #2b303a;        /* borders */
   --fg-0: #f3f4f6;        /* primary text */
   --fg-1: #a6adbb;        /* secondary text */
-  --fg-2: #6b7280;        /* disabled */
+  --fg-2: #7d8595;        /* tertiary text; ≥ 4.5:1 on --bg-2 (was #6b7280, failed contrast) */
   --accent: #ff7a1a;      /* hits, active, brand (warm amber-orange) */
   --accent-2: #ffb86b;    /* velocity highlight */
   --ok: #3ddc84;          /* connected */

@@ -6,8 +6,8 @@ Owner: Tech lead. Status: Approved for Phase 0.
 
 | Concern | Choice | Why |
 |---|---|---|
-| Language | TypeScript 5, `strict: true`, `noUncheckedIndexedAccess: true` | Catch mapping/schema mistakes at compile time |
-| Build | Vite 6 | Fast, static output, trivial GitHub Pages deploy |
+| Language | TypeScript 6.0 (pinned `~6.0`, see ADR-8), `strict: true`, `noUncheckedIndexedAccess: true` | Catch mapping/schema mistakes at compile time |
+| Build | Vite 8 | Fast, static output, trivial GitHub Pages deploy |
 | UI | React 19 + function components + hooks | Author familiarity; large ecosystem for testing |
 | Styling | Tailwind CSS 4 + CSS variables for theme tokens | Fast iteration, consistent design tokens (`03-DESIGN.md`) |
 | State | Zustand (one store per domain: `useKitStore`, `useMidiStore`, `useMappingStore`, `useSettingsStore`) | Tiny, no boilerplate, works outside React (audio engine needs it) |
@@ -21,9 +21,9 @@ Owner: Tech lead. Status: Approved for Phase 0.
 | Lighthouse | `@lhci/cli` against the preview build | CI gate |
 | CI/CD | GitHub Actions | Free; deploys `main` to GitHub Pages |
 | PWA | `vite-plugin-pwa` (Workbox) | Offline app shell + kit caching (Phase 7) |
-| Kit pipeline | Node 20 script + `ffmpeg` (via `ffmpeg-static`) | Offline tool, not shipped to browser |
+| Kit pipeline | Node script + `ffmpeg` (via `ffmpeg-static`) | Offline tool, not shipped to browser |
 
-Node 20 LTS, pnpm 9. Pin versions in `package.json`; commit the lockfile.
+Node 24 (engines `>=22`), pnpm 12 (`packageManager` field). Pin versions in `package.json`; commit the lockfile.
 
 ## 2. Repository layout
 
@@ -281,3 +281,7 @@ Device selection, last device id, mapping, settings are persisted in `localStora
 | ADR-5 | Zustand over Redux/Context | Redux Toolkit, Context | Engine code must read/write state outside React with no re-render cost |
 | ADR-6 | Playwright with injected fake MIDI | Manual testing only, jsdom only | The only way to automate US-03..US-07 end-to-end in CI |
 | ADR-7 | Single-page, no router | React Router | One screen; About/Settings are panels |
+| ADR-8 | Pin TypeScript to `~6.0` | TypeScript 7 (native Go compiler) | typescript-eslint 8.x peer range is `<6.1`; lint is a CI gate. Revisit when typescript-eslint supports TS 7 |
+| ADR-9 | Self-host fonts with `@fontsource-variable/inter` and `jetbrains-mono` as dev dependencies | Google Fonts CDN | No third-party network calls (privacy constraint, offline PWA). Bundled at build time, so they are not runtime JS dependencies |
+| ADR-10 | `--fg-2` changed from `#6b7280` to `#7d8595` | Keep and avoid small text in `--fg-2` | Original failed 4.5:1 contrast on `--bg-2`; axe gate in Phase 0 |
+| ADR-11 | Current phase recorded as `drumr.phase` in `package.json` | Separate file | `check:required-tests` checks every phase `0..drumr.phase`; bump it in the PR that starts a phase |

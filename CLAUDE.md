@@ -4,7 +4,7 @@ You are implementing a specified project. The specification lives in `docs/` and
 
 ## Workflow for every task
 
-1. **Find your phase** in `docs/04-ROADMAP.md`. Work on exactly one phase at a time, in order. Do not pull tasks from later phases.
+1. **Find your phase** in `docs/04-ROADMAP.md`. Work on exactly one phase at a time, in order. Do not pull tasks from later phases. Set `"drumr": { "phase": N }` in `package.json` at the start of phase N so CI checks its required tests.
 2. **Branch**: `phase-N-<slug>` from `main`.
 3. **Tests first** for anything under `src/engine`, `src/midi`, `src/mapping`, `src/kits`, `scripts/kit-pipeline`. Write the failing test with the exact title from the phase's "Required tests", then implement until it passes.
 4. **Run the full suite before claiming done**:
