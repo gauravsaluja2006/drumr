@@ -1,0 +1,103 @@
+{
+  "id": "dm-cr78",
+  "order": 40,
+  "local": true,
+  "name": "Roland CR-78",
+  "description": "1978 preset rhythm machine: soft, round, accent layers.",
+  "license": {
+    "name": "Public domain (per oramics/sampled)",
+    "url": "https://github.com/oramics/sampled"
+  },
+  "attribution": {
+    "author": "Roland CR-78 via boxedear.com",
+    "url": "http://www.boxedear.com/free.html"
+  },
+  "source": {
+    "libraryId": "oramics-sampled",
+    "root": "DM/CR-78"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["samples/kick.wav"], ["samples/kick-accent.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["samples/snare.wav"], ["samples/snare-accent.wav"]]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "layerFiles": [["samples/rim.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat.wav"], ["samples/hihat-accent.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-metal.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["samples/bongo-h.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["samples/bongo-l.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["samples/conga-l.wav"]]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["samples/cymbal.wav"]]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "layerFiles": [["samples/cowbell.wav"]]
+    },
+    {
+      "id": "tambourine",
+      "group": "perc",
+      "layerFiles": [["samples/tamb-short.wav"]]
+    },
+    {
+      "id": "shaker",
+      "group": "perc",
+      "layerFiles": [["samples/guiro-short.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

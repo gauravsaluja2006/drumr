@@ -1,0 +1,93 @@
+{
+  "id": "dm-rhythmking",
+  "order": 42,
+  "local": true,
+  "name": "Maestro Rhythm King",
+  "description": "1970s analog rhythm box (heard on Sly Stone records): lo-fi and charming.",
+  "license": {
+    "name": "Public domain (per oramics/sampled)",
+    "url": "https://github.com/oramics/sampled"
+  },
+  "attribution": {
+    "author": "Maestro Rhythm King MRK-2 via submodern.com",
+    "url": "http://www.submodern.com/slowburn/?p=736"
+  },
+  "source": {
+    "libraryId": "oramics-sampled",
+    "root": "DM/MRK-2"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["samples/kick.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["samples/snare.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["samples/tom.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["samples/bongo.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-closed.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-open.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["samples/cymball-long.wav"]]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "layerFiles": [["samples/cymball-short.wav"]]
+    },
+    {
+      "id": "stick",
+      "group": "perc",
+      "layerFiles": [["samples/clave.wav"]]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "layerFiles": [["samples/block.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

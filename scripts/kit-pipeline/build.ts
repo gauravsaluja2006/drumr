@@ -70,7 +70,19 @@ function planDrumgizmoJobs(recipe: Recipe, libRoot: string): Job[] {
 
 export function planJobs(recipe: Recipe, files: readonly string[], libRoot = ''): Job[] {
   if (recipe.drumgizmo) return planDrumgizmoJobs(recipe, libRoot);
+  const available = new Set(files);
   return recipe.articulations.flatMap((art) => {
+    if (art.layerFiles) {
+      if (art.ranges && art.ranges.length !== art.layerFiles.length) {
+        throw new Error(`${art.id}: ${art.ranges.length} ranges for ${art.layerFiles.length} layers`);
+      }
+      return art.layerFiles.flatMap((rrs, layer) =>
+        rrs.slice(0, recipe.budget.maxRoundRobins).map((path, rr) => {
+          if (!available.has(path)) throw new Error(`${art.id}: file not found "${path}"`);
+          return { art, layer, rr, inputs: [{ path, gain: 1 }], output: outName(art.id, layer, rr) };
+        }),
+      );
+    }
     const [primarySrc, ...otherSrcs] = art.sources;
     if (!primarySrc) throw new Error(`${art.id}: no sources`);
     const primary = discover(files, primarySrc.glob);

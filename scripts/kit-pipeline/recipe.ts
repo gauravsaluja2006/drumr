@@ -24,9 +24,14 @@ export const recipeArticulationSchema = z
     ranges: z.array(z.tuple([z.number().int(), z.number().int()])).optional(),
     /** DrumGizmo instrument name (requires recipe.drumgizmo). Replaces glob/mix. */
     instrument: z.string().optional(),
+    /**
+     * Explicit files per velocity layer, softest first; each inner list holds that layer's round
+     * robins. For libraries whose dynamics are named (e.g. snare-l/m/h) rather than numbered.
+     */
+    layerFiles: z.array(z.array(z.string()).min(1)).min(1).optional(),
   })
   .transform((a, ctx) => {
-    if (a.instrument) return { ...a, sources: [] as { glob: string; gainDb: number }[] };
+    if (a.instrument || a.layerFiles) return { ...a, sources: [] as { glob: string; gainDb: number }[] };
     const parsed = source.safeParse(a.mix ? { mix: a.mix } : { glob: a.glob });
     if (!parsed.success) {
       ctx.addIssue({ code: 'custom', message: `${a.id}: needs "glob" or "mix"` });

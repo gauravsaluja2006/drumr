@@ -1,0 +1,114 @@
+{
+  "id": "trap-hard",
+  "order": 50,
+  "local": true,
+  "name": "Hard Trap",
+  "description": "Distorted 808s, heavy kicks, crisp snares. 808 bass on the low tom pads.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Boochi44",
+    "url": "https://github.com/Boochi44/free-drum-samples"
+  },
+  "source": {
+    "libraryId": "boochi44",
+    "root": "drum-samples/01-hard-trap"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["kicks/hard-kick-01.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["snares/hard-snare-01.wav"]]
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "layerFiles": [["snares/hard-snare-02.wav"]]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "layerFiles": [["percs/perc-rimshot.wav"]]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "layerFiles": [["claps/clap-01.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["percs/perc-low-tom.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["808s/808-bass-dist.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["808s/808-bass-sub.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["hi-hats/hi-hat-closed-01.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.shank",
+      "group": "hihat",
+      "layerFiles": [["hi-hats/ch.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["open-hats/open-hat-01.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.shank"]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["fx/fx-cymbal.wav"]]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "layerFiles": [["fx/cy5075.wav"]]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "layerFiles": [["percs/perc-cowbell.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

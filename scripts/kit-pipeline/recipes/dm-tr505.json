@@ -1,0 +1,103 @@
+{
+  "id": "dm-tr505",
+  "order": 43,
+  "local": true,
+  "name": "Roland TR-505",
+  "description": "1986 budget digital drum machine: crisp, bright, very 80s.",
+  "license": {
+    "name": "Public domain (per oramics/sampled)",
+    "url": "https://github.com/oramics/sampled"
+  },
+  "attribution": {
+    "author": "Roland TR-505 via progsounds.com",
+    "url": "http://www.progsounds.com/downloads/progsounds-roland-tr-505-samples-pack"
+  },
+  "source": {
+    "libraryId": "oramics-sampled",
+    "root": "DM/TR-505"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["samples/tr505-kick.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["samples/tr505-snare.wav"]]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "layerFiles": [["samples/tr505-rim.wav"]]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "layerFiles": [["samples/tr505-clap.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["samples/tr505-tom-h.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["samples/tr505-tom-m.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["samples/tr505-tom-l.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["samples/tr505-hihat-closed.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["samples/tr505-hihat-open.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "layerFiles": [["samples/tr505-ride.wav"]]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["samples/tr505-crash.wav"]]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "layerFiles": [["samples/tr505-cowb-h.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

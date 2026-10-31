@@ -1,0 +1,131 @@
+{
+  "id": "dm-linndrum",
+  "order": 41,
+  "local": true,
+  "name": "LinnDrum LM-2",
+  "description": "1982 sampled drum machine: the 80s pop kit, with soft/medium/hard snares.",
+  "license": {
+    "name": "Public domain (per oramics/sampled)",
+    "url": "https://github.com/oramics/sampled"
+  },
+  "attribution": {
+    "author": "LinnDrum via machines.hyperreal.org",
+    "url": "http://machines.hyperreal.org/manufacturers/Linn/LinnDrum/"
+  },
+  "source": {
+    "libraryId": "oramics-sampled",
+    "root": "DM/LM-2"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["samples/kick.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["samples/snare-l.wav"], ["samples/snare-m.wav"], ["samples/snare-h.wav"]]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "layerFiles": [["samples/stick-l.wav"], ["samples/stick-m.wav"], ["samples/stick-h.wav"]]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "layerFiles": [["samples/clap.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["samples/tom-hh.wav"]]
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "layerFiles": [["samples/tom-h.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["samples/tom-m.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["samples/tom-l.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-closed.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-closed-short.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-closed-long.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-open.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "layerFiles": [["samples/ride.wav"]]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["samples/crash.wav"]]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "layerFiles": [["samples/cowb.wav"]]
+    },
+    {
+      "id": "tambourine",
+      "group": "perc",
+      "layerFiles": [["samples/tamb.wav"]]
+    },
+    {
+      "id": "shaker",
+      "group": "perc",
+      "layerFiles": [["samples/cabasa.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.half", "hihat.open"]
+  }
+}

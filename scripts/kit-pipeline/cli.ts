@@ -24,14 +24,22 @@ const MAX_TOTAL = 120_000_000;
 
 function loadRecipe(arg: string): Recipe {
   const name = `${arg.replace(/\.json$/, '')}.json`;
-  const file = existsSync(arg) ? arg : existsSync(join(privateRecipesDir, name)) ? join(privateRecipesDir, name) : join(recipesDir, name);
+  const file = existsSync(arg)
+    ? arg
+    : existsSync(join(privateRecipesDir, name))
+      ? join(privateRecipesDir, name)
+      : join(recipesDir, name);
   return recipeSchema.parse(JSON.parse(readFileSync(file, 'utf8')));
 }
 
 const allRecipes = () =>
   [recipesDir, privateRecipesDir]
     .filter((dir) => existsSync(dir))
-    .flatMap((dir) => readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => loadRecipe(join(dir, f))))
+    .flatMap((dir) =>
+      readdirSync(dir)
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => loadRecipe(join(dir, f))),
+    )
     .sort((a, b) => a.order - b.order);
 
 function build(r: Recipe) {

@@ -1,0 +1,108 @@
+{
+  "id": "dm-tr808",
+  "order": 44,
+  "local": true,
+  "name": "Roland TR-808",
+  "description": "The 808: boomy kick, snappy snare, cowbell, toms. Michael Fischer's recordings.",
+  "license": {
+    "name": "Free, licence unclear (local only)",
+    "url": "https://github.com/oramics/sampled"
+  },
+  "attribution": {
+    "author": "Michael Fischer (via oramics/sampled)",
+    "url": "https://github.com/oramics/sampled"
+  },
+  "source": {
+    "libraryId": "oramics-sampled",
+    "root": "DM/TR-808/samples"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["08.BD.808.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["08.SD5.808.wav"]]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "layerFiles": [["01.RS.808.wav"]]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "layerFiles": [["01.CP.808.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["08.HT.808.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["08.MT.808.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["08.LT.808.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["01.CH.808.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["08.OH.808.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["08.CY.808.wav"]]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "layerFiles": [["01.CB.808.wav"]]
+    },
+    {
+      "id": "stick",
+      "group": "perc",
+      "layerFiles": [["01.CL.808.wav"]]
+    },
+    {
+      "id": "shaker",
+      "group": "perc",
+      "layerFiles": [["01.MA.808.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

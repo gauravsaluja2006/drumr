@@ -1,0 +1,109 @@
+{
+  "id": "dm-tr909-sp",
+  "order": 46,
+  "local": true,
+  "name": "TR-909 SP-1200",
+  "description": "909 resampled through an E-mu SP-1200: gritty 12-bit.",
+  "license": {
+    "name": "Free, licence unclear (local only)",
+    "url": "https://github.com/oramics/sampled"
+  },
+  "attribution": {
+    "author": "F9 Audio (via oramics/sampled)",
+    "url": "http://www.flstudiomusic.com/2016/09/download-free-909-kits-stems-f9-audio.html"
+  },
+  "source": {
+    "libraryId": "oramics-sampled",
+    "root": "DM/TR-909/SP"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["samples/kick.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["samples/snare.wav"]]
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "layerFiles": [["samples/snare-short.wav"]]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "layerFiles": [["samples/rim.wav"]]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "layerFiles": [["samples/clap1.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["samples/tom-h.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["samples/tom-m.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["samples/tom-l.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-closed-1.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.shank",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-closed-2.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["samples/hihat-open-1.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.shank"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "layerFiles": [["samples/ride.wav"]]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["samples/cymbal.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

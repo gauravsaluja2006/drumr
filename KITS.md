@@ -35,3 +35,20 @@ Shortlist for a self-built pad sampler. All verified against the source pages or
 - **Salamander Drumkit** — CC-BY-SA 3.0, 370 MB WAV, few velocity layers but many RR. https://archive.org/details/SalamanderDrumkit
 - **DrumGizmo kits (DRSKit, MuldjordKit, CrocellKit, Aasimonster)** — CC-BY-4.0, excellent recordings, but per-microphone channel files (13-16 channels) that need mixing down; 2-5.5 GB each. SFZ/FLAC ports of DRSKit and MuldjordKit exist at https://github.com/sfzinstruments/DrumGizmo.DRSKit and https://github.com/sfzinstruments/DrumGizmo.MuldjordKit
 - Other Karoryfer CC0 sets: Swirly Drums (brushes, 1.6 GB), Unruly Drums (all snares, 2 GB), Frankensnare (snares, 900 MB), Gogodze Phu Vol II (lo-fi, 133 MB) via https://shop.karoryfer.com
+
+## Electronic and drum-machine kits (researched 2026-10-31)
+
+Built as local-only kits (`"local": true` recipes). One sample per drum unless noted.
+
+| Kit | Source | Licence | Notes |
+|---|---|---|---|
+| Roland CR-78 | [oramics/sampled](https://github.com/oramics/sampled) (from boxedear.com) | Public domain per oramics | Normal and accent layers for kick, snare, hat |
+| LinnDrum LM-2 | oramics/sampled (from machines.hyperreal.org) | Public domain per oramics | Soft/medium/hard snare and side stick layers; 5 toms |
+| Maestro Rhythm King MRK-2 | oramics/sampled (from submodern.com) | Public domain per oramics | |
+| Roland TR-505 | oramics/sampled (from progsounds.com) | Public domain per oramics | Full kit incl. ride and crash |
+| Roland TR-808 | oramics/sampled (Michael Fischer recordings) | No licence stated: local only | 16 tone/decay variants per voice; one chosen |
+| TR-909 Detroit / SP-1200 | oramics/sampled (F9 Audio free kits) | Royalty-free, not open: local only | |
+| Hard Trap, Bounce, Soulful Vintage | [Boochi44/free-drum-samples](https://github.com/Boochi44/free-drum-samples) | CC0 | 808 bass on low tom pads |
+
+"Public domain per oramics" relies on that repository's metadata; confirm with the original sources before publishing.
+Royalty-free packs from 99Sounds, BVKER, Sampletopia and similar sites allow use in music but usually forbid redistribution, so they were not used.

@@ -2,8 +2,9 @@ import type { Voice } from './voices';
 
 /**
  * Voice → kit articulation (docs/02-ARCHITECTURE.md §3.4). First available id wins.
- * Additions beyond the doc: hihat.open → ¾ → half, crash.left → crash.right, and toms search
- * outward by distance in [high, highMid, lowMid, low].
+ * Additions beyond the doc: hihat.open → ¾ → half, crash.left → crash.right, rides → crash
+ * (bell → cowbell first) for kits without a ride, and toms search outward by distance in
+ * [high, highMid, lowMid, low].
  */
 export const FALLBACKS: Readonly<Partial<Record<Voice, readonly string[]>>> = {
   'snare.edge': ['snare.center'],
@@ -19,8 +20,10 @@ export const FALLBACKS: Readonly<Partial<Record<Voice, readonly string[]>>> = {
   'hihat.shank': ['hihat.closed'],
   'hihat.splash': ['hihat.open'],
   'hihat.pedal': ['hihat.closed'],
-  'ride.edge': ['ride.bow'],
-  'ride.bell': ['ride.bow'],
+  // Kits without a ride (most drum machines) fall back to their crash rather than going silent.
+  'ride.bow': ['crash.right', 'crash.left'],
+  'ride.edge': ['ride.bow', 'crash.right', 'crash.left'],
+  'ride.bell': ['ride.bow', 'cowbell', 'crash.right', 'crash.left'],
   'crash.left': ['crash.right'],
   'crash.right': ['crash.left'],
   china: ['crash.left', 'crash.right'],

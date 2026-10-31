@@ -1,0 +1,114 @@
+{
+  "id": "trap-vintage",
+  "order": 52,
+  "local": true,
+  "name": "Soulful Vintage",
+  "description": "Bit-crushed 808 drums with SP-1200 grit: boom-bap and soul.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Boochi44",
+    "url": "https://github.com/Boochi44/free-drum-samples"
+  },
+  "source": {
+    "libraryId": "boochi44",
+    "root": "drum-samples/03-soulful-vintage"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["kicks/vintage-kick-01.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["snares/vintage-snare-01.wav"]]
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "layerFiles": [["snares/vintage-snare-02.wav"]]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "layerFiles": [["claps/vintage-clap-01.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["percs/ht00-lofi.wav"]]
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "layerFiles": [["percs/perc-high-tom.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["percs/lt00-lofi.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["percs/perc-low-tom.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["hi-hats/hi-hat-closed-01.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.shank",
+      "group": "hihat",
+      "layerFiles": [["hi-hats/ch-lofi.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["open-hats/open-hat-01.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.shank"]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["fx/cy0000-lofi.wav"]]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "layerFiles": [["fx/fx-cymbal.wav"]]
+    },
+    {
+      "id": "shaker",
+      "group": "perc",
+      "layerFiles": [["percs/perc-maraca.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "trap-bounce",
+  "order": 51,
+  "local": true,
+  "name": "Bounce",
+  "description": "Round 808s, tight kicks, snappy claps: West Coast bounce.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Boochi44",
+    "url": "https://github.com/Boochi44/free-drum-samples"
+  },
+  "source": {
+    "libraryId": "boochi44",
+    "root": "drum-samples/02-bounce"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "layerFiles": [["kicks/bounce-kick-01.wav"]]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "layerFiles": [["snares/bounce-snare-01.wav"]]
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "layerFiles": [["snares/bounce-snare-02.wav"]]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "layerFiles": [["claps/clap-01.wav"]]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "layerFiles": [["percs/perc-high-tom.wav"]]
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "layerFiles": [["percs/lt25.wav"]]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "layerFiles": [["percs/perc-low-tom.wav"]]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "layerFiles": [["808s/808-bass-punch.wav"]]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "layerFiles": [["hi-hats/hi-hat-closed-01.wav"]],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "layerFiles": [["open-hats/open-hat-01.wav"]],
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "layerFiles": [["fx/fx-cymbal.wav"]]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}
