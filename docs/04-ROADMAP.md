@@ -206,6 +206,11 @@ Tasks:
 4. Grid size stays 4×4 in v1 but the schema and components read `grid.rows/cols` so 2×8 or 4×8 is a data change later.
 5. Keyboard shortcuts: `E` toggles editor, `Esc` closes.
 
+Implementation notes (as built):
+- MIDI learn uses `controller.captureNextNote(cb)`: the next note-on is consumed (not played) and the 10 s timeout lives in the editor component.
+- `useUiStore` holds `editing / selectedPad / learning`. The editor replaces the right column on desktop and is a bottom sheet below `lg`.
+- Imported mappings become custom presets; export is the active mapping as pretty JSON.
+
 Acceptance: Remap a pad via learn, reload, mapping persists; export then import on a fresh profile reproduces it; invalid file rejected with reasons.
 
 Required tests:

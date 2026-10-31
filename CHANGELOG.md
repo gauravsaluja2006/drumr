@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Phase 5 — Mapping editor
+- Edit layout (button or `M`): select a pad on screen or by hitting it, set its MIDI note by learning from the controller (10 s timeout), choose its sound and label.
+- Save layouts as presets, rename and delete them; reset to the saved version.
+- Export the layout as JSON and import it elsewhere; invalid files are rejected with readable reasons and change nothing.
+
 ### Phase 4 — Hi-hat openness and choke
 - CC-controlled openness: logic.js `updateHiHat` ported exactly (verified by running the original), 7 bands mapped onto each kit's levels (2 to 6).
 - Choke: closed, pedal and shank hits fade ringing open hats in ≈40 ms; open does not choke open; crash choke pads work even without a choke sample.

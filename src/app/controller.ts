@@ -9,6 +9,7 @@ import type { MidiMessage } from '@/midi/types';
 import { curve } from '@/engine/velocity';
 import { HiHatState } from '@/engine/HiHat';
 import type { AudioEngine } from '@/engine/AudioEngine';
+import { useUiStore } from '@/state/useUiStore';
 
 /**
  * The hot path: input → pad → voice → articulation → engine. Everything here is synchronous and
@@ -31,6 +32,17 @@ let byNote = new Map<number, number>();
 let lastHit: HitInfo | null = null;
 const hitListeners = new Set<(hit: HitInfo) => void>();
 const hihatListeners = new Set<(value: number | null) => void>();
+let capture: ((note: number) => void) | null = null;
+
+/**
+ * MIDI learn: the next note-on goes to `cb` instead of playing. Returns a cancel function.
+ */
+export function captureNextNote(cb: (note: number) => void): () => void {
+  capture = cb;
+  return () => {
+    if (capture === cb) capture = null;
+  };
+}
 
 /** CC-driven hi-hat openness, shared by the resolver and the meter UI. */
 export const hihat = new HiHatState();
@@ -105,6 +117,7 @@ function play(i: number, inVelocity: number, velocity: number, eventTime: number
     engine.choke(pad.voice); // kit has no choke sample: just silence the cymbal
   }
   flashPad(i, velocity);
+  if (useUiStore.getState().editing) useUiStore.getState().selectPad(i); // editor follows what you hit
   lastHit = { padIndex: i, voice: pad.voice, articulationId, inVelocity, velocity, source };
   for (const l of hitListeners) l(lastHit);
 }
@@ -136,6 +149,12 @@ export function handleMidi(message: MidiMessage, eventTime: number): void {
     return;
   }
   if (message.type !== 'noteon') return; // drums are one-shots
+  if (capture) {
+    const cb = capture;
+    capture = null;
+    cb(message.note);
+    return;
+  }
   const i = byNote.get(message.note);
   if (i === undefined) return;
   play(i, message.velocity, curve(message.velocity, mapping.velocity), eventTime, 'midi');
