@@ -8,8 +8,10 @@ test('US-08: switching kit while playing completes without errors and old voices
   page.on('pageerror', (e) => errors.push(e.message));
   await openApp(page);
 
-  await page.keyboard.press('f'); // HH Open (CC pad): a 400 ms sample that should keep ringing through the switch
-  expect((await stats(page)).lastTrigger?.articulationId).toBe('hihat.open');
+  await page.keyboard.press('f'); // HH Open (CC pad): a 2 s sample that should keep ringing through the switch
+  const before = await stats(page);
+  expect(before.lastTrigger?.articulationId).toBe('hihat.open');
+  expect(before.activeVoices).toBe(1);
 
   await page.getByRole('button', { name: /Kit.*Test Kit/ }).click();
   await page.getByRole('option', { name: /Test Kit B/ }).click();

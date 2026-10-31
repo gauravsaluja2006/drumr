@@ -63,7 +63,8 @@ const kits: KitSpec[] = [
       'samples/snare_rr1.wav': noise(0.05, 0.7, 0.02, 11),
       'samples/snare_rr2.wav': noise(0.05, 0.7, 0.02, 23),
       'samples/hh_closed.wav': hat(0.03, 0.5, 0.008, 5),
-      'samples/hh_open.wav': render(0.4, (t) => Math.sin(2 * Math.PI * 8000 * t) * 0.4 * Math.exp(-t / 0.12)),
+      // 2 s so it is still ringing through slow kit switches and choke tests on CI.
+      'samples/hh_open.wav': render(2, (t) => Math.sin(2 * Math.PI * 8000 * t) * 0.4 * Math.exp(-t / 0.6)),
     },
     articulations: [
       {
