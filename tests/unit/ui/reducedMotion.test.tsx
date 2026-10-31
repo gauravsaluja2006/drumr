@@ -25,13 +25,16 @@ describe('reduced motion', () => {
     expect(prefersReducedMotion()).toBe(false);
     flashPad(3, 127);
     flushPadFlash();
-    expect(pad.getAttribute('data-hit')).toBe(''); // full animation: glow + scale (CSS .pad[data-hit])
+    expect(pad.getAttribute('data-hit')).toBe('a'); // full animation: glow + scale
+    flashPad(3, 127);
+    flushPadFlash();
+    expect(pad.getAttribute('data-hit')).toBe('b'); // alternates to restart without a layout flush
 
     mockMatchMedia(true);
     expect(prefersReducedMotion()).toBe(true);
     flashPad(3, 127);
     flushPadFlash();
-    // CSS: .pad[data-hit='reduced'] has no press (scale/glow) animation, only a one-frame colour flash.
-    expect(pad.getAttribute('data-hit')).toBe('reduced');
+    // CSS: .pad[data-hit^='reduced'] has no press (scale/glow) animation, only a one-frame colour flash.
+    expect(pad.getAttribute('data-hit')).toBe('reduced-a');
   });
 });

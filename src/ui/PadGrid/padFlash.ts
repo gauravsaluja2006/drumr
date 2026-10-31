@@ -54,10 +54,11 @@ function flush(): void {
     const el = elements.get(index);
     if (!el) continue;
     el.style.setProperty('--v', (Math.max(0, Math.min(127, velocity)) / 127).toFixed(3));
-    el.removeAttribute('data-hit');
-    void el.offsetWidth; // restart the CSS animation
+    // Restart the animation by alternating between two identical keyframe names ("a"/"b"), which
+    // avoids forcing a synchronous layout (reading offsetWidth) on every hit.
     // Reduced motion: a one-frame colour change, no glow or scale (docs/03-DESIGN.md §5).
-    el.setAttribute('data-hit', prefersReducedMotion() ? 'reduced' : '');
+    const phase = el.getAttribute('data-hit')?.endsWith('a') ? 'b' : 'a';
+    el.setAttribute('data-hit', prefersReducedMotion() ? `reduced-${phase}` : phase);
     el.dataset.hitCount = String(Number(el.dataset.hitCount ?? '0') + 1);
   }
   pending.clear();

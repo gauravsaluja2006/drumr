@@ -103,14 +103,21 @@ h3 {
 .pad::after {
   background: var(--accent);
 }
-.pad[data-hit] {
-  animation: pad-press 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+.pad[data-hit='a'] {
+  animation: pad-press-a 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.pad[data-hit]::after,
-.pad[data-hit]::before {
-  animation: pad-flash 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+.pad[data-hit='b'] {
+  animation: pad-press-b 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-@keyframes pad-flash {
+.pad[data-hit='a']::after,
+.pad[data-hit='a']::before {
+  animation: pad-flash-a 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.pad[data-hit='b']::after,
+.pad[data-hit='b']::before {
+  animation: pad-flash-b 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes pad-flash-a {
   from {
     opacity: calc(0.35 + 0.65 * var(--v));
   }
@@ -118,7 +125,23 @@ h3 {
     opacity: 0;
   }
 }
-@keyframes pad-press {
+@keyframes pad-flash-b {
+  from {
+    opacity: calc(0.35 + 0.65 * var(--v));
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pad-press-a {
+  from {
+    transform: scale(0.97);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes pad-press-b {
   from {
     transform: scale(0.97);
   }
@@ -128,7 +151,6 @@ h3 {
 }
 .pad[data-hit] .pad-label {
   color: var(--bg-0);
-  transition: color 180ms;
 }
 .pad[data-unavailable] {
   background-image: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.06) 0 2px, transparent 2px 10px);
@@ -136,16 +158,24 @@ h3 {
 .pad[data-unavailable] .pad-label {
   color: var(--fg-2);
 }
-.pad[data-hit='reduced'] {
+.pad[data-hit^='reduced']::before {
   animation: none;
 }
-.pad[data-hit='reduced']::before {
-  animation: none;
+.pad[data-hit='reduced-a']::after {
+  animation: pad-flash-reduced-a 50ms steps(1, end);
 }
-.pad[data-hit='reduced']::after {
-  animation: pad-flash-reduced 50ms steps(1, end);
+.pad[data-hit='reduced-b']::after {
+  animation: pad-flash-reduced-b 50ms steps(1, end);
 }
-@keyframes pad-flash-reduced {
+@keyframes pad-flash-reduced-a {
+  from {
+    opacity: calc(0.35 + 0.65 * var(--v));
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pad-flash-reduced-b {
   from {
     opacity: calc(0.35 + 0.65 * var(--v));
   }
