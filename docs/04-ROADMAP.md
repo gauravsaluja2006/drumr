@@ -31,7 +31,7 @@ Tasks:
 2. `tsconfig` strict + `noUncheckedIndexedAccess`. Path alias `@/` → `src/`.
 3. Repository layout from `02-ARCHITECTURE.md` §2 with placeholder `index.ts` files.
 4. Theme tokens file from `03-DESIGN.md` §2; app renders the status bar with the name and an empty 4×4 grid of idle pads (static).
-5. `scripts/check-required-tests.ts`: parses the manifest at the bottom of this file, greps `tests/**` for each title, exits 1 if missing.
+5. `scripts/check-required-tests.ts`: parses the manifest at the bottom of this file, greps `tests/**` and `scripts/**` test files for each title of phases `0..drumr.phase` (from `package.json`), exits 1 if missing.
 6. `.github/workflows/ci.yml` as in `05-TESTING.md` §5, including Pages deploy and Lighthouse on `main`.
 7. `size-limit` config with the budgets from `06-METRICS.md`.
 8. `README.md` skeleton, `CHANGELOG.md`, `docs/METRICS-LOG.md` (empty table), MIT `LICENSE`.
