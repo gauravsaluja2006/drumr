@@ -16,6 +16,7 @@ import { padIndex } from '@/mapping/schema';
 import { voiceLabel } from '@/mapping/voices';
 import { VelocityPanel } from '@/ui/VelocityPanel/VelocityPanel';
 import { PresetSelect } from '@/ui/PresetSelect/PresetSelect';
+import { HiHatMeter } from '@/ui/HiHatMeter/HiHatMeter';
 import { installTestHooks } from './testHooks';
 
 function Panel({ title, children }: { title: string; children?: React.ReactNode }) {
@@ -98,7 +99,9 @@ export function App() {
           <PresetSelect />
         </div>
         <aside className="hidden flex-col gap-8 rounded-l border border-line bg-bg-1 p-5 lg:flex">
-          <Panel title="Hi-hat" />
+          <Panel title="Hi-hat">
+            <HiHatMeter />
+          </Panel>
           <Panel title="Velocity">
             <VelocityPanel />
           </Panel>

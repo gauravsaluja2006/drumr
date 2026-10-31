@@ -289,3 +289,6 @@ Device selection, last device id, mapping, settings are persisted in `localStora
 | ADR-13 | "Generic pads" preset uses notes 36–51 chromatic with GM voice names for those notes | Exact GM layout | Most pad controllers (Akai MPD/MPC, Arturia) default to 36–51 bottom-left upward; GM names keep it familiar |
 | ADR-14 | Resolver fallbacks extended: `hihat.open → ¾ → half`, `crash.left ↔ crash.right`, toms search outward by distance | Doc table only | Avoids silent pads on kits that lack one cymbal or tom |
 | ADR-15 | Audio overlay dismisses on the first click/key, even if audio cannot start | Stay until `running` | CI Firefox (no output device) never reaches `running`; users must never be blocked |
+| ADR-16 | Hi-hat band = 7 − Drum Kit Designer articulation from logic.js `updateHiHat` | Re-derive thresholds | DKD articulation 7 is closed and 1 is open (logic.js forces closed pads to 7 with invert on). `invert: true` therefore means "high CC opens", the author's strip; `invert: false` means "high CC closes", standard for CC4 pedals. Verified by executing the original function in tests |
+| ADR-17 | `pedalOnClose` stored in `mapping.hihat` (default false) | Global setting | Same reason as ADR-12 |
+| ADR-18 | Before the first CC arrives, `hihat.cc` plays the most open level | Closed | Matches logic.js initial articulation 1 (open) |

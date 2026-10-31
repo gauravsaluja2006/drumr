@@ -10,12 +10,22 @@ export const GAIN_SMOOTHING = 0.01;
 /** Voice-steal fade: time constant and hard stop offset (≈5 ms). */
 const STEAL_TC = 0.0015;
 const STEAL_STOP = 0.01;
+/** Choke: time constant 12 ms reaches −60 dB in ≈40 ms; hard stop at 80 ms (docs/02 §3.6). */
+export const CHOKE_TC = 0.012;
+export const CHOKE_STOP = 0.08;
+/** Choke voices that silence a cymbal even when the kit has no sample for them. */
+export const IMPLICIT_CHOKES: Readonly<Record<string, string>> = {
+  'crash.leftChoke': 'crash.left',
+  'crash.rightChoke': 'crash.right',
+};
 const LATENCY_SAMPLES = 256;
 
 export interface Voice {
   id: number;
   articulationId: string;
   group: Group;
+  /** Articulations whose start silences this voice (from the manifest at trigger time). */
+  chokedBy: readonly string[];
   source: IBufferSourceNode;
   gain: IGainNode;
   startedAt: number;
@@ -39,6 +49,8 @@ export interface EngineStats {
 }
 
 export type EngineListener = (info: TriggerInfo) => void;
+export type VoiceEndReason = 'ended' | 'choked' | 'stolen';
+export type VoiceListener = (voice: Voice, reason: VoiceEndReason) => void;
 
 export class AudioEngine {
   readonly master: IGainNode;
@@ -54,6 +66,7 @@ export class AudioEngine {
   private counters = { triggers: 0, steals: 0, chokes: 0 };
   private last: TriggerInfo | null = null;
   private listeners = new Set<EngineListener>();
+  private endListeners = new Set<VoiceListener>();
 
   constructor(
     readonly ctx: IAudioContext,
@@ -110,6 +123,7 @@ export class AudioEngine {
     const buffer = kit.buffers.get(layer.samples[index] as string);
     if (!buffer) return null;
 
+    this.choke(art.id);
     if (this.voices.length >= MAX_VOICES) this.steal(art.group);
 
     const t = this.ctx.currentTime;
@@ -124,12 +138,13 @@ export class AudioEngine {
       id: this.nextVoiceId++,
       articulationId: art.id,
       group: art.group,
+      chokedBy: art.chokedBy ?? [],
       source,
       gain,
       startedAt: t,
     };
     source.onended = () => {
-      this.release(voice);
+      this.release(voice, 'ended');
       gain.disconnect();
     };
     this.voices.push(voice);
@@ -141,6 +156,24 @@ export class AudioEngine {
     this.last = { articulationId: art.id, velocity, atTime: t };
     for (const l of this.listeners) l(this.last);
     return voice;
+  }
+
+  /**
+   * Silences every sounding voice that `chokerId` chokes: voices listing it in `chokedBy`, plus the
+   * implicit cymbal targets in IMPLICIT_CHOKES. Called on every trigger, and directly for choke-only
+   * pads whose kit has no choke sample. Returns the number of voices choked.
+   */
+  choke(chokerId: string): number {
+    const implicit = IMPLICIT_CHOKES[chokerId];
+    const victims = this.voices.filter((v) => v.chokedBy.includes(chokerId) || v.articulationId === implicit);
+    for (const v of victims) this.fadeOut(v, CHOKE_TC, CHOKE_STOP, 'choked');
+    this.counters.chokes += victims.length;
+    return victims.length;
+  }
+
+  onVoiceEnd(listener: VoiceListener): () => void {
+    this.endListeners.add(listener);
+    return () => this.endListeners.delete(listener);
   }
 
   onTrigger(listener: EngineListener): () => void {
@@ -175,26 +208,27 @@ export class AudioEngine {
     };
   }
 
-  /** Fade and stop a voice early (voice stealing now; choke in Phase 4). */
-  protected fadeOut(voice: Voice, timeConstant: number, stopAfter: number): void {
+  /** Fade and stop a voice early (stealing and choking). */
+  protected fadeOut(voice: Voice, timeConstant: number, stopAfter: number, reason: VoiceEndReason): void {
     const t = this.ctx.currentTime;
     voice.gain.gain.cancelScheduledValues(t);
     voice.gain.gain.setTargetAtTime(0, t, timeConstant);
     voice.source.stop(t + stopAfter);
-    this.release(voice);
+    this.release(voice, reason);
   }
 
   private steal(group: Group) {
     const victim = this.voices.find((v) => v.group === group) ?? this.voices[0];
     if (!victim) return;
     this.counters.steals++;
-    this.fadeOut(victim, STEAL_TC, STEAL_STOP);
+    this.fadeOut(victim, STEAL_TC, STEAL_STOP, 'stolen');
   }
 
-  private release(voice: Voice) {
+  private release(voice: Voice, reason: VoiceEndReason) {
     const i = this.voices.indexOf(voice);
     if (i === -1) return;
     this.voices.splice(i, 1);
+    for (const l of this.endListeners) l(voice, reason);
   }
 
   private recordLatency(ms: number) {

@@ -19,7 +19,13 @@ export const mappingSchema = z
     grid: z.object({ rows: z.number().int().min(1).max(8), cols: z.number().int().min(1).max(8) }),
     pads: z.array(pad),
     velocity: z.object({ exponent: z.number().min(1).max(4), floor: z.number().int().min(0).max(64) }),
-    hihat: z.object({ cc: z.number().int().min(0).max(127), invert: z.boolean() }),
+    hihat: z.object({
+      cc: z.number().int().min(0).max(127),
+      /** true: high CC values open the hat (mod strip); false: high values close it (pedal, CC4). */
+      invert: z.boolean(),
+      /** Closing the CC fully while an open hat rings plays a pedal "chick" (docs/02 §3.5). */
+      pedalOnClose: z.boolean().default(false),
+    }),
     /** 1-16, or null for omni. */
     channel: z.number().int().min(1).max(16).nullable(),
   })

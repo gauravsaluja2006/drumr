@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { AudioEngine, GAIN_SMOOTHING, MAX_VOICES } from '@/engine/AudioEngine';
+import { AudioEngine, CHOKE_STOP, CHOKE_TC, GAIN_SMOOTHING, MAX_VOICES } from '@/engine/AudioEngine';
 import {
   FakeAudioContext,
   FakeBuffer,
@@ -7,7 +7,7 @@ import {
   FakeGain,
   FakeSource,
 } from '../fakes/FakeAudioContext';
-import { loadedTestKit } from '../fakes/kits';
+import { loadedTestKit, testManifest } from '../fakes/kits';
 
 function setup() {
   const ctx = new FakeAudioContext();
@@ -153,5 +153,98 @@ describe('AudioEngine', () => {
     expect(engine.activeVoices).toContain(v);
     expect(engine.currentKit?.manifest.id).toBe('test-kit');
     expect(engine.stats().kitId).toBe('test-kit');
+  });
+});
+
+describe('choke', () => {
+  function chokeKit() {
+    const base = testManifest();
+    return loadedTestKit({
+      ...base,
+      articulations: [
+        ...base.articulations,
+        {
+          id: 'hihat.pedal',
+          group: 'hihat',
+          chokeGroup: 'hihat',
+          gainDb: 0,
+          layers: [{ lovel: 1, hivel: 127, samples: ['hh_pedal.wav'] }],
+        },
+        {
+          id: 'hihat.half',
+          group: 'hihat',
+          chokeGroup: 'hihat',
+          chokedBy: ['hihat.closed', 'hihat.pedal'],
+          gainDb: 0,
+          layers: [{ lovel: 1, hivel: 127, samples: ['hh_half.wav'] }],
+        },
+        {
+          id: 'crash.left',
+          group: 'cymbals',
+          gainDb: 0,
+          layers: [{ lovel: 1, hivel: 127, samples: ['crash.wav'] }],
+        },
+      ],
+    });
+  }
+
+  test('P4: Choke fades every voice whose chokedBy includes the new articulation and leaves others', () => {
+    const { engine } = setup();
+    engine.setKit(chokeKit());
+    const open = engine.trigger('hihat.open', 100)!;
+    const half = engine.trigger('hihat.half', 100)!;
+    const open2 = engine.trigger('hihat.open', 100)!; // open does not choke open
+    const kick = engine.trigger('kick', 100)!;
+    expect(engine.stats().chokes).toBe(0);
+    expect(engine.activeVoices).toHaveLength(4);
+
+    const ended: string[] = [];
+    engine.onVoiceEnd((v, reason) => ended.push(`${v.articulationId}:${reason}`));
+    engine.trigger('hihat.pedal', 60); // chokes half only (open is choked by closed alone)
+    expect(engine.activeVoices).not.toContain(half);
+    expect(engine.activeVoices).toEqual(expect.arrayContaining([open, open2, kick]));
+    expect(ended).toEqual(['hihat.half:choked']);
+
+    engine.trigger('hihat.closed', 100);
+    expect(engine.activeVoices).not.toContain(open);
+    expect(engine.activeVoices).not.toContain(open2);
+    expect(engine.activeVoices).toContain(kick);
+    expect(engine.stats().chokes).toBe(3);
+  });
+
+  test('P4: Choke uses setTargetAtTime(0, now, 0.012) and stop(now + 0.08)', () => {
+    const { ctx, engine } = setup();
+    const open = engine.trigger('hihat.open', 100)!;
+    ctx.advance(0.5);
+    engine.trigger('hihat.closed', 100);
+    const calls = (open.gain as FakeGain).gain.calls;
+    expect(calls).toContainEqual({ kind: 'cancelScheduledValues', time: 0.5 });
+    expect(calls).toContainEqual({ kind: 'setTargetAtTime', target: 0, time: 0.5, timeConstant: CHOKE_TC });
+    expect((open.source as FakeSource).stoppedAt).toBeCloseTo(0.5 + CHOKE_STOP);
+    expect(CHOKE_TC).toBe(0.012);
+    expect(CHOKE_STOP).toBe(0.08);
+  });
+
+  test('R3: choke timing', () => {
+    // −60 dB is reached after ln(1000) ≈ 6.9 time constants: 6.9 × 12 ms ≈ 83 ms; −40 dB (inaudible
+    // under a new hit) after 4.6 × 12 ms ≈ 55 ms; the fade starts in the same JS task as the trigger.
+    const { ctx, engine } = setup();
+    const open = engine.trigger('hihat.open', 100)!;
+    ctx.advance(1.234);
+    engine.trigger('hihat.closed', 100);
+    const fade = (open.gain as FakeGain).gain.calls.find((c) => c.kind === 'setTargetAtTime');
+    expect(fade).toMatchObject({ time: 1.234 }); // no scheduling delay
+    expect(Math.exp(-0.04 / CHOKE_TC)).toBeLessThan(0.04); // under −28 dB within 40 ms
+  });
+
+  test('P4: crash.leftChoke chokes crash.left without playing a sample', () => {
+    const { ctx, engine } = setup();
+    engine.setKit(chokeKit());
+    const crash = engine.trigger('crash.left', 120)!;
+    const sources = ctx.sources.length;
+    expect(engine.choke('crash.leftChoke')).toBe(1);
+    expect(ctx.sources.length).toBe(sources);
+    expect(engine.activeVoices).not.toContain(crash);
+    expect(engine.choke('crash.rightChoke')).toBe(0);
   });
 });

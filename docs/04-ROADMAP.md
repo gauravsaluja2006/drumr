@@ -174,6 +174,11 @@ Tasks:
 6. Pad "sounding-open-hat" ring state driven by engine events (`voiceStarted`/`voiceEnded`/`voiceChoked`).
 7. Optional flag `pedalOnClose` (default off) in settings.
 
+Implementation notes (as built):
+- `AudioEngine.choke(id)` runs on every trigger and directly for choke-only pads; `IMPLICIT_CHOKES` maps `crash.leftChoke/rightChoke` to their cymbals for kits without choke samples. `onVoiceEnd(voice, reason)` drives the ring indicator.
+- Ring indicator is a `data-ringing` attribute set by `padFlash.ringPad()` in the same rAF batch as hit flashes.
+- Test kit open hat lengthened to 2 s (Phase 2 fix) so choke and kit-switch tests do not race CI.
+
 Acceptance: On a real controller with CC1 strip: sweeping the strip changes which sample the open-hat pad plays; hitting closed/shank/pedal pads chokes ringing open hats; ring indicator appears/disappears.
 
 Required tests:

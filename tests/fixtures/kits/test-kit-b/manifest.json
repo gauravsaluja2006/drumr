@@ -14,11 +14,7 @@
   "sampleRate": 44100,
   "format": "wav",
   "totalBytes": 24872,
-  "groups": [
-    "kick",
-    "snare",
-    "toms"
-  ],
+  "groups": ["kick", "snare", "toms"],
   "articulations": [
     {
       "id": "kick",
@@ -28,9 +24,7 @@
         {
           "lovel": 1,
           "hivel": 127,
-          "samples": [
-            "samples/kick.wav"
-          ]
+          "samples": ["samples/kick.wav"]
         }
       ]
     },
@@ -42,9 +36,7 @@
         {
           "lovel": 1,
           "hivel": 127,
-          "samples": [
-            "samples/snare.wav"
-          ]
+          "samples": ["samples/snare.wav"]
         }
       ]
     },
@@ -56,9 +48,7 @@
         {
           "lovel": 1,
           "hivel": 127,
-          "samples": [
-            "samples/tom_high.wav"
-          ]
+          "samples": ["samples/tom_high.wav"]
         }
       ]
     },
@@ -70,9 +60,7 @@
         {
           "lovel": 1,
           "hivel": 127,
-          "samples": [
-            "samples/tom_low.wav"
-          ]
+          "samples": ["samples/tom_low.wav"]
         }
       ]
     }
