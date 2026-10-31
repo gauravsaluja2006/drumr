@@ -15,10 +15,10 @@ export function AudioOverlay({ ctx }: { ctx: IAudioContext | null }) {
       setDismissed(true);
       void ctx.resume().catch(() => {});
     };
-    window.addEventListener('pointerdown', unlock, { capture: true });
+    window.addEventListener('click', unlock, { capture: true });
     window.addEventListener('keydown', unlock, { capture: true });
     return () => {
-      window.removeEventListener('pointerdown', unlock, { capture: true });
+      window.removeEventListener('click', unlock, { capture: true });
       window.removeEventListener('keydown', unlock, { capture: true });
     };
   }, [ctx, dismissed]);
