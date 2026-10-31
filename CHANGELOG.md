@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Phase 3 — Web MIDI and the Maschine preset
+- Web MIDI: permission, device list, hot-plug, auto-select, remembered device, running-status parser.
+- Mapping by logical voice with fallbacks; presets "Maschine 4×4 (Logic)" (checked against logic.js) and "Generic pads (GM 36–51)".
+- MIDI status pill with device picker; banners when MIDI is unsupported or blocked, with Retry.
+- Velocity panel: live curve plot with the last hit, editable curve and floor.
+- Fake Web MIDI for Playwright; latency (L1) and load (R1) gates.
+
 ### Phase 2 — Kit pipeline and real kits
 - Offline kit pipeline: recipes, {layer}/{rr} discovery, layer subsampling, multi-mic mixing, normalise-then-trim, clip guard, FLAC encoding, provenance, verify, index.
 - Three kits: Black Pearl (AVL, CC-BY-SA), Virtuosity Jazz (CC0), Big Rusty Rock (CC0, six hi-hat openings). 30.5 MB total.

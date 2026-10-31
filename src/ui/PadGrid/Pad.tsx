@@ -38,7 +38,7 @@ export function Pad({ index, label, note, disabled, unavailable, onHit }: PadPro
       title={unavailable ? 'Not in this kit' : undefined}
       onPointerDown={onPointerDown}
       onClick={onClick}
-      className="pad relative aspect-square min-h-11 touch-manipulation rounded-m border border-line bg-bg-2 p-3 text-left transition-[background-color,opacity] select-none hover:bg-bg-3 disabled:opacity-50"
+      className="pad relative aspect-square min-h-11 touch-manipulation rounded-m border border-line bg-bg-2 p-3 text-left transition-[background-color,opacity] select-none hover:bg-bg-3 disabled:cursor-wait disabled:bg-bg-1 disabled:hover:bg-bg-1"
     >
       <span className="pad-label absolute top-3 left-3 z-10 text-sm font-medium text-fg-0">
         <span className="sr-only">{`Pad ${index + 1}:`}</span>{' '}

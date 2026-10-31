@@ -1,5 +1,6 @@
 import { LoadingBar } from '@/ui/LoadingBar/LoadingBar';
 import { KitSelector } from '@/ui/KitSelector/KitSelector';
+import { MidiBanner, MidiStatus } from '@/ui/MidiStatus/MidiStatus';
 
 export function StatusBar() {
   return (
@@ -13,13 +14,10 @@ export function StatusBar() {
           <h1 className="text-base font-semibold">Drumr</h1>
         </div>
         <KitSelector />
-        <div className="flex items-center gap-2 rounded-full border border-line px-3 py-1 text-xs text-fg-1">
-          <span aria-hidden="true" className="size-2 rounded-full border border-fg-2" />
-          <span className="hidden sm:inline">MIDI: no device</span>
-          <span className="sm:hidden">MIDI</span>
-        </div>
+        <MidiStatus />
       </div>
       <LoadingBar />
+      <MidiBanner />
     </header>
   );
 }

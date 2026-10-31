@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "name": "Maschine 4×4 (Logic)",
+  "grid": { "rows": 4, "cols": 4 },
+  "pads": [
+    { "row": 3, "col": 0, "note": 24, "voice": "kick" },
+    { "row": 3, "col": 1, "note": 25, "voice": "snare.center" },
+    { "row": 3, "col": 2, "note": 26, "voice": "hihat.shank" },
+    { "row": 3, "col": 3, "note": 27, "voice": "hihat.closed", "label": "HH Tip" },
+    { "row": 2, "col": 0, "note": 28, "voice": "kick" },
+    { "row": 2, "col": 1, "note": 29, "voice": "snare.rimshot" },
+    { "row": 2, "col": 2, "note": 30, "voice": "snare.sidestick" },
+    { "row": 2, "col": 3, "note": 31, "voice": "hihat.cc", "label": "HH Open" },
+    { "row": 1, "col": 0, "note": 32, "voice": "tom.high" },
+    { "row": 1, "col": 1, "note": 33, "voice": "tom.highMid" },
+    { "row": 1, "col": 2, "note": 34, "voice": "tom.lowMid" },
+    { "row": 1, "col": 3, "note": 35, "voice": "tom.low" },
+    { "row": 0, "col": 0, "note": 36, "voice": "crash.left" },
+    { "row": 0, "col": 1, "note": 37, "voice": "crash.right" },
+    { "row": 0, "col": 2, "note": 38, "voice": "ride.bow", "label": "Ride In" },
+    { "row": 0, "col": 3, "note": 39, "voice": "ride.bell" }
+  ],
+  "velocity": { "exponent": 2.4, "floor": 28 },
+  "hihat": { "cc": 1, "invert": true },
+  "channel": null
+}

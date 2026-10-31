@@ -135,6 +135,12 @@ Tasks:
 8. `ui/VelocityPanel` with curve plot and last-hit dot.
 9. Replace Phase 1's temporary pad wiring with the mapping store; on-screen pads show labels and note numbers from the mapping; unavailable pads dimmed per resolver.
 
+Implementation notes (as built):
+- `src/app/controller.ts` is the hot path: note → pad (lookup table rebuilt on mapping change) → voice → `resolve()` → `engine.trigger()`, all synchronous. `getLastHit()` exposes `{padIndex, voice, articulationId, inVelocity, velocity, source}` for tests.
+- Velocity/hi-hat settings live in the mapping (ADR-12). `tempMapping.ts` removed.
+- `tests/e2e/fixtures/fakeMidi.ts` replaces `Navigator.prototype.requestMIDIAccess` before load; `openApp()` installs it with no devices by default so Firefox never shows a real permission prompt.
+- Disabled (loading) pads no longer fade to 50 % opacity; that failed contrast (see 03-DESIGN §4.3).
+
 Acceptance: With a real Maschine in MIDI mode, all 16 pads play the voices listed in `logic.js`; device hot-plug works; Safari shows the unsupported banner.
 
 Required tests:

@@ -170,3 +170,12 @@ h3 {
     animation: none;
   }
 }
+
+.velocity-dot {
+  animation: dot-fade 900ms ease-out forwards;
+}
+@keyframes dot-fade {
+  to {
+    opacity: 0.15;
+  }
+}
