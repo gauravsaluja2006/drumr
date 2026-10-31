@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 import type { IAudioContext } from '@/engine/audioContext';
 
-/** Browsers start audio suspended until a user gesture. Covers the app until audio runs. */
+/**
+ * Browsers start audio suspended until a user gesture. The overlay captures that first gesture,
+ * asks the context to resume, and then gets out of the way even if resume() does not reach
+ * "running" (e.g. no output device), so the app is never blocked behind it.
+ */
 export function AudioOverlay({ ctx }: { ctx: IAudioContext | null }) {
-  const [running, setRunning] = useState(() => ctx?.state === 'running');
+  const [dismissed, setDismissed] = useState(() => !ctx || ctx.state === 'running');
 
   useEffect(() => {
-    if (!ctx || ctx.state === 'running') return;
+    if (!ctx || dismissed) return;
     const unlock = () => {
-      void ctx.resume().then(() => setRunning(ctx.state === 'running'));
+      setDismissed(true);
+      void ctx.resume().catch(() => {});
     };
     window.addEventListener('pointerdown', unlock, { capture: true });
     window.addEventListener('keydown', unlock, { capture: true });
@@ -16,9 +21,9 @@ export function AudioOverlay({ ctx }: { ctx: IAudioContext | null }) {
       window.removeEventListener('pointerdown', unlock, { capture: true });
       window.removeEventListener('keydown', unlock, { capture: true });
     };
-  }, [ctx]);
+  }, [ctx, dismissed]);
 
-  if (running || !ctx) return null;
+  if (dismissed) return null;
   return (
     <div
       data-testid="audio-overlay"
