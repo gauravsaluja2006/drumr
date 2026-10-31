@@ -122,6 +122,14 @@ export function KitSelector() {
                     {kit.name}
                   </span>
                   <span className="flex gap-1.5 font-mono text-[11px] text-fg-1">
+                    {kit.baseUrl && (
+                      <span
+                        className="rounded-s border border-warn/50 px-1.5 text-warn"
+                        title="Built on this computer, not deployed"
+                      >
+                        local
+                      </span>
+                    )}
                     {m && <span className="rounded-s border border-line px-1.5">{m.license.name}</span>}
                     <span className="rounded-s border border-line px-1.5">{formatBytes(kit.totalBytes)}</span>
                   </span>

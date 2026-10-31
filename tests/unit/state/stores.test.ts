@@ -73,3 +73,28 @@ describe('useSettingsStore', () => {
     expect(JSON.parse(localStorage.getItem('drumr.v1.settings')!).state.masterDb).toBe(-60);
   });
 });
+
+describe('local-only kits', () => {
+  test('are merged into the index with their own base URL and load from there', async () => {
+    const rt = installFakeRuntime({ localKits: true });
+    await useKitStore.getState().init();
+    const index = useKitStore.getState().index;
+    // Main kits first; a local entry that duplicates a main id is dropped.
+    expect(index.map((k) => [k.id, k.baseUrl])).toEqual([
+      ['test-kit', undefined],
+      ['kit-b', undefined],
+      ['big-local', '/kits-local/'],
+    ]);
+    await useKitStore.getState().switchKit('big-local');
+    expect(useKitStore.getState().currentKitId).toBe('big-local');
+    expect(rt.requested).toContain('/kits-local/big-local/manifest.json');
+    expect(rt.requested).toContain('/kits-local/big-local/kick_v1.wav');
+  });
+
+  test('a missing local index is ignored', async () => {
+    installFakeRuntime(); // /kits-local/index.json → 404
+    await useKitStore.getState().init();
+    expect(useKitStore.getState().status).toBe('ready');
+    expect(useKitStore.getState().index).toHaveLength(2);
+  });
+});

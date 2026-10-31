@@ -1,0 +1,112 @@
+{
+  "id": "dg-muldjord",
+  "order": 11,
+  "local": true,
+  "name": "Muldjord (DrumGizmo)",
+  "description": "Big metal-style kit with double kick, four toms and a china. 16 mics mixed to stereo.",
+  "license": {
+    "name": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": {
+    "author": "DrumGizmo team",
+    "url": "https://drumgizmo.org/wiki/doku.php?id=kits:muldjordkit"
+  },
+  "source": {
+    "libraryId": "x-MuldjordKit3",
+    "root": "MuldjordKit3"
+  },
+  "drumgizmo": {
+    "kit": "MuldjordKit3.xml"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 80000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.5,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "instrument": "KdrumR"
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "instrument": "Snare",
+      "maxVelocityLayers": 6
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "instrument": "Tom1"
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "instrument": "Tom2"
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "instrument": "Tom3"
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "instrument": "Tom4"
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "instrument": "HihatClosed",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "instrument": "HihatOpen",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "instrument": "RideR"
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "instrument": "RideRBell"
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "instrument": "CrashL"
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "instrument": "CrashR"
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "instrument": "China"
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

@@ -18,3 +18,4 @@ test-results/
 
 # Source sample libraries downloaded by the user (gigabytes). Build kits with the pipeline instead.
 /kits/
+/public/kits-local/

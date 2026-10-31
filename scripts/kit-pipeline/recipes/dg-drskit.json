@@ -1,0 +1,132 @@
+{
+  "id": "dg-drskit",
+  "order": 10,
+  "local": true,
+  "name": "DRSKit (DrumGizmo)",
+  "description": "Studio rock kit, 13 mics mixed to stereo. Three toms, five hi-hat articulations.",
+  "license": {
+    "name": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": {
+    "author": "DrumGizmo team",
+    "url": "https://drumgizmo.org/wiki/doku.php?id=kits:drskit"
+  },
+  "source": {
+    "libraryId": "x-DRSKit2_1",
+    "root": "DRSKit"
+  },
+  "drumgizmo": {
+    "kit": "DRSKit_full.xml"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 80000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.5,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "instrument": "Kdrum_with_contact"
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "instrument": "Snare",
+      "maxVelocityLayers": 6
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "instrument": "Snare_rim"
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "instrument": "Tom1"
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "instrument": "Tom2"
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "instrument": "Tom3"
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "instrument": "Hihat_closed",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.shank",
+      "group": "hihat",
+      "instrument": "Hihat_closed_shank",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "instrument": "Hihat_foot",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "instrument": "Hihat_semi_open",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "instrument": "Hihat_open",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "instrument": "Ride_tip"
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "instrument": "Ride_tip_bell"
+    },
+    {
+      "id": "ride.edge",
+      "group": "cymbals",
+      "instrument": "Ride_shank"
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "instrument": "Crash_left_tip"
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "instrument": "Crash_right_tip"
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.half", "hihat.open"],
+    "pedal": "hihat.pedal"
+  }
+}

@@ -22,8 +22,11 @@ export const recipeArticulationSchema = z
     mix: z.array(z.object({ glob: z.string(), gainDb: z.number().default(0) })).optional(),
     /** Explicit velocity ranges, one per kept layer, ascending. */
     ranges: z.array(z.tuple([z.number().int(), z.number().int()])).optional(),
+    /** DrumGizmo instrument name (requires recipe.drumgizmo). Replaces glob/mix. */
+    instrument: z.string().optional(),
   })
   .transform((a, ctx) => {
+    if (a.instrument) return { ...a, sources: [] as { glob: string; gainDb: number }[] };
     const parsed = source.safeParse(a.mix ? { mix: a.mix } : { glob: a.glob });
     if (!parsed.success) {
       ctx.addIssue({ code: 'custom', message: `${a.id}: needs "glob" or "mix"` });
@@ -42,6 +45,19 @@ export const recipeSchema = z.object({
   /** Full licence text to ship as LICENSE.txt (required for CC-BY-SA kits). */
   licenseText: z.string().optional(),
   source: z.object({ libraryId: z.string(), root: z.string().default('') }),
+  /** DrumGizmo kit XML relative to source.root; articulations then name `instrument`s. */
+  drumgizmo: z
+    .object({
+      kit: z.string(),
+      /** Per-microphone gain multipliers by channel name (default 1). */
+      micGains: z.record(z.string(), z.number()).default({}),
+    })
+    .optional(),
+  /**
+   * Local-only kit: built into public/kits-local/ (gitignored) and listed in its own index, for
+   * trying large libraries without committing them.
+   */
+  local: z.boolean().default(false),
   output: z
     .object({
       sampleRate: z.number().int().default(44100),

@@ -1,0 +1,153 @@
+{
+  "id": "sm-drums",
+  "order": 20,
+  "local": true,
+  "name": "SM Drums",
+  "description": "Deeply sampled collector kit (up to 64 velocity layers in the source). Stereo mix, four toms, two rides.",
+  "license": {
+    "name": "Public domain (verify)",
+    "url": "https://sfzinstruments.github.io/drums/sm_drums"
+  },
+  "attribution": {
+    "author": "Scott McLean, Tod Stillwell, Suleiman Ali",
+    "url": "https://sfzinstruments.github.io/drums/sm_drums"
+  },
+  "source": {
+    "libraryId": "x-SMDrums_Sforzando_1.2",
+    "root": "Samples"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 80000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 5
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.5,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "glob": "SMDrum Stereo (Samples)/Kik_Stereo/RR{rr}/{layer}_*.wav",
+      "maxVelocityLayers": 8
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "glob": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR{rr}/{layer}_*.wav",
+      "maxVelocityLayers": 8
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "glob": "SMDrum Stereo (Samples)/RimShot_Stereo/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "glob": "SMDrum Stereo (Samples)/SideStick_Stereo/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "glob": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "glob": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "glob": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "glob": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "glob": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR{rr}/{layer}_*.wav",
+      "maxVelocityLayers": 6,
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "glob": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR{rr}/{layer}_*.wav",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "glob": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR{rr}/{layer}_*.wav",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "glob": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR{rr}/{layer}_*.wav",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.splash",
+      "group": "hihat",
+      "glob": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR{rr}/{layer}_*.wav",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "glob": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "glob": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "ride.edge",
+      "group": "cymbals",
+      "glob": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "glob": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "glob": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "splash",
+      "group": "cymbals",
+      "glob": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR{rr}/{layer}_*.wav"
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "glob": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR{rr}/{layer}_*.wav"
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.half", "hihat.open"],
+    "pedal": "hihat.pedal",
+    "splash": "hihat.splash"
+  }
+}

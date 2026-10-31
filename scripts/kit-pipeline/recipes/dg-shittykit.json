@@ -1,0 +1,109 @@
+{
+  "id": "dg-shittykit",
+  "order": 13,
+  "local": true,
+  "name": "ShittyKit (DrumGizmo)",
+  "description": "Cheap, characterful Stagg kit in a raw room. Close mics, overheads and M/S room.",
+  "license": {
+    "name": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": {
+    "author": "DrumGizmo team",
+    "url": "https://drumgizmo.org/wiki/doku.php?id=kits:shittykit"
+  },
+  "source": {
+    "libraryId": "x-ShittyKit1_2",
+    "root": "ShittyKit"
+  },
+  "drumgizmo": {
+    "kit": "ShittyKit.xml"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 80000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.5,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "instrument": "kick"
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "instrument": "snare-Dyn-RH",
+      "maxVelocityLayers": 6
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "instrument": "snare-RmClk"
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "instrument": "Tom-RH"
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "instrument": "Floor-RH"
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "instrument": "HH-closed",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "instrument": "HH-pdl",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "instrument": "HH-open",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "instrument": "ride"
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "instrument": "ride-bell"
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "instrument": "Crash1"
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "instrument": "Crash2"
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"],
+    "pedal": "hihat.pedal"
+  }
+}

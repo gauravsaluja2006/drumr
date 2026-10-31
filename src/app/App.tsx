@@ -4,7 +4,7 @@ import { StatusBar } from '@/ui/StatusBar/StatusBar';
 import { KitPanel } from '@/ui/KitPanel/KitPanel';
 import { Mixer } from '@/ui/Mixer/Mixer';
 import { AudioOverlay } from '@/ui/AudioOverlay/AudioOverlay';
-import { useKitStore } from '@/state/useKitStore';
+import { kitBaseUrl, useKitStore } from '@/state/useKitStore';
 import { DEFAULT_GROUP, useSettingsStore } from '@/state/useSettingsStore';
 import { GROUPS } from '@/kits/schema';
 import { attachKeyboard } from '@/input/keyboard';
@@ -115,7 +115,8 @@ export function App() {
   const manifest = useKitStore((s) => s.manifest);
   const offlineReady = useOfflineStore((s) => !!kitId && s.readyKitIds.includes(kitId));
   useEffect(() => {
-    if (runtime && manifest && status === 'ready') void warmKitCache(manifest, runtime.kitsBaseUrl);
+    if (runtime && manifest && status === 'ready')
+      void warmKitCache(manifest, kitBaseUrl(useKitStore.getState().index, manifest.id));
   }, [runtime, manifest, status]);
 
   const mapping = useMappingStore((s) => s.mapping);

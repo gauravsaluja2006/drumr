@@ -124,6 +124,8 @@ export const kitIndexSchema = z.array(
     description: z.string(),
     totalBytes: z.number().int().nonnegative(),
     thumbnail: z.string().optional(),
+    /** Set by the app for kits from the local-only index (public/kits-local); not in index files. */
+    baseUrl: z.string().optional(),
   }),
 );
 export type KitIndex = z.infer<typeof kitIndexSchema>;

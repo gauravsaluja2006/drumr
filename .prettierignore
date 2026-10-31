@@ -8,3 +8,4 @@ logic.js
 *.md
 tests/fixtures/kits
 /kits/
+public/kits-local

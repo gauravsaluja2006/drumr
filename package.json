@@ -25,7 +25,8 @@
     "kit:index": "tsx scripts/kit-pipeline/cli.ts index",
     "make:icons": "tsx scripts/make-icons.ts",
     "make:og-image": "tsx scripts/make-og-image.ts",
-    "test:visual:linux": "bash scripts/update-linux-snapshots.sh"
+    "test:visual:linux": "bash scripts/update-linux-snapshots.sh",
+    "kit:build-local": "tsx scripts/kit-pipeline/cli.ts build-local"
   },
   "dependencies": {
     "react": "^19.3.1",

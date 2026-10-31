@@ -3,7 +3,7 @@
  *   pnpm kit:build <recipe.json|id>   pnpm kit:verify <id>   pnpm kit:index   pnpm kit:build-all
  * Sources: $DRUMR_SOURCES (default ~/drumr-sources/<libraryId>/...).
  */
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { basename, join } from 'node:path';
 import { recipeSchema, type Recipe } from './recipe';
@@ -14,6 +14,9 @@ import { kitManifestSchema } from '../../src/kits/schema';
 const root = new URL('../..', import.meta.url).pathname;
 const recipesDir = join(root, 'scripts/kit-pipeline/recipes');
 const outRoot = join(root, 'public/kits');
+/** Local-only kits (gitignored), listed in their own index the app merges in when present. */
+const localRoot = join(root, 'public/kits-local');
+const outFor = (r: Recipe) => (r.local ? localRoot : outRoot);
 const sourcesRoot = process.env.DRUMR_SOURCES ?? join(homedir(), 'drumr-sources');
 const MAX_TOTAL = 120_000_000;
 
@@ -30,7 +33,8 @@ const allRecipes = () =>
 
 function build(r: Recipe) {
   const t0 = Date.now();
-  const res = buildKit(r, { sourcesRoot, outRoot, log: console.log });
+  mkdirSync(outFor(r), { recursive: true });
+  const res = buildKit(r, { sourcesRoot, outRoot: outFor(r), log: console.log });
   console.log(
     `${r.id}: ${(res.manifest.totalBytes / 1e6).toFixed(2)} MB, kit gain ${res.kitGainDb.toFixed(1)} dB, reference peak ${res.referencePeakDbfs.toFixed(1)} dBFS (${((Date.now() - t0) / 1000).toFixed(1)} s)`,
   );
@@ -38,7 +42,7 @@ function build(r: Recipe) {
 }
 
 function verify(r: Recipe): boolean {
-  const res = verifyKit(join(outRoot, r.id), {
+  const res = verifyKit(join(outFor(r), r.id), {
     maxBytes: r.budget.maxBytes,
     reference: r.normalize.reference,
     targetPeakDbfs: r.normalize.targetPeakDbfs,
@@ -57,21 +61,23 @@ function verify(r: Recipe): boolean {
 }
 
 function index() {
-  const recipes = allRecipes();
-  const entries = recipes
-    .filter((r) => existsSync(join(outRoot, r.id, 'manifest.json')))
-    .map((r) => {
-      const m = kitManifestSchema.parse(
-        JSON.parse(readFileSync(join(outRoot, r.id, 'manifest.json'), 'utf8')),
-      );
-      return { id: m.id, name: m.name, description: m.description, totalBytes: m.totalBytes };
-    });
-  const total = entries.reduce((s, e) => s + e.totalBytes, 0);
-  writeFileSync(join(outRoot, 'index.json'), JSON.stringify(entries, null, 2) + '\n');
-  console.log(
-    `index.json: ${entries.length} kits, ${(total / 1e6).toFixed(1)} MB total (budget ${MAX_TOTAL / 1e6} MB)`,
-  );
-  if (total > MAX_TOTAL) process.exitCode = 1;
+  for (const local of [false, true]) {
+    const dir = local ? localRoot : outRoot;
+    const entries = allRecipes()
+      .filter((r) => r.local === local && existsSync(join(dir, r.id, 'manifest.json')))
+      .map((r) => {
+        const m = kitManifestSchema.parse(JSON.parse(readFileSync(join(dir, r.id, 'manifest.json'), 'utf8')));
+        return { id: m.id, name: m.name, description: m.description, totalBytes: m.totalBytes };
+      });
+    if (local && entries.length === 0) continue;
+    const total = entries.reduce((s, e) => s + e.totalBytes, 0);
+    writeFileSync(join(dir, 'index.json'), JSON.stringify(entries, null, 2) + '\n');
+    const note = local ? ' (local only, not committed)' : ` (budget ${MAX_TOTAL / 1e6} MB)`;
+    console.log(
+      `${local ? 'kits-local' : 'kits'}/index.json: ${entries.length} kits, ${(total / 1e6).toFixed(1)} MB${note}`,
+    );
+    if (!local && total > MAX_TOTAL) process.exitCode = 1;
+  }
 }
 
 const [cmd, arg] = process.argv.slice(2);
@@ -82,7 +88,12 @@ switch (cmd) {
     index();
     break;
   case 'build-all':
-    for (const r of allRecipes()) if (!build(r)) process.exitCode = 1;
+    for (const r of allRecipes().filter((r) => !r.local)) if (!build(r)) process.exitCode = 1;
+    index();
+    break;
+  case 'build-local':
+    for (const r of allRecipes().filter((r) => r.local && (!arg || r.id === arg)))
+      if (!build(r)) process.exitCode = 1;
     index();
     break;
   case 'verify':
@@ -93,6 +104,6 @@ switch (cmd) {
     index();
     break;
   default:
-    console.error('commands: build <recipe> | build-all | verify <id> | index');
+    console.error('commands: build <recipe> | build-all | build-local [id] | verify <id> | index');
     process.exitCode = 1;
 }

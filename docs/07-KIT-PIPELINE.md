@@ -111,3 +111,21 @@ Deviations from the plan above, all reflected in code:
 | avl-black-pearl | 113 (mono, 5 layers) | 5.8 MB | −6.0 dBFS |
 | virtuosity-jazz | 96 (stereo, 4–6 layers × 2 RR) | 8.6 MB | −6.0 dBFS |
 | big-rusty-rock | 168 (stereo, 3–5 layers × 2 RR) | 16.1 MB | −7.4 dBFS (clip guard) |
+
+## 9. Local-only kits and the DrumGizmo importer (as built)
+
+Large libraries can be tried without committing them:
+
+- A recipe with `"local": true` builds into `public/kits-local/<id>/` (gitignored) and is listed in `public/kits-local/index.json`. `pnpm kit:build-local [id]` builds them; `pnpm kit:build-all` builds only committed kits.
+- The app reads `${BASE_URL}kits-local/index.json` if it exists (`VITE_KITS_LOCAL_URL` overrides; empty disables, as in `.env.test`) and merges those kits after the main ones, each loading from its own base URL. The kit menu marks them **local**. The deployed site has no such index, so nothing changes there.
+- **DrumGizmo kits** (`"drumgizmo": { "kit": "<kit>.xml" }`, articulations name an `instrument`): hits are sorted by the instrument's `power` (measured from the audio when absent), split into velocity layers, round robins spread within each layer. Only channels marked `main="true"` are mixed (all channels if none are marked); trigger channels are always dropped. Room, overhead, ambience and ride pairs ending in L/R are panned; everything else is centred at −3 dB. Optional `micGains` per channel name.
+- Source archives the user downloaded live in the repo-root `kits/` folder (gitignored) and are extracted to `~/drumr-sources/x-<archive name>/`.
+
+| Local kit | Source | Samples | Size | Notes |
+|---|---|---|---|---|
+| dg-drskit | DRSKit 2.1 (CC-BY 4.0) | 13 mics | 11.8 MB | 3 toms, 5 hi-hat articulations |
+| dg-muldjord | MuldjordKit 3 (CC-BY 4.0) | 16 mics | 11.1 MB | 4 toms, china |
+| dg-aasimonster | Aasimonster 2.1 (CC-BY 4.0) | 16 mics | 13.3 MB | crash chokes, 3 chinas; clip-guarded to −6.3 dBFS |
+| dg-shittykit | ShittyKit 1.2 (CC-BY 4.0) | 8 mics, no power values | 8.1 MB | loudness measured from audio |
+| sm-drums | SM Drums 1.2 (licence to verify) | stereo, up to 64 layers | 19.3 MB | regular folder layout, built with globs; tom folders run low→high |
+| — | Naked Drums (GitHub mirror) | — | — | Not built: the mirror has no kick samples (kick maps to snare-bottom files) and toms only have room mics |

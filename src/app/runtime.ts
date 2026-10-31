@@ -12,10 +12,18 @@ export interface Runtime {
   sampler: Sampler;
   fetch: FetchLike;
   kitsBaseUrl: string;
+  /** Optional second kit index for local-only kits (gitignored public/kits-local); null disables. */
+  localKitsBaseUrl: string | null;
   midi: MidiManager;
 }
 
 let runtime: Runtime | null = null;
+
+export function defaultLocalKitsBaseUrl(): string | null {
+  const configured = import.meta.env.VITE_KITS_LOCAL_URL as string | undefined;
+  if (configured === '') return null; // disabled (e.g. test builds)
+  return configured ?? `${import.meta.env.BASE_URL}kits-local/`;
+}
 
 export function defaultKitsBaseUrl(): string {
   return import.meta.env.VITE_KITS_BASE_URL ?? `${import.meta.env.BASE_URL}kits/`;
@@ -34,6 +42,7 @@ export function createRuntime(
   fetchImpl: FetchLike,
   kitsBaseUrl = defaultKitsBaseUrl(),
   midi = new MidiManager(browserMidiAccess()),
+  localKitsBaseUrl: string | null = null,
 ): Runtime {
   return {
     ctx,
@@ -41,12 +50,19 @@ export function createRuntime(
     sampler: new Sampler(ctx, fetchImpl),
     fetch: fetchImpl,
     kitsBaseUrl,
+    localKitsBaseUrl,
     midi,
   };
 }
 
 export function getRuntime(): Runtime {
-  runtime ??= createRuntime(createRealAudioContext(), (url) => fetch(url));
+  runtime ??= createRuntime(
+    createRealAudioContext(),
+    (url) => fetch(url),
+    defaultKitsBaseUrl(),
+    new MidiManager(browserMidiAccess()),
+    defaultLocalKitsBaseUrl(),
+  );
   return runtime;
 }
 

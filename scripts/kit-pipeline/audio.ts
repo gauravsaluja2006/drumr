@@ -10,8 +10,12 @@ export interface Pcm {
   data: Float32Array;
 }
 
-/** Decodes any audio file to interleaved float32 at the given rate/channels. */
-export function decode(file: string, sampleRate: number, channels: number): Pcm {
+/**
+ * Decodes any audio file to interleaved float32 at the given rate/channels. An optional ffmpeg
+ * filter runs first (e.g. a `pan` mixdown of a multichannel recording).
+ */
+export function decode(file: string, sampleRate: number, channels: number, filter?: string): Pcm {
+  const resample = 'aresample=filter_size=64:phase_shift=10:cutoff=0.97';
   const out = execFileSync(
     FFMPEG,
     [
@@ -19,12 +23,12 @@ export function decode(file: string, sampleRate: number, channels: number): Pcm 
       'error',
       '-i',
       file,
+      '-af',
+      filter ? `${filter},${resample}` : resample,
       '-ac',
       String(channels),
       '-ar',
       String(sampleRate),
-      '-af',
-      'aresample=filter_size=64:phase_shift=10:cutoff=0.97',
       '-f',
       'f32le',
       '-',

@@ -1,0 +1,146 @@
+{
+  "id": "dg-aasimonster",
+  "order": 12,
+  "local": true,
+  "name": "Aasimonster (DrumGizmo)",
+  "description": "Huge kit: four toms, three chinas, crash chokes. 16 mics mixed to stereo.",
+  "license": {
+    "name": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": {
+    "author": "DrumGizmo team",
+    "url": "https://drumgizmo.org/wiki/doku.php?id=kits:the_aasimonster"
+  },
+  "source": {
+    "libraryId": "x-aasimonster2_1",
+    "root": "aasimonster2"
+  },
+  "drumgizmo": {
+    "kit": "aasimonster.xml"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 80000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.5,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "instrument": "kick_r"
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "instrument": "snare_on_center",
+      "maxVelocityLayers": 6
+    },
+    {
+      "id": "snare.edge",
+      "group": "snare",
+      "instrument": "snare_off_center"
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "instrument": "snare_rim_shot"
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "instrument": "tom_1"
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "instrument": "tom_2"
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "instrument": "tom_3"
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "instrument": "tom_4"
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "instrument": "hihat_closed1",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "instrument": "hihat_open",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "instrument": "ride"
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "instrument": "ride_bell1"
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "instrument": "crash1",
+      "chokeGroup": "crash.left",
+      "chokedBy": ["crash.leftChoke"]
+    },
+    {
+      "id": "crash.leftChoke",
+      "group": "cymbals",
+      "instrument": "crash1_stop"
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "instrument": "crash2",
+      "chokeGroup": "crash.right",
+      "chokedBy": ["crash.rightChoke"]
+    },
+    {
+      "id": "crash.rightChoke",
+      "group": "cymbals",
+      "instrument": "crash2_stop"
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "instrument": "china_18_inch"
+    },
+    {
+      "id": "splash",
+      "group": "cymbals",
+      "instrument": "china_10_inch"
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "instrument": "zilbel"
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

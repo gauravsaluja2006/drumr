@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { kitManifestSchema, type KitManifest } from '../../src/kits/schema';
 import type { Recipe, RecipeArticulation } from './recipe';
 import { discover, listFiles, selectLayers, velocityRanges, type Discovered } from './discover';
 import { dbToLinear, decode, encode, linearToDb, mix, peak, scale, trim, type Pcm } from './audio';
+import { panFilter, parseInstrument, parseKit, selectHits } from './drumgizmo';
 
 export interface BuildOptions {
   sourcesRoot: string;
@@ -16,7 +17,7 @@ interface Job {
   art: RecipeArticulation;
   layer: number; // 0-based kept layer index
   rr: number; // 0-based
-  inputs: { path: string; gain: number }[];
+  inputs: { path: string; gain: number; filter?: string }[];
   output: string; // relative to kit dir
   pcm?: Pcm;
 }
@@ -37,7 +38,38 @@ function alignMix(primary: Discovered, others: Discovered[][]): Discovered[] | n
   return matches.every(Boolean) ? (matches as Discovered[]) : null;
 }
 
-export function planJobs(recipe: Recipe, files: readonly string[]): Job[] {
+function planDrumgizmoJobs(recipe: Recipe, libRoot: string): Job[] {
+  const dg = recipe.drumgizmo!;
+  const kitXml = join(libRoot, dg.kit);
+  const kitDir = dirname(kitXml);
+  const instruments = parseKit(kitXml);
+  return recipe.articulations.flatMap((art) => {
+    const inst = instruments.get(art.instrument!);
+    if (!inst) throw new Error(`${art.id}: DrumGizmo instrument "${art.instrument}" not in ${dg.kit}`);
+    const hits = parseInstrument(join(kitDir, inst.file), libRoot, inst.main);
+    if (hits.length === 0) throw new Error(`${art.id}: instrument "${art.instrument}" has no samples`);
+    const layers = selectHits(
+      hits,
+      libRoot,
+      art.maxVelocityLayers ?? recipe.budget.maxVelocityLayers,
+      recipe.budget.maxRoundRobins,
+    );
+    if (art.ranges && art.ranges.length !== layers.length)
+      throw new Error(`${art.id}: ${art.ranges.length} ranges for ${layers.length} layers`);
+    return layers.flatMap((rrs, layer) =>
+      rrs.map((hit, rr) => ({
+        art,
+        layer,
+        rr,
+        inputs: [{ path: hit.file, gain: 1, filter: panFilter(hit.channels, dg.micGains) }],
+        output: outName(art.id, layer, rr),
+      })),
+    );
+  });
+}
+
+export function planJobs(recipe: Recipe, files: readonly string[], libRoot = ''): Job[] {
+  if (recipe.drumgizmo) return planDrumgizmoJobs(recipe, libRoot);
   return recipe.articulations.flatMap((art) => {
     const [primarySrc, ...otherSrcs] = art.sources;
     if (!primarySrc) throw new Error(`${art.id}: no sources`);
@@ -76,8 +108,8 @@ const sha256 = (file: string) => createHash('sha256').update(readFileSync(file))
 export function buildKit(recipe: Recipe, opts: BuildOptions): BuildResult {
   const log = opts.log ?? (() => {});
   const libRoot = join(opts.sourcesRoot, recipe.source.libraryId, recipe.source.root);
-  const files = listFiles(libRoot);
-  const jobs = planJobs(recipe, files);
+  const files = recipe.drumgizmo ? [] : listFiles(libRoot);
+  const jobs = planJobs(recipe, files, libRoot);
   const { sampleRate, channels } = recipe.output;
   const t = recipe.trim;
   log(`${recipe.id}: ${jobs.length} samples from ${files.length} source files`);
@@ -86,7 +118,7 @@ export function buildKit(recipe: Recipe, opts: BuildOptions): BuildResult {
   // Hits peak near their start, so peaks measured before trimming equal the shipped peaks.
   for (const job of jobs) {
     const parts = job.inputs.map((i) => ({
-      pcm: decode(join(libRoot, i.path), sampleRate, channels),
+      pcm: decode(join(libRoot, i.path), sampleRate, channels, i.filter),
       gain: i.gain,
     }));
     job.pcm = mix(parts);

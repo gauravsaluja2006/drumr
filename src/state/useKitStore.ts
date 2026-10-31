@@ -24,6 +24,11 @@ interface KitState {
 
 let loadToken = 0;
 
+/** Folder that holds a kit's `<id>/` directory: the local-only index's base, or the main one. */
+export function kitBaseUrl(index: KitIndex, id: string): string {
+  return index.find((k) => k.id === id)?.baseUrl ?? getRuntime().kitsBaseUrl;
+}
+
 export const useKitStore = create<KitState>()((set, get) => ({
   index: [],
   currentKitId: null,
@@ -36,8 +41,17 @@ export const useKitStore = create<KitState>()((set, get) => ({
 
   init: async () => {
     try {
-      const { kitsBaseUrl, fetch } = getRuntime();
-      const index = await fetchKitIndex(kitsBaseUrl, fetch);
+      const { kitsBaseUrl, localKitsBaseUrl, fetch } = getRuntime();
+      const main = await fetchKitIndex(kitsBaseUrl, fetch);
+      // Local-only kits are optional: a missing or broken index just means there are none.
+      const local = localKitsBaseUrl
+        ? await fetchKitIndex(localKitsBaseUrl, fetch).catch(() => [] as KitIndex)
+        : [];
+      const ids = new Set(main.map((k) => k.id));
+      const index = [
+        ...main,
+        ...local.filter((k) => !ids.has(k.id)).map((k) => ({ ...k, baseUrl: localKitsBaseUrl! })),
+      ];
       set({ index });
       const remembered = useSettingsStore.getState().lastKitId;
       const first = index.find((k) => k.id === remembered) ?? index[0];
@@ -49,9 +63,11 @@ export const useKitStore = create<KitState>()((set, get) => ({
   },
 
   loadAllManifests: async () => {
-    const { kitsBaseUrl, fetch } = getRuntime();
+    const { fetch } = getRuntime();
     const missing = get().index.filter((k) => !get().manifests[k.id]);
-    const loaded = await Promise.allSettled(missing.map((k) => fetchKitManifest(kitsBaseUrl, k.id, fetch)));
+    const loaded = await Promise.allSettled(
+      missing.map((k) => fetchKitManifest(kitBaseUrl(get().index, k.id), k.id, fetch)),
+    );
     const add: Record<string, KitManifest> = {};
     for (const r of loaded) if (r.status === 'fulfilled') add[r.value.id] = r.value;
     set({ manifests: { ...get().manifests, ...add } });
@@ -62,10 +78,11 @@ export const useKitStore = create<KitState>()((set, get) => ({
     const meta = get().index.find((k) => k.id === id);
     set({ status: 'loading', error: null, progress: { loaded: 0, total: meta?.totalBytes ?? 0 } });
     try {
-      const { kitsBaseUrl, fetch, sampler, engine } = getRuntime();
-      const manifest = get().manifests[id] ?? (await fetchKitManifest(kitsBaseUrl, id, fetch));
+      const { fetch, sampler, engine } = getRuntime();
+      const base = kitBaseUrl(get().index, id);
+      const manifest = get().manifests[id] ?? (await fetchKitManifest(base, id, fetch));
       if (token === loadToken) set({ manifests: { ...get().manifests, [id]: manifest } });
-      const kit = await sampler.loadKit(manifest, `${kitsBaseUrl}${id}/`, (progress) => {
+      const kit = await sampler.loadKit(manifest, `${base}${id}/`, (progress) => {
         if (token === loadToken) set({ progress });
       });
       if (token !== loadToken) return; // a newer switch won

@@ -60,6 +60,7 @@ export default defineConfig({
         // Only Latin font subsets are precached; others load on demand via unicode-range.
         globIgnores: [
           'kits/**',
+          'kits-local/**',
           'test-kits/**',
           '**/*-{cyrillic,cyrillic-ext,greek,greek-ext,vietnamese}-*.woff2',
         ],
@@ -68,7 +69,7 @@ export default defineConfig({
         skipWaiting: true,
         runtimeCaching: [
           {
-            urlPattern: /\/(test-)?kits\/.*\.(flac|wav)$/,
+            urlPattern: /\/(test-)?kits(-local)?\/.*\.(flac|wav)$/,
             handler: 'CacheFirst',
             options: {
               cacheName: 'drumr-kit-audio',
@@ -77,7 +78,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/(test-)?kits\/.*\.json$/,
+            urlPattern: /\/(test-)?kits(-local)?\/.*\.json$/,
             handler: 'StaleWhileRevalidate',
             options: { cacheName: 'drumr-kit-json', cacheableResponse: { statuses: [200] } },
           },
