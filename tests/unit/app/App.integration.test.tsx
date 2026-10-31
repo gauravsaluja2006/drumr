@@ -49,7 +49,7 @@ describe('App with a fake runtime', () => {
     render(<App />);
     expect(screen.getByTestId('audio-overlay')).toBeInTheDocument();
     await act(async () => {
-      fireEvent.pointerDown(window);
+      fireEvent.click(window);
     });
     await waitFor(() => expect(screen.queryByTestId('audio-overlay')).not.toBeInTheDocument());
   });
