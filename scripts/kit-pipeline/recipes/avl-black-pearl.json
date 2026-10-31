@@ -1,0 +1,177 @@
+{
+  "id": "avl-black-pearl",
+  "order": 1,
+  "name": "Black Pearl",
+  "description": "Pearl rock kit with Sabian cymbals. Small and quick to load.",
+  "license": {
+    "name": "CC-BY-SA-3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "attribution": {
+    "author": "AVL Drumkits (Glen MacArthur)",
+    "url": "https://www.bandshed.net/avldrumkits/"
+  },
+  "licenseText": "Black Pearl drum samples from AVL Drumkits by Glen MacArthur (https://www.bandshed.net/avldrumkits/).\nModified for Drumr: trimmed, normalised and re-encoded as FLAC.\nLicensed under Creative Commons Attribution-ShareAlike 3.0 Unported: https://creativecommons.org/licenses/by-sa/3.0/legalcode\nYou may share and adapt these samples if you give attribution and distribute derivatives of the samples under the same licence. Music made with them is not affected.",
+  "source": {
+    "libraryId": "avl-black-pearl",
+    "root": "BLACK_PEARL_2023_repack"
+  },
+  "output": {
+    "channels": 1
+  },
+  "budget": {
+    "maxBytes": 8000000,
+    "maxRoundRobins": 1,
+    "maxVelocityLayers": 5
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.5,
+      "hihat": 2.5,
+      "cymbals": 4.5
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "glob": "36-Pearl-22-Kick-{layer}.wav"
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "glob": "38-Pearl-14-Snare-{layer}.wav"
+    },
+    {
+      "id": "snare.edge",
+      "group": "snare",
+      "glob": "40-Pearl-14-SnareEdge-{layer}.wav"
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "glob": "37-Pearl-14-SideStick-{layer}.wav"
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "glob": "45-Pearl-12-Tom-{layer}.wav"
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "glob": "41-Pearl-16-FloorTom-{layer}.wav"
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "glob": "42-Sabian-13-HatClosed-{layer}.wav",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "glob": "44-Sabian-13-HatPedal-{layer}.wav",
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "glob": "46-Sabian-13-HatSemi-{layer}.wav",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "glob": "48-Sabian-13-HatSwish-{layer}.wav",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "glob": "51-SabianAAX-20-Ride-{layer}.wav",
+      "chokedBy": ["ride.choke"]
+    },
+    {
+      "id": "ride.edge",
+      "group": "cymbals",
+      "glob": "59-SabianAAX-20-RideShank-{layer}.wav"
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "glob": "53-SabianAAX-20-RideBell-{layer}.wav"
+    },
+    {
+      "id": "ride.choke",
+      "group": "cymbals",
+      "glob": "52-SabianAAX-20-RideChoke.wav"
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "glob": "49-SabianAA-16-Crash-{layer}.wav",
+      "chokeGroup": "crash.left",
+      "chokedBy": ["crash.leftChoke"]
+    },
+    {
+      "id": "crash.leftChoke",
+      "group": "cymbals",
+      "glob": "50-SabianAA-16-CrashChoke.wav"
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "glob": "57-SabianAAX-17-Crash-{layer}.wav",
+      "chokeGroup": "crash.right",
+      "chokedBy": ["crash.rightChoke"]
+    },
+    {
+      "id": "crash.rightChoke",
+      "group": "cymbals",
+      "glob": "58-SabianAAX-17-CrashChoke.wav"
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "glob": "62-Wuhan-18-ChinaCrash-{layer}.wav"
+    },
+    {
+      "id": "splash",
+      "group": "cymbals",
+      "glob": "55-Zildjian-10-Splash-{layer}.wav"
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "glob": "39-HandClap-{layer}.wav"
+    },
+    {
+      "id": "tambourine",
+      "group": "perc",
+      "glob": "54-Tambourine-{layer}.wav"
+    },
+    {
+      "id": "shaker",
+      "group": "perc",
+      "glob": "61-Maraca-{layer}.wav"
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "glob": "56-Cowbell-{layer}.wav"
+    },
+    {
+      "id": "stick",
+      "group": "perc",
+      "glob": "35-JojoMayer-2-StickClick-{layer}.wav"
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.half", "hihat.open"],
+    "pedal": "hihat.pedal"
+  }
+}

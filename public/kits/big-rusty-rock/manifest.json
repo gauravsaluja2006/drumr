@@ -1,0 +1,928 @@
+{
+  "schemaVersion": 1,
+  "id": "big-rusty-rock",
+  "name": "Big Rusty Rock",
+  "description": "Oversized 1980s Polish rock kit: close mics blended with overheads. Six hi-hat openings.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Karoryfer Lecolds",
+    "url": "https://shop.karoryfer.com/pages/free-big-rusty-drums"
+  },
+  "sampleRate": 44100,
+  "format": "flac",
+  "totalBytes": 16098123,
+  "groups": [
+    "kick",
+    "snare",
+    "toms",
+    "hihat",
+    "cymbals"
+  ],
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/kick_v1_rr1.flac",
+            "samples/kick_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/kick_v2_rr1.flac",
+            "samples/kick_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/kick_v3_rr1.flac",
+            "samples/kick_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/kick_v4_rr1.flac",
+            "samples/kick_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/snare_center_v1_rr1.flac",
+            "samples/snare_center_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/snare_center_v2_rr1.flac",
+            "samples/snare_center_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/snare_center_v3_rr1.flac",
+            "samples/snare_center_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/snare_center_v4_rr1.flac",
+            "samples/snare_center_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_center_v5_rr1.flac",
+            "samples/snare_center_v5_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.edge",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/snare_edge_v1_rr1.flac",
+            "samples/snare_edge_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/snare_edge_v2_rr1.flac",
+            "samples/snare_edge_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/snare_edge_v3_rr1.flac",
+            "samples/snare_edge_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_edge_v4_rr1.flac",
+            "samples/snare_edge_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/snare_rimshot_v1_rr1.flac",
+            "samples/snare_rimshot_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/snare_rimshot_v2_rr1.flac",
+            "samples/snare_rimshot_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/snare_rimshot_v3_rr1.flac",
+            "samples/snare_rimshot_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_rimshot_v4_rr1.flac",
+            "samples/snare_rimshot_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/snare_sidestick_v1_rr1.flac",
+            "samples/snare_sidestick_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/snare_sidestick_v2_rr1.flac",
+            "samples/snare_sidestick_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/snare_sidestick_v3_rr1.flac",
+            "samples/snare_sidestick_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_sidestick_v4_rr1.flac",
+            "samples/snare_sidestick_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_high_v1_rr1.flac",
+            "samples/tom_high_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_high_v2_rr1.flac",
+            "samples/tom_high_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_high_v3_rr1.flac",
+            "samples/tom_high_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_high_v4_rr1.flac",
+            "samples/tom_high_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_highMid_v1_rr1.flac",
+            "samples/tom_highMid_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_highMid_v2_rr1.flac",
+            "samples/tom_highMid_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_highMid_v3_rr1.flac",
+            "samples/tom_highMid_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_highMid_v4_rr1.flac",
+            "samples/tom_highMid_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_lowMid_v1_rr1.flac",
+            "samples/tom_lowMid_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_lowMid_v2_rr1.flac",
+            "samples/tom_lowMid_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_lowMid_v3_rr1.flac",
+            "samples/tom_lowMid_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_lowMid_v4_rr1.flac",
+            "samples/tom_lowMid_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_low_v1_rr1.flac",
+            "samples/tom_low_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_low_v2_rr1.flac",
+            "samples/tom_low_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_low_v3_rr1.flac",
+            "samples/tom_low_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_low_v4_rr1.flac",
+            "samples/tom_low_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/hihat_closed_v1_rr1.flac",
+            "samples/hihat_closed_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/hihat_closed_v2_rr1.flac",
+            "samples/hihat_closed_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_closed_v3_rr1.flac",
+            "samples/hihat_closed_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_closed_v4_rr1.flac",
+            "samples/hihat_closed_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.shank",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 31,
+          "samples": [
+            "samples/hihat_shank_v1_rr1.flac",
+            "samples/hihat_shank_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 63,
+          "samples": [
+            "samples/hihat_shank_v2_rr1.flac",
+            "samples/hihat_shank_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_shank_v3_rr1.flac",
+            "samples/hihat_shank_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_shank_v4_rr1.flac",
+            "samples/hihat_shank_v4_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/hihat_pedal_v1_rr1.flac",
+            "samples/hihat_pedal_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/hihat_pedal_v2_rr1.flac",
+            "samples/hihat_pedal_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_pedal_v3_rr1.flac",
+            "samples/hihat_pedal_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.loose",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal",
+        "hihat.shank"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/hihat_loose_v1_rr1.flac",
+            "samples/hihat_loose_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/hihat_loose_v2_rr1.flac",
+            "samples/hihat_loose_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_loose_v3_rr1.flac",
+            "samples/hihat_loose_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.quarter",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal",
+        "hihat.shank"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/hihat_quarter_v1_rr1.flac",
+            "samples/hihat_quarter_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/hihat_quarter_v2_rr1.flac",
+            "samples/hihat_quarter_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_quarter_v3_rr1.flac",
+            "samples/hihat_quarter_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal",
+        "hihat.shank"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/hihat_half_v1_rr1.flac",
+            "samples/hihat_half_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/hihat_half_v2_rr1.flac",
+            "samples/hihat_half_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_half_v3_rr1.flac",
+            "samples/hihat_half_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.threeQuarter",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal",
+        "hihat.shank"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/hihat_threeQuarter_v1_rr1.flac",
+            "samples/hihat_threeQuarter_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/hihat_threeQuarter_v2_rr1.flac",
+            "samples/hihat_threeQuarter_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_threeQuarter_v3_rr1.flac",
+            "samples/hihat_threeQuarter_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal",
+        "hihat.shank"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/hihat_open_v1_rr1.flac",
+            "samples/hihat_open_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/hihat_open_v2_rr1.flac",
+            "samples/hihat_open_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_open_v3_rr1.flac",
+            "samples/hihat_open_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.splash",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal",
+        "hihat.shank"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 63,
+          "samples": [
+            "samples/hihat_splash_v1_rr1.flac",
+            "samples/hihat_splash_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_splash_v2_rr1.flac",
+            "samples/hihat_splash_v2_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/ride_bow_v1_rr1.flac",
+            "samples/ride_bow_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/ride_bow_v2_rr1.flac",
+            "samples/ride_bow_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bow_v3_rr1.flac",
+            "samples/ride_bow_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/ride_bell_v1_rr1.flac",
+            "samples/ride_bell_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/ride_bell_v2_rr1.flac",
+            "samples/ride_bell_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bell_v3_rr1.flac",
+            "samples/ride_bell_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.edge",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/ride_edge_v1_rr1.flac",
+            "samples/ride_edge_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/ride_edge_v2_rr1.flac",
+            "samples/ride_edge_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_edge_v3_rr1.flac",
+            "samples/ride_edge_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "chokeGroup": "crash.left",
+      "chokedBy": [
+        "crash.leftChoke"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/crash_left_v1_rr1.flac",
+            "samples/crash_left_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/crash_left_v2_rr1.flac",
+            "samples/crash_left_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_left_v3_rr1.flac",
+            "samples/crash_left_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.leftChoke",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_leftChoke_v1_rr1.flac",
+            "samples/crash_leftChoke_v1_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/crash_right_v1_rr1.flac",
+            "samples/crash_right_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/crash_right_v2_rr1.flac",
+            "samples/crash_right_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_right_v3_rr1.flac",
+            "samples/crash_right_v3_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 42,
+          "samples": [
+            "samples/china_v1_rr1.flac",
+            "samples/china_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 43,
+          "hivel": 84,
+          "samples": [
+            "samples/china_v2_rr1.flac",
+            "samples/china_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 127,
+          "samples": [
+            "samples/china_v3_rr1.flac",
+            "samples/china_v3_rr2.flac"
+          ]
+        }
+      ]
+    }
+  ],
+  "hihat": {
+    "openness": [
+      "hihat.closed",
+      "hihat.loose",
+      "hihat.quarter",
+      "hihat.half",
+      "hihat.threeQuarter",
+      "hihat.open"
+    ],
+    "pedal": "hihat.pedal",
+    "splash": "hihat.splash"
+  }
+}

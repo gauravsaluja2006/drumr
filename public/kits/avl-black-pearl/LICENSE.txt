@@ -1,0 +1,4 @@
+Black Pearl drum samples from AVL Drumkits by Glen MacArthur (https://www.bandshed.net/avldrumkits/).
+Modified for Drumr: trimmed, normalised and re-encoded as FLAC.
+Licensed under Creative Commons Attribution-ShareAlike 3.0 Unported: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+You may share and adapt these samples if you give attribution and distribute derivatives of the samples under the same licence. Music made with them is not affected.
