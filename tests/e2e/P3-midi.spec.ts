@@ -115,3 +115,31 @@ test('R1: 500 note-ons at 10 ms intervals all trigger', async ({ page, browserNa
   );
   expect((await stats(page)).triggers).toBe(500);
 });
+
+test('with NI placeholder ports, hitting a pad on the real controller connects it and plays', async ({
+  page,
+}) => {
+  await installFakeMidi(page, {
+    devices: [
+      { id: 'v1', name: 'Maschine Controller Virtual Input' },
+      { id: 'v2', name: 'Maschine MK2 Virtual Input' },
+      { id: 'z1', name: 'Traktor Kontrol Z1 Input' },
+      { id: 'mikro', name: 'Maschine Mikro MK3' },
+    ],
+  });
+  await openApp(page, { fakeMidi: false });
+  const status = page.getByTestId('midi-status');
+  await expect(status).toHaveText('Hit a pad to connect…');
+  await status.click();
+  const items = page.getByRole('menuitemradio');
+  await expect(items.last()).toHaveText(/Virtual Input/); // placeholders listed last
+  await page.keyboard.press('Escape');
+
+  await page.evaluate(() => window.__fakeMidi!.noteOn('mikro', 24, 100));
+  await expect(status).toHaveText('Connected · Maschine Mikro MK3');
+  expect(await lastHit(page)).toMatchObject({ voice: 'kick', source: 'midi' });
+
+  await page.reload(); // remembered from now on
+  await waitForKit(page);
+  await expect(page.getByTestId('midi-status')).toHaveText('Connected · Maschine Mikro MK3');
+});

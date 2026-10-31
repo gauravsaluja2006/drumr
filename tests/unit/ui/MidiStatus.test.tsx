@@ -42,8 +42,9 @@ describe('MidiStatus', () => {
     const { midi } = withMidi(async () => access);
     await act(() => midi.init());
     render(<MidiStatus />);
-    expect(screen.getByTestId('midi-status')).toHaveTextContent('Choose MIDI device…');
+    expect(screen.getByTestId('midi-status')).toHaveTextContent('Hit a pad to connect…');
     fireEvent.click(screen.getByTestId('midi-status'));
+    expect(screen.getByRole('menu')).toHaveTextContent(/Hit any pad on your controller/);
     fireEvent.click(screen.getByRole('menuitemradio', { name: 'Maschine MK3' }));
     expect(screen.getByTestId('midi-status')).toHaveTextContent('Connected · Maschine MK3');
     fireEvent.click(screen.getByTestId('midi-status'));
@@ -53,6 +54,7 @@ describe('MidiStatus', () => {
     );
     fireEvent.click(screen.getByRole('menuitemradio', { name: 'Maschine MK3' }));
     expect(screen.getByTestId('midi-status')).toHaveAttribute('data-status', 'no-device');
+    expect(screen.getByTestId('midi-status')).toHaveTextContent('Choose MIDI device…'); // explicit disconnect: not listening
     fireEvent.click(screen.getByTestId('midi-status'));
     fireEvent.keyDown(window, { key: 'Escape' });
     expect(screen.queryByRole('menu')).not.toBeInTheDocument();

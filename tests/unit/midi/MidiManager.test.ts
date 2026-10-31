@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from 'vitest';
-import { LAST_DEVICE_KEY, MidiManager } from '@/midi/MidiManager';
+import { isLikelyVirtual, LAST_DEVICE_KEY, MidiManager } from '@/midi/MidiManager';
 import type { MidiMessage } from '@/midi/types';
 import { FakeMidiAccess, memoryStorage } from '../fakes/FakeMidi';
 
@@ -109,5 +109,72 @@ describe('MidiManager', () => {
     off();
     await broken.init();
     expect(listener).not.toHaveBeenCalled();
+  });
+});
+
+describe('MidiManager auto-connect', () => {
+  test('with several devices it listens on all and connects to the first that plays a note', async () => {
+    const { manager, access, messages } = setup((a) => {
+      a.add('ni-virtual', 'Maschine MK3 Virtual Input');
+      a.add('mikro', 'Maschine Mikro MK3');
+      a.add('keys', 'Keyboard');
+    });
+    await manager.init();
+    expect(manager.getState()).toMatchObject({ status: 'no-device', selectedId: null, listening: true });
+
+    access.map.get('keys')!.send([0xb0, 1, 64]); // a CC alone does not pick a device
+    expect(manager.getState().selectedId).toBeNull();
+    expect(messages).toHaveLength(0);
+
+    access.map.get('mikro')!.send([0x90, 24, 100]);
+    expect(manager.getState()).toMatchObject({ status: 'connected', selectedId: 'mikro', listening: false });
+    expect(messages).toEqual([[{ type: 'noteon', channel: 1, note: 24, velocity: 100 }, expect.any(Number)]]); // that hit still plays
+
+    access.map.get('keys')!.send([0x90, 60, 100]); // other devices are ignored from now on
+    access.map.get('mikro')!.send([0x90, 25, 90]);
+    expect(messages.map(([m]) => (m.type === 'noteon' ? m.note : -1))).toEqual([24, 25]);
+  });
+
+  test('explicit disconnect stops listening until the device list changes', async () => {
+    const { manager, access } = setup((a) => {
+      a.add('a');
+      a.add('b');
+    });
+    await manager.init();
+    manager.select('a');
+    manager.select(null);
+    expect(manager.getState()).toMatchObject({ status: 'no-device', listening: false });
+    access.map.get('b')!.send([0x90, 1, 1]);
+    expect(manager.getState().selectedId).toBeNull();
+
+    access.add('c'); // hot-plug: start listening again (remembered "a" is still preferred)
+    expect(manager.getState().selectedId).toBe('a');
+  });
+
+  test('listens again when the connected device is unplugged among several', async () => {
+    const { manager, access, storage } = setup((a) => {
+      a.add('a');
+      a.add('b');
+      a.add('c');
+    });
+    await manager.init();
+    access.map.get('b')!.send([0x90, 1, 1]);
+    expect(manager.getState().selectedId).toBe('b');
+    storage.data.clear();
+    access.remove('b');
+    expect(manager.getState()).toMatchObject({ selectedId: null, listening: true });
+  });
+
+  test('driver placeholder ports are listed last', async () => {
+    const { manager } = setup((a) => {
+      a.add('1', 'Maschine Controller Virtual Input');
+      a.add('2', 'Traktor Kontrol Z1 Input');
+      a.add('3', 'Maschine MK2 Virtual Input');
+      a.add('4', 'Maschine Mikro MK3');
+    });
+    await manager.init();
+    expect(manager.getState().inputs.map((d) => d.id)).toEqual(['2', '4', '1', '3']);
+    expect(isLikelyVirtual('Maschine MK3 Virtual Input')).toBe(true);
+    expect(isLikelyVirtual('Virtuosity Keys')).toBe(false);
   });
 });

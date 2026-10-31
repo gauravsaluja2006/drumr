@@ -31,4 +31,6 @@ export interface MidiState {
   inputs: MidiDevice[];
   selectedId: string | null;
   error: string | null;
+  /** No device chosen yet: listening on every input and connecting to the first one that plays a note. */
+  listening: boolean;
 }

@@ -14,7 +14,7 @@ const DOT: Record<Status, string> = {
 
 /** Status pill and device picker (docs/03-DESIGN.md §4.2). */
 export function MidiStatus() {
-  const { status, inputs, selectedId } = useMidiStore();
+  const { status, inputs, selectedId, listening } = useMidiStore();
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const device = inputs.find((d) => d.id === selectedId);
@@ -23,9 +23,11 @@ export function MidiStatus() {
     status === 'connected'
       ? `Connected · ${device?.name ?? ''}`
       : status === 'no-device'
-        ? inputs.length > 1
-          ? 'Choose MIDI device…'
-          : 'No MIDI device'
+        ? listening
+          ? 'Hit a pad to connect…'
+          : inputs.length > 0
+            ? 'Choose MIDI device…'
+            : 'No MIDI device'
         : status === 'pending'
           ? 'MIDI…'
           : status === 'unsupported'
@@ -59,7 +61,10 @@ export function MidiStatus() {
         onClick={() => setOpen((o) => !o)}
         className="flex max-w-[16rem] items-center gap-2 rounded-full border border-line px-3 py-1 text-xs text-fg-1 hover:bg-bg-2"
       >
-        <span aria-hidden="true" className={`size-2 shrink-0 rounded-full ${DOT[status]}`} />
+        <span
+          aria-hidden="true"
+          className={`size-2 shrink-0 rounded-full ${listening ? 'animate-pulse bg-accent' : DOT[status]}`}
+        />
         <span className="truncate">{text}</span>
       </button>
       {open && (
@@ -75,6 +80,11 @@ export function MidiStatus() {
                 : status === 'denied'
                   ? 'MIDI access was blocked.'
                   : 'Plug in a USB MIDI controller. It appears here automatically.'}
+            </p>
+          )}
+          {listening && (
+            <p className="px-3 pt-1 pb-2 text-xs text-fg-1">
+              Hit any pad on your controller to connect it, or choose it below.
             </p>
           )}
           {inputs.map((d) => (

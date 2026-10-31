@@ -8,6 +8,7 @@ export const useMidiStore = create<MidiState>()(() => ({
   inputs: [],
   selectedId: null,
   error: null,
+  listening: false,
 }));
 
 export function bindMidiStore(manager: MidiManager): () => void {
