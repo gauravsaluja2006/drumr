@@ -303,3 +303,5 @@ Device selection, last device id, mapping, settings are persisted in `localStora
 | ADR-27 | Below 1024 px the side columns render as two tabs under the grid, chosen with `matchMedia` in JS | CSS-only hiding | Rendering both trees would duplicate controls (ids, tests, screen readers) |
 | ADR-28 | Reduced motion handled in JS: `data-hit="reduced"` gives a 50 ms colour step with no glow or scale | CSS media query only | Testable in jsdom, and the same code path in every browser |
 | ADR-29 | Size budget split: initial JS (`index-*.js`) ≤ 180 KB, all chunks ≤ 200 KB | One budget over all chunks | Lazy chunks (editor, About, debug) are not on the critical path |
+| ADR-30 | Pad flash restarts by alternating keyframe names (`data-hit="a"/"b"`), glow and flash are opacity-only layers | `offsetWidth` reflow + animated `box-shadow` | No forced layout or repaint per hit; CI frame rate while playing rose from 48 to 54 fps on one run |
+| ADR-31 | F1 frame-rate budget gated locally, recorded (not gated) in CI | Gate in CI | GitHub runner frame rate varies more between identical commits than the budget margin; not reproducible on any controlled machine |

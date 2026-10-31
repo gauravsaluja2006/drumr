@@ -45,3 +45,4 @@ One row per metric per phase. Values come from CI output or the manual checks de
 | 2026-10-31 | 7 | phase-7-polish | PWA precache | 20 files, 584 KB uncompressed | — | ✅ |
 | 2026-10-31 | 7 | phase-7-polish | Q4 coverage (all) | 98.1 % lines | ≥ 80 % | ✅ |
 | 2026-10-31 | 7 | phase-7-polish | Tests | 116 unit, 69 e2e (+18 browser-specific skips) | all pass | ✅ |
+| 2026-10-31 | 7 | phase-7-polish | F1 on GitHub runners (informational) | 47.2–54.1 fps playing vs 58.7–60.8 idle | recorded only | ℹ️ |
