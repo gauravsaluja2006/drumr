@@ -13,6 +13,8 @@ import { kitManifestSchema } from '../../src/kits/schema';
 
 const root = new URL('../..', import.meta.url).pathname;
 const recipesDir = join(root, 'scripts/kit-pipeline/recipes');
+/** Recipes for content that must never reach git (e.g. commercial libraries you own). Gitignored. */
+const privateRecipesDir = join(root, 'scripts/kit-pipeline/recipes-private');
 const outRoot = join(root, 'public/kits');
 /** Local-only kits (gitignored), listed in their own index the app merges in when present. */
 const localRoot = join(root, 'public/kits-local');
@@ -21,14 +23,15 @@ const sourcesRoot = process.env.DRUMR_SOURCES ?? join(homedir(), 'drumr-sources'
 const MAX_TOTAL = 120_000_000;
 
 function loadRecipe(arg: string): Recipe {
-  const file = existsSync(arg) ? arg : join(recipesDir, `${arg.replace(/\.json$/, '')}.json`);
+  const name = `${arg.replace(/\.json$/, '')}.json`;
+  const file = existsSync(arg) ? arg : existsSync(join(privateRecipesDir, name)) ? join(privateRecipesDir, name) : join(recipesDir, name);
   return recipeSchema.parse(JSON.parse(readFileSync(file, 'utf8')));
 }
 
 const allRecipes = () =>
-  readdirSync(recipesDir)
-    .filter((f) => f.endsWith('.json'))
-    .map((f) => loadRecipe(join(recipesDir, f)))
+  [recipesDir, privateRecipesDir]
+    .filter((dir) => existsSync(dir))
+    .flatMap((dir) => readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => loadRecipe(join(dir, f))))
     .sort((a, b) => a.order - b.order);
 
 function build(r: Recipe) {
