@@ -42,6 +42,11 @@ export function KitSelector() {
     if (kit && kit.id !== currentKitId) void useKitStore.getState().switchKit(kit.id);
   };
 
+  // Keep the highlighted kit visible while arrowing through a long list.
+  useEffect(() => {
+    if (open) document.getElementById(`${listId}-${active}`)?.scrollIntoView?.({ block: 'nearest' });
+  }, [open, active, listId]);
+
   useEffect(() => {
     if (!open) return;
     list.current?.focus();
@@ -99,7 +104,7 @@ export function KitSelector() {
           tabIndex={-1}
           aria-activedescendant={`${listId}-${active}`}
           onKeyDown={onListKey}
-          className="absolute top-full left-1/2 z-30 mt-2 w-80 -translate-x-1/2 overflow-hidden rounded-l border border-line bg-bg-1 p-1.5 shadow-2xl outline-none"
+          className="absolute top-full left-1/2 z-30 mt-2 max-h-[min(70vh,36rem)] w-[40rem] max-w-[calc(100vw-1rem)] -translate-x-1/2 overflow-y-auto rounded-l border border-line bg-bg-1 p-1 shadow-2xl outline-none"
         >
           {index.map((kit, i) => {
             const m = manifests[kit.id];
@@ -112,29 +117,39 @@ export function KitSelector() {
                 id={`${listId}-${i}`}
                 role="option"
                 aria-selected={selected}
+                title={kit.description}
                 onPointerEnter={() => setActive(i)}
                 onClick={() => choose(i)}
-                className={`flex cursor-pointer flex-col gap-1 rounded-m px-3 py-2.5 ${i === active ? 'bg-bg-3' : ''}`}
+                className={`flex cursor-pointer items-center gap-2.5 rounded-m px-2.5 py-1.5 text-sm ${i === active ? 'bg-bg-3' : ''}`}
               >
-                <span className="flex items-center justify-between gap-2">
-                  <span className="font-medium text-fg-0">
-                    {selected && <span className="mr-1.5 text-accent">●</span>}
-                    {kit.name}
-                  </span>
-                  <span className="flex gap-1.5 font-mono text-[11px] text-fg-1">
-                    {kit.baseUrl && (
-                      <span
-                        className="rounded-s border border-warn/50 px-1.5 text-warn"
-                        title="Built on this computer, not deployed"
-                      >
-                        local
-                      </span>
-                    )}
-                    {m && <span className="rounded-s border border-line px-1.5">{m.license.name}</span>}
-                    <span className="rounded-s border border-line px-1.5">{formatBytes(kit.totalBytes)}</span>
+                <span aria-hidden="true" className="w-2 shrink-0 text-[10px] text-accent">
+                  {selected ? '●' : ''}
+                </span>
+                <span className="w-52 shrink-0 truncate font-medium text-fg-0">{kit.name}</span>
+                <span className="hidden min-w-0 flex-1 truncate text-xs text-fg-2 sm:block">
+                  {kit.description}
+                </span>
+                <span className="ml-auto flex shrink-0 gap-1 font-mono text-[10px] text-fg-1">
+                  {kit.baseUrl && (
+                    <span
+                      className="rounded-s border border-warn/50 px-1 text-warn"
+                      title="Built on this computer, not deployed"
+                    >
+                      local
+                    </span>
+                  )}
+                  {m && (
+                    <span
+                      className="max-w-24 truncate rounded-s border border-line px-1"
+                      title={m.license.name}
+                    >
+                      {m.license.name}
+                    </span>
+                  )}
+                  <span className="w-14 rounded-s border border-line px-1 text-right">
+                    {formatBytes(kit.totalBytes)}
                   </span>
                 </span>
-                <span className="text-xs text-fg-1">{kit.description}</span>
               </li>
             );
           })}
