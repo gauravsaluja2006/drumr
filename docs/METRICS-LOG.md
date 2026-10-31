@@ -28,3 +28,7 @@ One row per metric per phase. Values come from CI output or the manual checks de
 | 2026-10-31 | 3 | phase-3-midi | S1 JS bundle (gzip) | 105.6 KB | ≤ 180 KB | ✅ |
 | 2026-10-31 | 3 | phase-3-midi | Q4 coverage (all / midi / mapping) | 98.5 / 98.6 / 100 % lines | ≥ 80 / 90 / 90 % | ✅ |
 | 2026-10-31 | 3 | phase-3-midi | Tests | 84 unit, 39 e2e (+6 Chromium-only skips) | all pass | ✅ |
+| 2026-10-31 | 4 | phase-4-hihat | R3 choke timing | fade scheduled in the trigger task, τ = 12 ms, stop at 80 ms | ≤ 40 ms audible | ✅ |
+| 2026-10-31 | 4 | phase-4-hihat | S1 JS bundle (gzip) | 106.9 KB | ≤ 180 KB | ✅ |
+| 2026-10-31 | 4 | phase-4-hihat | Q4 coverage (all / engine) | 98.7 / 98.8 % lines | ≥ 80 / 90 % | ✅ |
+| 2026-10-31 | 4 | phase-4-hihat | Tests | 96 unit, 48 e2e (+6 Chromium-only skips) | all pass | ✅ |

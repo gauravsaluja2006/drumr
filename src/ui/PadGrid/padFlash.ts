@@ -5,6 +5,7 @@
  */
 const elements = new Map<number, HTMLElement>();
 const pending = new Map<number, number>();
+const ringing = new Map<number, boolean>();
 let scheduled = false;
 
 const clearHit = (e: Event) => {
@@ -30,8 +31,23 @@ export function flashPad(index: number, velocity: number): void {
   globalThis.requestAnimationFrame(flush);
 }
 
+/** Marks a pad whose open hi-hat is still sounding (thin ring, cleared on choke or end). */
+export function ringPad(index: number, on: boolean): void {
+  ringing.set(index, on);
+  if (scheduled) return;
+  scheduled = true;
+  globalThis.requestAnimationFrame(flush);
+}
+
+/** Applies queued updates now. For tests; the app always flushes on animation frames. */
+export function flushPadFlash(): void {
+  flush();
+}
+
 function flush(): void {
   scheduled = false;
+  for (const [index, on] of ringing) elements.get(index)?.toggleAttribute('data-ringing', on);
+  ringing.clear();
   for (const [index, velocity] of pending) {
     const el = elements.get(index);
     if (!el) continue;

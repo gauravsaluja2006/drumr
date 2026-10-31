@@ -14,11 +14,7 @@
   "sampleRate": 44100,
   "format": "wav",
   "totalBytes": 196950,
-  "groups": [
-    "kick",
-    "snare",
-    "hihat"
-  ],
+  "groups": ["kick", "snare", "hihat"],
   "articulations": [
     {
       "id": "kick",
@@ -28,16 +24,12 @@
         {
           "lovel": 1,
           "hivel": 63,
-          "samples": [
-            "samples/kick_v1.wav"
-          ]
+          "samples": ["samples/kick_v1.wav"]
         },
         {
           "lovel": 64,
           "hivel": 127,
-          "samples": [
-            "samples/kick_v2.wav"
-          ]
+          "samples": ["samples/kick_v2.wav"]
         }
       ]
     },
@@ -49,10 +41,7 @@
         {
           "lovel": 1,
           "hivel": 127,
-          "samples": [
-            "samples/snare_rr1.wav",
-            "samples/snare_rr2.wav"
-          ]
+          "samples": ["samples/snare_rr1.wav", "samples/snare_rr2.wav"]
         }
       ]
     },
@@ -65,9 +54,7 @@
         {
           "lovel": 1,
           "hivel": 127,
-          "samples": [
-            "samples/hh_closed.wav"
-          ]
+          "samples": ["samples/hh_closed.wav"]
         }
       ]
     },
@@ -75,25 +62,18 @@
       "id": "hihat.open",
       "group": "hihat",
       "chokeGroup": "hihat",
-      "chokedBy": [
-        "hihat.closed"
-      ],
+      "chokedBy": ["hihat.closed"],
       "gainDb": 0,
       "layers": [
         {
           "lovel": 1,
           "hivel": 127,
-          "samples": [
-            "samples/hh_open.wav"
-          ]
+          "samples": ["samples/hh_open.wav"]
         }
       ]
     }
   ],
   "hihat": {
-    "openness": [
-      "hihat.closed",
-      "hihat.open"
-    ]
+    "openness": ["hihat.closed", "hihat.open"]
   }
 }

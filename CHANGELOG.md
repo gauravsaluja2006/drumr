@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Phase 4 — Hi-hat openness and choke
+- CC-controlled openness: logic.js `updateHiHat` ported exactly (verified by running the original), 7 bands mapped onto each kit's levels (2 to 6).
+- Choke: closed, pedal and shank hits fade ringing open hats in ≈40 ms; open does not choke open; crash choke pads work even without a choke sample.
+- Hi-hat panel: live openness meter and level name, controller select, direction toggle, optional pedal "chick" on close.
+- Ring indicator on pads whose open hat is still sounding.
+
 ### Phase 3 — Web MIDI and the Maschine preset
 - Web MIDI: permission, device list, hot-plug, auto-select, remembered device, running-status parser.
 - Mapping by logical voice with fallbacks; presets "Maschine 4×4 (Logic)" (checked against logic.js) and "Generic pads (GM 36–51)".

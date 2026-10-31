@@ -12,6 +12,13 @@ test('US-08: switching kit while playing completes without errors and old voices
   const before = await stats(page);
   expect(before.lastTrigger?.articulationId).toBe('hihat.open');
   expect(before.activeVoices).toBe(1);
+  // Record why voices end. A kit switch must never cut a voice (choke/steal); ending naturally is fine,
+  // and on slow CI browsers the 2 s sample can finish before the switch does.
+  await page.evaluate(() => {
+    const w = window as unknown as { __ends: string[] };
+    w.__ends = [];
+    window.__drumr!.engine.onVoiceEnd((_v, reason) => w.__ends.push(reason));
+  });
 
   await page.getByRole('button', { name: /Kit.*Test Kit/ }).click();
   await page.getByRole('option', { name: /Test Kit B/ }).click();
@@ -19,7 +26,9 @@ test('US-08: switching kit while playing completes without errors and old voices
 
   const s = await stats(page);
   expect(s.kitId).toBe('test-kit-b');
-  expect(s.activeVoices).toBeGreaterThanOrEqual(1); // the open hat from the old kit
+  const ends = await page.evaluate(() => (window as unknown as { __ends: string[] }).__ends);
+  expect(ends.every((r) => r === 'ended')).toBe(true);
+  expect(s.activeVoices + ends.length).toBe(1); // still ringing, or ended on its own
   expect(s.steals + s.chokes).toBe(0);
   await expect(page.getByTestId('kit-name')).toHaveText('Test Kit B');
 

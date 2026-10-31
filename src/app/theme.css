@@ -9,7 +9,7 @@
   --line: #2b303a;
   --fg-0: #f3f4f6;
   --fg-1: #a6adbb;
-  --fg-2: #7d8595;
+  --fg-2: #8a92a2;
   --accent: #ff7a1a;
   --accent-2: #ffb86b;
   --ok: #3ddc84;
@@ -51,6 +51,7 @@
   --radius-l: var(--radius-l);
   --font-ui: var(--font-ui);
   --font-mono: var(--font-mono);
+  --color-group-hihat: var(--group-hihat);
 }
 
 html,
@@ -178,4 +179,12 @@ h3 {
   to {
     opacity: 0.15;
   }
+}
+
+/* Open hi-hat still ringing (docs/03-DESIGN.md §4.1 sounding-open-hat). */
+.pad[data-ringing] {
+  border-color: var(--accent-2);
+  box-shadow:
+    var(--shadow-pad),
+    inset 0 0 0 1px var(--accent-2);
 }
