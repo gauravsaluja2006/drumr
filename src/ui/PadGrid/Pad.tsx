@@ -10,6 +10,8 @@ export interface PadProps {
   note?: number;
   disabled?: boolean;
   unavailable?: boolean;
+  selected?: boolean;
+  learning?: boolean;
   onHit?: (index: number, velocity: number, eventTime: number) => void;
 }
 
@@ -17,7 +19,7 @@ export interface PadProps {
  * The accessible name is built from visible text plus screen-reader-only text
  * ("Pad 5: Snare, note 25") so it always contains what sighted users see.
  */
-export function Pad({ index, label, note, disabled, unavailable, onHit }: PadProps) {
+export function Pad({ index, label, note, disabled, unavailable, selected, learning, onHit }: PadProps) {
   const onPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
     if (disabled || e.button > 0) return;
     const rect = e.currentTarget.getBoundingClientRect();
@@ -34,6 +36,9 @@ export function Pad({ index, label, note, disabled, unavailable, onHit }: PadPro
       type="button"
       data-pad={index}
       data-unavailable={unavailable || undefined}
+      data-selected={selected || undefined}
+      data-learning={learning || undefined}
+      aria-current={selected || undefined}
       disabled={disabled}
       title={unavailable ? 'Not in this kit' : undefined}
       onPointerDown={onPointerDown}
@@ -47,6 +52,12 @@ export function Pad({ index, label, note, disabled, unavailable, onHit }: PadPro
           <>
             {' '}
             <span className="sr-only">unassigned</span>
+          </>
+        )}
+        {learning && (
+          <>
+            {' '}
+            <span className="pad-learning-hint text-xs text-accent">Hit a pad…</span>
           </>
         )}
         {unavailable && (

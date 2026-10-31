@@ -292,3 +292,7 @@ Device selection, last device id, mapping, settings are persisted in `localStora
 | ADR-16 | Hi-hat band = 7 − Drum Kit Designer articulation from logic.js `updateHiHat` | Re-derive thresholds | DKD articulation 7 is closed and 1 is open (logic.js forces closed pads to 7 with invert on). `invert: true` therefore means "high CC opens", the author's strip; `invert: false` means "high CC closes", standard for CC4 pedals. Verified by executing the original function in tests |
 | ADR-17 | `pedalOnClose` stored in `mapping.hihat` (default false) | Global setting | Same reason as ADR-12 |
 | ADR-18 | Before the first CC arrives, `hihat.cc` plays the most open level | Closed | Matches logic.js initial articulation 1 (open) |
+| ADR-19 | Editor toggle key is `M`, not `E` | `E` (roadmap) | `E` is a pad key in the `qwer` row |
+| ADR-20 | Assigning a note already used by another pad swaps the two notes | Reject, or clear the other pad | Keeps the mapping valid (no duplicate notes) without an error state mid-edit |
+| ADR-21 | Voice picker is a native `<select>` with `<optgroup>` per family | Custom searchable combobox | 31 voices in 7 families fit a native select; native is accessible and works on touch. Revisit if voices grow |
+| ADR-22 | In edit mode, any hit (MIDI, keyboard, pointer) selects that pad and still plays it | Silent selection | Lets the player audition and pick pads straight from the controller |

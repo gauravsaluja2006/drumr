@@ -17,6 +17,8 @@ import { voiceLabel } from '@/mapping/voices';
 import { VelocityPanel } from '@/ui/VelocityPanel/VelocityPanel';
 import { PresetSelect } from '@/ui/PresetSelect/PresetSelect';
 import { HiHatMeter } from '@/ui/HiHatMeter/HiHatMeter';
+import { MappingEditor } from '@/ui/MappingEditor/MappingEditor';
+import { useUiStore } from '@/state/useUiStore';
 import { installTestHooks } from './testHooks';
 
 function Panel({ title, children }: { title: string; children?: React.ReactNode }) {
@@ -45,6 +47,25 @@ export function App() {
   const available = useKitStore((s) => s.available);
   const masterDb = useSettingsStore((s) => s.masterDb);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const { editing, selectedPad, learning, setEditing } = useUiStore();
+
+  // "m" toggles the layout editor ("e" is a pad key); Escape closes it.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement | null;
+      if (e.ctrlKey || e.metaKey || e.altKey || (t && ['INPUT', 'TEXTAREA', 'SELECT'].includes(t.tagName)))
+        return;
+      if (e.key === 'm' || e.key === 'M') setEditing(!useUiStore.getState().editing);
+      else if (
+        e.key === 'Escape' &&
+        useUiStore.getState().editing &&
+        !document.querySelector('[role="dialog"]')
+      )
+        setEditing(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [setEditing]);
 
   useEffect(() => {
     if (!runtime) {
@@ -95,17 +116,40 @@ export function App() {
           </Panel>
         </aside>
         <div className="flex flex-col items-center justify-center gap-4">
-          <PadGrid pads={pads} disabled={status !== 'ready'} onHit={hitPad} />
-          <PresetSelect />
+          <PadGrid
+            pads={pads}
+            disabled={status !== 'ready'}
+            selectedIndex={editing ? selectedPad : null}
+            learning={learning}
+            onHit={hitPad}
+          />
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <PresetSelect />
+            <button
+              type="button"
+              aria-pressed={editing}
+              onClick={() => setEditing(!editing)}
+              className="rounded-m border border-line px-3 py-1.5 text-xs text-fg-1 hover:bg-bg-3 hover:text-fg-0 aria-pressed:border-accent aria-pressed:text-accent"
+            >
+              {editing ? 'Editing layout' : 'Edit layout'}{' '}
+              <span className="ml-1 hidden font-mono text-fg-2 lg:inline">M</span>
+            </button>
+          </div>
         </div>
-        <aside className="hidden flex-col gap-8 rounded-l border border-line bg-bg-1 p-5 lg:flex">
-          <Panel title="Hi-hat">
-            <HiHatMeter />
-          </Panel>
-          <Panel title="Velocity">
-            <VelocityPanel />
-          </Panel>
-        </aside>
+        {editing ? (
+          <aside className="fixed inset-x-0 bottom-0 z-30 max-h-[70vh] overflow-y-auto rounded-t-l border border-line bg-bg-1 p-5 shadow-2xl lg:static lg:max-h-none lg:rounded-l lg:shadow-none">
+            <MappingEditor />
+          </aside>
+        ) : (
+          <aside className="hidden flex-col gap-8 rounded-l border border-line bg-bg-1 p-5 lg:flex">
+            <Panel title="Hi-hat">
+              <HiHatMeter />
+            </Panel>
+            <Panel title="Velocity">
+              <VelocityPanel />
+            </Panel>
+          </aside>
+        )}
       </main>
       <footer className="flex h-10 items-center justify-between border-t border-line px-4 text-xs text-fg-2 lg:px-6">
         <span className="flex items-center gap-3">

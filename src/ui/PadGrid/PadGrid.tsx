@@ -10,10 +10,18 @@ export interface PadView {
 export interface PadGridProps {
   pads?: readonly PadView[];
   disabled?: boolean;
+  selectedIndex?: number | null;
+  learning?: boolean;
   onHit?: (index: number, velocity: number, eventTime: number) => void;
 }
 
-export function PadGrid({ pads = [], disabled, onHit }: PadGridProps) {
+export function PadGrid({
+  pads = [],
+  disabled,
+  selectedIndex = null,
+  learning = false,
+  onHit,
+}: PadGridProps) {
   return (
     <div
       role="group"
@@ -22,7 +30,15 @@ export function PadGrid({ pads = [], disabled, onHit }: PadGridProps) {
       style={{ gridTemplateColumns: `repeat(${GRID_COLS}, minmax(0, 1fr))` }}
     >
       {Array.from({ length: GRID_ROWS * GRID_COLS }, (_, i) => (
-        <Pad key={i} index={i} {...pads[i]} disabled={disabled} onHit={onHit} />
+        <Pad
+          key={i}
+          index={i}
+          {...pads[i]}
+          disabled={disabled}
+          selected={selectedIndex === i}
+          learning={learning && selectedIndex === i}
+          onHit={onHit}
+        />
       ))}
     </div>
   );

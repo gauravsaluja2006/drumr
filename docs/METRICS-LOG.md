@@ -32,3 +32,7 @@ One row per metric per phase. Values come from CI output or the manual checks de
 | 2026-10-31 | 4 | phase-4-hihat | S1 JS bundle (gzip) | 106.9 KB | ≤ 180 KB | ✅ |
 | 2026-10-31 | 4 | phase-4-hihat | Q4 coverage (all / engine) | 98.7 / 98.8 % lines | ≥ 80 / 90 % | ✅ |
 | 2026-10-31 | 4 | phase-4-hihat | Tests | 96 unit, 48 e2e (+6 Chromium-only skips) | all pass | ✅ |
+| 2026-10-31 | 5 | phase-5-mapping-editor | Q6 axe serious/critical (editor open, 3 browsers) | 0 | 0 | ✅ |
+| 2026-10-31 | 5 | phase-5-mapping-editor | S1 JS bundle (gzip) | 109.4 KB | ≤ 180 KB | ✅ |
+| 2026-10-31 | 5 | phase-5-mapping-editor | Q4 coverage (all) | 98.4 % lines | ≥ 80 % | ✅ |
+| 2026-10-31 | 5 | phase-5-mapping-editor | Tests | 105 unit, 57 e2e (+6 Chromium-only skips) | all pass | ✅ |

@@ -188,3 +188,22 @@ h3 {
     var(--shadow-pad),
     inset 0 0 0 1px var(--accent-2);
 }
+
+/* Mapping editor states (docs/03-DESIGN.md §4.1 learning, §4.7). */
+.pad[data-selected] {
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
+}
+.pad[data-learning] {
+  animation: pad-learning 1s ease-in-out infinite;
+}
+@keyframes pad-learning {
+  50% {
+    outline-color: transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pad[data-learning] {
+    animation: none;
+  }
+}
