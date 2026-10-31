@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Phase 1 — Audio engine core and on-screen playing
+- Web Audio engine: voice → group → master → safety limiter graph, 64-voice pool with group-aware stealing, velocity layers, round robin, event-to-schedule latency stats.
+- Velocity curve ported exactly from logic.js (`scaleVelocity`).
+- Kit manifest schema (Zod) with layer coverage, choke reference and path validation; kit loader and LRU sampler (2 kits resident).
+- Keyboard (1234/qwer/asdf/zxcv) and pointer input with position-based velocity; tap-to-start-audio overlay.
+- Pad hit flash scaled by velocity, driven by requestAnimationFrame outside React.
+- Kit panel with licence and attribution, master volume slider (persisted), loading progress bar.
+- Synthetic test kits generator; Playwright test hooks in `--mode test` builds.
+
 ### Phase 0 — Scaffold, CI, deploy
 - Vite 8 + React 19 + TypeScript 6 + Tailwind 4 project with design tokens from docs/03-DESIGN.md.
 - Static app shell: status bar, three-column layout, 4×4 pad grid with keyboard hints, footer with version and commit.

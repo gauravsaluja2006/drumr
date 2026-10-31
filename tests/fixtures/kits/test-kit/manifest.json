@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "test-kit",
+  "name": "Test Kit",
+  "description": "Synthetic tones for tests and development. Not a real drum kit.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Drumr (generated)",
+    "url": "https://github.com/gauravsaluja2006/drumr"
+  },
+  "sampleRate": 44100,
+  "format": "wav",
+  "totalBytes": 55830,
+  "groups": ["kick", "snare", "hihat"],
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 63,
+          "samples": ["samples/kick_v1.wav"]
+        },
+        {
+          "lovel": 64,
+          "hivel": 127,
+          "samples": ["samples/kick_v2.wav"]
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": ["samples/snare_rr1.wav", "samples/snare_rr2.wav"]
+        }
+      ]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": ["samples/hh_closed.wav"]
+        }
+      ]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed"],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": ["samples/hh_open.wav"]
+        }
+      ]
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.open"]
+  }
+}

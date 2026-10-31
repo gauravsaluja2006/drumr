@@ -62,6 +62,12 @@ Tasks:
 10. Master volume slider in the Mixer (group sliders in Phase 6).
 11. Test kit fixture + `scripts/make-test-kit.ts`.
 
+Implementation notes (as built):
+- `pnpm make:test-kit [--public]` generates two synthetic kits (`test-kit`, `test-kit-b`) into `tests/fixtures/kits/`; `--public` also copies them to `public/kits/` so the Phase 1 deploy has something to play. Phase 2 replaces `public/kits/` with real kits and points e2e at the fixtures via `VITE_KITS_BASE_URL`.
+- Temporary pad wiring lives in `src/app/tempMapping.ts` (Kick, Snare, HH Closed, HH Open repeating across rows). Delete it in Phase 3.
+- Hit feedback is owned by `src/ui/PadGrid/padFlash.ts` (rAF, `--v`, `data-hit`, `data-hit-count`), not React state.
+- Playwright uses a dedicated port (4179) and never reuses an existing server, so a stale preview cannot mask a test build.
+
 Acceptance: In the deployed preview with the test kit, pressing `1` plays the kick, clicking pads plays with position-based velocity, master slider works, pads flash with velocity-scaled intensity.
 
 Required tests:
