@@ -23,3 +23,8 @@ One row per metric per phase. Values come from CI output or the manual checks de
 | 2026-10-31 | 2 | phase-2-kits | S5 kit switch, downloaded (Big Rusty 16 MB, local) | 181 ms | ≤ 1 s | ✅ |
 | 2026-10-31 | 2 | phase-2-kits | A3 loudness: reference peak | −6.0 / −6.0 / −7.4 dBFS | −6 ± 1 dB | ⚠️ Big Rusty clip-guarded |
 | 2026-10-31 | 2 | phase-2-kits | Tests | 62 unit, 22 e2e | all pass | ✅ |
+| 2026-10-31 | 3 | phase-3-midi | L1 event-to-schedule (200 note-ons, Chromium) | median 0.0 ms, p95 0.1 ms | ≤ 2 / ≤ 5 ms | ✅ |
+| 2026-10-31 | 3 | phase-3-midi | R1 dropped notes (500 at 10 ms) | 0 | 0 | ✅ |
+| 2026-10-31 | 3 | phase-3-midi | S1 JS bundle (gzip) | 105.6 KB | ≤ 180 KB | ✅ |
+| 2026-10-31 | 3 | phase-3-midi | Q4 coverage (all / midi / mapping) | 98.5 / 98.6 / 100 % lines | ≥ 80 / 90 / 90 % | ✅ |
+| 2026-10-31 | 3 | phase-3-midi | Tests | 84 unit, 39 e2e (+6 Chromium-only skips) | all pass | ✅ |

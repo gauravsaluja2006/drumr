@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "name": "Generic pads (GM, notes 36–51)",
+  "grid": { "rows": 4, "cols": 4 },
+  "pads": [
+    { "row": 3, "col": 0, "note": 36, "voice": "kick" },
+    { "row": 3, "col": 1, "note": 37, "voice": "snare.sidestick" },
+    { "row": 3, "col": 2, "note": 38, "voice": "snare.center" },
+    { "row": 3, "col": 3, "note": 39, "voice": "clap" },
+    { "row": 2, "col": 0, "note": 40, "voice": "snare.rimshot" },
+    { "row": 2, "col": 1, "note": 41, "voice": "tom.low" },
+    { "row": 2, "col": 2, "note": 42, "voice": "hihat.closed" },
+    { "row": 2, "col": 3, "note": 43, "voice": "tom.lowMid" },
+    { "row": 1, "col": 0, "note": 44, "voice": "hihat.pedal" },
+    { "row": 1, "col": 1, "note": 45, "voice": "tom.highMid" },
+    { "row": 1, "col": 2, "note": 46, "voice": "hihat.cc", "label": "HH Open" },
+    { "row": 1, "col": 3, "note": 47, "voice": "tom.high" },
+    { "row": 0, "col": 0, "note": 48, "voice": "crash.right" },
+    { "row": 0, "col": 1, "note": 49, "voice": "crash.left" },
+    { "row": 0, "col": 2, "note": 50, "voice": "ride.bell" },
+    { "row": 0, "col": 3, "note": 51, "voice": "ride.bow" }
+  ],
+  "velocity": { "exponent": 2.4, "floor": 28 },
+  "hihat": { "cc": 4, "invert": false },
+  "channel": null
+}

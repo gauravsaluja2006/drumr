@@ -8,7 +8,7 @@ test('US-08: switching kit while playing completes without errors and old voices
   page.on('pageerror', (e) => errors.push(e.message));
   await openApp(page);
 
-  await page.keyboard.press('4'); // HH Open: a 2 s sample that should keep ringing through the switch
+  await page.keyboard.press('f'); // HH Open (CC pad): a 2 s sample that should keep ringing through the switch
   const before = await stats(page);
   expect(before.lastTrigger?.articulationId).toBe('hihat.open');
   expect(before.activeVoices).toBe(1);
@@ -24,8 +24,8 @@ test('US-08: switching kit while playing completes without errors and old voices
   await expect(page.getByTestId('kit-name')).toHaveText('Test Kit B');
 
   // Kit B has no hi-hat: those pads are marked unavailable; kick still plays from kit B.
-  await expect(page.locator('[data-pad="2"]')).toHaveAttribute('data-unavailable', 'true');
-  await page.keyboard.press('1');
+  await expect(page.locator('[data-pad="15"]')).toHaveAttribute('data-unavailable', 'true');
+  await page.keyboard.press('z');
   expect((await stats(page)).lastTrigger?.articulationId).toBe('kick');
   expect(errors).toEqual([]);
 });

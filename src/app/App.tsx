@@ -9,8 +9,13 @@ import { useKitStore } from '@/state/useKitStore';
 import { useSettingsStore } from '@/state/useSettingsStore';
 import { attachKeyboard } from '@/input/keyboard';
 import { getRuntime, type Runtime } from './runtime';
-import { hitPad } from './controller';
-import { TEMP_PADS } from './tempMapping';
+import { handleMidi, hitPad, resolvePadVoice } from './controller';
+import { useMappingStore } from '@/state/useMappingStore';
+import { bindMidiStore } from '@/state/useMidiStore';
+import { padIndex } from '@/mapping/schema';
+import { voiceLabel } from '@/mapping/voices';
+import { VelocityPanel } from '@/ui/VelocityPanel/VelocityPanel';
+import { PresetSelect } from '@/ui/PresetSelect/PresetSelect';
 import { installTestHooks } from './testHooks';
 
 function Panel({ title, children }: { title: string; children?: React.ReactNode }) {
@@ -47,18 +52,34 @@ export function App() {
     }
     installTestHooks(runtime);
     if (useKitStore.getState().status === 'idle') void useKitStore.getState().init();
-    return attachKeyboard(window, hitPad);
+    const unbindMidi = bindMidiStore(runtime.midi);
+    runtime.midi.setMessageHandler(handleMidi);
+    void runtime.midi.init();
+    const detachKeyboard = attachKeyboard(window, hitPad);
+    return () => {
+      unbindMidi();
+      detachKeyboard();
+    };
   }, [runtime]);
 
   useEffect(() => {
     runtime?.engine.setMasterGainDb(masterDb);
   }, [runtime, masterDb]);
 
-  const pads = useMemo(
-    () =>
-      TEMP_PADS.map((p) => ({ label: p.label, unavailable: status === 'ready' && !available.has(p.voice) })),
-    [status, available],
-  );
+  const mapping = useMappingStore((s) => s.mapping);
+  const pads = useMemo(() => {
+    const views: { label?: string; note?: number; unavailable?: boolean }[] = [];
+    for (const p of mapping.pads) {
+      views[padIndex(mapping, p)] = {
+        label: p.label ?? voiceLabel(p.voice),
+        note: p.note,
+        unavailable: status === 'ready' && resolvePadVoice(p.voice) === null,
+      };
+    }
+    return views;
+    // `available` is read inside resolvePadVoice via the kit store.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mapping, status, available]);
 
   return (
     <div className="flex h-full flex-col">
@@ -72,12 +93,15 @@ export function App() {
             <Mixer />
           </Panel>
         </aside>
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-4">
           <PadGrid pads={pads} disabled={status !== 'ready'} onHit={hitPad} />
+          <PresetSelect />
         </div>
         <aside className="hidden flex-col gap-8 rounded-l border border-line bg-bg-1 p-5 lg:flex">
           <Panel title="Hi-hat" />
-          <Panel title="Velocity" />
+          <Panel title="Velocity">
+            <VelocityPanel />
+          </Panel>
         </aside>
       </main>
       <footer className="flex h-10 items-center justify-between border-t border-line px-4 text-xs text-fg-2 lg:px-6">

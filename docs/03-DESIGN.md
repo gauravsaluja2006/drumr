@@ -92,7 +92,7 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 - Audio-suspended overlay (full screen, `--bg-0` at 85 %): "Tap anywhere to start audio". Disappears on first gesture.
 
 ### 4.3 Kit selector
-- Dropdown listing kits with name, one-line description, size badge ("24 MB"), license badge ("CC0"). Loading shows a determinate progress bar under the status bar (bytes received / totalBytes) and the pads are disabled with 50 % opacity until decoded.
+- Dropdown listing kits with name, one-line description, size badge ("24 MB"), license badge ("CC0"). Loading shows a determinate progress bar under the status bar (bytes received / totalBytes) and the pads are disabled until decoded. Disabled pads use the `--bg-1` fill and a wait cursor; they are not faded, because 50 % opacity pushed note numbers below 4.5:1 contrast.
 
 ### 4.4 Mixer
 - Vertical list of horizontal sliders. Label left, value in mono dB right (e.g. `−6.0 dB`). Double-click resets to 0 dB. Group colour dot before the label. Mute toggle on hover.

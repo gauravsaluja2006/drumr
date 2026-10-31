@@ -26,12 +26,15 @@ describe('App with a fake runtime', () => {
     const rt = installFakeRuntime();
     render(<App />);
     await waitFor(() => expect(screen.getByTestId('kit-name')).toHaveTextContent('Test Kit'));
-    expect(screen.getByRole('button', { name: /Pad 1: Kick/ })).toBeEnabled();
+    // Maschine layout: bottom-left pad (key "z", note 24) is the kick.
+    expect(screen.getByRole('button', { name: 'Pad 13: Kick, note 24' })).toBeEnabled();
+    expect(screen.getByRole('button', { name: /Pad 1: Crash L.*not in this kit/ })).toBeInTheDocument();
 
-    fireEvent.keyDown(window, { key: '1' });
+    fireEvent.keyDown(window, { key: 'z' });
     expect(rt.engine.stats().lastTrigger).toMatchObject({ articulationId: 'kick', velocity: 100 });
-    fireEvent.keyDown(window, { key: 'w' });
+    fireEvent.keyDown(window, { key: 'x' });
     expect(rt.engine.stats().lastTrigger?.articulationId).toBe('snare.center');
+    fireEvent.keyDown(window, { key: '1' }); // crash: not in the test kit, nothing plays
     expect(rt.engine.stats().triggers).toBe(2);
   });
 
