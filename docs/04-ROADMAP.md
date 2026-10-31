@@ -100,6 +100,11 @@ Tasks:
 5. `ui/About` panel with sources table generated from manifests (`license`, `attribution`).
 6. Kit folder `LICENSE.txt` for CC-BY-SA kits; README licensing section.
 
+Implementation notes (as built):
+- `vite build --mode test` copies `tests/fixtures/kits` to `dist/test-kits/` and `.env.test` points `VITE_KITS_BASE_URL` there, so e2e never loads the real kits.
+- Kit selector is a listbox (`aria-activedescendant`); pad keys do not leak out of the open list. About is a slide-over `Dialog` primitive reused later.
+- See `docs/07-KIT-PIPELINE.md` §8 for pipeline deviations.
+
 Acceptance: All three kits play from the deployed site; sizes within budget; switching kits mid-play has no errors; About shows attributions.
 
 Required tests:

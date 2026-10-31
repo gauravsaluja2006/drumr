@@ -1,0 +1,146 @@
+{
+  "id": "virtuosity-jazz",
+  "order": 2,
+  "name": "Virtuosity Jazz",
+  "description": "Contemporary jazz kit played with sticks, mid-room stereo mic. Four hi-hat openings.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Versilian Studios & Karoryfer Lecolds",
+    "url": "https://versilian-studios.com/virtuosity-drums/"
+  },
+  "source": {
+    "libraryId": "virtuosity",
+    "root": "Samples"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.5,
+      "cymbals": 4.0
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "glob": "mid/kick/mid_kick_snoff_vl{layer}_rr{rr}.flac",
+      "gainDb": 9
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "glob": "mid/snare/mid_snare_center_vl{layer}.flac",
+      "maxVelocityLayers": 6
+    },
+    {
+      "id": "snare.edge",
+      "group": "snare",
+      "glob": "mid/snare/mid_snare_offcenter_vl{layer}.flac"
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "glob": "mid/snare/mid_snare_rimshot_vl{layer}.flac"
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "glob": "mid/snare/mid_snare_crossstick_vl{layer}.flac"
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "glob": "mid/htom/mid_htom_center_vl{layer}.flac",
+      "gainDb": 3
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "glob": "mid/ltom/mid_ltom_center_vl{layer}.flac",
+      "gainDb": 3
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "glob": "mid/hh/mid_hh_closed_vl{layer}_rr{rr}.flac",
+      "chokeGroup": "hihat",
+      "gainDb": 8
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "glob": "mid/hh/mid_hh_pedal_vl{layer}_rr{rr}.flac",
+      "chokeGroup": "hihat",
+      "gainDb": 8
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "glob": "mid/hh/mid_hh_half_vl{layer}_rr{rr}.flac",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"],
+      "gainDb": 8
+    },
+    {
+      "id": "hihat.threeQuarter",
+      "group": "hihat",
+      "glob": "mid/hh/mid_hh_34_vl{layer}_rr{rr}.flac",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"],
+      "gainDb": 8
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "glob": "mid/hh/mid_hh_open_vl{layer}_rr{rr}.flac",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"],
+      "gainDb": 8
+    },
+    {
+      "id": "hihat.splash",
+      "group": "hihat",
+      "glob": "mid/hh/mid_hh_splash_rr{rr}.flac",
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal"],
+      "gainDb": 8
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "glob": "mid/ride/mid_ride_ride_vl{layer}_rr{rr}.flac"
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "glob": "mid/ride/mid_ride_bell_vl{layer}_rr{rr}.flac"
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "glob": "mid/crash/mid_crash_crash_vl{layer}_rr{rr}.flac"
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "glob": "mid/flatride/mid_flatride_crash_vl{layer}.flac"
+    }
+  ],
+  "hihat": {
+    "openness": ["hihat.closed", "hihat.half", "hihat.threeQuarter", "hihat.open"],
+    "pedal": "hihat.pedal",
+    "splash": "hihat.splash"
+  }
+}

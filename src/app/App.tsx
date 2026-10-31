@@ -4,6 +4,7 @@ import { StatusBar } from '@/ui/StatusBar/StatusBar';
 import { KitPanel } from '@/ui/KitPanel/KitPanel';
 import { Mixer } from '@/ui/Mixer/Mixer';
 import { AudioOverlay } from '@/ui/AudioOverlay/AudioOverlay';
+import { About } from '@/ui/About/About';
 import { useKitStore } from '@/state/useKitStore';
 import { useSettingsStore } from '@/state/useSettingsStore';
 import { attachKeyboard } from '@/input/keyboard';
@@ -37,6 +38,7 @@ export function App() {
   const status = useKitStore((s) => s.status);
   const available = useKitStore((s) => s.available);
   const masterDb = useSettingsStore((s) => s.masterDb);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   useEffect(() => {
     if (!runtime) {
@@ -79,11 +81,17 @@ export function App() {
         </aside>
       </main>
       <footer className="flex h-10 items-center justify-between border-t border-line px-4 text-xs text-fg-2 lg:px-6">
-        <span className="hidden sm:inline">Web MIDI · Web Audio · open-licence drum samples</span>
+        <span className="flex items-center gap-3">
+          <button type="button" onClick={() => setAboutOpen(true)} className="text-fg-1 hover:text-fg-0">
+            About · Sources &amp; licences
+          </button>
+          <span className="hidden text-fg-2 md:inline">Web MIDI · Web Audio · open-licence drum samples</span>
+        </span>
         <span className="font-mono">
           v{__APP_VERSION__} · {__COMMIT__}
         </span>
       </footer>
+      <About open={aboutOpen} onClose={() => setAboutOpen(false)} />
       <AudioOverlay ctx={runtime?.ctx ?? null} />
     </div>
   );

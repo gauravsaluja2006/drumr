@@ -1,0 +1,1024 @@
+{
+  "schemaVersion": 1,
+  "id": "avl-black-pearl",
+  "name": "Black Pearl",
+  "description": "Pearl rock kit with Sabian cymbals. Small and quick to load.",
+  "license": {
+    "name": "CC-BY-SA-3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "attribution": {
+    "author": "AVL Drumkits (Glen MacArthur)",
+    "url": "https://www.bandshed.net/avldrumkits/"
+  },
+  "sampleRate": 44100,
+  "format": "flac",
+  "totalBytes": 5756975,
+  "groups": [
+    "kick",
+    "snare",
+    "toms",
+    "hihat",
+    "cymbals",
+    "perc"
+  ],
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/kick_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/kick_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/kick_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/kick_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/kick_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/snare_center_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/snare_center_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/snare_center_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/snare_center_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_center_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.edge",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/snare_edge_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/snare_edge_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/snare_edge_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/snare_edge_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_edge_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/snare_sidestick_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/snare_sidestick_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/snare_sidestick_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/snare_sidestick_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_sidestick_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/tom_high_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/tom_high_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/tom_high_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/tom_high_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_high_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/tom_low_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/tom_low_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/tom_low_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/tom_low_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_low_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/hihat_closed_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/hihat_closed_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/hihat_closed_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/hihat_closed_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_closed_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/hihat_pedal_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/hihat_pedal_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/hihat_pedal_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/hihat_pedal_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_pedal_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/hihat_half_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/hihat_half_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/hihat_half_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/hihat_half_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_half_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.pedal"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/hihat_open_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/hihat_open_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/hihat_open_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/hihat_open_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_open_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "chokedBy": [
+        "ride.choke"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/ride_bow_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/ride_bow_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/ride_bow_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/ride_bow_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bow_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.edge",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/ride_edge_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/ride_edge_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/ride_edge_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/ride_edge_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_edge_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/ride_bell_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/ride_bell_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/ride_bell_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/ride_bell_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bell_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.choke",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_choke_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "chokeGroup": "crash.left",
+      "chokedBy": [
+        "crash.leftChoke"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/crash_left_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/crash_left_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/crash_left_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/crash_left_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_left_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.leftChoke",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_leftChoke_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "chokeGroup": "crash.right",
+      "chokedBy": [
+        "crash.rightChoke"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/crash_right_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/crash_right_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/crash_right_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/crash_right_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_right_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.rightChoke",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_rightChoke_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/china_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/china_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/china_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/china_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/china_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "splash",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/splash_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/splash_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/splash_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/splash_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/splash_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/clap_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/clap_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/clap_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/clap_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/clap_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tambourine",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/tambourine_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/tambourine_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/tambourine_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/tambourine_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/tambourine_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shaker",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/shaker_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/shaker_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/shaker_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/shaker_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/shaker_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/cowbell_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/cowbell_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/cowbell_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/cowbell_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/cowbell_v5_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stick",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 25,
+          "samples": [
+            "samples/stick_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 50,
+          "samples": [
+            "samples/stick_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 76,
+          "samples": [
+            "samples/stick_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 101,
+          "samples": [
+            "samples/stick_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 127,
+          "samples": [
+            "samples/stick_v5_rr1.flac"
+          ]
+        }
+      ]
+    }
+  ],
+  "hihat": {
+    "openness": [
+      "hihat.closed",
+      "hihat.half",
+      "hihat.open"
+    ],
+    "pedal": "hihat.pedal"
+  }
+}

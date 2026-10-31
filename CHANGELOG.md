@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Phase 2 — Kit pipeline and real kits
+- Offline kit pipeline: recipes, {layer}/{rr} discovery, layer subsampling, multi-mic mixing, normalise-then-trim, clip guard, FLAC encoding, provenance, verify, index.
+- Three kits: Black Pearl (AVL, CC-BY-SA), Virtuosity Jazz (CC0), Big Rusty Rock (CC0, six hi-hat openings). 30.5 MB total.
+- Kit selector listbox with licence and size badges; About panel with sources and licences.
+- Test builds serve synthetic fixture kits from /test-kits/.
+
 ### Phase 1 — Audio engine core and on-screen playing
 - Web Audio engine: voice → group → master → safety limiter graph, 64-voice pool with group-aware stealing, velocity layers, round robin, event-to-schedule latency stats.
 - Velocity curve ported exactly from logic.js (`scaleVelocity`).

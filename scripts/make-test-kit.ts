@@ -7,30 +7,11 @@ import { cpSync, mkdirSync, writeFileSync, statSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import type { KitManifest } from '../src/kits/schema';
 import { kitManifestSchema } from '../src/kits/schema';
+import { wav } from './lib/wav';
 
 const SR = 44100;
 const root = new URL('..', import.meta.url).pathname;
 const outRoot = join(root, 'tests/fixtures/kits');
-
-function wav(samples: Float32Array): Buffer {
-  const data = Buffer.alloc(samples.length * 2);
-  samples.forEach((s, i) => data.writeInt16LE(Math.round(Math.max(-1, Math.min(1, s)) * 32767), i * 2));
-  const header = Buffer.alloc(44);
-  header.write('RIFF', 0);
-  header.writeUInt32LE(36 + data.length, 4);
-  header.write('WAVE', 8);
-  header.write('fmt ', 12);
-  header.writeUInt32LE(16, 16);
-  header.writeUInt16LE(1, 20); // PCM
-  header.writeUInt16LE(1, 22); // mono
-  header.writeUInt32LE(SR, 24);
-  header.writeUInt32LE(SR * 2, 28);
-  header.writeUInt16LE(2, 32);
-  header.writeUInt16LE(16, 34);
-  header.write('data', 36);
-  header.writeUInt32LE(data.length, 40);
-  return Buffer.concat([header, data]);
-}
 
 function seeded(seed: number) {
   return () => ((seed = (seed * 16807) % 2147483647) / 2147483647) * 2 - 1;
@@ -82,7 +63,8 @@ const kits: KitSpec[] = [
       'samples/snare_rr1.wav': noise(0.05, 0.7, 0.02, 11),
       'samples/snare_rr2.wav': noise(0.05, 0.7, 0.02, 23),
       'samples/hh_closed.wav': hat(0.03, 0.5, 0.008, 5),
-      'samples/hh_open.wav': render(0.4, (t) => Math.sin(2 * Math.PI * 8000 * t) * 0.4 * Math.exp(-t / 0.12)),
+      // 2 s so it is still ringing through slow kit switches and choke tests on CI.
+      'samples/hh_open.wav': render(2, (t) => Math.sin(2 * Math.PI * 8000 * t) * 0.4 * Math.exp(-t / 0.6)),
     },
     articulations: [
       {

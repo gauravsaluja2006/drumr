@@ -1,0 +1,429 @@
+{
+  "id": "big-rusty-rock",
+  "order": 3,
+  "name": "Big Rusty Rock",
+  "description": "Oversized 1980s Polish rock kit: close mics blended with overheads. Six hi-hat openings.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Karoryfer Lecolds",
+    "url": "https://shop.karoryfer.com/pages/free-big-rusty-drums"
+  },
+  "source": {
+    "libraryId": "big-rusty",
+    "root": "Samples"
+  },
+  "output": {
+    "channels": 2
+  },
+  "budget": {
+    "maxBytes": 30000000,
+    "maxRoundRobins": 2,
+    "maxVelocityLayers": 4
+  },
+  "trim": {
+    "maxSeconds": {
+      "default": 1.5,
+      "toms": 2.0,
+      "hihat": 2.0,
+      "cymbals": 3.5
+    }
+  },
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "mix": [
+        {
+          "glob": "kick_24/kick/kick/k_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "kick_24/kick/oh/k_vl{layer}_rr{rr}.flac",
+          "gainDb": -8
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "mix": [
+        {
+          "glob": "snare_14/center/top/sn_center_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "snare_14/center/oh/sn_center_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 5
+    },
+    {
+      "id": "snare.edge",
+      "group": "snare",
+      "mix": [
+        {
+          "glob": "snare_14/edge/top/sn_edge_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "snare_14/edge/oh/sn_edge_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "mix": [
+        {
+          "glob": "snare_14/rimshot/top/sn_rims_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "snare_14/rimshot/oh/sn_rims_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "mix": [
+        {
+          "glob": "snare_14/sidestick/top/sn_ss_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "snare_14/sidestick/oh/sn_ss_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "mix": [
+        {
+          "glob": "tom_14/center/cl/t14_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "tom_14/center/oh/t14_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "mix": [
+        {
+          "glob": "tom_15/center/cl/t15_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "tom_15/center/oh/t15_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "mix": [
+        {
+          "glob": "tom_18/center/cl/t18_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "tom_18/center/oh/t18_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "mix": [
+        {
+          "glob": "tom_22/center/cl/t22_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "tom_22/center/oh/t22_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/cl/cl/ht_cl_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/cl/oh/ht_cl_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.shank",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/cl_s/cl/ht_cl_s_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/cl_s/oh/ht_cl_s_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.pedal",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/chik/cl/ht_chik_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/chik/oh/ht_chik_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3,
+      "chokeGroup": "hihat"
+    },
+    {
+      "id": "hihat.loose",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/lc/cl/ht_lc_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/lc/oh/ht_lc_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3,
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "hihat.quarter",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/qo/cl/ht_qo_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/qo/oh/ht_qo_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3,
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "hihat.half",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/ho/cl/ht_ho_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/ho/oh/ht_ho_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3,
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "hihat.threeQuarter",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/tc/cl/ht_tc_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/tc/oh/ht_tc_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3,
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/open/cl/ht_open_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/open/oh/ht_open_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3,
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "hihat.splash",
+      "group": "hihat",
+      "mix": [
+        {
+          "glob": "hihat_14/footspl/cl/ht_footspl_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "hihat_14/footspl/oh/ht_footspl_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 2,
+      "chokeGroup": "hihat",
+      "chokedBy": ["hihat.closed", "hihat.pedal", "hihat.shank"]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "mix": [
+        {
+          "glob": "ride_22/rd/cl/rd_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "ride_22/rd/oh/rd_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "mix": [
+        {
+          "glob": "ride_22/bl/cl/rd_bl_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "ride_22/bl/oh/rd_bl_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3
+    },
+    {
+      "id": "ride.edge",
+      "group": "cymbals",
+      "mix": [
+        {
+          "glob": "ride_22/ed/cl/rd_ed_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "ride_22/ed/oh/rd_ed_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "mix": [
+        {
+          "glob": "crash_17/cr/cl/cr_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "crash_17/cr/oh/cr_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3,
+      "chokeGroup": "crash.left",
+      "chokedBy": ["crash.leftChoke"]
+    },
+    {
+      "id": "crash.leftChoke",
+      "group": "cymbals",
+      "mix": [
+        {
+          "glob": "crash_17/choke/cl/cr_choke_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "crash_17/choke/oh/cr_choke_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "mix": [
+        {
+          "glob": "crash_sizzle_17/cr/cl/crs_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "crash_sizzle_17/cr/oh/crs_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "mix": [
+        {
+          "glob": "china_18/cn/cl/cn_vl{layer}_rr{rr}.flac",
+          "gainDb": 0
+        },
+        {
+          "glob": "china_18/cn/oh/cn_vl{layer}_rr{rr}.flac",
+          "gainDb": -4
+        }
+      ],
+      "maxVelocityLayers": 3
+    }
+  ],
+  "hihat": {
+    "openness": [
+      "hihat.closed",
+      "hihat.loose",
+      "hihat.quarter",
+      "hihat.half",
+      "hihat.threeQuarter",
+      "hihat.open"
+    ],
+    "pedal": "hihat.pedal",
+    "splash": "hihat.splash"
+  }
+}
