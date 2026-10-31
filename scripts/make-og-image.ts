@@ -32,7 +32,7 @@ await page.waitForFunction(
 await page.evaluate('document.fonts.ready');
 await page.addStyleTag({
   content:
-    '.pad[data-hit], .pad[data-hit]::after { animation-play-state: paused !important; } footer { display: none }',
+    '.pad[data-hit], .pad[data-hit]::after, .pad[data-hit]::before { animation-play-state: paused !important; } footer { display: none }',
 });
 await page.evaluate(`{
   for (const b of [[0xb0, 1, 70], [0x90, 24, 120], [0x90, 31, 90], [0x90, 33, 60]]) window.__port.onmidimessage({ data: new Uint8Array(b) });

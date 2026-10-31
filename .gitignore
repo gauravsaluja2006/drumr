@@ -15,3 +15,6 @@ test-results/
 !.vscode/extensions.json
 *.tsbuildinfo
 !.env.test
+
+# Source sample libraries downloaded by the user (gigabytes). Build kits with the pipeline instead.
+/kits/

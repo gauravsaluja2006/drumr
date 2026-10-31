@@ -81,25 +81,33 @@ h3 {
   outline-offset: 2px;
 }
 
-/* ---- Pad hit feedback (docs/03-DESIGN.md §4.1) ---- */
+/* ---- Pad hit feedback (docs/03-DESIGN.md §4.1) ----
+   Compositor-only: the flash (::after) and glow (::before) are pre-painted layers whose opacity
+   animates, and the press is a transform. Animating box-shadow repainted every frame per pad. */
 .pad {
   --v: 0;
   box-shadow: var(--shadow-pad);
-  overflow: hidden;
 }
+.pad::before,
 .pad::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--accent);
   opacity: 0;
   pointer-events: none;
+}
+.pad::before {
+  box-shadow: 0 0 24px var(--accent);
+}
+.pad::after {
+  background: var(--accent);
 }
 .pad[data-hit] {
   animation: pad-press 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.pad[data-hit]::after {
+.pad[data-hit]::after,
+.pad[data-hit]::before {
   animation: pad-flash 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 @keyframes pad-flash {
@@ -113,13 +121,9 @@ h3 {
 @keyframes pad-press {
   from {
     transform: scale(0.97);
-    box-shadow:
-      var(--shadow-pad),
-      0 0 24px rgb(255 122 26 / calc(0.35 + 0.65 * var(--v)));
   }
   to {
     transform: scale(1);
-    box-shadow: var(--shadow-pad);
   }
 }
 .pad[data-hit] .pad-label {
@@ -133,6 +137,9 @@ h3 {
   color: var(--fg-2);
 }
 .pad[data-hit='reduced'] {
+  animation: none;
+}
+.pad[data-hit='reduced']::before {
   animation: none;
 }
 .pad[data-hit='reduced']::after {

@@ -7,3 +7,4 @@ test-results
 logic.js
 *.md
 tests/fixtures/kits
+/kits/
