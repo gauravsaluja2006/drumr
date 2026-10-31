@@ -54,6 +54,21 @@ describe('App with a fake runtime', () => {
     await waitFor(() => expect(screen.queryByTestId('audio-overlay')).not.toBeInTheDocument());
   });
 
+  test('audio overlay never blocks the app when resume cannot start audio (no output device)', async () => {
+    const rt = installFakeRuntime();
+    rt.ctx.state = 'suspended';
+    rt.ctx.resume = async () => {
+      throw new Error('no device');
+    };
+    render(<App />);
+    expect(screen.getByTestId('audio-overlay')).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.keyDown(window, { key: 'x' });
+    });
+    expect(screen.queryByTestId('audio-overlay')).not.toBeInTheDocument();
+    expect(rt.ctx.state).toBe('suspended');
+  });
+
   test('hitPad ignores pads outside the grid', () => {
     const rt = installFakeRuntime();
     hitPad(99, 100);
