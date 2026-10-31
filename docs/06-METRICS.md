@@ -35,7 +35,7 @@ Each metric has a target, a measurement method, and a gate (where it is enforced
 
 | Metric | Target | Measure | Gate |
 |---|---|---|---|
-| F1 Frame rate while playing | ≥ 55 fps average during 200 hits over 5 s | Playwright: CDP `Performance` domain or `requestAnimationFrame` counter injected in page | E2E (Chromium) |
+| F1 Frame rate while playing | ≥ min(55 fps, 90 % of idle fps) during 200 hits over 5 s | `requestAnimationFrame` counter: 2 s idle, then 5 s while hitting. Relative to idle because shared CI runners render ~44 fps with nothing happening (60/60 locally) | E2E (Chromium) |
 | F2 Hit-to-pixel | ≤ 1 frame (16.7 ms) | Visual: pad `data-hit` attribute set within the same task as trigger (unit test on the store/rAF bridge) | Unit |
 
 ## 5. Quality
