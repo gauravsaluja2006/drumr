@@ -21,3 +21,46 @@ describe('DbSlider', () => {
     expect(onChange).toHaveBeenLastCalledWith(0);
   });
 });
+
+describe('DbSlider keyboard and mute', () => {
+  test('P6: Slider is keyboard operable and reports aria-valuetext in dB', () => {
+    const values: number[] = [];
+    const { rerender } = render(
+      <DbSlider label="Toms" value={-6} min={-60} max={6} step={0.5} onChange={(v) => values.push(v)} />,
+    );
+    const slider = screen.getByRole('slider', { name: 'Toms' });
+    expect(slider).toHaveAttribute('aria-valuetext', '−6.0 dB');
+    for (const key of [
+      'ArrowUp',
+      'ArrowRight',
+      'ArrowDown',
+      'ArrowLeft',
+      'PageUp',
+      'PageDown',
+      'Home',
+      'End',
+    ])
+      fireEvent.keyDown(slider, { key });
+    expect(values).toEqual([-5.5, -5.5, -6.5, -6.5, 0, -12, -60, 6]);
+    fireEvent.keyDown(slider, { key: 'q' }); // pad keys pass through untouched
+    expect(values).toHaveLength(8);
+
+    rerender(<DbSlider label="Toms" value={6} onChange={(v) => values.push(v)} />);
+    fireEvent.keyDown(slider, { key: 'ArrowUp' });
+    expect(values.at(-1)).toBe(6); // clamped
+    rerender(<DbSlider label="Toms" value={-60} onChange={() => {}} />);
+    expect(slider).toHaveAttribute('aria-valuetext', '−∞ dB');
+  });
+
+  test('mute toggle reports state', () => {
+    const onMute = vi.fn();
+    const { rerender } = render(
+      <DbSlider label="Kick" value={-3} muted={false} onMuteChange={onMute} onChange={() => {}} />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Mute Kick' }));
+    expect(onMute).toHaveBeenCalledWith(true);
+    rerender(<DbSlider label="Kick" value={-3} muted onMuteChange={onMute} onChange={() => {}} />);
+    expect(screen.getByRole('button', { name: 'Mute Kick' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('slider', { name: 'Kick' })).toHaveAttribute('aria-valuetext', 'muted (−3.0 dB)');
+  });
+});

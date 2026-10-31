@@ -233,6 +233,10 @@ Tasks:
 3. Slider primitive: pointer + keyboard (arrows, Home/End), `aria-valuetext` in dB.
 4. Pad-level quick mute on right-click (optional; skip if time-boxed).
 
+Implementation notes (as built):
+- Slider handles arrows (±0.5 dB), Page Up/Down (±6 dB), Home/End explicitly, so behaviour is identical across browsers and testable in jsdom. Pad keys pass through.
+- Pad-level quick mute (task 4, optional) not built; moved to the Backlog. Limiter reduction readout ships with the Phase 7 debug panel.
+
 Acceptance: Changing a group slider affects only that group's next hits; no zipper noise (gains use `setTargetAtTime` with 10 ms constant); settings persist per kit.
 
 Required tests:
@@ -282,7 +286,7 @@ Required tests: none new; full suite green on the tag.
 
 ## Backlog (v2 candidates, not scheduled)
 
-Metronome; simple room reverb (convolution, per-kit IR); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n.
+Pad-level quick mute (right-click). Metronome; simple room reverb (convolution, per-kit IR); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n.
 
 ---
 

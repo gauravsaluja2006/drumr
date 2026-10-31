@@ -83,3 +83,22 @@ describe('App with a fake runtime', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent(/Web Audio/);
   });
 });
+
+describe('mixer', () => {
+  test('group sliders and mutes drive engine group gains for the current kit', async () => {
+    const rt = installFakeRuntime();
+    render(<App />);
+    await waitFor(() => expect(useKitStore.getState().status).toBe('ready'));
+    // Test kit groups: kick, snare, hihat (no toms/cymbals/perc sliders).
+    expect(screen.queryByRole('slider', { name: 'Toms' })).not.toBeInTheDocument();
+    fireEvent.keyDown(screen.getByRole('slider', { name: 'Hi-hat' }), { key: 'PageDown' });
+    expect(rt.engine.gainDb.hihat).toBe(-6);
+    fireEvent.click(screen.getByRole('button', { name: 'Mute Kick' }));
+    expect(rt.engine.gainDb.kick).toBe(-Infinity);
+    expect((rt.engine.groups.kick as FakeGain).gain.target).toBe(0);
+    expect(useSettingsStore.getState().mix['test-kit']).toEqual({
+      hihat: { db: -6, muted: false },
+      kick: { db: 0, muted: true },
+    });
+  });
+});

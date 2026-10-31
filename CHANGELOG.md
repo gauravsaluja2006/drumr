@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Phase 6 — Mixer
+- Per-group volume and mute (kick, snare, hi-hat, toms, cymbals, percussion), remembered per kit; only groups the kit has are shown.
+- Sliders work from the keyboard (arrows, Page Up/Down, Home/End) and announce values in dB.
+
 ### Phase 5 — Mapping editor
 - Edit layout (button or `M`): select a pad on screen or by hitting it, set its MIDI note by learning from the controller (10 s timeout), choose its sound and label.
 - Save layouts as presets, rename and delete them; reset to the saved version.

@@ -36,3 +36,5 @@ One row per metric per phase. Values come from CI output or the manual checks de
 | 2026-10-31 | 5 | phase-5-mapping-editor | S1 JS bundle (gzip) | 109.4 KB | ≤ 180 KB | ✅ |
 | 2026-10-31 | 5 | phase-5-mapping-editor | Q4 coverage (all) | 98.4 % lines | ≥ 80 % | ✅ |
 | 2026-10-31 | 5 | phase-5-mapping-editor | Tests | 105 unit, 57 e2e (+6 Chromium-only skips) | all pass | ✅ |
+| 2026-10-31 | 6 | phase-6-mixer | S1 JS bundle (gzip) | 110.1 KB | ≤ 180 KB | ✅ |
+| 2026-10-31 | 6 | phase-6-mixer | Tests | 110 unit, 60 e2e (+6 Chromium-only skips) | all pass | ✅ |
