@@ -8,7 +8,7 @@ describe('useMappingStore', () => {
     expect(useMappingStore.getState().mapping.pads[0]!.note).toBe(36);
     s.setVelocity({ exponent: 3 });
     s.setHihat({ invert: true });
-    expect(useMappingStore.getState().mapping.velocity).toEqual({ exponent: 3, floor: 28 });
+    expect(useMappingStore.getState().mapping.velocity).toEqual({ exponent: 3, floor: 28, ceiling: 127 });
     expect(useMappingStore.getState().mapping.hihat).toEqual({ cc: 4, invert: true, pedalOnClose: false });
     s.setPreset('nope');
     expect(useMappingStore.getState().mapping.name).toMatch(/Maschine/);

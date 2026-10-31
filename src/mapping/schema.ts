@@ -18,7 +18,12 @@ export const mappingSchema = z
     name: z.string().min(1).max(60),
     grid: z.object({ rows: z.number().int().min(1).max(8), cols: z.number().int().min(1).max(8) }),
     pads: z.array(pad),
-    velocity: z.object({ exponent: z.number().min(1).max(4), floor: z.number().int().min(0).max(64) }),
+    velocity: z.object({
+      exponent: z.number().min(1).max(4),
+      floor: z.number().int().min(0).max(64),
+      /** Input velocity treated as full force (127 = logic.js behaviour). */
+      ceiling: z.number().int().min(32).max(127).default(127),
+    }),
     hihat: z.object({
       cc: z.number().int().min(0).max(127),
       /** true: high CC values open the hat (mod strip); false: high values close it (pedal, CC4). */

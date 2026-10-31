@@ -2,9 +2,27 @@
 export interface VelocityCurve {
   exponent: number;
   floor: number;
+  /**
+   * Input velocity treated as the hardest possible hit (127). Lower it so lighter hits reach full
+   * volume. 127 (default) reproduces logic.js exactly.
+   */
+  ceiling?: number;
 }
 
-export const DEFAULT_CURVE: VelocityCurve = { exponent: 2.4, floor: 28 };
+export const DEFAULT_CURVE: VelocityCurve = { exponent: 2.4, floor: 28, ceiling: 127 };
+
+/** Exponent range the Sensitivity control spans: 1 = linear (0 %) … 4 = strong soft-hit boost (100 %). */
+export const MIN_EXPONENT = 1;
+export const MAX_EXPONENT = 4;
+
+export function sensitivityToExponent(percent: number): number {
+  const p = Math.min(100, Math.max(0, percent));
+  return Math.round((MIN_EXPONENT + ((MAX_EXPONENT - MIN_EXPONENT) * p) / 100) * 10) / 10;
+}
+
+export function exponentToSensitivity(exponent: number): number {
+  return Math.round(((exponent - MIN_EXPONENT) / (MAX_EXPONENT - MIN_EXPONENT)) * 100);
+}
 
 export interface VelocityLayer<T = string> {
   lovel: number;
@@ -12,8 +30,8 @@ export interface VelocityLayer<T = string> {
   samples: readonly T[];
 }
 
-export function curve(v: number, { exponent, floor }: VelocityCurve = DEFAULT_CURVE): number {
-  const norm = v / 127;
+export function curve(v: number, { exponent, floor, ceiling = 127 }: VelocityCurve = DEFAULT_CURVE): number {
+  const norm = Math.min(1, v / Math.max(1, ceiling));
   const scaled = Math.round(Math.pow(norm, 1 / exponent) * 127);
   return Math.min(127, Math.max(floor, scaled));
 }

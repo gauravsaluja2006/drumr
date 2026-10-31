@@ -105,11 +105,47 @@ describe('VelocityPanel', () => {
     fireEvent.change(screen.getByLabelText('Curve'), { target: { value: '3' } });
     fireEvent.change(screen.getByLabelText('Floor'), { target: { value: '10' } });
     fireEvent.change(screen.getByLabelText('Floor'), { target: { value: '99' } }); // out of range: ignored
-    expect(useMappingStore.getState().mapping.velocity).toEqual({ exponent: 3, floor: 10 });
+    expect(useMappingStore.getState().mapping.velocity).toEqual({ exponent: 3, floor: 10, ceiling: 127 });
     await act(async () => {
       handleMidi({ type: 'noteon', channel: 1, note: 24, velocity: 64 }, 0);
       await new Promise((r) => setTimeout(r, 5));
     });
     expect(screen.getByText(/last hit 64 → 101/)).toBeInTheDocument();
+  });
+});
+
+describe('VelocityPanel sensitivity', () => {
+  test('Sensitivity and Hardest hit sliders edit the curve; soft hits come out louder', async () => {
+    useMappingStore.getState().setPreset('maschine-logic');
+    vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => setTimeout(() => cb(0), 0));
+    withMidi(undefined);
+    render(<VelocityPanel />);
+    const sens = screen.getByRole('slider', { name: 'Sensitivity' });
+    const hardest = screen.getByRole('slider', { name: 'Hardest hit' });
+    expect(sens).toHaveAttribute('aria-valuetext', '47%');
+    expect(hardest).toHaveAttribute('aria-valuetext', 'velocity 127');
+    expect(screen.getByTestId('velocity-hint')).toHaveTextContent(/Playing soft\?/);
+
+    const softHit = async () => {
+      await act(async () => {
+        handleMidi({ type: 'noteon', channel: 1, note: 24, velocity: 30 }, 0);
+        await new Promise((r) => setTimeout(r, 5));
+      });
+      return Number(/→ (\d+)/.exec(screen.getByText(/last hit/).textContent!)![1]);
+    };
+    const before = await softHit();
+    fireEvent.keyDown(sens, { key: 'End' });
+    expect(useMappingStore.getState().mapping.velocity.exponent).toBe(4);
+    fireEvent.change(hardest, { target: { value: '80' } });
+    expect(useMappingStore.getState().mapping.velocity.ceiling).toBe(80);
+    expect(screen.getByTestId('velocity-hint')).toHaveTextContent(/Light touch/);
+    const after = await softHit();
+    expect(after).toBeGreaterThan(before + 20);
+
+    fireEvent.keyDown(sens, { key: 'Home' });
+    fireEvent.keyDown(hardest, { key: 'End' });
+    expect(screen.getByTestId('velocity-hint')).toHaveTextContent(/Linear/);
+    fireEvent.doubleClick(sens); // reset to the logic.js curve
+    expect(useMappingStore.getState().mapping.velocity.exponent).toBe(2.4);
   });
 });

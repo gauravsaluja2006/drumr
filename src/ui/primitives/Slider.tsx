@@ -15,6 +15,8 @@ export interface DbSliderProps {
   step?: number;
   defaultValue?: number;
   color?: string;
+  /** Display and aria-valuetext formatter; defaults to dB. */
+  format?: (value: number) => string;
   muted?: boolean;
   onMuteChange?: (muted: boolean) => void;
   onChange: (db: number) => void;
@@ -34,14 +36,16 @@ export function DbSlider({
   step = 0.5,
   defaultValue = 0,
   color,
+  format,
   muted,
   onMuteChange,
   onChange,
 }: DbSliderProps) {
+  const show = format ?? ((v: number) => formatDb(v, min));
   const id = useId();
   const pct = ((value - min) / (max - min)) * 100;
   const clamp = (v: number) => Math.min(max, Math.max(min, Math.round(v / step) * step));
-  const text = muted ? `muted (${formatDb(value, min)})` : formatDb(value, min);
+  const text = muted ? `muted (${show(value)})` : show(value);
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const next: Record<string, number> = {
@@ -88,7 +92,7 @@ export function DbSlider({
             htmlFor={id}
             className={`font-mono text-xs ${muted ? 'text-fg-2 line-through' : 'text-fg-1'}`}
           >
-            {formatDb(value, min)}
+            {show(value)}
           </output>
         </span>
       </div>

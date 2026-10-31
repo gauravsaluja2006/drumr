@@ -1,5 +1,13 @@
 import { describe, expect, test } from 'vitest';
-import { curve, DEFAULT_CURVE, gainFor, layerFor, pickRoundRobin } from '@/engine/velocity';
+import {
+  curve,
+  DEFAULT_CURVE,
+  exponentToSensitivity,
+  gainFor,
+  layerFor,
+  pickRoundRobin,
+  sensitivityToExponent,
+} from '@/engine/velocity';
 
 describe('velocity', () => {
   test('P1: velocity.curve matches logic.js values for 1, 28, 64, 100, 127', () => {
@@ -52,5 +60,31 @@ describe('velocity', () => {
     expect(pickRoundRobin(1, 0)).toBe(0);
     expect(pickRoundRobin(0, undefined)).toBe(0);
     expect(pickRoundRobin(3, 9, () => 0.99)).toBe(2);
+  });
+});
+
+describe('pad sensitivity', () => {
+  test('ceiling makes lighter hits reach full velocity; 127 matches logic.js', () => {
+    const linear = { exponent: 1, floor: 0 };
+    expect(curve(64, { ...linear, ceiling: 64 })).toBe(127);
+    expect(curve(32, { ...linear, ceiling: 64 })).toBe(64);
+    expect(curve(100, { ...linear, ceiling: 64 })).toBe(127);
+    expect(curve(64, { ...linear, ceiling: 127 })).toBe(64);
+    expect([1, 28, 64, 100, 127].map((v) => curve(v, { exponent: 2.4, floor: 28, ceiling: 127 }))).toEqual([
+      28, 68, 95, 115, 127,
+    ]);
+  });
+
+  test('sensitivity percent maps onto the curve exponent and back', () => {
+    expect(sensitivityToExponent(0)).toBe(1);
+    expect(sensitivityToExponent(100)).toBe(4);
+    expect(sensitivityToExponent(150)).toBe(4);
+    expect(sensitivityToExponent(47)).toBe(2.4);
+    expect(exponentToSensitivity(2.4)).toBe(47);
+    expect(exponentToSensitivity(1)).toBe(0);
+    // Higher sensitivity lifts a soft hit more.
+    const soft = (p: number) => curve(20, { exponent: sensitivityToExponent(p), floor: 0 });
+    expect(soft(0)).toBeLessThan(soft(50));
+    expect(soft(50)).toBeLessThan(soft(100));
   });
 });

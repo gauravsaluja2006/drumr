@@ -62,7 +62,7 @@ describe('mapping schema', () => {
       // logic.js lists hardware rows bottom-up, four pads per row; row 0 on screen is the top.
       expect([pad.row, pad.col], `note ${note}`).toEqual([3 - Math.floor(i / 4), i % 4]);
     });
-    expect(maschine.velocity).toEqual({ exponent: 2.4, floor: 28 }); // CURVE, MIN_VELOCITY
+    expect(maschine.velocity).toEqual({ exponent: 2.4, floor: 28, ceiling: 127 }); // CURVE, MIN_VELOCITY, full range
     expect(maschine.hihat).toMatchObject({ cc: 1, invert: true }); // HIHAT_CONTROLLER, INVERT_HIHAT_MOD
     expect(padIndex(maschine, maschine.pads[0]!)).toBe(12); // note 24 = bottom-left
   });
