@@ -296,3 +296,5 @@ Device selection, last device id, mapping, settings are persisted in `localStora
 | ADR-20 | Assigning a note already used by another pad swaps the two notes | Reject, or clear the other pad | Keeps the mapping valid (no duplicate notes) without an error state mid-edit |
 | ADR-21 | Voice picker is a native `<select>` with `<optgroup>` per family | Custom searchable combobox | 31 voices in 7 families fit a native select; native is accessible and works on touch. Revisit if voices grow |
 | ADR-22 | In edit mode, any hit (MIDI, keyboard, pointer) selects that pad and still plays it | Silent selection | Lets the player audition and pick pads straight from the controller |
+| ADR-23 | Engine records requested gains in `engine.gainDb` | Read `AudioParam.value` | `value` lags `setTargetAtTime` and never moves while the context is suspended (CI); tests and UI need the requested value |
+| ADR-24 | Group mix stored as `settings.mix[kitId][group] = { db, muted }`; mixer only lists groups the kit has | One global mix | Kits are balanced differently; per-kit memory is what US-11 asks for |

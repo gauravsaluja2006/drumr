@@ -1,4 +1,5 @@
 import { useId } from 'react';
+import type React from 'react';
 
 export function formatDb(db: number, min = -60): string {
   if (db <= min) return '−∞ dB';
@@ -14,10 +15,17 @@ export interface DbSliderProps {
   step?: number;
   defaultValue?: number;
   color?: string;
+  muted?: boolean;
+  onMuteChange?: (muted: boolean) => void;
   onChange: (db: number) => void;
 }
 
-/** Horizontal dB slider (docs/03-DESIGN.md §4.4). Double-click resets to the default. */
+const BIG_STEP = 6;
+
+/**
+ * Horizontal dB slider (docs/03-DESIGN.md §4.4). Keyboard: arrows ±step, Page Up/Down ±6 dB,
+ * Home/End min/max. Double-click resets to the default. Optional mute toggle.
+ */
 export function DbSlider({
   label,
   value,
@@ -26,20 +34,63 @@ export function DbSlider({
   step = 0.5,
   defaultValue = 0,
   color,
+  muted,
+  onMuteChange,
   onChange,
 }: DbSliderProps) {
   const id = useId();
   const pct = ((value - min) / (max - min)) * 100;
+  const clamp = (v: number) => Math.min(max, Math.max(min, Math.round(v / step) * step));
+  const text = muted ? `muted (${formatDb(value, min)})` : formatDb(value, min);
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const next: Record<string, number> = {
+      ArrowUp: value + step,
+      ArrowRight: value + step,
+      ArrowDown: value - step,
+      ArrowLeft: value - step,
+      PageUp: value + BIG_STEP,
+      PageDown: value - BIG_STEP,
+      Home: min,
+      End: max,
+    };
+    const v = next[e.key];
+    if (v === undefined) return;
+    e.preventDefault();
+    e.stopPropagation();
+    onChange(clamp(v));
+  };
+
   return (
-    <div className="flex flex-col gap-1.5">
-      <div className="flex items-center justify-between">
+    <div className="group/slider flex flex-col gap-1.5" data-muted={muted || undefined}>
+      <div className="flex items-center justify-between gap-2">
         <label htmlFor={id} className="flex items-center gap-2 text-sm text-fg-1">
           {color && <span aria-hidden="true" className="size-2 rounded-full" style={{ background: color }} />}
           {label}
         </label>
-        <output htmlFor={id} className="font-mono text-xs text-fg-1">
-          {formatDb(value, min)}
-        </output>
+        <span className="flex items-center gap-2">
+          {onMuteChange && (
+            <button
+              type="button"
+              aria-pressed={!!muted}
+              aria-label={`Mute ${label}`}
+              onClick={() => onMuteChange(!muted)}
+              className={`rounded-s border px-1.5 font-mono text-[10px] leading-4 ${
+                muted
+                  ? 'border-err/60 bg-err/15 text-fg-0'
+                  : 'border-line text-fg-1 opacity-0 group-hover/slider:opacity-100 group-focus-within/slider:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100'
+              }`}
+            >
+              M
+            </button>
+          )}
+          <output
+            htmlFor={id}
+            className={`font-mono text-xs ${muted ? 'text-fg-2 line-through' : 'text-fg-1'}`}
+          >
+            {formatDb(value, min)}
+          </output>
+        </span>
       </div>
       <input
         id={id}
@@ -48,11 +99,14 @@ export function DbSlider({
         max={max}
         step={step}
         value={value}
-        aria-valuetext={formatDb(value, min)}
+        aria-valuetext={text}
         onChange={(e) => onChange(Number(e.target.value))}
+        onKeyDown={onKeyDown}
         onDoubleClick={() => onChange(defaultValue)}
-        className="db-slider h-1.5 w-full cursor-pointer appearance-none rounded-full"
-        style={{ background: `linear-gradient(to right, var(--accent) ${pct}%, var(--bg-3) ${pct}%)` }}
+        className={`db-slider h-1.5 w-full cursor-pointer appearance-none rounded-full ${muted ? 'opacity-50' : ''}`}
+        style={{
+          background: `linear-gradient(to right, ${color ?? 'var(--accent)'} ${pct}%, var(--bg-3) ${pct}%)`,
+        }}
       />
     </div>
   );

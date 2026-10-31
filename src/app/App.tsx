@@ -6,7 +6,8 @@ import { Mixer } from '@/ui/Mixer/Mixer';
 import { AudioOverlay } from '@/ui/AudioOverlay/AudioOverlay';
 import { About } from '@/ui/About/About';
 import { useKitStore } from '@/state/useKitStore';
-import { useSettingsStore } from '@/state/useSettingsStore';
+import { DEFAULT_GROUP, useSettingsStore } from '@/state/useSettingsStore';
+import { GROUPS } from '@/kits/schema';
 import { attachKeyboard } from '@/input/keyboard';
 import { getRuntime, type Runtime } from './runtime';
 import { handleMidi, hitPad, resolvePadVoice } from './controller';
@@ -87,6 +88,17 @@ export function App() {
   useEffect(() => {
     runtime?.engine.setMasterGainDb(masterDb);
   }, [runtime, masterDb]);
+
+  // Per-kit group mix → engine group gains (muted = silence).
+  const kitId = useKitStore((s) => s.currentKitId);
+  const kitMix = useSettingsStore((s) => (kitId ? s.mix[kitId] : undefined));
+  useEffect(() => {
+    if (!runtime) return;
+    for (const g of GROUPS) {
+      const setting = kitMix?.[g] ?? DEFAULT_GROUP;
+      runtime.engine.setGroupGainDb(g, setting.muted ? -Infinity : setting.db);
+    }
+  }, [runtime, kitMix]);
 
   const mapping = useMappingStore((s) => s.mapping);
   const pads = useMemo(() => {

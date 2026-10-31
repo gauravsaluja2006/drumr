@@ -248,3 +248,26 @@ describe('choke', () => {
     expect(engine.choke('crash.rightChoke')).toBe(0);
   });
 });
+
+describe('group gain', () => {
+  test('P6: setGroupGainDb affects only the group node and uses a 10 ms smoothing constant', () => {
+    const { ctx, engine } = setup();
+    ctx.advance(2);
+    engine.setGroupGainDb('hihat', -12);
+    const hh = (engine.groups.hihat as FakeGain).gain;
+    expect(hh.calls.at(-1)).toEqual({
+      kind: 'setTargetAtTime',
+      target: expect.closeTo(0.2512, 3),
+      time: 2,
+      timeConstant: 0.01,
+    });
+    expect(GAIN_SMOOTHING).toBe(0.01);
+    for (const g of ['kick', 'snare', 'toms', 'cymbals', 'perc'] as const)
+      expect((engine.groups[g] as FakeGain).gain.calls).toEqual([]);
+    expect((engine.master as FakeGain).gain.calls).toEqual([]);
+    expect(engine.gainDb).toMatchObject({ hihat: -12, kick: 0, master: 0 });
+    // A voice in that group is routed through the group node, so its level follows the group.
+    const v = engine.trigger('hihat.closed', 100)!;
+    expect((v.gain as FakeGain).outputs).toEqual([engine.groups.hihat]);
+  });
+});

@@ -56,6 +56,16 @@ export class AudioEngine {
   readonly master: IGainNode;
   readonly limiter: IDynamicsCompressorNode;
   readonly groups: Record<Group, IGainNode>;
+  /** Last requested gains in dB (AudioParam.value lags behind setTargetAtTime). */
+  readonly gainDb: { master: number } & Record<Group, number> = {
+    master: 0,
+    kick: 0,
+    snare: 0,
+    hihat: 0,
+    toms: 0,
+    cymbals: 0,
+    perc: 0,
+  };
 
   private kit: LoadedKit | null = null;
   private voices: Voice[] = [];
@@ -182,10 +192,12 @@ export class AudioEngine {
   }
 
   setMasterGainDb(db: number): void {
+    this.gainDb.master = db;
     this.master.gain.setTargetAtTime(dbToGain(db), this.ctx.currentTime, GAIN_SMOOTHING);
   }
 
   setGroupGainDb(group: Group, db: number): void {
+    this.gainDb[group] = db;
     this.groups[group].gain.setTargetAtTime(dbToGain(db), this.ctx.currentTime, GAIN_SMOOTHING);
   }
 
