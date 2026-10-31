@@ -80,3 +80,12 @@ Automated tests cannot verify real-hardware latency or audio quality. Before eac
 - [ ] Phone: touch pads work, layout correct.
 - [ ] Offline reload after first visit works.
 Record results in `CHANGELOG.md` under the release.
+
+## 7. Visual regression baselines (as built, Phase 7)
+
+`tests/e2e/P7-visual.spec.ts` compares screenshots in Chromium only, with the footer masked (version and commit differ per build) and `maxDiffPixelRatio: 0.01`. Font rendering differs between macOS and Linux, so baselines are stored per platform:
+
+- `*-chromium-darwin.png` for local runs: `pnpm test:e2e tests/e2e/P7-visual.spec.ts --project=chromium --update-snapshots`
+- `*-chromium-linux.png` for CI: `pnpm test:visual:linux` (runs the same test in `mcr.microsoft.com/playwright:v<version>-noble` via Docker and copies the Linux images back)
+
+Update both after any intentional visual change and review the image diffs in the pull request. Never update baselines to make an unexplained diff go away.

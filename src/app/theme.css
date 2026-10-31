@@ -81,28 +81,43 @@ h3 {
   outline-offset: 2px;
 }
 
-/* ---- Pad hit feedback (docs/03-DESIGN.md §4.1) ---- */
+/* ---- Pad hit feedback (docs/03-DESIGN.md §4.1) ----
+   Compositor-only: the flash (::after) and glow (::before) are pre-painted layers whose opacity
+   animates, and the press is a transform. Animating box-shadow repainted every frame per pad. */
 .pad {
   --v: 0;
   box-shadow: var(--shadow-pad);
-  overflow: hidden;
 }
+.pad::before,
 .pad::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--accent);
   opacity: 0;
   pointer-events: none;
 }
-.pad[data-hit] {
-  animation: pad-press 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+.pad::before {
+  box-shadow: 0 0 24px var(--accent);
 }
-.pad[data-hit]::after {
-  animation: pad-flash 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+.pad::after {
+  background: var(--accent);
 }
-@keyframes pad-flash {
+.pad[data-hit='a'] {
+  animation: pad-press-a 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.pad[data-hit='b'] {
+  animation: pad-press-b 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.pad[data-hit='a']::after,
+.pad[data-hit='a']::before {
+  animation: pad-flash-a 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.pad[data-hit='b']::after,
+.pad[data-hit='b']::before {
+  animation: pad-flash-b 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes pad-flash-a {
   from {
     opacity: calc(0.35 + 0.65 * var(--v));
   }
@@ -110,21 +125,32 @@ h3 {
     opacity: 0;
   }
 }
-@keyframes pad-press {
+@keyframes pad-flash-b {
+  from {
+    opacity: calc(0.35 + 0.65 * var(--v));
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pad-press-a {
   from {
     transform: scale(0.97);
-    box-shadow:
-      var(--shadow-pad),
-      0 0 24px rgb(255 122 26 / calc(0.35 + 0.65 * var(--v)));
   }
   to {
     transform: scale(1);
-    box-shadow: var(--shadow-pad);
+  }
+}
+@keyframes pad-press-b {
+  from {
+    transform: scale(0.97);
+  }
+  to {
+    transform: scale(1);
   }
 }
 .pad[data-hit] .pad-label {
   color: var(--bg-0);
-  transition: color 180ms;
 }
 .pad[data-unavailable] {
   background-image: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.06) 0 2px, transparent 2px 10px);
@@ -132,10 +158,29 @@ h3 {
 .pad[data-unavailable] .pad-label {
   color: var(--fg-2);
 }
-@media (prefers-reduced-motion: reduce) {
-  .pad[data-hit],
-  .pad[data-hit]::after {
-    animation-duration: 1ms;
+.pad[data-hit^='reduced']::before {
+  animation: none;
+}
+.pad[data-hit='reduced-a']::after {
+  animation: pad-flash-reduced-a 50ms steps(1, end);
+}
+.pad[data-hit='reduced-b']::after {
+  animation: pad-flash-reduced-b 50ms steps(1, end);
+}
+@keyframes pad-flash-reduced-a {
+  from {
+    opacity: calc(0.35 + 0.65 * var(--v));
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pad-flash-reduced-b {
+  from {
+    opacity: calc(0.35 + 0.65 * var(--v));
+  }
+  to {
+    opacity: 0;
   }
 }
 

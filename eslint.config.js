@@ -14,6 +14,7 @@ export default tseslint.config(
       'public/kits',
       '.lighthouseci',
       'logic.js',
+      'kits',
     ],
   },
   js.configs.recommended,

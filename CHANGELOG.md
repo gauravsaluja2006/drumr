@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Phase 7 — Polish, offline, performance
+- Works offline after the first visit (installable PWA); "Available offline" indicator.
+- Tablet and phone layouts: controls in two tabs under the pads; tighter pad labels on small screens.
+- Debug panel with latency, voices, limiter and buffer readouts (`` ` `` key).
+- Reduced-motion support, app icons, social preview image, Open Graph tags.
+- Editor, About and debug panels load on demand; initial JS 109 KB gzipped.
+- Visual regression baselines for macOS and Linux; tertiary text contrast fixed on hover.
+
 ### Phase 6 — Mixer
 - Per-group volume and mute (kick, snare, hi-hat, toms, cymbals, percussion), remembered per kit; only groups the kit has are shown.
 - Sliders work from the keyboard (arrows, Page Up/Down, Home/End) and announce values in dB.
