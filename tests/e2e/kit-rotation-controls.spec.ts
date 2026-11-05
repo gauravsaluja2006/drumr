@@ -13,13 +13,17 @@ test('kit list loads a kit on click and rotation cycles the ticked kits on a tim
   await waitForKit(page, 'test-kit-b');
   await expect(kits.getByRole('button', { name: 'Test Kit B' })).toHaveAttribute('aria-current', 'true');
 
-  await page.getByLabel('Rotate through Test Kit', { exact: true }).check();
+  // Checkboxes only appear while rotating.
+  await expect(kits.getByRole('checkbox')).toHaveCount(0);
   await page.getByLabel('every').selectOption('s10');
   await page.getByRole('button', { name: 'Rotate kits' }).click();
   await expect(page.getByRole('button', { name: 'Rotating' })).toHaveAttribute('aria-pressed', 'true');
+  await page.getByLabel('Rotate through Test Kit', { exact: true }).check();
 
   await page.clock.runFor(10_000);
   await waitForKit(page, 'test-kit');
+  await page.clock.runFor(10_000); // only the playing kit is ticked: stays put, keeps rotating
+  expect(await kitId(page)).toBe('test-kit');
   // Tick a second kit: rotation now alternates between the two.
   await page.getByLabel('Rotate through Test Kit B').check();
   await page.clock.runFor(10_000);
@@ -28,11 +32,14 @@ test('kit list loads a kit on click and rotation cycles the ticked kits on a tim
   await waitForKit(page, 'test-kit');
 
   await page.getByRole('button', { name: 'Rotating' }).click();
+  await expect(kits.getByRole('checkbox')).toHaveCount(0);
   await page.clock.runFor(30_000);
   expect(await kitId(page)).toBe('test-kit');
   // Ticks persist.
   await page.reload();
   await waitForKit(page);
+  await startAudio(page);
+  await page.getByRole('button', { name: 'Rotate kits' }).click();
   await expect(page.getByLabel('Rotate through Test Kit B')).toBeChecked();
 });
 

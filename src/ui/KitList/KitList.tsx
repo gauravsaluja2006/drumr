@@ -32,9 +32,7 @@ function RotationControls() {
   const rotation = useSettingsStore((s) => s.rotation);
   const setRotation = useSettingsStore((s) => s.setRotation);
   const running = useRotationStore((s) => s.running);
-  // Re-evaluate when the list, the ticks or the current kit change.
-  useKitStore((s) => s.index);
-  useKitStore((s) => s.currentKitId);
+  useKitStore((s) => s.index); // re-evaluate when the kit list arrives
   const possible = running || canRotate();
   const everyId = useId();
   const bpmId = useId();
@@ -48,7 +46,6 @@ function RotationControls() {
           aria-pressed={running}
           disabled={!possible}
           onClick={toggleRotation}
-          title={possible ? undefined : 'Tick at least one other kit to rotate through'}
           className="flex items-center gap-1.5 rounded-m border border-line px-2.5 py-1 text-xs text-fg-1 hover:bg-bg-3 hover:text-fg-0 disabled:cursor-not-allowed disabled:hover:bg-transparent aria-pressed:border-accent aria-pressed:text-accent"
         >
           <span aria-hidden="true">⟳</span>
@@ -117,8 +114,8 @@ function RotationControls() {
 }
 
 /**
- * Left-column kit browser: every kit in one scrolling list, click to load, tick to include in
- * rotation. The controller encoder highlights a row (kit cursor) and its push loads it.
+ * Left-column kit browser: every kit in one scrolling list, click to load. While rotation runs,
+ * each row gets a checkbox to include it in the rotation. The controller encoder highlights a row (kit cursor) and its push loads it.
  */
 export function KitList() {
   const index = useKitStore((s) => s.index);
@@ -126,6 +123,7 @@ export function KitList() {
   const ticked = useSettingsStore((s) => s.rotation.kitIds);
   const setRotation = useSettingsStore((s) => s.setRotation);
   const kitCursor = useUiStore((s) => s.kitCursor);
+  const rotating = useRotationStore((s) => s.running);
   const listId = useId();
 
   // Keep the encoder's highlighted kit, or else the playing kit, in view.
@@ -178,23 +176,27 @@ export function KitList() {
                   </span>
                 )}
               </button>
-              <input
-                type="checkbox"
-                aria-label={`Rotate through ${kit.name}`}
-                title="Include in rotation"
-                checked={ticked.includes(kit.id)}
-                onChange={(e) => toggle(kit.id, e.target.checked)}
-                className="size-3.5 shrink-0 cursor-pointer accent-[var(--accent)]"
-              />
+              {rotating && (
+                <input
+                  type="checkbox"
+                  aria-label={`Rotate through ${kit.name}`}
+                  title="Include in rotation"
+                  checked={ticked.includes(kit.id)}
+                  onChange={(e) => toggle(kit.id, e.target.checked)}
+                  className="size-3.5 shrink-0 cursor-pointer accent-[var(--accent)]"
+                />
+              )}
             </li>
           );
         })}
       </ul>
-      <p className="text-xs text-fg-2" data-testid="rotation-hint">
-        {tickedCount === 0
-          ? 'Rotation plays every kit. Tick kits to choose a shortlist.'
-          : `Rotation plays the ${tickedCount} ticked ${tickedCount === 1 ? 'kit' : 'kits'}.`}
-      </p>
+      {rotating && (
+        <p className="text-xs text-fg-2" data-testid="rotation-hint">
+          {tickedCount === 0
+            ? 'Rotating through every kit. Tick kits to choose a shortlist.'
+            : `Rotating through the ${tickedCount} ticked ${tickedCount === 1 ? 'kit' : 'kits'}.`}
+        </p>
+      )}
     </div>
   );
 }

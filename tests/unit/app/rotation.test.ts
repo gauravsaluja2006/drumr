@@ -58,12 +58,22 @@ describe('kit rotation runtime', () => {
     expect(current()).toBe('test-kit');
   });
 
-  test('only ticked kits rotate; a single ticked kit that is already playing cannot rotate', () => {
-    useSettingsStore.getState().setRotation({ kitIds: ['test-kit'] });
+  test('only ticked kits rotate; ticking just the playing kit keeps rotation running on that kit', async () => {
+    useSettingsStore.getState().setRotation({ mode: 'seconds', seconds: 10, kitIds: ['test-kit'] });
+    expect(canRotate()).toBe(true);
+    expect(startRotation()).toBe(true);
+    await vi.advanceTimersByTimeAsync(20_000);
+    expect(current()).toBe('test-kit');
+    expect(useRotationStore.getState().running).toBe(true);
+    useSettingsStore.getState().setRotation({ kitIds: ['test-kit', 'kit-b'] });
+    await vi.advanceTimersByTimeAsync(10_000);
+    expect(current()).toBe('kit-b');
+  });
+
+  test('rotation needs at least two kits', () => {
+    useKitStore.setState({ index: useKitStore.getState().index.slice(0, 1) });
     expect(canRotate()).toBe(false);
     expect(startRotation()).toBe(false);
-    useSettingsStore.getState().setRotation({ kitIds: ['kit-b'] });
-    expect(canRotate()).toBe(true);
   });
 
   test('picking a kit by hand restarts the seconds countdown', async () => {

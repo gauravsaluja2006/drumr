@@ -54,9 +54,9 @@ Desktop (≥ 1024 px), single screen, no scrolling for the instrument (side colu
 │  KITS                 │         ┌───┬───┬───┬───┐    │  HI-HAT       │
 │  [⟳ Rotate] every 15s │         │   │   │   │   │    │  openness     │
 │  ▬▬▬▬▬▬▬▬ countdown   │         ├───┼───┼───┼───┤    │  meter (vert) │
-│  ● Virtuosity Jazz ☐  │         │   │   │   │   │    │  CC: 1 ▾      │
-│    Black Pearl     ☑  │         ├───┼───┼───┼───┤    │  invert [x]   │
-│    808 Classic     ☑  │         │   │   │   │   │    │               │
+│  ● Virtuosity Jazz    │         │   │   │   │   │    │  CC: 1 ▾      │
+│    Black Pearl        │         ├───┼───┼───┼───┤    │  invert [x]   │
+│    808 Classic        │         │   │   │   │   │    │               │
 │    … (scrolls)        │         └───┴───┴───┴───┘    │  VELOCITY     │
 │  ─────────────        │   M │ K  S  H  T  C  P       │  sliders      │
 │  Kit name and         │   ┃ │ ┃  ┃  ┃  ┃  ┃  ┃  faders│  curve graph  │
@@ -93,7 +93,7 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 
 ### 4.3a Kit list and rotation (left column)
 - Every kit in one scrolling list: playing kit marked with an `--accent` dot and `aria-current`; click loads; "local" badge for kits built on this machine. The current kit's name and description sit below the list (licence and author are in the About panel, §4.8).
-- A checkbox per kit ticks it for rotation; with none ticked, rotation uses every kit.
+- While rotation runs (only then), a checkbox per kit ticks it for rotation; with none ticked, rotation uses every kit. Ticks persist. Ticking only the playing kit keeps rotation running on that kit until another is ticked.
 - Rotation controls above the list: `⟳ Rotate kits` toggle (pressed: `--accent` border and text, label "Rotating"), "every" select (10/15/30/60 s or 1/2/4/8 bars of 4/4), and in bars mode a BPM input with a Tap button. While running, a 4 px `--accent` bar on `--bg-3` empties until the next switch (progress indicator, not decoration).
 - The controller encoder highlights a row (`--bg-3` fill, `--accent` outline at 60 %) and keeps it in view.
 

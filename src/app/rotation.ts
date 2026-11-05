@@ -40,10 +40,9 @@ function rotationList(): string[] {
   );
 }
 
-/** Whether there is anything to rotate between. */
+/** Rotation needs at least two kits; the ticks only narrow it down while it runs. */
 export function canRotate(): boolean {
-  const list = rotationList();
-  return list.length >= 2 || (list.length === 1 && list[0] !== useKitStore.getState().currentKitId);
+  return useKitStore.getState().index.length >= 2;
 }
 
 function preloadNext() {
@@ -117,7 +116,7 @@ export function tapRotationTempo(now: number = performance.now()): void {
 function subscribe(): () => void {
   const offSettings = useSettingsStore.subscribe((s, prev) => {
     if (s.rotation === prev.rotation) return;
-    if (!canRotate()) return stopRotation();
+    // Ticking only the playing kit does not stop rotation: it just stays put until another is ticked.
     const timing = (['mode', 'seconds', 'bars', 'bpm'] as const).some(
       (k) => s.rotation[k] !== prev.rotation[k],
     );

@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { KitList } from '@/ui/KitList/KitList';
 import { DEFAULT_ROTATION } from '@/kits/rotation';
+import { resetRotation } from '@/app/rotation';
 import { About } from '@/ui/About/About';
 import { useKitStore } from '@/state/useKitStore';
 import { useSettingsStore } from '@/state/useSettingsStore';
@@ -16,7 +17,10 @@ beforeEach(async () => {
   installFakeRuntime();
   await useKitStore.getState().init();
 });
-afterEach(() => setRuntime(null));
+afterEach(() => {
+  resetRotation();
+  setRuntime(null);
+});
 
 describe('KitList', () => {
   test('marks the playing kit and loads another on click', async () => {
@@ -29,12 +33,18 @@ describe('KitList', () => {
     expect(within(list).getByRole('button', { name: 'Kit B' })).toHaveAttribute('aria-current', 'true');
   });
 
-  test('ticking kits picks the rotation shortlist', () => {
+  test('checkboxes appear only while rotating; ticking kits picks the rotation shortlist', () => {
     render(<KitList />);
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('rotation-hint')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Rotate kits' }));
+    expect(screen.getAllByRole('checkbox')).toHaveLength(2);
     expect(screen.getByTestId('rotation-hint')).toHaveTextContent('every kit');
     fireEvent.click(screen.getByRole('checkbox', { name: 'Rotate through Kit B' }));
     expect(useSettingsStore.getState().rotation.kitIds).toEqual(['kit-b']);
     expect(screen.getByTestId('rotation-hint')).toHaveTextContent('the 1 ticked kit');
+    fireEvent.click(screen.getByRole('button', { name: 'Rotating' }));
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
   });
 });
 
