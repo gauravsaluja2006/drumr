@@ -1,0 +1,123 @@
+{
+  "recipe": "dm-tr808",
+  "kitGainDb": -1.09,
+  "samples": [
+    {
+      "output": "samples/kick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "08.BD.808.wav",
+          "sha256": "e42de775ce5f92831b8c2bf1b7dffd6a57bdf5e3fdc00445e612110dbd3e8b0f"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "08.SD5.808.wav",
+          "sha256": "277b47e71440088c7b0df47831f7d00eb18f6895e37cbe727fc6a6a314372d3b"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "01.RS.808.wav",
+          "sha256": "e2e85e5b071702a10218b4567d5aca2aaf46213aa83b465bd2b49098d3d10275"
+        }
+      ]
+    },
+    {
+      "output": "samples/clap_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "01.CP.808.wav",
+          "sha256": "346663d4f48cf94154ceaafd1cd51d6c4ee2840d62b46b97815c76cd9bcd983e"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "08.HT.808.wav",
+          "sha256": "f0780d5908d5f14fd2029ab3b584c1d8a63286e3ef2ef82eae70d3273c8888a4"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "08.MT.808.wav",
+          "sha256": "22177cfd39e00666f436dbd7e8ba044220581c7cf8322113e9afc44aa955f3b5"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "08.LT.808.wav",
+          "sha256": "61d15a71a2a275360f8ac7a4566a3347630c7abcda680cc77214ca6253b1c128"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "01.CH.808.wav",
+          "sha256": "9a1a3c545cb022a4d368f460b3ff1bc75df31601190f06f72264de679f74eeb4"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "08.OH.808.wav",
+          "sha256": "ab206eae1db8a22672ca746a0aca23ff30a4d04000842d5f7fefe5a8f6a9ce29"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "08.CY.808.wav",
+          "sha256": "ef84e76f742723f16466d930e4d039e4bc7420ad1016d937ba237236226302a4"
+        }
+      ]
+    },
+    {
+      "output": "samples/cowbell_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "01.CB.808.wav",
+          "sha256": "ac4a54d5142f3368b185f9356bdc14dd3717e0df0bab5b543c69e42b279c5dcf"
+        }
+      ]
+    },
+    {
+      "output": "samples/stick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "01.CL.808.wav",
+          "sha256": "038918ed7110f34283ea9cf67b60269a517ad2cfd64bd5d549449ed5b46e3f97"
+        }
+      ]
+    },
+    {
+      "output": "samples/shaker_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "01.MA.808.wav",
+          "sha256": "4264bd99c21d0f67c7cf19d1ea575fae6a5d66f94421f8e4f10b075df5b2d0fd"
+        }
+      ]
+    }
+  ]
+}

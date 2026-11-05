@@ -114,4 +114,19 @@ describe('controller buttons and knobs', () => {
     handleMidi(cc(hihatCc, 0), 0);
     expect(useSettingsStore.getState().masterDb).toBe(-60);
   });
+
+  test('Maschine-style Rec, Play and Stop buttons drive the looper', async () => {
+    const bind = useControlsStore.getState().bind;
+    bind('loop.record', { kind: 'cc', channel: 1, number: 50 });
+    bind('loop.play', { kind: 'cc', channel: 1, number: 51 });
+    bind('loop.stop', { kind: 'cc', channel: 1, number: 52 });
+    const { useLoopStore, loopClear } = await import('@/app/looper');
+    handleMidi(cc(50, 127), 0);
+    expect(useLoopStore.getState().phase).toBe('armed');
+    handleMidi(cc(52, 127), 0);
+    expect(useLoopStore.getState().phase).toBe('idle');
+    handleMidi(cc(52, 0), 0); // release: nothing
+    expect(useLoopStore.getState().phase).toBe('idle');
+    loopClear();
+  });
 });

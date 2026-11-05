@@ -94,7 +94,7 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 ### 4.3a Kit list and rotation (left column)
 - Every kit in one scrolling list: playing kit marked with an `--accent` dot and `aria-current`; click loads; "local" badge for kits built on this machine. The current kit's name and description sit below the list (licence and author are in the About panel, §4.8).
 - While rotation runs (only then), a checkbox per kit ticks it for rotation; with none ticked, rotation uses every kit. Ticks persist. Ticking only the playing kit keeps rotation running on that kit until another is ticked.
-- Rotation controls above the list: `⟳ Rotate kits` toggle (pressed: `--accent` border and text, label "Rotating"), "every" select (10/15/30/60 s, 1/2/4/8 bars of 4/4, or 1/2/4 loop passes; loop-pass mode shows "Record a loop (L) to start" until a loop plays), and in bars mode a BPM input with a Tap button. While running, a 4 px `--accent` bar on `--bg-3` empties until the next switch (progress indicator, not decoration).
+- Rotation controls above the list: `⟳ Rotate kits` toggle (pressed: `--accent` border and text, label "Rotating"), "every" select (10/15/30/60 s, 1/2/4/8 bars of 4/4, or 1/2/4 loop passes; turning rotation on while a loop plays, or closing a loop while it rotates, selects "every loop pass"; loop-pass mode shows "Record a loop (L) to start" until a loop plays), and in bars mode a BPM input with a Tap button. While running, a 4 px `--accent` bar on `--bg-3` empties until the next switch (progress indicator, not decoration).
 - The controller encoder highlights a row (`--bg-3` fill, `--accent` outline at 60 %) and keeps it in view.
 
 ### 4.4 Mixer
@@ -119,7 +119,7 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 - Footer: encoder mode select, "Program change selects a kit" checkbox, "Clear all assignments".
 
 ### 4.10 Looper (row between the pads and the mixer)
-- One main button whose label is the next action: `● Record loop` → (armed) `Hit a pad to start…` with a dashed `--accent` border → (recording) `■ Close loop` with an `--err` border and a mono running time → (playing) `● Overdub` → (overdubbing) `Overdubbing: press to finish` with an `--err` border → (stopped) `▶ Play loop`. Key `L`; `Shift+L` stops/plays.
+- One main button whose label is the next action: `● Record loop` → (armed) `Hit a pad to start…` with a dashed `--accent` border → (recording) `■ Close loop` with an `--err` border and a mono running time → (playing) `● Overdub` → (overdubbing) `Overdubbing: press to finish` with an `--err` border → (stopped) `▶ Play loop`. Key `L`; `Shift+L` stops/plays. MIDI-learnable: record/close/overdub, play, stop, stop/play (one button), undo, clear; Play never restarts a loop that is already playing.
 - While a loop plays: a 4 px position bar (`--accent`, `--err` while overdubbing) and `■ Stop`; `↶ Undo` when there are overdub layers; `✕ Clear` whenever there is something to clear; the loop length and layer count in mono `--fg-2`.
 - With no loop: a "Length" select, "As played" or "Whole bars at N BPM" (the rotation tempo).
 

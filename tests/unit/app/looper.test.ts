@@ -4,6 +4,8 @@ import {
   installLooper,
   loopClear,
   loopMain,
+  loopPlay,
+  loopStop,
   loopStopPlay,
   loopUndo,
   looper,
@@ -168,5 +170,56 @@ describe('looper runtime', () => {
     expect(useLoopStore.getState().length).toBe(4_000);
     expect(looper.position(performance.now())).toBe(300);
     expect(useRotationStore.getState().tempoAnchor).toBe(looper.start);
+  });
+
+  test('separate Play and Stop buttons: Play ends a recording or restarts a stopped loop, never jumps while playing', async () => {
+    loopMain();
+    hitPad(KICK, 100, performance.now());
+    await vi.advanceTimersByTimeAsync(1_000);
+    loopPlay(); // closes the recording and plays
+    expect(useLoopStore.getState()).toMatchObject({ phase: 'playing', length: 1_000 });
+    await vi.advanceTimersByTimeAsync(400);
+    const start = looper.start;
+    loopPlay(); // already playing: no restart
+    expect(looper.start).toBe(start);
+    loopStop();
+    loopStop(); // stays stopped
+    expect(useLoopStore.getState().phase).toBe('stopped');
+    played = [];
+    loopPlay();
+    expect(played.map((p) => p.id)).toEqual(['kick']); // frame 0 at once
+
+    loopClear();
+    loopMain();
+    loopStop(); // cancels arming
+    expect(useLoopStore.getState().phase).toBe('idle');
+  });
+
+  test('turning rotation on while a loop plays switches kit after every loop pass', async () => {
+    useSettingsStore.getState().setRotation({ mode: 'seconds', seconds: 15 });
+    loopMain();
+    hitPad(KICK, 100, performance.now());
+    await vi.advanceTimersByTimeAsync(1_000);
+    loopMain(); // 1 s loop playing
+    startRotation();
+    expect(useSettingsStore.getState().rotation).toMatchObject({ mode: 'loops', loops: 1 });
+    await vi.advanceTimersByTimeAsync(0);
+    played = [];
+    await vi.advanceTimersByTimeAsync(2_000);
+    expect(played.map((p) => `${p.id}@${p.kit}`)).toEqual(['kick@kit-b', 'kick@test-kit']);
+  });
+
+  test('closing a loop while rotation runs on a timer moves rotation onto the loop passes', async () => {
+    useSettingsStore.getState().setRotation({ mode: 'seconds', seconds: 15 });
+    startRotation();
+    loopMain();
+    hitPad(KICK, 100, performance.now());
+    await vi.advanceTimersByTimeAsync(1_000);
+    loopMain();
+    expect(useSettingsStore.getState().rotation.mode).toBe('loops');
+    await vi.advanceTimersByTimeAsync(0);
+    played = [];
+    await vi.advanceTimersByTimeAsync(1_000);
+    expect(played.map((p) => `${p.id}@${p.kit}`)).toEqual(['kick@kit-b']);
   });
 });

@@ -1,5 +1,24 @@
 # Free acoustic drum kits (researched 2026-10-31)
 
+## Published kit set (2026-11-06, ADR-38)
+
+The app ships these seven kits (`public/kits`). Licences re-checked on 2026-11-06 against the source pages.
+Policy (owner's decision): publish a kit unless its terms explicitly or clearly restrict use or redistribution.
+Kits marked "no explicit licence" carry copyright risk (no licence is not a grant); remove one quickly if a
+rights holder objects.
+
+| Kit | Licence status | Evidence |
+|---|---|---|
+| Muldjord (DrumGizmo) | CC BY 4.0 | drumgizmo.org kit page; credit "Drum samples provided by DrumGizmo.org" |
+| ShittyKit (DrumGizmo) | CC BY 4.0 | drumgizmo.org kit page; author Sardonicus |
+| Hard Trap, Bounce | CC0 1.0 | Boochi44/free-drum-samples README (no LICENSE file) |
+| Roland TR-808 | No explicit licence from the author | Michael Fischer's readme: "absolutely free"; tidalcycles/sounds-tr808-fischer adds a CC0 file without saying who applied it |
+| SM Drums | No explicit licence from the authors | "Public Domain" label on sfzinstruments.github.io only; authors' site and repo have no licence text |
+| TR-909 Detroit | No licence terms found (highest risk) | F9 Audio free download; source page now 404; royalty-free packs usually forbid redistribution |
+
+Kept local only: NI · BB (Native Instruments, personal use only: explicitly restricted). Removed from the app:
+Black Pearl, Virtuosity Jazz, Big Rusty Rock (recipes kept, marked local).
+
 Shortlist for a self-built pad sampler. All verified against the source pages or by downloading.
 
 ## Tier 1: use these
@@ -46,8 +65,8 @@ Built as local-only kits (`"local": true` recipes). One sample per drum unless n
 | LinnDrum LM-2 | oramics/sampled (from machines.hyperreal.org) | Public domain per oramics | Soft/medium/hard snare and side stick layers; 5 toms |
 | Maestro Rhythm King MRK-2 | oramics/sampled (from submodern.com) | Public domain per oramics | |
 | Roland TR-505 | oramics/sampled (from progsounds.com) | Public domain per oramics | Full kit incl. ride and crash |
-| Roland TR-808 | oramics/sampled (Michael Fischer recordings) | No licence stated: local only | 16 tone/decay variants per voice; one chosen |
-| TR-909 Detroit / SP-1200 | oramics/sampled (F9 Audio free kits) | Royalty-free, not open: local only | |
+| Roland TR-808 | oramics/sampled (Michael Fischer recordings) | No licence stated: published 2026-11-06 (see above) | 16 tone/decay variants per voice; one chosen |
+| TR-909 Detroit / SP-1200 | oramics/sampled (F9 Audio free kits) | Royalty-free, terms not found: Detroit published 2026-11-06 (see above), SP-1200 local | |
 | Hard Trap, Bounce, Soulful Vintage | [Boochi44/free-drum-samples](https://github.com/Boochi44/free-drum-samples) | CC0 | 808 bass on low tom pads |
 
 "Public domain per oramics" relies on that repository's metadata; confirm with the original sources before publishing.

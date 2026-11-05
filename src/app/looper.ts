@@ -5,7 +5,7 @@ import { barMs } from '@/kits/rotation';
 import { useSettingsStore } from '@/state/useSettingsStore';
 import { getRuntime } from './runtime';
 import { hihat, onHihatChange, onHit, playLoopHihat, playLoopHit } from './controller';
-import { alignRotationTo } from './rotation';
+import { alignRotationTo, followLoop } from './rotation';
 
 /**
  * Loop runtime: feeds live hits into the Looper and plays the loop back with a look-ahead
@@ -96,6 +96,7 @@ function closeLoop(now: number) {
   if (looper.close(now, bars ? { barMs: bar } : {})) {
     startPlayback(now);
     if (bars) alignRotationTo(looper.start); // bar-mode rotation lands on the loop's "1"
+    followLoop(); // rotation already running: one kit per loop pass from now on
   }
 }
 
@@ -164,20 +165,31 @@ export function loopMain(now: number = performance.now()): void {
   sync();
 }
 
-/** Stop / play: stops a playing loop, restarts a stopped one from frame 0, ends a recording without playing it. */
-export function loopStopPlay(now: number = performance.now()): void {
+/**
+ * Play (a controller's Play button): a stopped loop restarts from frame 0; a recording closes and
+ * plays; an overdub ends and keeps playing. Already playing: nothing, so a stray press never jumps.
+ */
+export function loopPlay(now: number = performance.now()): void {
   if (looper.phase === 'stopped') {
     looper.play(now);
     startPlayback(now);
-  } else if (looper.phase === 'recording') {
-    closeLoop(now);
-    stopPlayback();
-    looper.stop();
-  } else {
-    stopPlayback();
-    looper.stop();
-  }
+  } else if (looper.phase === 'recording') closeLoop(now);
+  else if (looper.phase === 'overdub') looper.toggleOverdub();
   sync();
+}
+
+/** Stop: stops playback (the loop is kept), ends a recording without playing it, cancels arming. */
+export function loopStop(now: number = performance.now()): void {
+  if (looper.phase === 'recording') closeLoop(now);
+  stopPlayback();
+  looper.stop();
+  sync();
+}
+
+/** One-button stop/play (Shift+L): stops a playing loop, plays a stopped one. */
+export function loopStopPlay(now: number = performance.now()): void {
+  if (looper.phase === 'stopped') loopPlay(now);
+  else loopStop(now);
 }
 
 export function loopUndo(): void {

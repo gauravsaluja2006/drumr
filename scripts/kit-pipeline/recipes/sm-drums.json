@@ -1,11 +1,10 @@
 {
   "id": "sm-drums",
   "order": 20,
-  "local": true,
   "name": "SM Drums",
   "description": "Deeply sampled collector kit (up to 64 velocity layers in the source). Stereo mix, four toms, two rides.",
   "license": {
-    "name": "Public domain (verify)",
+    "name": "Public domain (per SFZ Instruments; no licence text from the authors)",
     "url": "https://sfzinstruments.github.io/drums/sm_drums"
   },
   "attribution": {

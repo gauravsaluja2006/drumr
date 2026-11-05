@@ -112,6 +112,19 @@ function fire(at: number) {
   schedule(at);
 }
 
+function loopIsPlaying(): boolean {
+  return looper.phase === 'playing' || looper.phase === 'overdub';
+}
+
+/** A loop just started playing while rotation runs: switch on its passes from now on. */
+export function followLoop(): void {
+  if (!useRotationStore.getState().running) return;
+  const s = useSettingsStore.getState();
+  if (s.rotation.mode !== 'loops')
+    s.setRotation({ mode: 'loops', loops: 1 }); // reschedules via subscription
+  else scheduleLoops();
+}
+
 /** Bar-mode rotation follows a newly recorded loop: its first hit becomes the downbeat. */
 export function alignRotationTo(downbeat: number): void {
   useRotationStore.setState({ tempoAnchor: downbeat });
@@ -131,6 +144,8 @@ function restartGrid() {
 
 export function startRotation(): boolean {
   if (useRotationStore.getState().running || !canRotate()) return false;
+  // With a loop playing, rotation follows it: one kit per loop pass, switched on the downbeat.
+  if (loopIsPlaying()) useSettingsStore.getState().setRotation({ mode: 'loops', loops: 1 });
   useRotationStore.setState({ running: true });
   restartGrid();
   preloadNext();

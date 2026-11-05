@@ -24,7 +24,9 @@ export const ACTION_LABELS: Record<ControlAction, string> = {
   'layout.next': 'Next pad layout',
   'kitList.load': 'Load highlighted kit',
   'loop.record': 'Loop: record / close / overdub',
-  'loop.stopPlay': 'Loop: stop / play',
+  'loop.play': 'Loop: play',
+  'loop.stop': 'Loop: stop',
+  'loop.stopPlay': 'Loop: stop / play (one button)',
   'loop.undo': 'Loop: undo last overdub',
   'loop.clear': 'Loop: clear',
   'mix.master': 'Master volume',
@@ -158,7 +160,7 @@ export function MidiControls({ onClose }: { onClose: () => void }) {
       </p>
       <Section
         title="Buttons"
-        hint="Fire when pressed. Notes or CCs both work."
+        hint="Fire when pressed. Notes or CCs both work. Maschine's Rec, Play and Stop fit the three Loop actions."
         actions={BUTTON_ACTIONS}
         learning={learning}
         setLearning={setLearning}

@@ -22,7 +22,7 @@ import { useMappingStore } from '@/state/useMappingStore';
 import { useSettingsStore } from '@/state/useSettingsStore';
 import { useUiStore } from '@/state/useUiStore';
 import { tapRotationTempo, toggleRotation } from './rotation';
-import { loopClear, loopMain, loopStopPlay, loopUndo } from './looper';
+import { loopClear, loopMain, loopPlay, loopStop, loopStopPlay, loopUndo } from './looper';
 
 /**
  * Controller buttons, knobs and encoders → app actions (kit, rotation, mixer, velocity).
@@ -102,6 +102,10 @@ function press(action: ControlAction) {
       return nextLayout();
     case 'loop.record':
       return loopMain();
+    case 'loop.play':
+      return loopPlay();
+    case 'loop.stop':
+      return loopStop();
     case 'loop.stopPlay':
       return loopStopPlay();
     case 'loop.undo':

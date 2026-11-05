@@ -1,7 +1,6 @@
 {
   "id": "dg-shittykit",
   "order": 13,
-  "local": true,
   "name": "ShittyKit (DrumGizmo)",
   "description": "Cheap, characterful Stagg kit in a raw room. Close mics, overheads and M/S room.",
   "license": {
@@ -9,7 +8,7 @@
     "url": "https://creativecommons.org/licenses/by/4.0/"
   },
   "attribution": {
-    "author": "DrumGizmo team",
+    "author": "Sardonicus \u00b7 Drum samples provided by DrumGizmo.org",
     "url": "https://drumgizmo.org/wiki/doku.php?id=kits:shittykit"
   },
   "source": {

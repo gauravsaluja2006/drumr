@@ -13,6 +13,8 @@ export const BUTTON_ACTIONS = [
   'layout.next',
   'kitList.load',
   'loop.record',
+  'loop.play',
+  'loop.stop',
   'loop.stopPlay',
   'loop.undo',
   'loop.clear',

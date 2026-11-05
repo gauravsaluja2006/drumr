@@ -1,0 +1,1932 @@
+{
+  "recipe": "sm-drums",
+  "kitGainDb": -5.49,
+  "samples": [
+    {
+      "output": "samples/kick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/01_Kik_Stereo_RR1.wav",
+          "sha256": "df313d5a458163ead4c5ca447609d48d7e1395582585504c049c8faea6dc716b"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/01_Kik_Stereo_RR2.wav",
+          "sha256": "654912b0a50df40c78c3f95e59201e229cf49f94e83523fa6d9637d93e8505fe"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/05_Kik_Stereo_RR1.wav",
+          "sha256": "5c225c6972cdd016157092080eeb377967ab711ee2af8a96f9e91e3905c50a35"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/05_Kik_Stereo_RR2.wav",
+          "sha256": "1b09c900d7423c5c59d443cb9a09b4f2baf97fcbcd856687ef2fc0ca17ae2881"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/10_Kik_Stereo_RR1.wav",
+          "sha256": "49f8aecb1bfb62b9c10ff7640047006d211059c0274f32bf55eeb992bf17ca8b"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/10_Kik_Stereo_RR2.wav",
+          "sha256": "adb1045f328a76050048cc48d69dabb3af43152027f27e368973e395d4c22d4b"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/14_Kik_Stereo_RR1.wav",
+          "sha256": "dd863f16c7774304a9768f127c410537b9842d8e59d97a41090f7c3010408db0"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/14_Kik_Stereo_RR2.wav",
+          "sha256": "3047205826928822c9da5513f0df575345808a6c3183c87f29b5d2546b58e15f"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/19_Kik_Stereo_RR1.wav",
+          "sha256": "3e9dff4dfcf373b80c497f869857b337e7c5732c8ac9fde36484fbeb78d28a07"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/19_Kik_Stereo_RR2.wav",
+          "sha256": "b622bef9fc77c6e0895201ec528a7f5b5fb31fd7db328312906326c2b14040e2"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/23_Kik_Stereo_RR1.wav",
+          "sha256": "94b3e3d165ff3f04ad3199d434c3c4043693998d9fef82c66724bd689aff777e"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v6_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/23_Kik_Stereo_RR2.wav",
+          "sha256": "c17a027c2713c2a471cb44399ffa98d41a1ae3c61e144f610bebfb3547a8dd5d"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/28_Kik_Stereo_RR1.wav",
+          "sha256": "e7f02e10c058500c2ae482d8db23bcc2c13a9c7c9191e81c1ad36a437ccb3c66"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v7_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/28_Kik_Stereo_RR2.wav",
+          "sha256": "959f4d7ecb2b92804a02615b3fc587b18a99acf83352406f5c4beff09fc32e69"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR1/32_Kik_Stereo_RR1.wav",
+          "sha256": "93f97eacc15d15a99221f9a4f3c67984264c7e142b646bd6c23c62a26bca4aac"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v8_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Kik_Stereo/RR2/32_Kik_Stereo_RR2.wav",
+          "sha256": "d006a000a6be2f1a1a5ab11e1a91e58bc0c27238e2ebbd5bf4e2d5ae84aac467"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/01_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "ff363dd88172f8c52279f41f3df9afd45119758fbc0a4ad340b5bc3944a4e74a"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/01_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "2bc1fe9dbc97064d4e5c48cc3f43bd89edad78b17d2a23967f3d584a001d6fc8"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/06_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "88b722e9fd3340f95503373b4487ded1bcf76dd26cec3478cd38f65a955d9e39"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/06_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "3d54c469ed6f507a804556048f839ba9c4e8091f2c91bee19e5517262971381c"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/10_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "08ce0d8300b4a427ea30a922708219bf13db34d85147c1701df2b9bfc5de4c31"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/10_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "5b72ff7665445b604838702849476230c9530df489e390be23bfa01e0ce467d4"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/15_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "cc686919f7889ef636e33114201f0f86780ee3b5aec46134a74b4adbd7548e95"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/15_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "f6c1d7b8c248d4cb72238a9d07e4faedbfd0a22b38cbc1750c010969d181d8a7"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/20_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "4a623bf748fd5d698455f56b054a3368b62b411a8837972cb7ebb5ba5f889293"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/20_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "b83921ec93a2ce94a9b88351a06cfa17edb8a4050be9ee18c65824cc414edbab"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/25_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "313fb034e1df38538d4e07193ff2443a3d743f49c2cafa31f7f38e6085a24e46"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v6_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/25_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "13e3bf3e7f29aafda7b58aa950e4857c0a63bb188a11e03c75d8c526c674db04"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/29_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "c4a84500903ca6558beabea0d17862b0d69fb40e5a07b72009f13e777e00c165"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v7_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/29_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "3186f783285917505c33eaddba01b561e6dbdd423503942b65889613b8f720bb"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR1/34_Snare65_Reg_Stereo_RR1.wav",
+          "sha256": "a17c4d2330fa441a3e8d7e25139a3d202bb161faa4aa47b605ab770cebf695cc"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v8_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR2/34_Snare65_Reg_Stereo_RR2.wav",
+          "sha256": "52a76f3b60952bb71b10b49b79fb850417dea155218fe2f63db4b49f2d8e7031"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR1/01_RimShot_Stereo_RR1.wav",
+          "sha256": "121f5b0bbb075662692fa4be4da6b8b131410c26d0b373e0864757b43062d5bc"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR2/01_RimShot_Stereo_RR2.wav",
+          "sha256": "7a29a7e83bd4384dbe2ca342d89435f6e5a7e8d0293cfd86a48cebadf2e6a894"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR1/03_RimShot_Stereo_RR1.wav",
+          "sha256": "8fc3347812730211e8452271df5e23d8e8c7818f9dbeca6e3454371d7624dfea"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR2/03_RimShot_Stereo_RR2.wav",
+          "sha256": "c5c7c0580d02874f4408f4079c78765110334c3d6af7471541f87d4706c0912b"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR1/06_RimShot_Stereo_RR1.wav",
+          "sha256": "e0a0d62c24aa8cbf654e5f3a1dbc0f9e72c2f2b616cd596f56e0209d0a688a74"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR2/06_RimShot_Stereo_RR2.wav",
+          "sha256": "4b5550dfe9085b757021eaa858d78af6c173810a23163c30470cc1690358cf0c"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR1/08_RimShot_Stereo_RR1.wav",
+          "sha256": "dd0f2917d16853e85a516f277ab5b4fb09b50ae10164670b14793c83d95017bb"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR2/08_RimShot_Stereo_RR2.wav",
+          "sha256": "eaf04d046916eab5f35cc8a91924f1b443fdab8a4e712f24c854877faa0ab26e"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR1/10_RimShot_Stereo_RR1.wav",
+          "sha256": "1945b578d87721421e207405dafb4c0260dcaf6a38d628fdd96ac2b328976ba2"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/RimShot_Stereo/RR2/10_RimShot_Stereo_RR2.wav",
+          "sha256": "c90c09ed29cd88b46df33635131898053c0ada46a23e36d1ee95155f538f317e"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR1/01_SideStick_Stereo_RR1.wav",
+          "sha256": "66742437ebe8ad67cec55dda32c583abc20303e93bb48336eed1c2e53ff9d027"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR2/01_SideStick_Stereo_RR2.wav",
+          "sha256": "68a67eb58062e5bf082224ce01a52a4c5fe60a5be1ee05035e5e38eaa6b079f9"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR1/08_SideStick_Stereo_RR1.wav",
+          "sha256": "0793f92d3dd6019e0c4d5523fcb4aa32214068c343581e2e15749a1d39b02b6a"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR2/08_SideStick_Stereo_RR2.wav",
+          "sha256": "495c15b3d85b413b570b87032f17efcc5e026be603fa472f312741505cdfbd75"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR1/15_SideStick_Stereo_RR1.wav",
+          "sha256": "9f0de1038f6e552f9122359a28dad8a0d8a8153739c3d1cabb62b1233ab0d188"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR2/15_SideStick_Stereo_RR2.wav",
+          "sha256": "e0649598c5325a409e50c38c4eb5c5ee73d1e2232c6b555b4eaf7cfc6b32939d"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR1/22_SideStick_Stereo_RR1.wav",
+          "sha256": "2166343f2bb7d21890bb41c3586bebc290e899c9d5dda37f9c6e57a448ecaa8b"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR2/22_SideStick_Stereo_RR2.wav",
+          "sha256": "9f6be84fd2c7a0586865980f9c06d6744d22af35565e56f33aa8165e4b102afa"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR1/29_SideStick_Stereo_RR1.wav",
+          "sha256": "93515ef4d94705f897fb43fb6a480601c27199e31a76dc0b88cff7ddf1504d5b"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/SideStick_Stereo/RR2/29_SideStick_Stereo_RR2.wav",
+          "sha256": "0aed35ae064119865e71297b132b9d21bf2cc0f835fe349850617f5a566c7695"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR1/01_Tom4_Stereo_RR1.wav",
+          "sha256": "991235c620b44139f4a58cc9d18e92597a9d53d4372a2456a61bfe976186d166"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR2/01_Tom4_Stereo_RR2.wav",
+          "sha256": "e0848fd903c13560a00ca65fe4eb3c835e5c64b6af5e8218479ba5960d29e571"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR1/07_Tom4_Stereo_RR1.wav",
+          "sha256": "e011f24fd8e6467516ccb34276c98de8ef8eacf0f0576027300495c8426711d1"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR2/07_Tom4_Stereo_RR2.wav",
+          "sha256": "c05024403760ef6799dc7a8487344356269ef5a3fabcb010e937c08270428e3b"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR1/14_Tom4_Stereo_RR1.wav",
+          "sha256": "72dc0cd2199333363328fddb22b90f50e6b73ef1f0f988e25cd3fc2a480aedf3"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR2/14_Tom4_Stereo_RR2.wav",
+          "sha256": "ad1e36f4f8a47a312d2bf26e5cb27d58bf5de1a29c793c1d2a97525f4a596fac"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR1/20_Tom4_Stereo_RR1.wav",
+          "sha256": "ee7b2c6dccd4558ca548188a662f4b598ff989101dc913afa4d304ed0db4dad8"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR2/20_Tom4_Stereo_RR2.wav",
+          "sha256": "9f440a0bd5e851bc2618f826dcad624a9f3754c488b0139e055d9a9eddb8e9c2"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR1/26_Tom4_Stereo_RR1.wav",
+          "sha256": "fb6b1e53b1197e8a67579289054d6eaf88d29383fcf69bdda8313007f690d9a2"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom4/RR2/26_Tom4_Stereo_RR2.wav",
+          "sha256": "d37c661c4ed79305da286d79a947a45cd6a258cfc075549b34f5964a54b53147"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR1/01_Tom3_Stereo_RR1.wav",
+          "sha256": "0dd386865734721384e8e0129da024206ad06dbe529e629126ba0a62bd7ab588"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR2/01_Tom3_Stereo_RR2.wav",
+          "sha256": "cdc3852d65db223096d9ab3ac10544b7c24a70419210626d9bcb2ddb34ed0cc8"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR1/07_Tom3_Stereo_RR1.wav",
+          "sha256": "84d61c3e2bfd68e3d2974b7b9781dcae4beee4b642c1c6590181a3bc035d6aec"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR2/07_Tom3_Stereo_RR2.wav",
+          "sha256": "22142072b3ea0de424fadb4ac0cffce5698945a860a60051ce2ac2ab9d44de29"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR1/14_Tom3_Stereo_RR1.wav",
+          "sha256": "7162f11e71a88a64c1dd882afb3c8b7c61516579bbf8ef8b6ff7f8e03f543e3a"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR2/14_Tom3_Stereo_RR2.wav",
+          "sha256": "1a74cb7dcdf8ccc5e68e3a09a05eb81945ae0f1a8114230792600666d12bf784"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR1/20_Tom3_Stereo_RR1.wav",
+          "sha256": "e89677bd144b1a6674c7a0c25ca42c43b104433ad7144540539bbbbb2b933602"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR2/20_Tom3_Stereo_RR2.wav",
+          "sha256": "cffe1495bf996c85458d70fde84304d85faea6c1d4a00a567292d6602892dedd"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR1/26_Tom3_Stereo_RR1.wav",
+          "sha256": "a276610490d09f842552cbeb391b015200144b65902d556137db7fd9a1a8241b"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom3/RR2/26_Tom3_Stereo_RR2.wav",
+          "sha256": "70f9b08ff286800c2355db5ae23955ebb4b64c7d7746524db9951b94cd5236ef"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR1/01_Tom2_Stereo_RR1.wav",
+          "sha256": "0908c305058ea2849499acf35c20e3a158e7780485c008f5d6684148f32ece73"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR2/01_Tom2_Stereo_RR2.wav",
+          "sha256": "b176efbda90ade8c227495baa021444c853702b8d7de4acbf50d5368080366da"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR1/08_Tom2_Stereo_RR1.wav",
+          "sha256": "51c27a3d293976c11efa4eb20956dfc0827b0d72051168c04267f87fbb0394ec"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR2/08_Tom2_Stereo_RR2.wav",
+          "sha256": "b33318905c313ba54259f7b67913afbe14454f211c85ccdfed47879d961ac7d6"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR1/16_Tom2_Stereo_RR1.wav",
+          "sha256": "cc6cf24680975a72ef4b03b1a30478c01fa84db32109aaf5f6a6cc2f4f89e200"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR2/16_Tom2_Stereo_RR2.wav",
+          "sha256": "33b1810159359cfa82dcf726253fe3be9b8a4614d4c37a87205cc457da142499"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR1/23_Tom2_Stereo_RR1.wav",
+          "sha256": "409ce5da32164ab58cacd1848ce946fcdb8927283620ae0912e7f349a65e4a70"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR2/23_Tom2_Stereo_RR2.wav",
+          "sha256": "adbf1d8eef03efe9f3e5a5407d3d3cbdb0b03f4808b91c85ad677fb395457aaa"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR1/30_Tom2_Stereo_RR1.wav",
+          "sha256": "5b6d1162e578d9dac6fceec13b1d42147c01b5e11a9922853f55fcde7118354f"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom2/RR2/30_Tom2_Stereo_RR2.wav",
+          "sha256": "50132862f419c288214247f26413ea86920d01ef64bdcc8a4da6bb5fbe5cfdfa"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR1/01_Tom1_Stereo_RR1.wav",
+          "sha256": "7c6866e75d1850fa980c381231070d3f3ff093325eed6ef772c63f7ecc65a2a2"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR2/01_Tom1_Stereo_RR2.wav",
+          "sha256": "e38174533bb455b816e115d69891d5d266e50b9799a1b06a5bd2d6e64f00487f"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR1/07_Tom1_Stereo_RR1.wav",
+          "sha256": "65bab3ea1a509f6b8a6cb3f6b16aefdcc4ade46d5ef74598df0f70798cabdc52"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR2/07_Tom1_Stereo_RR2.wav",
+          "sha256": "1eb83c28ab4b8aeb5196c16fb0bd0bdec65386609f8ce9a433287e369f70bc1a"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR1/13_Tom1_Stereo_RR1.wav",
+          "sha256": "f23110d1d25eebabe679ca2a56df6a5131f00b57a4f6acb9214b8d80b9d35eaf"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR2/13_Tom1_Stereo_RR2.wav",
+          "sha256": "6a16b539a289e8fa8ad55544dacb20d72fcd8e4c8194054b604a1999830b77c8"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR1/19_Tom1_Stereo_RR1.wav",
+          "sha256": "c2a229e7f31be82dac6cf11ab6974853bda466150a4df103f5363769ed15abaf"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR2/19_Tom1_Stereo_RR2.wav",
+          "sha256": "2907841a82957e0ab203e987ed2feba6970953382606c4687580c530dd8a9f7f"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR1/25_Tom1_Stereo_RR1.wav",
+          "sha256": "5a201aeee4177b847c817a6790c92f59ee0a7c05610f514f893629224d0e16c3"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMDrum Stereo (Samples)/Toms_Stereo/Tom1/RR2/25_Tom1_Stereo_RR2.wav",
+          "sha256": "1276ba6801dae09e459e137fe7363fbaa1be499762566cd90a0e05d64ddc0dd1"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR1/01_Hat_Tight_Cnt_RR1.wav",
+          "sha256": "11499229118c7c3d4ea5545918dfa0a3956f71dbb1eaa5952c5f9bdd5d2a5b5c"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR2/01_Hat_Tight_Cnt_RR2.wav",
+          "sha256": "73d332d1f480d0ed9cf988d55549bc9e48f55c9de98835ff1166266e50ec3de2"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR1/11_Hat_Tight_Cnt_RR1.wav",
+          "sha256": "43e4e1f5772e940a0043b7a16bf8f1c2d519c68fa6ffc034ff862f2ae6874624"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR2/11_Hat_Tight_Cnt_RR2.wav",
+          "sha256": "e3075f254efd289b2f0f3cda0cc92a4c08d82f975321d075c9d61d6b868ff75a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR1/20_Hat_Tight_Cnt_RR1.wav",
+          "sha256": "0b3d89d084060a1378eb745cfff87e2d31a83dd5612200f9817c0098f50a6ba3"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR2/20_Hat_Tight_Cnt_RR2.wav",
+          "sha256": "1170256dd128f158925c19c91837a49873352c7c5f4921ceb9e918901d652d22"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR1/30_Hat_Tight_Cnt_RR1.wav",
+          "sha256": "e942bf79a0cee1aac2aff166ca9b92be60fc21af467808e0fe419cf6c8f2a15a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR2/30_Hat_Tight_Cnt_RR2.wav",
+          "sha256": "8f9e6ba14b259aa1e875676d3e814bdfcc7eefa8fb2279b69659b6b718db31bd"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR1/39_Hat_Tight_Cnt_RR1.wav",
+          "sha256": "dcbfae159585bf3b3d0a44b9a209cbe35f4ffdc187e30fa7a78f2627af6d3b8f"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR2/39_Hat_Tight_Cnt_RR2.wav",
+          "sha256": "5ab57e24342eeef40c1e0a512a84557944ceb058d9188681ffa9828562dc3952"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR1/49_Hat_Tight_Cnt_RR1.wav",
+          "sha256": "66368ae0149b91928b7ea516a0abb7c2082a9972748be46f674d3ece67d47a8d"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v6_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR2/49_Hat_Tight_Cnt_RR2.wav",
+          "sha256": "55adaed3b9772a613f1979ced0e8d1b681e8f9ae24d54255219e85eba26ff6e9"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR1/01_Hat_Loose_Cnt_RR1.wav",
+          "sha256": "96ec88f2bf2dcc9374c4c79588c72fc5b95f9c56de665ddb08c6cd05bfc84422"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR2/01_Hat_Loose_Cnt_RR2.wav",
+          "sha256": "4bb0c887d9b5bd1a64b505effeb3e673816c668235e9c0599a27a2dd80e7047d"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR1/11_Hat_Loose_Cnt_RR1.wav",
+          "sha256": "27becec5a6c2c766e02c83f6368d8570ebe29647f8fad6e01a65de06d86d9662"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR2/11_Hat_Loose_Cnt_RR2.wav",
+          "sha256": "de15b9cd5539bce45810484abc31810886ebe6b8b8c3953e3918a20b8abdc683"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR1/21_Hat_Loose_Cnt_RR1.wav",
+          "sha256": "6ce55597fa9565e6853eedc2e0ee9f39a160da90eb5d02dae570b0bc95910833"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR2/21_Hat_Loose_Cnt_RR2.wav",
+          "sha256": "1347938f8ea7268ba635ef39bdde69326e2873c18185694c9599378fe0d03e28"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR1/30_Hat_Loose_Cnt_RR1.wav",
+          "sha256": "83c3f58f8c1487c92d01d631cf3b82989f68cfa421123dcb6ccb78d963e0142b"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR2/30_Hat_Loose_Cnt_RR2.wav",
+          "sha256": "1545c610d866ae8b69a1b86ff3afcf854debf9e4ede8a1465b884ee4cd554f27"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR1/40_Hat_Loose_Cnt_RR1.wav",
+          "sha256": "10fdcd1377d1f6e91eb5ec71fa444d6f0a068074153e9008f67a904e9e9613dc"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_half_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/02 Hat, Loose/RR2/40_Hat_Loose_Cnt_RR2.wav",
+          "sha256": "ad1628b82beba0695879f8d29108a094a5b725231d98fe686f6bb3d0785a95c8"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR1/01_Hat_Open_RR1.wav",
+          "sha256": "4435178ee3ee327ce60e716851c53dc02b7e06c3e664dc9c528733a700a48bf5"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR2/01_Hat_Open_RR2.wav",
+          "sha256": "3ebee0c292771fba291cbcf6c86eb787010029d4e326c34d4820568313e5312c"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR1/04_Hat_Open_RR1.wav",
+          "sha256": "84160a2d48a7347455a65a704af0ae9782fad1b4ba17e90be900752c5398d3fe"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR2/04_Hat_Open_RR2.wav",
+          "sha256": "405b2774980423db4f40cd12699ce1b060b96961f35ed22a4922374894679e04"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR1/08_Hat_Open_RR1.wav",
+          "sha256": "31d771409228a351dfc3019398e6ebcf3a5d24e4c6d8bf966390c3d34e2aad66"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR2/08_Hat_Open_RR2.wav",
+          "sha256": "bec9d75a11b8550e5bd2420d88e91337306defaf958af1c3cecdf550316cc070"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR1/11_Hat_Open_RR1.wav",
+          "sha256": "5ad32c218b730e3d6bc1cf98eb12f94b47d42463d9af6068afd1c0b1b576c50b"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR2/11_Hat_Open_RR2.wav",
+          "sha256": "3f4b1b43dcdb0ac73a3a12acbacd39c9f9710e7ed7325125794afd3760d43671"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR1/14_Hat_Open_RR1.wav",
+          "sha256": "7d1ca6140d0577952785e41674c8ca220de5e50924e2ece7246c0e32fd41b312"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/03 Hat, Open/RR2/14_Hat_Open_RR2.wav",
+          "sha256": "113d3226f2d173fe4ed0e3b84dcdb97206ca9174d4e92de1e7bbc83498f4e8c9"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR1/01_Hat_Foot_RR1.wav",
+          "sha256": "f9d7abe501faac982d9f2b81ecfd2dd35e571e358e67b9d8fe1d5a6e03f23650"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR2/01_Hat_Foot_RR2.wav",
+          "sha256": "121f574e9dbee33e6d0ebff682d0de260f71a88c622dbfe3a3857c279aff45ce"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR1/09_Hat_Foot_RR1.wav",
+          "sha256": "3f5e0e0b755999029e0f83c6b73d26c6da165712afb7fd5609697d6658c44ae5"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR2/09_Hat_Foot_RR2.wav",
+          "sha256": "a24e5c1bfa5fb1c5ea36b95000c55ca1c06a885cdc9ec0f51563984e9ce58b2b"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR1/16_Hat_Foot_RR1.wav",
+          "sha256": "1449a9fd80e877308a0d21b2c88bd990a471789fe9e21a5707e4b022078e518b"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR2/16_Hat_Foot_RR2.wav",
+          "sha256": "d450ba0ed60978e8d70b19827547b102eba9e6852a30f6c742fb5a20fa12db4c"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR1/24_Hat_Foot_RR1.wav",
+          "sha256": "348e32ad682e1b2c9df92190e561c6a9687292cf534e4e9e1b6e5a1b7e5ada13"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR2/24_Hat_Foot_RR2.wav",
+          "sha256": "6bdfa79884d6f785ec85a7f3397acc899e68d9b96b213aeae021011d6bcd5676"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR1/31_Hat_Foot_RR1.wav",
+          "sha256": "a121a464bdc06ea4a50184fbc48d355a1da44cef6e442d5f842b8a1501572183"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/05 Hat, Foot/RR2/31_Hat_Foot_RR2.wav",
+          "sha256": "8812dd190402a976a058d120f774bf214d2819ed72de7e971c024e8f1cd90787"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR1/01_Hat_Foot_Open_RR1.wav",
+          "sha256": "1356c70c5c084443815fcef9d7c798e02f14c3355fc394f9430de882f96f0303"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR2/01_Hat_Foot_Open_RR2.wav",
+          "sha256": "5fb21dfedae82ccff564161775d8600514b748a22595faddb77dd93e6c596ecf"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR1/04_Hat_Foot_Open_RR1.wav",
+          "sha256": "0c0c24c5bdc9817daf2e77bdd36abf2d0d31b6fb314b5be4e6a8178889b4d0c5"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR2/04_Hat_Foot_Open_RR2.wav",
+          "sha256": "b85ef5a4b47a3e380350012b6b523c102905898ed1da61a1cc662bc7587d283f"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR1/08_Hat_Foot_Open_RR1.wav",
+          "sha256": "d4219f81c6e5d60f961ee67122242452b78d2583740bf97bbe4eab115eb0f42b"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR2/08_Hat_Foot_Open_RR2.wav",
+          "sha256": "e13b6b72f391bcb045e968c98f2c8e5ef13a71b8c7a760d787db9969602c09d2"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR1/11_Hat_Foot_Open_RR1.wav",
+          "sha256": "c5fd45fe5ba7d3465202428d7812ffef6c638f7fd5c30fd898d95de91deacb64"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR2/11_Hat_Foot_Open_RR2.wav",
+          "sha256": "760bdd4a994b4e6ab917a6ec4d84d08e0c7bc880230ff5d267a1bc34d0ca2d52"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR1/14_Hat_Foot_Open_RR1.wav",
+          "sha256": "4852855d93938e0dcdf342c107ed15b3adcdefca1649ccd21526bd0ed9d9fc49"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_splash_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/04 Hat, Foot, Open/RR2/14_Hat_Foot_Open_RR2.wav",
+          "sha256": "fdf9f03c50bc14bc5a7971d9e14b558704387df1995cdeeb4a88cabf55dccb59"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR1/01_Ride_20in_R_Cnt_Tip_RR1.wav",
+          "sha256": "2a9fffaf10984501d3bd9db8dab96bb5d97015c709e27523fe074c1d1532daab"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR2/01_Ride_20in_R_Cnt_Tip_RR2.wav",
+          "sha256": "d96ac82e6967b8df964b1084ddd2b833aac9d79453a99f774ce7da734c6a3072"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR1/07_Ride_20in_R_Cnt_Tip_RR1.wav",
+          "sha256": "0a691a5a0bf379c50581baf4b46d535e56992a2a2126bb4fb3d9c71f0daac950"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR2/07_Ride_20in_R_Cnt_Tip_RR2.wav",
+          "sha256": "9d0b0adb4431bef07eae3cfacf3cccabdb9d8982582f9d8018752cafe931464e"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR1/12_Ride_20in_R_Cnt_Tip_RR1.wav",
+          "sha256": "1567f493a57074b8d9a4c3e12ed45cecda7202d3e07bec91558129f564018ce1"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR2/12_Ride_20in_R_Cnt_Tip_RR2.wav",
+          "sha256": "8cf29cd80a43550b12fb37ba744166887c96546d63c66a5fb3653241a63876b7"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR1/18_Ride_20in_R_Cnt_Tip_RR1.wav",
+          "sha256": "359471b1bd9514335f559086ef2feaa4c83c1c9bc290a33042b06385bfd881f9"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR2/18_Ride_20in_R_Cnt_Tip_RR2.wav",
+          "sha256": "e2623e384626267c0c177cb40dc3f80f854bdaf862c19bf2cec14c87a4d90764"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR1/23_Ride_20in_R_Cnt_Tip_RR1.wav",
+          "sha256": "eb7f6b752e969c29aa1d07fc6cf46325df665d98b7c0f09c04010f8778d16744"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 (Samples)/RR2/23_Ride_20in_R_Cnt_Tip_RR2.wav",
+          "sha256": "5e3ba009d42895d1fac2a31b98821a02e2b6d25902f4ee6806ef42c4e85cee28"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR1/01_Ride_Bell_20in_R_Tip_RR1.wav",
+          "sha256": "918701ec3ae8ad36c1dc0b6b0fbc34a1dbab547ff55f7026e160f927f5c1aa3e"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR2/01_Ride_Bell_20in_R_Tip_RR2.wav",
+          "sha256": "43534cb5d783340d4ee93c7f708dcbb53f871d6c34068ee8793bfa7aafa8aa14"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR1/07_Ride_Bell_20in_R_Tip_RR1.wav",
+          "sha256": "4eb9506a3bdda6e364b01f01027b9bb7a1a870556091e9819d04d3636c23dbf2"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR2/07_Ride_Bell_20in_R_Tip_RR2.wav",
+          "sha256": "97ca888a324006b6ca7308ee3b3068976765fd332e451bb4c4d5d8de44e885a6"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR1/12_Ride_Bell_20in_R_Tip_RR1.wav",
+          "sha256": "2721e6fea423f434dc6265084da87d894818c7e52d7a1c490f026bf86ef6e918"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR2/12_Ride_Bell_20in_R_Tip_RR2.wav",
+          "sha256": "098023267a7d6d6db8e785ace3dc0892821bc012c8ed98869121a258d997c35a"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR1/18_Ride_Bell_20in_R_Tip_RR1.wav",
+          "sha256": "4c185c2d6e8d03013bda0c63106d8016c41700c01c7f025a2af4333ffca42098"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR2/18_Ride_Bell_20in_R_Tip_RR2.wav",
+          "sha256": "e058cee307e84a66a9e39df4d2fcc7b74a13b90e1bba14c919f269f99b7769d6"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR1/23_Ride_Bell_20in_R_Tip_RR1.wav",
+          "sha256": "865be70d8ab3d35861e513679f4a086461d7b06f077d293ab57737c9aafa85ad"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 20 Bell (Samples)/RR2/23_Ride_Bell_20in_R_Tip_RR2.wav",
+          "sha256": "e2a2f794382c269d8f5906d59174ec1b9712287e2f5a7b04483a50bab288f9fe"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR1/01_Ride_17in_L_Cnt_Tip_RR1.wav",
+          "sha256": "df7c6d12f8f9052d55ec61f0c0233a17d16935e1b7811903ff839b59a99e616b"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR2/01_Ride_17in_L_Cnt_Tip_RR2.wav",
+          "sha256": "deaf0028c0beadd2fa13f3034ff3ad7566d6caf09855065606a3c75de4b503fd"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR1/07_Ride_17in_L_Cnt_Tip_RR1.wav",
+          "sha256": "f548e907bbbd9243a674a095873cfaa45680dff72cdf231c72931a49ca145ea4"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR2/07_Ride_17in_L_Cnt_Tip_RR2.wav",
+          "sha256": "b90f86541c128fbf247353daf39affe97a772e7b7bca698d35b6a6669cfec9ff"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR1/13_Ride_17in_L_Cnt_Tip_RR1.wav",
+          "sha256": "e03d1a8f2729d8347c36d2c051c80da8f35378a0da8adad5aa315409cef94b4c"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR2/13_Ride_17in_L_Cnt_Tip_RR2.wav",
+          "sha256": "a52c6819318fa16969010e3aab723c7261ef055e94bc69269a6f8830c14fc1a3"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR1/19_Ride_17in_L_Cnt_Tip_RR1.wav",
+          "sha256": "6fe217ff740511de99ab9b46366d1fc892f6d4d0336e749d87ed4c1e83fd01e2"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR2/19_Ride_17in_L_Cnt_Tip_RR2.wav",
+          "sha256": "da924b7baa699544932cff3e45a591c441768e44208111fd547722d634e83c6f"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR1/25_Ride_17in_L_Cnt_Tip_RR1.wav",
+          "sha256": "5620453009c00d0549157653010192ffc7d6c8ca151c4be19868188eb431928b"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_edge_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Ride (Samples)/Ride 17 (Samples)/RR2/25_Ride_17in_L_Cnt_Tip_RR2.wav",
+          "sha256": "b805f30af30deb33910f6564ef3db86b8b6a90230436e8bff1d77675f2fb411b"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR1/01_Crash_16in_R_edge_RR1.wav",
+          "sha256": "ccf3b4202f4157cb649ea3628a378b2521f1afc83f69eb97013766adb1801a90"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR2/01_Crash_16in_R_edge_RR2.wav",
+          "sha256": "83574ee9bbf1554e5df70499c49b91987c8cdedad7029e572e8faa631959a16e"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR1/06_Crash_16in_R_edge_RR1.wav",
+          "sha256": "c46a69f18fc06077def2d000cc509d8eb1be2101ff1e321c5eb8a58182602157"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR2/06_Crash_16in_R_edge_RR2.wav",
+          "sha256": "1f495dc541e44d964b45650ab721fc9e965614b3ce5051cd6bdb561522bd0bf4"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR1/12_Crash_16in_R_edge_RR1.wav",
+          "sha256": "6237055c7bca654d0f0f0d36f6422b3db002e4236135cb2b2908a898ed0d9501"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR2/12_Crash_16in_R_edge_RR2.wav",
+          "sha256": "f5dc9a0b2f44f40e2e98817f1eb7699f23a005a0bf5fa9089ee329372795c89b"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR1/17_Crash_16in_R_edge_RR1.wav",
+          "sha256": "38bd96ae9188cca3f5cf4c2023c0b456bd6c47da974168b08d4b268fa2f8ff10"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR2/17_Crash_16in_R_edge_RR2.wav",
+          "sha256": "f7f94182350609bc9d3aa571d762e61cc2e9879e9170fe969be3187a2ca69366"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR1/22_Crash_16in_R_edge_RR1.wav",
+          "sha256": "cdb25836d7822d2a008f2a76ced0ea51100b4463f403b43c31ae4f65a4054412"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 16 (Samples)/RR2/22_Crash_16in_R_edge_RR2.wav",
+          "sha256": "dff216583ee24498b01d393d71b6cedc37f76cf5dacbe4a6926928ffafd2e9ac"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR1/01_Crash_17in_L_edge_RR1.wav",
+          "sha256": "7f23e7d8e43b990f29e75d665e24ce0eba17e06e97fdd186c7af43c26ba76655"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR2/01_Crash_17in_L_edge_RR2.wav",
+          "sha256": "b31506f64640ed5c16576381308f6b05a40ebec3e2bb30fc04af3b2d2f89751d"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR1/07_Crash_17in_L_edge_RR1.wav",
+          "sha256": "84a2fe389eca3a356535fdc0076305927c55278c1a02941de51dc54e501e830c"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR2/07_Crash_17in_L_edge_RR2.wav",
+          "sha256": "c8f615208164326bf6274c1d4e23a7ec1729ba04c2c8d342c4a684c33d2be98a"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR1/12_Crash_17in_L_edge_RR1.wav",
+          "sha256": "1a9f7186206aa7fbdd12e8961e78a0b51f24785cca89ce32649f2c6416ced281"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR2/12_Crash_17in_L_edge_RR2.wav",
+          "sha256": "51a2968267d62a58b01237be72ef54eb97963c0f1b8d1ad5214110bf5cab64e3"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR1/18_Crash_17in_L_edge_RR1.wav",
+          "sha256": "aa05680ebf5259e0f5c1a5ce136fcb6247c84409f35bd1a4f161bb53f585e1ac"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR2/18_Crash_17in_L_edge_RR2.wav",
+          "sha256": "b5172160321e344ec666b041a030f85ee54168e059f35d4692fe7b00b51f4756"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR1/23_Crash_17in_L_edge_RR1.wav",
+          "sha256": "991f9014c10582d96dd7309c58c4e2864bbb6228519a5d5af9c56617f0262047"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 17 (Samples)/RR2/23_Crash_17in_L_edge_RR2.wav",
+          "sha256": "806fa85c71222248e64d3eb9c6922bd5db67ef8ef2a3ae954c1fdee9e14fd52b"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR1/01_Crash_13in_R_edge_RR1.wav",
+          "sha256": "cb2af493f52d38e20d3782448cb016bf59245adb378e8799e05319d259c8411f"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR2/01_Crash_13in_R_edge_RR2.wav",
+          "sha256": "fdd25572d6a0146deddacad6a7c3fd9e1991934538f17e9a9a1ead18125a1eea"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR1/06_Crash_13in_R_edge_RR1.wav",
+          "sha256": "8f7743d336e134a4792e39140656beb918946f079fadfcb3982221b9e7bf4f70"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR2/06_Crash_13in_R_edge_RR2.wav",
+          "sha256": "1b6b550364d563e17d95b87edffacf4622180ff8e39dcdacf6b8986a6bb4fd5f"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR1/12_Crash_13in_R_edge_RR1.wav",
+          "sha256": "1307b320f9900b82e60ba781f9900ce3c91686d4f692c1c45706d8b62a362c1b"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR2/12_Crash_13in_R_edge_RR2.wav",
+          "sha256": "7590f8c41478fc277fe6f6496bd29ad71333674c0da2de6159490b76bb0d5c4e"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR1/17_Crash_13in_R_edge_RR1.wav",
+          "sha256": "68fff0cf77db91c09741d75d04fc9e875fc23e1a8b425d51fdb1ef12237fa300"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR2/17_Crash_13in_R_edge_RR2.wav",
+          "sha256": "b0b5355090d63d1f195b320a9db6efb3c192bb6b62ba3e6f417b435b7dd556d6"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR1/22_Crash_13in_R_edge_RR1.wav",
+          "sha256": "30a8c3161e99cfa8f781cd636bfd291f1a617b93274cdf2d40f97370c39500c8"
+        }
+      ]
+    },
+    {
+      "output": "samples/splash_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/Crash 13 (Samples)/RR2/22_Crash_13in_R_edge_RR2.wav",
+          "sha256": "33adf294be0078a0bae649de5d4b6f0b87d339323bfc648c10c62e10488bf4d8"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR1/01_China_RR1.wav",
+          "sha256": "2a81530f4f183957f8f982a817346b8a211cbb2196bac4402499ca3178ecf2db"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR2/01_China_RR2.wav",
+          "sha256": "b0a9bc5ec4564a6b939465470866ec5950d0d7c499c68b593840a143fc80d930"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR1/02_China_RR1.wav",
+          "sha256": "836fbb5d96452566b1ef33d4a3ffaf24e257b2099eeaae48a21aa82ec3443888"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR2/02_China_RR2.wav",
+          "sha256": "78c9937f465d4f9ad3a9e1938be8d63473f90195e621e906512d92627c8ad3b2"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR1/03_China_RR1.wav",
+          "sha256": "3ad23454c3573eb444407e1df200dc40f01178dbebda745a112af033ba2d505b"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR2/03_China_RR2.wav",
+          "sha256": "487d0ac0bb720098a9ec8f8b5579fb249aaa5fb262883c52b5df68fc7c53975e"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR1/04_China_RR1.wav",
+          "sha256": "2c14474b043bf05aa6a1050e4831840f551f7949536930c56b17ee17e9372531"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR2/04_China_RR2.wav",
+          "sha256": "4597142aff1da8d1d7eacc9596f572fb1a7a6f6b82689baf1f4a32affe880240"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR1/05_China_RR1.wav",
+          "sha256": "8eb32b8cfd359fddbbbee67921e86fb5ec0f0b0feaf52459345acd10356c052b"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "SMD Cymbals Stereo (Samples)/Crash (Samples)/China Cymbal (Samples)/RR2/05_China_RR2.wav",
+          "sha256": "8bfa06ced0b8343a66421d3b5e23d4daca697e8c6c56b1fa0780f10f8c05fb25"
+        }
+      ]
+    }
+  ]
+}

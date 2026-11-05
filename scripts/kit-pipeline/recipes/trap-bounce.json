@@ -1,7 +1,6 @@
 {
   "id": "trap-bounce",
   "order": 51,
-  "local": true,
   "name": "Bounce",
   "description": "Round 808s, tight kicks, snappy claps: West Coast bounce.",
   "license": {
