@@ -20,6 +20,11 @@ interface KitState {
   init: () => Promise<void>;
   loadAllManifests: () => Promise<void>;
   switchKit: (id: string) => Promise<void>;
+  /**
+   * Switch synchronously to a kit that is already decoded (preloaded). Returns false when it is not
+   * resident; use switchKit then. Lets loop playback change kit exactly on a pass boundary.
+   */
+  switchKitNow: (id: string) => boolean;
   /** Fetch and decode a kit in the background (no status or progress) so switching to it is instant. */
   preloadKit: (id: string) => Promise<void>;
 }
@@ -103,6 +108,19 @@ export const useKitStore = create<KitState>()((set, get) => ({
       if (token !== loadToken) return;
       set({ status: get().manifest ? 'ready' : 'error', error: e instanceof Error ? e.message : String(e) });
     }
+  },
+
+  switchKitNow: (id) => {
+    const { sampler, engine } = getRuntime();
+    const manifest = get().manifests[id];
+    const kit = manifest && sampler.peek(id);
+    if (!manifest || !kit) return false;
+    loadToken++; // cancels any switch still loading
+    engine.setKit(kit);
+    const available = new Set(manifest.articulations.map((a) => a.id).filter((a) => !kit.unavailable.has(a)));
+    set({ currentKitId: id, manifest, status: 'ready', error: null, available });
+    useSettingsStore.getState().setLastKitId(id);
+    return true;
   },
 
   preloadKit: async (id) => {

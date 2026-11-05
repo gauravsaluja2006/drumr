@@ -61,7 +61,7 @@ test('MIDI learn: a controller button switches kits, a knob sets master volume, 
   await dialog.getByRole('button', { name: 'Learn Master volume' }).click();
   await page.evaluate(() => window.__fakeMidi!.cc('mikro', 70, 0));
   await expect(dialog.getByTestId('binding-mix.master')).toHaveText('CC 70');
-  await dialog.getByRole('button', { name: 'Close' }).click();
+  await dialog.getByRole('button', { name: 'Close', exact: true }).click();
 
   await page.evaluate(() => window.__fakeMidi!.cc('mikro', 102, 127));
   await waitForKit(page, 'test-kit-b');

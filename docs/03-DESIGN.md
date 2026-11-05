@@ -66,7 +66,7 @@ Desktop (≥ 1024 px), single screen, no scrolling for the instrument (side colu
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-Left column 340 px (long kit names fit), right column 240 px, centre flexible. Pad grid is a square sized to `min(centreWidth, viewportHeight − 400)` on desktop (room for the mixer strip), `viewportHeight − 220` below.
+Left column 340 px (long kit names fit), right column 240 px, centre flexible. Pad grid is a square sized to `min(centreWidth, viewportHeight − 450)` on desktop (room for the looper row and mixer strip; `− 390` under 800 px tall), `viewportHeight − 220` below.
 
 Tablet (768–1023 px): side columns collapse into two tabs below the grid ("Kit & mixer", "Hi-hat & velocity"); the kit list sits in the first tab and the mixer there uses horizontal sliders.
 Phone (< 768 px): grid full width, status bar condensed to icons, columns become a bottom sheet. Keyboard hints hidden; touch is the input.
@@ -94,7 +94,7 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 ### 4.3a Kit list and rotation (left column)
 - Every kit in one scrolling list: playing kit marked with an `--accent` dot and `aria-current`; click loads; "local" badge for kits built on this machine. The current kit's name and description sit below the list (licence and author are in the About panel, §4.8).
 - While rotation runs (only then), a checkbox per kit ticks it for rotation; with none ticked, rotation uses every kit. Ticks persist. Ticking only the playing kit keeps rotation running on that kit until another is ticked.
-- Rotation controls above the list: `⟳ Rotate kits` toggle (pressed: `--accent` border and text, label "Rotating"), "every" select (10/15/30/60 s or 1/2/4/8 bars of 4/4), and in bars mode a BPM input with a Tap button. While running, a 4 px `--accent` bar on `--bg-3` empties until the next switch (progress indicator, not decoration).
+- Rotation controls above the list: `⟳ Rotate kits` toggle (pressed: `--accent` border and text, label "Rotating"), "every" select (10/15/30/60 s, 1/2/4/8 bars of 4/4, or 1/2/4 loop passes; loop-pass mode shows "Record a loop (L) to start" until a loop plays), and in bars mode a BPM input with a Tap button. While running, a 4 px `--accent` bar on `--bg-3` empties until the next switch (progress indicator, not decoration).
 - The controller encoder highlights a row (`--bg-3` fill, `--accent` outline at 60 %) and keeps it in view.
 
 ### 4.4 Mixer
@@ -117,6 +117,11 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 - Rows grouped as Buttons, Knobs, Encoder: action name, current assignment in mono (`CC 102`, `Note 40 · ch 2`, `—`), Learn button (pressed: dashed `--accent` border, text "Cancel"; the assignment cell reads "Move it…"; 10 s timeout), and a clear ✕.
 - A `--warn` line under a row whose assignment shadows a pad note or the hi-hat CC.
 - Footer: encoder mode select, "Program change selects a kit" checkbox, "Clear all assignments".
+
+### 4.10 Looper (row between the pads and the mixer)
+- One main button whose label is the next action: `● Record loop` → (armed) `Hit a pad to start…` with a dashed `--accent` border → (recording) `■ Close loop` with an `--err` border and a mono running time → (playing) `● Overdub` → (overdubbing) `Overdubbing: press to finish` with an `--err` border → (stopped) `▶ Play loop`. Key `L`; `Shift+L` stops/plays.
+- While a loop plays: a 4 px position bar (`--accent`, `--err` while overdubbing) and `■ Stop`; `↶ Undo` when there are overdub layers; `✕ Clear` whenever there is something to clear; the loop length and layer count in mono `--fg-2`.
+- With no loop: a "Length" select, "As played" or "Whole bars at N BPM" (the rotation tempo).
 
 ### 4.9 Debug panel (toggle with `` ` `` key or footer link)
 - Mono text: AudioContext sampleRate, baseLatency, outputLatency, last 50-hit median and p95 of event-to-schedule time, active voices, decoded buffers, memory estimate.

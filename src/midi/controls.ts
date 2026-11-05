@@ -12,6 +12,10 @@ export const BUTTON_ACTIONS = [
   'tempo.tap',
   'layout.next',
   'kitList.load',
+  'loop.record',
+  'loop.stopPlay',
+  'loop.undo',
+  'loop.clear',
 ] as const;
 export const KNOB_ACTIONS = [
   'mix.master',

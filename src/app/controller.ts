@@ -22,7 +22,9 @@ export interface HitInfo {
   articulationId: string | null;
   inVelocity: number;
   velocity: number;
-  source: 'midi' | 'ui';
+  source: 'midi' | 'ui' | 'loop';
+  /** performance.now() of the input event (loop recording timestamps). */
+  time: number;
 }
 
 const CHOKE_ONLY = new Set<Voice>(['crash.leftChoke', 'crash.rightChoke']);
@@ -32,7 +34,7 @@ let byIndex: (PadMapping | undefined)[] = [];
 let byNote = new Map<number, number>();
 let lastHit: HitInfo | null = null;
 const hitListeners = new Set<(hit: HitInfo) => void>();
-const hihatListeners = new Set<(value: number | null) => void>();
+const hihatListeners = new Set<(value: number | null, fromLoop: boolean) => void>();
 let capture: ((note: number) => void) | null = null;
 
 /**
@@ -102,14 +104,23 @@ export function padForNote(note: number): number | undefined {
   return byNote.get(note);
 }
 
-function play(i: number, inVelocity: number, velocity: number, eventTime: number, source: HitInfo['source']) {
-  const pad = byIndex[i];
+function play(
+  i: number,
+  inVelocity: number,
+  velocity: number,
+  eventTime: number,
+  source: HitInfo['source'],
+  recorded?: { voice: Voice; at: number },
+) {
+  const pad = recorded ? { voice: recorded.voice } : byIndex[i];
   if (!pad) return;
   const engine = getRuntime().engine;
   bindEngine(engine);
   const articulationId = resolvePadVoice(pad.voice);
   if (articulationId) {
-    const voice = engine.trigger(articulationId, velocity, eventTime);
+    const voice = recorded
+      ? engine.trigger(articulationId, velocity, undefined, recorded.at)
+      : engine.trigger(articulationId, velocity, eventTime);
     if (voice && voice.group === 'hihat' && voice.chokedBy.length > 0) {
       ringVoices.set(voice.id, i);
       ringPad(i, true);
@@ -119,7 +130,7 @@ function play(i: number, inVelocity: number, velocity: number, eventTime: number
   }
   flashPad(i, velocity);
   if (useUiStore.getState().editing) useUiStore.getState().selectPad(i); // editor follows what you hit
-  lastHit = { padIndex: i, voice: pad.voice, articulationId, inVelocity, velocity, source };
+  lastHit = { padIndex: i, voice: pad.voice, articulationId, inVelocity, velocity, source, time: eventTime };
   for (const l of hitListeners) l(lastHit);
 }
 
@@ -128,7 +139,20 @@ export function hitPad(i: number, velocity: number, eventTime: number = performa
   play(i, velocity, velocity, eventTime, 'ui');
 }
 
-function hihatCC(value: number, mapping: Mapping) {
+/**
+ * Loop playback: replays a recorded voice (not the pad's current one, so a layout change does not
+ * change the loop) at `at` on the audio clock, resolved against the current kit.
+ */
+export function playLoopHit(i: number, voice: Voice, velocity: number, at: number): void {
+  play(i, velocity, velocity, performance.now(), 'loop', { voice, at });
+}
+
+/** Loop playback of a recorded hi-hat pedal position. */
+export function playLoopHihat(value: number): void {
+  hihatCC(value, useMappingStore.getState().mapping, true);
+}
+
+function hihatCC(value: number, mapping: Mapping, fromLoop = false) {
   const { invert, pedalOnClose } = mapping.hihat;
   const before = hihat.band(invert);
   hihat.value = value;
@@ -139,7 +163,7 @@ function hihatCC(value: number, mapping: Mapping) {
       if (pedal) engine.trigger(pedal, PEDAL_ON_CLOSE_VELOCITY);
     }
   }
-  for (const l of hihatListeners) l(value);
+  for (const l of hihatListeners) l(value, fromLoop);
 }
 
 export function handleMidi(message: MidiMessage, eventTime: number): void {
@@ -173,7 +197,7 @@ export function onHit(listener: (hit: HitInfo) => void): () => void {
   return () => hitListeners.delete(listener);
 }
 
-export function onHihatChange(listener: (value: number | null) => void): () => void {
+export function onHihatChange(listener: (value: number | null, fromLoop: boolean) => void): () => void {
   hihatListeners.add(listener);
   return () => hihatListeners.delete(listener);
 }

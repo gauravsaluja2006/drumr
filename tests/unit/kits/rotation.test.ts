@@ -30,10 +30,12 @@ describe('kit rotation', () => {
     expect(nextKitId(['a'], 'a')).toBeNull(); // nothing else to switch to
   });
 
-  test('intervalMs is seconds in seconds mode and bars × 4 beats at the tempo in bars mode', () => {
+  test('intervalMs is seconds, bars × 4 beats at the tempo, or N loop passes', () => {
     expect(intervalMs({ ...DEFAULT_ROTATION, mode: 'seconds', seconds: 15 })).toBe(15_000);
     expect(intervalMs({ ...DEFAULT_ROTATION, mode: 'bars', bars: 4, bpm: 120 })).toBe(8_000);
     expect(intervalMs({ ...DEFAULT_ROTATION, mode: 'bars', bars: 2, bpm: 90 })).toBeCloseTo(5_333.33, 1);
+    expect(intervalMs({ ...DEFAULT_ROTATION, mode: 'loops', loops: 2 }, 3_000)).toBe(6_000);
+    expect(intervalMs({ ...DEFAULT_ROTATION, mode: 'loops', loops: 2 })).toBe(0); // no loop playing
   });
 
   test('nextSwitchAt is the first grid point strictly after now', () => {

@@ -2,7 +2,8 @@ import { useEffect, useId, useRef } from 'react';
 import { useKitStore } from '@/state/useKitStore';
 import { useSettingsStore } from '@/state/useSettingsStore';
 import { useUiStore } from '@/state/useUiStore';
-import { BARS_CHOICES, MAX_BPM, MIN_BPM, SECONDS_CHOICES } from '@/kits/rotation';
+import { BARS_CHOICES, LOOPS_CHOICES, MAX_BPM, MIN_BPM, SECONDS_CHOICES } from '@/kits/rotation';
+import { useLoopStore } from '@/app/looper';
 import { canRotate, tapRotationTempo, toggleRotation, useRotationStore } from '@/app/rotation';
 
 /** Thin bar that empties until the next kit switch. Updated per frame on the DOM node, not React state. */
@@ -36,7 +37,13 @@ function RotationControls() {
   const possible = running || canRotate();
   const everyId = useId();
   const bpmId = useId();
-  const every = rotation.mode === 'seconds' ? `s${rotation.seconds}` : `b${rotation.bars}`;
+  const every =
+    rotation.mode === 'seconds'
+      ? `s${rotation.seconds}`
+      : rotation.mode === 'bars'
+        ? `b${rotation.bars}`
+        : `l${rotation.loops}`;
+  const loopPlaying = useLoopStore((s) => s.phase === 'playing' || s.phase === 'overdub');
 
   return (
     <div className="flex flex-col gap-2">
@@ -60,7 +67,13 @@ function RotationControls() {
           onChange={(e) => {
             const v = e.target.value;
             const n = Number(v.slice(1));
-            setRotation(v.startsWith('s') ? { mode: 'seconds', seconds: n } : { mode: 'bars', bars: n });
+            setRotation(
+              v.startsWith('s')
+                ? { mode: 'seconds', seconds: n }
+                : v.startsWith('b')
+                  ? { mode: 'bars', bars: n }
+                  : { mode: 'loops', loops: n },
+            );
           }}
           className="min-w-0 flex-1 rounded-m border border-line bg-bg-2 px-2 py-1 text-xs text-fg-0 hover:bg-bg-3"
         >
@@ -75,6 +88,13 @@ function RotationControls() {
             {BARS_CHOICES.map((n) => (
               <option key={n} value={`b${n}`}>
                 {n} {n === 1 ? 'bar' : 'bars'}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Loop passes">
+            {LOOPS_CHOICES.map((n) => (
+              <option key={n} value={`l${n}`}>
+                {n === 1 ? 'loop pass' : `${n} loop passes`}
               </option>
             ))}
           </optgroup>
@@ -108,7 +128,12 @@ function RotationControls() {
           </button>
         </div>
       )}
-      {running && <Countdown />}
+      {rotation.mode === 'loops' && !loopPlaying && (
+        <p className="text-xs text-fg-2" data-testid="rotation-loop-hint">
+          Switches on the loop&apos;s downbeat. Record a loop (L) to start.
+        </p>
+      )}
+      {running && (rotation.mode !== 'loops' || loopPlaying) && <Countdown />}
     </div>
   );
 }

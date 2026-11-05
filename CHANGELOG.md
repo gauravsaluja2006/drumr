@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-### Kit browser, kit rotation, MIDI controls
+### Kit browser, kit rotation, MIDI controls, looper
+- Looper: press Record loop (or `L`), then play: recording starts on your first pad hit. Press again to close the loop; it plays back from the first hit at once, with no gap. Overdub layers, undo, stop/play (`Shift+L`) and clear. Length "as played" or rounded to whole bars at the rotation tempo. Hi-hat pedal moves are recorded too, and playback is timed on the audio clock.
+- Rotation can switch every 1/2/4 loop passes, exactly on the loop's downbeat, so each kit plays the whole loop.
+- Loop actions are MIDI-learnable (record/close/overdub, stop/play, undo, clear).
 - Kit list in the left column: every kit one click away, playing kit marked, current kit's name and description below it (licence and author stay in About). It replaces the kit dropdown in the status bar.
 - Kit rotation: switch to the next kit every 10/15/30/60 seconds or every 1/2/4/8 bars at a typed or tapped tempo; while rotating, tick kits to narrow it to a shortlist (checkboxes show only while rotation is on). The next kit loads in the background so switches are instant; in bars mode they land just before the downbeat.
 - Mixer moved under the pads as vertical faders.

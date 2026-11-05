@@ -20,6 +20,9 @@ interface SettingsState {
   mix: Record<string, KitMix>;
   /** Kit rotation settings (whether it is running is not persisted). */
   rotation: RotationSettings;
+  /** Loop length on close: exactly as played, or rounded to whole bars at the rotation tempo. */
+  loopLength: 'free' | 'bars';
+  setLoopLength: (mode: 'free' | 'bars') => void;
   setRotation: (patch: Partial<RotationSettings>) => void;
   setMasterDb: (db: number) => void;
   setGroup: (kitId: string, group: Group, patch: Partial<GroupSetting>) => void;
@@ -33,6 +36,8 @@ export const useSettingsStore = create<SettingsState>()(
       lastKitId: null,
       mix: {},
       rotation: DEFAULT_ROTATION,
+      loopLength: 'free',
+      setLoopLength: (mode) => set({ loopLength: mode }),
       setRotation: (patch) =>
         set((s) => {
           const next = { ...s.rotation, ...patch };

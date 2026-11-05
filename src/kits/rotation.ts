@@ -2,13 +2,15 @@
  * Kit rotation: switch to the next kit on a timer so a player can hear one groove on many kits
  * without stopping. Pure functions only; timers live in src/app/rotation.ts.
  */
-export type RotationMode = 'seconds' | 'bars';
+/** `loops`: switch on the downbeat of every N passes of the playing loop. */
+export type RotationMode = 'seconds' | 'bars' | 'loops';
 
 export interface RotationSettings {
   mode: RotationMode;
   seconds: number;
   bars: number;
   bpm: number;
+  loops: number;
   /** Kits to rotate through; empty means every kit. */
   kitIds: string[];
 }
@@ -18,12 +20,14 @@ export const MIN_BPM = 40;
 export const MAX_BPM = 240;
 export const SECONDS_CHOICES = [10, 15, 30, 60] as const;
 export const BARS_CHOICES = [1, 2, 4, 8] as const;
+export const LOOPS_CHOICES = [1, 2, 4] as const;
 
 export const DEFAULT_ROTATION: RotationSettings = {
   mode: 'seconds',
   seconds: 15,
   bars: 4,
   bpm: 120,
+  loops: 1,
   kitIds: [],
 };
 
@@ -42,8 +46,18 @@ export function nextKitId(list: readonly string[], current: string | null, step:
   return list[(i + step + list.length) % list.length] ?? null;
 }
 
-export function intervalMs(s: Pick<RotationSettings, 'mode' | 'seconds' | 'bars' | 'bpm'>): number {
-  return s.mode === 'seconds' ? s.seconds * 1000 : (s.bars * BEATS_PER_BAR * 60_000) / s.bpm;
+/** Time between switches; `loops` mode needs the loop length (0 when no loop plays). */
+export function intervalMs(
+  s: Pick<RotationSettings, 'mode' | 'seconds' | 'bars' | 'bpm' | 'loops'>,
+  loopMs = 0,
+): number {
+  if (s.mode === 'seconds') return s.seconds * 1000;
+  if (s.mode === 'loops') return s.loops * loopMs;
+  return s.bars * barMs(s.bpm);
+}
+
+export function barMs(bpm: number): number {
+  return (BEATS_PER_BAR * 60_000) / bpm;
 }
 
 /** First point of the grid `anchor + k × interval` that is strictly after `now`. */

@@ -31,6 +31,13 @@ export class Sampler {
     return [...this.cache.keys()];
   }
 
+  /** A decoded kit, if resident (marks it recently used). */
+  peek(id: string): LoadedKit | undefined {
+    const kit = this.cache.get(id);
+    if (kit) this.touch(id, kit);
+    return kit;
+  }
+
   async loadKit(
     manifest: KitManifest,
     kitBaseUrl: string,

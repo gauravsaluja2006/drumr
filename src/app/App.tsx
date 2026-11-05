@@ -3,6 +3,7 @@ import { PadGrid } from '@/ui/PadGrid/PadGrid';
 import { StatusBar } from '@/ui/StatusBar/StatusBar';
 import { KitPanel } from '@/ui/KitPanel/KitPanel';
 import { KitList } from '@/ui/KitList/KitList';
+import { LoopBar } from '@/ui/LoopBar/LoopBar';
 import { Mixer } from '@/ui/Mixer/Mixer';
 import { AudioOverlay } from '@/ui/AudioOverlay/AudioOverlay';
 import { kitBaseUrl, useKitStore } from '@/state/useKitStore';
@@ -23,6 +24,7 @@ import { DESKTOP, useMediaQuery } from './media';
 import { useOfflineStore, warmKitCache } from './offline';
 import { useUiStore } from '@/state/useUiStore';
 import { installTestHooks } from './testHooks';
+import { installLooper, loopMain, loopStopPlay } from './looper';
 
 // Panels that are not needed for the first paint load on demand (docs/04-ROADMAP.md Phase 7).
 const About = lazy(() => import('@/ui/About/About').then((m) => ({ default: m.About })));
@@ -80,6 +82,8 @@ export function App() {
       if (e.ctrlKey || e.metaKey || e.altKey || (t && ['INPUT', 'TEXTAREA', 'SELECT'].includes(t.tagName)))
         return;
       if (e.key === '`') setDebugOpen((o) => !o);
+      else if (e.key === 'l' && !e.repeat) loopMain(e.timeStamp || performance.now());
+      else if (e.key === 'L' && !e.repeat) loopStopPlay(e.timeStamp || performance.now());
       else if (e.key === 'm' || e.key === 'M') setEditing(!useUiStore.getState().editing);
       else if (
         e.key === 'Escape' &&
@@ -103,9 +107,11 @@ export function App() {
     runtime.midi.setMessageHandler(handleMidi);
     void runtime.midi.init();
     const detachKeyboard = attachKeyboard(window, hitPad);
+    const uninstallLooper = installLooper();
     return () => {
       unbindMidi();
       detachKeyboard();
+      uninstallLooper();
     };
   }, [runtime]);
 
@@ -163,7 +169,7 @@ export function App() {
         )}
         <div
           className={`flex flex-col items-center justify-center gap-4 ${
-            desktop ? '[--grid-reserve:400px] [@media(max-height:800px)]:[--grid-reserve:340px]' : ''
+            desktop ? '[--grid-reserve:450px] [@media(max-height:800px)]:[--grid-reserve:390px]' : ''
           }`}
         >
           <PadGrid
@@ -173,6 +179,7 @@ export function App() {
             learning={learning}
             onHit={hitPad}
           />
+          <LoopBar />
           {desktop && (
             <section aria-label="Mixer" className="w-full">
               <Mixer layout="strip" />

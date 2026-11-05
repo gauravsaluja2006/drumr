@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { intervalMs, nextKitId, nextSwitchAt, rotationKits, tapTempo } from '@/kits/rotation';
 import { useKitStore } from '@/state/useKitStore';
 import { useSettingsStore } from '@/state/useSettingsStore';
+import { looper, onLoopBoundary, useLoopStore } from './looper';
 
 /**
  * Kit rotation runtime: a timer that switches to the next ticked kit every N seconds or N bars,
@@ -51,9 +52,46 @@ function preloadNext() {
   if (next) void kits.preloadKit(next);
 }
 
+let passes = 0;
+
+/** `loops` mode: no timer; the loop scheduler's pass boundaries drive the switch (see onPass). */
+function scheduleLoops() {
+  clearTimeout(timer);
+  const s = useSettingsStore.getState().rotation;
+  const playing = looper.phase === 'playing' || looper.phase === 'overdub';
+  if (!playing) return useRotationStore.setState({ nextAt: null, interval: 0 });
+  const interval = intervalMs(s, looper.length);
+  const passStart =
+    looper.start + Math.floor((performance.now() - looper.start) / looper.length) * looper.length;
+  useRotationStore.setState({ nextAt: passStart + (s.loops - passes) * looper.length, interval });
+}
+
+function onPass(_pass: number, at: number) {
+  if (useSettingsStore.getState().rotation.mode !== 'loops') return;
+  passes++;
+  if (passes >= useSettingsStore.getState().rotation.loops) {
+    passes = 0;
+    const kits = useKitStore.getState();
+    const next = nextKitId(rotationList(), kits.currentKitId);
+    if (next) {
+      switchingTo = next;
+      // Synchronous when preloaded, so this pass's frame-0 hits already use the new kit.
+      if (!kits.switchKitNow(next)) void kits.switchKit(next);
+      switchingTo = null;
+      preloadNext();
+    }
+  }
+  const s = useSettingsStore.getState().rotation;
+  useRotationStore.setState({
+    nextAt: at + (s.loops - passes) * looper.length,
+    interval: intervalMs(s, looper.length),
+  });
+}
+
 function schedule(after: number) {
   clearTimeout(timer);
   const s = useSettingsStore.getState().rotation;
+  if (s.mode === 'loops') return scheduleLoops();
   const interval = intervalMs(s);
   const at = nextSwitchAt(after, anchor, interval);
   const early = s.mode === 'bars' ? EARLY_MS : 0;
@@ -74,7 +112,16 @@ function fire(at: number) {
   schedule(at);
 }
 
+/** Bar-mode rotation follows a newly recorded loop: its first hit becomes the downbeat. */
+export function alignRotationTo(downbeat: number): void {
+  useRotationStore.setState({ tempoAnchor: downbeat });
+  if (!useRotationStore.getState().running || useSettingsStore.getState().rotation.mode !== 'bars') return;
+  anchor = downbeat;
+  schedule(performance.now());
+}
+
 function restartGrid() {
+  passes = 0;
   const now = performance.now();
   const { tempoAnchor } = useRotationStore.getState();
   const s = useSettingsStore.getState().rotation;
@@ -121,6 +168,7 @@ function subscribe(): () => void {
       (k) => s.rotation[k] !== prev.rotation[k],
     );
     if (timing) {
+      if (s.rotation.mode !== prev.rotation.mode) passes = 0;
       // Seconds restart the countdown; bars keep the downbeat so the change still lands on the "1".
       if (s.rotation.mode === 'seconds') restartGrid();
       else {
@@ -131,6 +179,14 @@ function subscribe(): () => void {
     }
     preloadNext();
   });
+  const offPass = onLoopBoundary(onPass);
+  const offLoop = useLoopStore.subscribe((s, prev) => {
+    if (
+      useSettingsStore.getState().rotation.mode === 'loops' &&
+      (s.phase !== prev.phase || s.length !== prev.length)
+    )
+      scheduleLoops();
+  });
   const offKits = useKitStore.subscribe((s, prev) => {
     if (s.currentKitId === prev.currentKitId || s.currentKitId === switchingTo) return;
     // The player picked a kit by hand: give it a full interval (seconds) and preload what follows it.
@@ -140,6 +196,8 @@ function subscribe(): () => void {
   return () => {
     offSettings();
     offKits();
+    offPass();
+    offLoop();
   };
 }
 
