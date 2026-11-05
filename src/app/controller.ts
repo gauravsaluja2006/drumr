@@ -10,6 +10,7 @@ import { curve } from '@/engine/velocity';
 import { HiHatState } from '@/engine/HiHat';
 import type { AudioEngine } from '@/engine/AudioEngine';
 import { useUiStore } from '@/state/useUiStore';
+import { handleControl } from './controls';
 
 /**
  * The hot path: input → pad → voice → articulation → engine. Everything here is synchronous and
@@ -142,6 +143,9 @@ function hihatCC(value: number, mapping: Mapping) {
 }
 
 export function handleMidi(message: MidiMessage, eventTime: number): void {
+  if (message.type !== 'noteon' || capture === null) {
+    if (handleControl(message)) return; // controller buttons/knobs bound to app actions
+  }
   const { mapping } = useMappingStore.getState();
   if (mapping.channel !== null && message.channel !== mapping.channel) return;
   if (message.type === 'cc') {

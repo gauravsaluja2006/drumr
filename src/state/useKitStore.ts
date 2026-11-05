@@ -20,9 +20,13 @@ interface KitState {
   init: () => Promise<void>;
   loadAllManifests: () => Promise<void>;
   switchKit: (id: string) => Promise<void>;
+  /** Fetch and decode a kit in the background (no status or progress) so switching to it is instant. */
+  preloadKit: (id: string) => Promise<void>;
 }
 
 let loadToken = 0;
+/** In-flight background loads, so a switch to a kit that is still preloading waits instead of loading it twice. */
+const preloading = new Map<string, Promise<void>>();
 
 /** Folder that holds a kit's `<id>/` directory: the local-only index's base, or the main one. */
 export function kitBaseUrl(index: KitIndex, id: string): string {
@@ -76,9 +80,12 @@ export const useKitStore = create<KitState>()((set, get) => ({
   switchKit: async (id) => {
     const token = ++loadToken;
     const meta = get().index.find((k) => k.id === id);
-    set({ status: 'loading', error: null, progress: { loaded: 0, total: meta?.totalBytes ?? 0 } });
+    const { fetch, sampler, engine } = getRuntime();
+    // A resident (preloaded) kit switches without a loading state, so the pads never blink disabled.
+    if (!sampler.residentKitIds.includes(id) || !get().manifests[id])
+      set({ status: 'loading', error: null, progress: { loaded: 0, total: meta?.totalBytes ?? 0 } });
     try {
-      const { fetch, sampler, engine } = getRuntime();
+      await preloading.get(id);
       const base = kitBaseUrl(get().index, id);
       const manifest = get().manifests[id] ?? (await fetchKitManifest(base, id, fetch));
       if (token === loadToken) set({ manifests: { ...get().manifests, [id]: manifest } });
@@ -90,11 +97,33 @@ export const useKitStore = create<KitState>()((set, get) => ({
       const available = new Set(
         manifest.articulations.map((a) => a.id).filter((a) => !kit.unavailable.has(a)),
       );
-      set({ currentKitId: id, manifest, status: 'ready', available });
+      set({ currentKitId: id, manifest, status: 'ready', error: null, available });
       useSettingsStore.getState().setLastKitId(id);
     } catch (e) {
       if (token !== loadToken) return;
       set({ status: get().manifest ? 'ready' : 'error', error: e instanceof Error ? e.message : String(e) });
     }
+  },
+
+  preloadKit: async (id) => {
+    if (id === get().currentKitId) return;
+    const { fetch, sampler } = getRuntime();
+    if (sampler.residentKitIds.includes(id)) return;
+    const pending = preloading.get(id);
+    if (pending) return pending;
+    const base = kitBaseUrl(get().index, id);
+    const job = (async () => {
+      try {
+        const manifest = get().manifests[id] ?? (await fetchKitManifest(base, id, fetch));
+        set({ manifests: { ...get().manifests, [id]: manifest } });
+        await sampler.loadKit(manifest, `${base}${id}/`);
+      } catch {
+        // A failed preload is retried as a normal switch, which reports the error.
+      } finally {
+        preloading.delete(id);
+      }
+    })();
+    preloading.set(id, job);
+    return job;
   },
 }));

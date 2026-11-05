@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { PadGrid } from '@/ui/PadGrid/PadGrid';
 import { StatusBar } from '@/ui/StatusBar/StatusBar';
 import { KitPanel } from '@/ui/KitPanel/KitPanel';
+import { KitList } from '@/ui/KitList/KitList';
 import { Mixer } from '@/ui/Mixer/Mixer';
 import { AudioOverlay } from '@/ui/AudioOverlay/AudioOverlay';
 import { kitBaseUrl, useKitStore } from '@/state/useKitStore';
@@ -28,11 +29,22 @@ const About = lazy(() => import('@/ui/About/About').then((m) => ({ default: m.Ab
 const MappingEditor = lazy(() =>
   import('@/ui/MappingEditor/MappingEditor').then((m) => ({ default: m.MappingEditor })),
 );
+const MidiControls = lazy(() =>
+  import('@/ui/MidiControls/MidiControls').then((m) => ({ default: m.MidiControls })),
+);
 const DebugPanel = lazy(() => import('@/ui/DebugPanel/DebugPanel').then((m) => ({ default: m.DebugPanel })));
 
-function Panel({ title, children }: { title: string; children?: React.ReactNode }) {
+function Panel({
+  title,
+  children,
+  className = '',
+}: {
+  title: string;
+  children?: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <section aria-label={title} className="flex flex-col gap-3">
+    <section aria-label={title} className={`flex flex-col gap-3 ${className}`}>
       <h2 className="text-xs font-semibold tracking-wider text-fg-2 uppercase">{title}</h2>
       {children}
     </section>
@@ -57,6 +69,7 @@ export function App() {
   const masterDb = useSettingsStore((s) => s.masterDb);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [debugOpen, setDebugOpen] = useState(false);
+  const [controlsOpen, setControlsOpen] = useState(false);
   const { editing, selectedPad, learning, setEditing } = useUiStore();
   const desktop = useMediaQuery(DESKTOP, true);
 
@@ -137,18 +150,22 @@ export function App() {
   return (
     <div className="flex h-full flex-col">
       <StatusBar />
-      <main className="grid flex-1 grid-cols-1 gap-6 p-4 lg:grid-cols-[280px_1fr_240px] lg:p-6">
+      <main className="grid min-h-0 flex-1 grid-cols-1 gap-6 p-4 lg:grid-cols-[280px_1fr_240px] lg:grid-rows-[minmax(0,1fr)] lg:p-6">
         {desktop && (
-          <aside className="flex flex-col gap-8 rounded-l border border-line bg-bg-1 p-5">
-            <Panel title="Kit">
+          <aside className="flex min-h-0 flex-col gap-5 rounded-l border border-line bg-bg-1 p-5">
+            <Panel title="Kits" className="min-h-0 flex-1">
+              <KitList />
+            </Panel>
+            <div className="border-t border-line pt-4">
               <KitPanel />
-            </Panel>
-            <Panel title="Mixer">
-              <Mixer />
-            </Panel>
+            </div>
           </aside>
         )}
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div
+          className={`flex flex-col items-center justify-center gap-4 ${
+            desktop ? '[--grid-reserve:400px] [@media(max-height:800px)]:[--grid-reserve:340px]' : ''
+          }`}
+        >
           <PadGrid
             pads={pads}
             disabled={status !== 'ready'}
@@ -156,6 +173,11 @@ export function App() {
             learning={learning}
             onHit={hitPad}
           />
+          {desktop && (
+            <section aria-label="Mixer" className="w-full">
+              <Mixer layout="strip" />
+            </section>
+          )}
           <div className="flex flex-wrap items-center justify-center gap-3">
             <PresetSelect />
             <button
@@ -167,6 +189,13 @@ export function App() {
               {editing ? 'Editing layout' : 'Edit layout'}{' '}
               <span className="ml-1 hidden font-mono text-fg-2 lg:inline">M</span>
             </button>
+            <button
+              type="button"
+              onClick={() => setControlsOpen(true)}
+              className="rounded-m border border-line px-3 py-1.5 text-xs text-fg-1 hover:bg-bg-3 hover:text-fg-0"
+            >
+              MIDI controls
+            </button>
           </div>
           {!desktop && (
             <MobilePanels
@@ -176,6 +205,9 @@ export function App() {
                   label: 'Kit & mixer',
                   content: (
                     <>
+                      <div className="flex max-h-80 min-h-0 flex-col">
+                        <KitList />
+                      </div>
                       <KitPanel />
                       <Mixer />
                     </>
@@ -196,14 +228,14 @@ export function App() {
           )}
         </div>
         {editing ? (
-          <aside className="fixed inset-x-0 bottom-0 z-30 max-h-[70vh] overflow-y-auto rounded-t-l border border-line bg-bg-1 p-5 shadow-2xl lg:static lg:max-h-none lg:rounded-l lg:shadow-none">
+          <aside className="fixed inset-x-0 bottom-0 z-30 max-h-[70vh] overflow-y-auto rounded-t-l border border-line bg-bg-1 p-5 shadow-2xl lg:static lg:max-h-none lg:min-h-0 lg:rounded-l lg:shadow-none">
             <Suspense fallback={<p className="text-fg-1">Loading editor…</p>}>
               <MappingEditor />
             </Suspense>
           </aside>
         ) : (
           desktop && (
-            <aside className="flex flex-col gap-8 rounded-l border border-line bg-bg-1 p-5">
+            <aside className="flex min-h-0 flex-col gap-8 overflow-y-auto rounded-l border border-line bg-bg-1 p-5">
               <Panel title="Hi-hat">
                 <HiHatMeter />
               </Panel>
@@ -243,6 +275,7 @@ export function App() {
       <Suspense fallback={null}>
         {aboutOpen && <About open onClose={() => setAboutOpen(false)} />}
         {debugOpen && <DebugPanel onClose={() => setDebugOpen(false)} />}
+        {controlsOpen && <MidiControls onClose={() => setControlsOpen(false)} />}
       </Suspense>
       <AudioOverlay ctx={runtime?.ctx ?? null} />
     </div>

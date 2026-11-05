@@ -45,33 +45,30 @@ Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64 px.
 
 ## 3. Layout
 
-Desktop (≥ 1024 px), single screen, no scrolling for the instrument:
+Desktop (≥ 1024 px), single screen, no scrolling for the instrument (side columns scroll inside themselves):
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
 │ ● Drumr        [Kit: Virtuosity Jazz ▾]      MIDI: ● Maschine MK3   │  status bar 56px
 ├───────────────────────┬──────────────────────────────┬───────────────┤
-│  KIT                  │                              │  HI-HAT       │
-│  name, description    │         ┌───┬───┬───┬───┐    │  openness     │
-│  license badge        │         │   │   │   │   │    │  meter (vert) │
-│                       │         ├───┼───┼───┼───┤    │  CC: 1 ▾      │
-│  MIXER                │         │   │   │   │   │    │  invert [x]   │
-│  Master ───────●──    │         ├───┼───┼───┼───┤    │               │
-│  Kick   ───────●──    │         │   │   │   │   │    │  VELOCITY     │
-│  Snare  ───────●──    │         ├───┼───┼───┼───┤    │  curve graph  │
-│  Hi-hat ───────●──    │         │   │   │   │   │    │  exp  2.4     │
-│  Toms   ───────●──    │         └───┴───┴───┴───┘    │  floor 28     │
-│  Cymbals───────●──    │   [Edit mapping] [Preset ▾]  │               │
-│  Perc   ───────●──    │                              │  LATENCY      │
-│                       │                              │  7.2 ms       │
+│  KITS                 │         ┌───┬───┬───┬───┐    │  HI-HAT       │
+│  [⟳ Rotate] every 15s │         │   │   │   │   │    │  openness     │
+│  ▬▬▬▬▬▬▬▬ countdown   │         ├───┼───┼───┼───┤    │  meter (vert) │
+│  ● Virtuosity Jazz ☐  │         │   │   │   │   │    │  CC: 1 ▾      │
+│    Black Pearl     ☑  │         ├───┼───┼───┼───┤    │  invert [x]   │
+│    808 Classic     ☑  │         │   │   │   │   │    │               │
+│    … (scrolls)        │         └───┴───┴───┴───┘    │  VELOCITY     │
+│  ─────────────        │   M │ K  S  H  T  C  P       │  sliders      │
+│  Kit name, licence,   │   ┃ │ ┃  ┃  ┃  ┃  ┃  ┃  faders│  curve graph  │
+│  author               │ [Layout ▾][Edit layout][MIDI controls]       │
 ├───────────────────────┴──────────────────────────────┴───────────────┤
 │ About · Sources & licenses · GitHub                      v1.0.0       │  footer 40px
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-Left column 280 px, right column 240 px, centre flexible. Pad grid is a square sized to `min(centreWidth − 48, viewportHeight − 200)`.
+Left column 280 px, right column 240 px, centre flexible. Pad grid is a square sized to `min(centreWidth, viewportHeight − 400)` on desktop (room for the mixer strip), `viewportHeight − 220` below.
 
-Tablet (768–1023 px): side columns collapse into two tabs below the grid ("Mixer", "Hi-hat & velocity").
+Tablet (768–1023 px): side columns collapse into two tabs below the grid ("Kit & mixer", "Hi-hat & velocity"); the kit list sits in the first tab and the mixer there uses horizontal sliders.
 Phone (< 768 px): grid full width, status bar condensed to icons, columns become a bottom sheet. Keyboard hints hidden; touch is the input.
 
 ## 4. Components
@@ -94,8 +91,15 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 ### 4.3 Kit selector
 - Dropdown listing kits with name, one-line description, size badge ("24 MB"), license badge ("CC0"). Loading shows a determinate progress bar under the status bar (bytes received / totalBytes) and the pads are disabled until decoded. Disabled pads use the `--bg-1` fill and a wait cursor; they are not faded, because 50 % opacity pushed note numbers below 4.5:1 contrast.
 
+### 4.3a Kit list and rotation (left column)
+- Every kit in one scrolling list: playing kit marked with an `--accent` dot and `aria-current`; click loads; "local" badge for kits built on this machine. The current kit's description, licence and author sit below the list.
+- A checkbox per kit ticks it for rotation; with none ticked, rotation uses every kit.
+- Rotation controls above the list: `⟳ Rotate kits` toggle (pressed: `--accent` border and text, label "Rotating"), "every" select (10/15/30/60 s or 1/2/4/8 bars of 4/4), and in bars mode a BPM input with a Tap button. While running, a 4 px `--accent` bar on `--bg-3` empties until the next switch (progress indicator, not decoration).
+- The controller encoder highlights a row (`--bg-3` fill, `--accent` outline at 60 %) and keeps it in view.
+
 ### 4.4 Mixer
-- Vertical list of horizontal sliders. Label left, value in mono dB right (e.g. `−6.0 dB`). Double-click resets to 0 dB. Group colour dot before the label. Mute toggle on hover.
+- Sidebar and tablet: vertical list of horizontal sliders. Label left, value in mono dB right (e.g. `−6.0 dB`). Double-click resets to 0 dB. Group colour dot before the label. Mute toggle on hover.
+- Desktop: a strip of vertical faders under the pads (Master, a divider, then the kit's groups): value in mono 10 px on top, 80 px fader filled in the group colour, mute toggle, label with colour dot below.
 
 ### 4.5 Hi-hat panel
 - Vertical meter showing CC position with the discrete bands as ticks; the active openness level is labelled ("¾ open"). CC number select and invert checkbox below.
@@ -108,6 +112,11 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 
 ### 4.8 About / Sources panel (slide-over)
 - What it is (3 sentences), tech stack chips, a "How it works" diagram (simple SVG: controller → Web MIDI → mapping → Web Audio → speakers), and a sources table: kit, author, license, link.
+
+### 4.8a MIDI controls (slide-over, same Dialog as §4.8)
+- Rows grouped as Buttons, Knobs, Encoder: action name, current assignment in mono (`CC 102`, `Note 40 · ch 2`, `—`), Learn button (pressed: dashed `--accent` border, text "Cancel"; the assignment cell reads "Move it…"; 10 s timeout), and a clear ✕.
+- A `--warn` line under a row whose assignment shadows a pad note or the hi-hat CC.
+- Footer: encoder mode select, "Program change selects a kit" checkbox, "Clear all assignments".
 
 ### 4.9 Debug panel (toggle with `` ` `` key or footer link)
 - Mono text: AudioContext sampleRate, baseLatency, outputLatency, last 50-hit median and p95 of event-to-schedule time, active voices, decoded buffers, memory estimate.

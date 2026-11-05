@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Kit browser, kit rotation, MIDI controls
+- Kit list in the left column: every kit one click away, playing kit marked, current kit's licence and author below it.
+- Kit rotation: switch to the next kit every 10/15/30/60 seconds or every 1/2/4/8 bars at a typed or tapped tempo; tick kits to rotate through a shortlist. The next kit loads in the background so switches are instant; in bars mode they land just before the downbeat.
+- Mixer moved under the pads as vertical faders.
+- MIDI controls panel: learn controller buttons (next/previous kit, start/stop rotation, tap tempo, next pad layout, load highlighted kit), knobs (master and group volumes, sensitivity, hardest hit) and an encoder (scroll the kit list). Program change selects a kit. Assignments persist.
+- Side columns scroll inside the window instead of pushing the footer over the controls on short screens.
+
 ### Phase 7 — Polish, offline, performance
 - Works offline after the first visit (installable PWA); "Available offline" indicator.
 - Tablet and phone layouts: controls in two tabs under the pads; tighter pad labels on small screens.

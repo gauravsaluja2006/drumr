@@ -1,7 +1,8 @@
 export type MidiMessage =
   | { type: 'noteon'; channel: number; note: number; velocity: number }
   | { type: 'noteoff'; channel: number; note: number; velocity: number }
-  | { type: 'cc'; channel: number; controller: number; value: number };
+  | { type: 'cc'; channel: number; controller: number; value: number }
+  | { type: 'program'; channel: number; program: number };
 
 /** Structural subset of Web MIDI used by MidiManager (real MIDIAccess and the test fakes both satisfy it). */
 export interface MidiInputLike {

@@ -12,7 +12,8 @@ describe('MIDI parse', () => {
     expect(parse([0xf8])).toBeNull(); // clock
     expect(parse([0xfe])).toBeNull(); // active sensing
     expect(parse([0xe0, 0, 64])).toBeNull(); // pitch bend
-    expect(parse([0xc0, 5])).toBeNull(); // program change
+    expect(parse([0xc0, 5])).toEqual({ type: 'program', channel: 1, program: 5 }); // kit select
+    expect(parse([0xc0])).toBeNull(); // truncated program change
     expect(parse([0x90, 36])).toBeNull(); // truncated
     expect(parse([])).toBeNull();
     expect(parse(null)).toBeNull();
