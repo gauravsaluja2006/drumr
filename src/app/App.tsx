@@ -150,7 +150,7 @@ export function App() {
   return (
     <div className="flex h-full flex-col">
       <StatusBar />
-      <main className="grid min-h-0 flex-1 grid-cols-1 gap-6 p-4 lg:grid-cols-[280px_1fr_240px] lg:grid-rows-[minmax(0,1fr)] lg:p-6">
+      <main className="grid min-h-0 flex-1 grid-cols-1 gap-6 p-4 lg:grid-cols-[340px_1fr_240px] lg:grid-rows-[minmax(0,1fr)] lg:p-6">
         {desktop && (
           <aside className="flex min-h-0 flex-col gap-5 rounded-l border border-line bg-bg-1 p-5">
             <Panel title="Kits" className="min-h-0 flex-1">

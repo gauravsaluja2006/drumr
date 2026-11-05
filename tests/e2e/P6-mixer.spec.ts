@@ -26,8 +26,7 @@ test('US-11: moving the hi-hat slider to -12 dB changes hi-hat voice gain and pe
   expect(await gains()).toMatchObject({ hihat: -12 });
 
   // Per kit: switching kits restores that kit's own mix (default 0 dB).
-  await page.getByRole('button', { name: /Kit.*Test Kit/ }).click();
-  await page.getByRole('option', { name: /Test Kit B/ }).click();
+  await page.getByRole('list', { name: 'Drum kits' }).getByRole('button', { name: 'Test Kit B' }).click();
   await waitForKit(page, 'test-kit-b');
   expect(await gains()).toMatchObject({ hihat: 0 });
 });

@@ -49,7 +49,7 @@ Desktop (≥ 1024 px), single screen, no scrolling for the instrument (side colu
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│ ● Drumr        [Kit: Virtuosity Jazz ▾]      MIDI: ● Maschine MK3   │  status bar 56px
+│ ● Drumr                                      MIDI: ● Maschine MK3   │  status bar 56px
 ├───────────────────────┬──────────────────────────────┬───────────────┤
 │  KITS                 │         ┌───┬───┬───┬───┐    │  HI-HAT       │
 │  [⟳ Rotate] every 15s │         │   │   │   │   │    │  openness     │
@@ -59,14 +59,14 @@ Desktop (≥ 1024 px), single screen, no scrolling for the instrument (side colu
 │    808 Classic     ☑  │         │   │   │   │   │    │               │
 │    … (scrolls)        │         └───┴───┴───┴───┘    │  VELOCITY     │
 │  ─────────────        │   M │ K  S  H  T  C  P       │  sliders      │
-│  Kit name, licence,   │   ┃ │ ┃  ┃  ┃  ┃  ┃  ┃  faders│  curve graph  │
-│  author               │ [Layout ▾][Edit layout][MIDI controls]       │
+│  Kit name and         │   ┃ │ ┃  ┃  ┃  ┃  ┃  ┃  faders│  curve graph  │
+│  description          │ [Layout ▾][Edit layout][MIDI controls]       │
 ├───────────────────────┴──────────────────────────────┴───────────────┤
 │ About · Sources & licenses · GitHub                      v1.0.0       │  footer 40px
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-Left column 280 px, right column 240 px, centre flexible. Pad grid is a square sized to `min(centreWidth, viewportHeight − 400)` on desktop (room for the mixer strip), `viewportHeight − 220` below.
+Left column 340 px (long kit names fit), right column 240 px, centre flexible. Pad grid is a square sized to `min(centreWidth, viewportHeight − 400)` on desktop (room for the mixer strip), `viewportHeight − 220` below.
 
 Tablet (768–1023 px): side columns collapse into two tabs below the grid ("Kit & mixer", "Hi-hat & velocity"); the kit list sits in the first tab and the mixer there uses horizontal sliders.
 Phone (< 768 px): grid full width, status bar condensed to icons, columns become a bottom sheet. Keyboard hints hidden; touch is the input.
@@ -85,14 +85,14 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
   - **focused** (keyboard a11y): 2 px `--accent` outline offset 2 px.
 
 ### 4.2 Status bar
-- Left: logo dot + name. Centre: kit selector (Select primitive). Right: MIDI status pill: `● Connected · <device>` green; `○ No device` grey with "Choose…" if several; `⚠ Not supported` amber on Safari. Clicking opens device list.
+- Left: logo dot + name. Right: MIDI status pill (kits are chosen in the kit list, §4.3a): `● Connected · <device>` green; `○ No device` grey with "Choose…" if several; `⚠ Not supported` amber on Safari. Clicking opens device list.
 - Audio-suspended overlay (full screen, `--bg-0` at 85 %): "Tap anywhere to start audio". Disappears on first gesture.
 
-### 4.3 Kit selector
-- Dropdown listing kits with name, one-line description, size badge ("24 MB"), license badge ("CC0"). Loading shows a determinate progress bar under the status bar (bytes received / totalBytes) and the pads are disabled until decoded. Disabled pads use the `--bg-1` fill and a wait cursor; they are not faded, because 50 % opacity pushed note numbers below 4.5:1 contrast.
+### 4.3 Kit loading
+- Loading shows a determinate progress bar under the status bar (bytes received / totalBytes) and the pads are disabled until decoded. Disabled pads use the `--bg-1` fill and a wait cursor; they are not faded, because 50 % opacity pushed note numbers below 4.5:1 contrast. (The status-bar kit dropdown was removed in favour of the kit list, ADR-34.)
 
 ### 4.3a Kit list and rotation (left column)
-- Every kit in one scrolling list: playing kit marked with an `--accent` dot and `aria-current`; click loads; "local" badge for kits built on this machine. The current kit's description, licence and author sit below the list.
+- Every kit in one scrolling list: playing kit marked with an `--accent` dot and `aria-current`; click loads; "local" badge for kits built on this machine. The current kit's name and description sit below the list (licence and author are in the About panel, §4.8).
 - A checkbox per kit ticks it for rotation; with none ticked, rotation uses every kit.
 - Rotation controls above the list: `⟳ Rotate kits` toggle (pressed: `--accent` border and text, label "Rotating"), "every" select (10/15/30/60 s or 1/2/4/8 bars of 4/4), and in bars mode a BPM input with a Tap button. While running, a 4 px `--accent` bar on `--bg-3` empties until the next switch (progress indicator, not decoration).
 - The controller encoder highlights a row (`--bg-3` fill, `--accent` outline at 60 %) and keeps it in view.
