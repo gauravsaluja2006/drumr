@@ -291,9 +291,13 @@ Required tests: none new; full suite green on the tag.
 
 ---
 
+## Post-1.0 changes to earlier tests
+
+- `P3: parse decodes note on, note off, velocity-0 note on as off, CC, and ignores sysex/clock`: program change is now decoded (`{ type: 'program' }`) because it selects kits (ADR-36). The test asserted it was ignored; it now asserts the decoded message. Sysex, clock, active sensing and pitch bend are still ignored.
+
 ## Backlog (v2 candidates, not scheduled)
 
-Pad-level quick mute (right-click). Metronome; simple room reverb (convolution, per-kit IR); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n.
+Pad-level quick mute (right-click). Metronome; simple room reverb (convolution, per-kit IR); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n; kit rotation synced to incoming MIDI clock; MIDI output to light controller buttons for assigned actions.
 
 ---
 

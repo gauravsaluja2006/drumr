@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Kit browser, kit rotation, MIDI controls, looper
+- New kit set: Muldjord, ShittyKit, SM Drums, Roland TR-808, TR-909 Detroit, Hard Trap and Bounce. Black Pearl, Virtuosity Jazz and Big Rusty Rock are removed. Licence status per kit in KITS.md (ADR-38).
+- Looper: press Record loop (or `L`), then play: recording starts on your first pad hit. Press again to close the loop; it plays back from the first hit at once, with no gap. Overdub layers, undo, stop/play (`Shift+L`) and clear. Length "as played" or rounded to whole bars at the rotation tempo. Hi-hat pedal moves are recorded too, and playback is timed on the audio clock.
+- Rotation can switch every 1/2/4 loop passes, exactly on the loop's downbeat, so each kit plays the whole loop. Turning rotation on while a loop plays (or recording a loop while it rotates) switches to every loop pass automatically.
+- Loop actions are MIDI-learnable: record/close/overdub, play, stop (for controllers with Rec, Play and Stop buttons, such as Maschine), one-button stop/play, undo, clear.
+- Kit list in the left column: every kit one click away, playing kit marked, current kit's name and description below it (licence and author stay in About). It replaces the kit dropdown in the status bar.
+- Kit rotation: switch to the next kit every 10/15/30/60 seconds or every 1/2/4/8 bars at a typed or tapped tempo; while rotating, tick kits to narrow it to a shortlist (checkboxes show only while rotation is on). The next kit loads in the background so switches are instant; in bars mode they land just before the downbeat.
+- Mixer moved under the pads as vertical faders.
+- MIDI controls panel: learn controller buttons (next/previous kit, start/stop rotation, tap tempo, next pad layout, load highlighted kit), knobs (master and group volumes, sensitivity, hardest hit) and an encoder (scroll the kit list). Program change selects a kit. Assignments persist.
+- Side columns scroll inside the window instead of pushing the footer over the controls on short screens.
+
 ### Phase 7 — Polish, offline, performance
 - Works offline after the first visit (installable PWA); "Available offline" indicator.
 - Tablet and phone layouts: controls in two tabs under the pads; tighter pad labels on small screens.

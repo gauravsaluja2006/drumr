@@ -23,7 +23,7 @@ You are implementing a specified project. The specification lives in `docs/` and
 - MIDI → engine trigger path is synchronous. No `await`, no React state update, no store subscription on that path. UI updates go through `requestAnimationFrame`.
 - No new runtime dependencies without a Decision Log entry. Current allowed runtime deps: `react`, `react-dom`, `zustand`, `zod`. Everything else is dev-only.
 - Audio samples are FLAC produced by `scripts/kit-pipeline` only. Never hand-edit `public/kits/**`.
-- Licenses: only kits listed in `KITS.md` Tier 1 or 2 with a verified license. Attribution must appear in the manifest and the About panel.
+- Licenses: publish only kits listed in `KITS.md` "Published kit set". Owner's policy (ADR-38): a kit may be published unless its terms explicitly or clearly restrict use or redistribution; record the licence status honestly in the recipe and `KITS.md`. Attribution must appear in the manifest and the About panel.
 - Visual design follows `docs/03-DESIGN.md` tokens and states. Do not invent colours or animations.
 - TypeScript `strict` with `noUncheckedIndexedAccess`; no `any`, no `@ts-ignore` (use `@ts-expect-error` with a reason if unavoidable).
 - Test titles must match the required-test manifest exactly (copy-paste).

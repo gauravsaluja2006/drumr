@@ -120,8 +120,9 @@ export class AudioEngine {
   /**
    * Play an articulation now. Synchronous by design: this is the MIDI hot path.
    * @param eventTime performance.now() when the input event arrived, for latency stats.
+   * @param at AudioContext time to start at (loop playback schedules slightly ahead); default now.
    */
-  trigger(articulationId: string, velocity: number, eventTime?: number): Voice | null {
+  trigger(articulationId: string, velocity: number, eventTime?: number, at?: number): Voice | null {
     const kit = this.kit;
     const art = kit?.articulations.get(articulationId);
     if (!kit || !art || kit.unavailable.has(articulationId) || velocity <= 0) return null;
@@ -133,10 +134,10 @@ export class AudioEngine {
     const buffer = kit.buffers.get(layer.samples[index] as string);
     if (!buffer) return null;
 
-    this.choke(art.id);
-    if (this.voices.length >= MAX_VOICES) this.steal(art.group);
+    const t = Math.max(this.ctx.currentTime, at ?? 0);
+    this.choke(art.id, t);
+    if (this.voices.length >= MAX_VOICES) this.steal(art.group, t);
 
-    const t = this.ctx.currentTime;
     const source = this.ctx.createBufferSource();
     source.buffer = buffer;
     const gain = this.ctx.createGain();
@@ -173,10 +174,10 @@ export class AudioEngine {
    * implicit cymbal targets in IMPLICIT_CHOKES. Called on every trigger, and directly for choke-only
    * pads whose kit has no choke sample. Returns the number of voices choked.
    */
-  choke(chokerId: string): number {
+  choke(chokerId: string, at?: number): number {
     const implicit = IMPLICIT_CHOKES[chokerId];
     const victims = this.voices.filter((v) => v.chokedBy.includes(chokerId) || v.articulationId === implicit);
-    for (const v of victims) this.fadeOut(v, CHOKE_TC, CHOKE_STOP, 'choked');
+    for (const v of victims) this.fadeOut(v, CHOKE_TC, CHOKE_STOP, 'choked', at);
     this.counters.chokes += victims.length;
     return victims.length;
   }
@@ -221,19 +222,25 @@ export class AudioEngine {
   }
 
   /** Fade and stop a voice early (stealing and choking). */
-  protected fadeOut(voice: Voice, timeConstant: number, stopAfter: number, reason: VoiceEndReason): void {
-    const t = this.ctx.currentTime;
+  protected fadeOut(
+    voice: Voice,
+    timeConstant: number,
+    stopAfter: number,
+    reason: VoiceEndReason,
+    at?: number,
+  ): void {
+    const t = Math.max(this.ctx.currentTime, at ?? 0);
     voice.gain.gain.cancelScheduledValues(t);
     voice.gain.gain.setTargetAtTime(0, t, timeConstant);
     voice.source.stop(t + stopAfter);
     this.release(voice, reason);
   }
 
-  private steal(group: Group) {
+  private steal(group: Group, at?: number) {
     const victim = this.voices.find((v) => v.group === group) ?? this.voices[0];
     if (!victim) return;
     this.counters.steals++;
-    this.fadeOut(victim, STEAL_TC, STEAL_STOP, 'stolen');
+    this.fadeOut(victim, STEAL_TC, STEAL_STOP, 'stolen', at);
   }
 
   private release(voice: Voice, reason: VoiceEndReason) {

@@ -173,5 +173,6 @@
   "hihat": {
     "openness": ["hihat.closed", "hihat.half", "hihat.open"],
     "pedal": "hihat.pedal"
-  }
+  },
+  "local": true
 }

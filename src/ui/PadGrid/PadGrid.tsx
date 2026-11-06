@@ -26,7 +26,7 @@ export function PadGrid({
     <div
       role="group"
       aria-label="Drum pads"
-      className="grid aspect-square w-full max-w-[min(100%,calc(100vh-220px))] gap-3"
+      className="grid aspect-square w-full max-w-[min(100%,calc(100vh-var(--grid-reserve,220px)))] gap-3"
       style={{ gridTemplateColumns: `repeat(${GRID_COLS}, minmax(0, 1fr))` }}
     >
       {Array.from({ length: GRID_ROWS * GRID_COLS }, (_, i) => (

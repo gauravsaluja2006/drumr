@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "id": "dm-tr909-detroit",
+  "name": "TR-909 Detroit",
+  "description": "909 recorded through API and Neve: punchy house and techno.",
+  "license": {
+    "name": "Free download (F9 Audio); no licence terms found",
+    "url": "https://github.com/oramics/sampled/tree/master/DM/TR-909/Detroit"
+  },
+  "attribution": {
+    "author": "F9 Audio (via oramics/sampled)",
+    "url": "http://www.flstudiomusic.com/2016/09/download-free-909-kits-stems-f9-audio.html"
+  },
+  "sampleRate": 44100,
+  "format": "flac",
+  "totalBytes": 368088,
+  "groups": [
+    "kick",
+    "snare",
+    "perc",
+    "toms",
+    "hihat",
+    "cymbals"
+  ],
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/kick_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_center_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_sidestick_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/clap_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_high_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_low_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_closed_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_open_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bow_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_left_v1_rr1.flac"
+          ]
+        }
+      ]
+    }
+  ],
+  "hihat": {
+    "openness": [
+      "hihat.closed",
+      "hihat.open"
+    ]
+  }
+}

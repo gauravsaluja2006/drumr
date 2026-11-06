@@ -1,5 +1,4 @@
 import { LoadingBar } from '@/ui/LoadingBar/LoadingBar';
-import { KitSelector } from '@/ui/KitSelector/KitSelector';
 import { MidiBanner, MidiStatus } from '@/ui/MidiStatus/MidiStatus';
 
 export function StatusBar() {
@@ -13,7 +12,6 @@ export function StatusBar() {
           />
           <h1 className="text-base font-semibold">Drumr</h1>
         </div>
-        <KitSelector />
         <MidiStatus />
       </div>
       <LoadingBar />

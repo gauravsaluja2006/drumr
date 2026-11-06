@@ -425,5 +425,6 @@
     ],
     "pedal": "hihat.pedal",
     "splash": "hihat.splash"
-  }
+  },
+  "local": true
 }

@@ -1,12 +1,11 @@
 {
   "id": "dm-tr909-detroit",
   "order": 45,
-  "local": true,
   "name": "TR-909 Detroit",
   "description": "909 recorded through API and Neve: punchy house and techno.",
   "license": {
-    "name": "Free, licence unclear (local only)",
-    "url": "https://github.com/oramics/sampled"
+    "name": "Free download (F9 Audio); no licence terms found",
+    "url": "https://github.com/oramics/sampled/tree/master/DM/TR-909/Detroit"
   },
   "attribution": {
     "author": "F9 Audio (via oramics/sampled)",

@@ -1,0 +1,132 @@
+{
+  "recipe": "trap-hard",
+  "kitGainDb": -0.54,
+  "samples": [
+    {
+      "output": "samples/kick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "kicks/hard-kick-01.wav",
+          "sha256": "75ab3c2b179c47c718a740dbae97f792442b739ca28df9e2ab59aea6c26b0496"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "snares/hard-snare-01.wav",
+          "sha256": "117e5a78df3ffa0735f18b5889793f95080dfeffe574b742607a02de6183d497"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_rimshot_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "snares/hard-snare-02.wav",
+          "sha256": "56f7629948822e8988310d64f9a8c9e4935f7a4064e5ed243598048e504493a0"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "percs/perc-rimshot.wav",
+          "sha256": "20d5cd385c0f8c3a24bbfe78c2e2747776841ede6185bc0fe93f97f0b455b89c"
+        }
+      ]
+    },
+    {
+      "output": "samples/clap_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "claps/clap-01.wav",
+          "sha256": "4f5b72674791ce133a2ad3bd40c9a0e628bad9062eb8f04de27f59dcc8ce5d46"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "percs/perc-low-tom.wav",
+          "sha256": "17386b1ed8d6eb2820fa217bfd86109c0d5178eda256557bcc0e849a903476b9"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "808s/808-bass-dist.wav",
+          "sha256": "e3ee04b3f5f732a82dfc917e4e5c011bca85a82850113364e343b4dded7e440b"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "808s/808-bass-sub.wav",
+          "sha256": "669c62e3528026b0789856be711354d0388f5c2f528cff9487188dfb938bd85f"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "hi-hats/hi-hat-closed-01.wav",
+          "sha256": "c9f30ff2b4d73b03f41960e504e03c54e9a59697af666fe4d155bab9cd1ccae6"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_shank_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "hi-hats/ch.wav",
+          "sha256": "c9f30ff2b4d73b03f41960e504e03c54e9a59697af666fe4d155bab9cd1ccae6"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "open-hats/open-hat-01.wav",
+          "sha256": "cde0aec2ca84358067859f52bac7d55b875f30d2baea700923e25e21307803e9"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "fx/fx-cymbal.wav",
+          "sha256": "d1806c3878815fcc3816dcef4ab870c67eb67bf27f2dd140f5c25178749525be"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "fx/cy5075.wav",
+          "sha256": "d1806c3878815fcc3816dcef4ab870c67eb67bf27f2dd140f5c25178749525be"
+        }
+      ]
+    },
+    {
+      "output": "samples/cowbell_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "percs/perc-cowbell.wav",
+          "sha256": "1468cbd6c75a1f23b50a15968796c256c74893a35aa3824c6663db82c271f28d"
+        }
+      ]
+    }
+  ]
+}

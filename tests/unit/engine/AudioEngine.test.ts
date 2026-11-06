@@ -270,4 +270,18 @@ describe('group gain', () => {
     const v = engine.trigger('hihat.closed', 100)!;
     expect((v.gain as FakeGain).outputs).toEqual([engine.groups.hihat]);
   });
+
+  test('trigger at a future audio time starts the source then and chokes ringing voices at that time', () => {
+    const { ctx, engine } = setup();
+    ctx.advance(1);
+    const open = engine.trigger('hihat.open', 100)!;
+    engine.trigger('hihat.closed', 100, undefined, 1.02);
+    expect(lastSource(ctx).startedAt).toBe(1.02);
+    expect((open.source as FakeSource).stoppedAt).toBeCloseTo(1.02 + CHOKE_STOP, 6);
+    expect((open.gain as FakeGain).gain.calls.at(-1)).toMatchObject({ kind: 'setTargetAtTime', time: 1.02 });
+    expect(engine.stats().lastTrigger).toMatchObject({ articulationId: 'hihat.closed', atTime: 1.02 });
+    // A time already in the past plays now.
+    engine.trigger('kick', 100, undefined, 0.5);
+    expect(lastSource(ctx).startedAt).toBe(1);
+  });
 });

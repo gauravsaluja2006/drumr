@@ -1,0 +1,96 @@
+{
+  "recipe": "dm-tr909-detroit",
+  "kitGainDb": 0.47,
+  "samples": [
+    {
+      "output": "samples/kick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/kick.wav",
+          "sha256": "7b0a75441ffbbef5e9ccb38bec43e8dfe86ba070621fbe5ac623e52b6fd9f4a1"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/snare.wav",
+          "sha256": "e33f9949b5ef498cb505c5ba0bc59aee11ecca98fb89a51531d1584e65cb7b2e"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/rim.wav",
+          "sha256": "2f8a399daf050dcb30c80ffb84906153014b76e65348b7dbf3a98cdd2c110618"
+        }
+      ]
+    },
+    {
+      "output": "samples/clap_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/clap-1.wav",
+          "sha256": "d416c0f1db1bf01db19cc70323e803c4a23bbb7b8488cb0429d27485f0cd15b2"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/tom-h.wav",
+          "sha256": "6fc4a813ca6a9eda965173f0142ce917140917d35409ba899bf9fd2266a9d47e"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/tom-l.wav",
+          "sha256": "597314222a40c9e63d74b35c0dc3aa3b9c58429b3c10e6350a2e77d533aecbe6"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/hihat-closed.wav",
+          "sha256": "8f67165b4fdf6ce6f1a73e5157ebc36522838659dd7424777e90209c79aea36a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/hihat-open-1.wav",
+          "sha256": "e09b1ec288407b3dd4a9eb5688af32618f5c011a6b09f6641370f9634494d515"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/ride.wav",
+          "sha256": "1422a672cf4a9b59b4fac480fb2f85ca54c7b0205ddbf3be8a1f6f420bfa2771"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "samples/cymbal.wav",
+          "sha256": "2153f1cb7a08a7eb1d66d801039e077474832d1df9bb114e69493aaa97e65616"
+        }
+      ]
+    }
+  ]
+}

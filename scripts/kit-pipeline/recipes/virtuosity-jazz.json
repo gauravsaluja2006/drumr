@@ -142,5 +142,6 @@
     "openness": ["hihat.closed", "hihat.half", "hihat.threeQuarter", "hihat.open"],
     "pedal": "hihat.pedal",
     "splash": "hihat.splash"
-  }
+  },
+  "local": true
 }

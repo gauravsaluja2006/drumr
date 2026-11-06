@@ -3,7 +3,8 @@ import type { MidiMessage } from './types';
 /**
  * Parses one Web MIDI message. Channel is 1-16. Note-on with velocity 0 is a note-off.
  * Running status (data bytes without a status byte) reuses the previous channel-voice status.
- * Everything other than note on/off and control change is ignored (sysex, clock, pitch bend, ...).
+ * Note on/off, control change and program change are decoded; everything else (sysex, clock,
+ * pitch bend, ...) is ignored.
  */
 export class MidiParser {
   private running = 0;
@@ -25,8 +26,10 @@ export class MidiParser {
     const kind = status & 0xf0;
     const channel = (status & 0x0f) + 1;
     const d1 = data[i];
+    if (d1 === undefined) return null;
+    if (kind === 0xc0) return { type: 'program', channel, program: d1 }; // one data byte
     const d2 = data[i + 1];
-    if (d1 === undefined || d2 === undefined) return null;
+    if (d2 === undefined) return null;
     switch (kind) {
       case 0x90:
         return d2 === 0
