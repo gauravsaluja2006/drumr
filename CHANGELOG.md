@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Kit browser, kit rotation, MIDI controls, looper
+- Effects: Room, Hall and Plate reverb and a tempo-synced Echo, any combination, with an amount for each. Remembered per kit, or "Use on all kits". Amounts are MIDI-learnable knobs. Reverb is sent mostly from snare, toms and cymbals and little from the kick, so the low end stays tight (ADR-39).
 - New kit set: Muldjord, ShittyKit, SM Drums, Roland TR-808, TR-909 Detroit, Hard Trap and Bounce. Black Pearl, Virtuosity Jazz and Big Rusty Rock are removed. Licence status per kit in KITS.md (ADR-38).
 - Looper: press Record loop (or `L`), then play: recording starts on your first pad hit. Press again to close the loop; it plays back from the first hit at once, with no gap. Overdub layers, undo, stop/play (`Shift+L`) and clear. Length "as played" or rounded to whole bars at the rotation tempo. Hi-hat pedal moves are recorded too, and playback is timed on the audio clock.
 - Rotation can switch every 1/2/4 loop passes, exactly on the loop's downbeat, so each kit plays the whole loop. Turning rotation on while a loop plays (or recording a loop while it rotates) switches to every loop pass automatically.

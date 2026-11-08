@@ -3,6 +3,7 @@ import type { LoadedKit } from './Sampler';
 import { GROUPS, type Group } from '@/kits/schema';
 import { gainFor, layerFor, pickRoundRobin } from './velocity';
 import { dbToGain, median, percentile } from '@/lib/audioMath';
+import { Effects } from './Effects';
 
 export const MAX_VOICES = 64;
 /** Time constant for gain changes from the mixer (≈10 ms, no zipper noise). */
@@ -56,6 +57,8 @@ export class AudioEngine {
   readonly master: IGainNode;
   readonly limiter: IDynamicsCompressorNode;
   readonly groups: Record<Group, IGainNode>;
+  /** Reverb and echo sends (docs/02-ARCHITECTURE.md ADR-39). */
+  readonly effects: Effects;
   /** Last requested gains in dB (AudioParam.value lags behind setTargetAtTime). */
   readonly gainDb: { master: number } & Record<Group, number> = {
     master: 0,
@@ -101,6 +104,7 @@ export class AudioEngine {
       groups[g] = node;
     }
     this.groups = groups;
+    this.effects = new Effects(ctx, groups, this.master, random);
   }
 
   setKit(kit: LoadedKit | null): void {

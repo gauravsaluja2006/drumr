@@ -297,7 +297,7 @@ Required tests: none new; full suite green on the tag.
 
 ## Backlog (v2 candidates, not scheduled)
 
-Pad-level quick mute (right-click). Metronome; simple room reverb (convolution, per-kit IR); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n; kit rotation synced to incoming MIDI clock; MIDI output to light controller buttons for assigned actions.
+Pad-level quick mute (right-click). Metronome; effects follow-ups (echo time choice, real-room IRs, per-group send levels; base reverb/echo shipped, ADR-39); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n; kit rotation synced to incoming MIDI clock; MIDI output to light controller buttons for assigned actions.
 
 ---
 

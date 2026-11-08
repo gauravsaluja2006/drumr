@@ -40,7 +40,7 @@ Tertiary users matter: the app must be fully demonstrable with no MIDI device.
 ### 4.2 Out of scope (v1)
 
 - Recording, sequencing, looping, metronome.
-- Effects beyond volume (reverb, EQ, compression). May come in v2.
+- EQ and compression. (Reverb and echo sends were added later, ADR-39.)
 - Multiple simultaneous kits, layering, custom user-uploaded samples.
 - Accounts, cloud sync, analytics.
 - MIDI output.

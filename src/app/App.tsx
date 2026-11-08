@@ -7,7 +7,8 @@ import { LoopBar } from '@/ui/LoopBar/LoopBar';
 import { Mixer } from '@/ui/Mixer/Mixer';
 import { AudioOverlay } from '@/ui/AudioOverlay/AudioOverlay';
 import { kitBaseUrl, useKitStore } from '@/state/useKitStore';
-import { DEFAULT_GROUP, useSettingsStore } from '@/state/useSettingsStore';
+import { DEFAULT_GROUP, fxFor, useSettingsStore } from '@/state/useSettingsStore';
+import { EffectsPanel } from '@/ui/EffectsPanel/EffectsPanel';
 import { GROUPS } from '@/kits/schema';
 import { attachKeyboard } from '@/input/keyboard';
 import { getRuntime, type Runtime } from './runtime';
@@ -130,6 +131,16 @@ export function App() {
     }
   }, [runtime, kitMix]);
 
+  // Per-kit effects and the echo tempo → engine sends.
+  const kitFx = useSettingsStore((s) => fxFor(s, kitId));
+  const bpm = useSettingsStore((s) => s.rotation.bpm);
+  useEffect(() => {
+    runtime?.engine.effects.setTempo(bpm);
+  }, [runtime, bpm]);
+  useEffect(() => {
+    runtime?.engine.effects.set(kitFx);
+  }, [runtime, kitFx]);
+
   // Make the current kit available offline once a service worker is active.
   const manifest = useKitStore((s) => s.manifest);
   const offlineReady = useOfflineStore((s) => !!kitId && s.readyKitIds.includes(kitId));
@@ -217,6 +228,9 @@ export function App() {
                       </div>
                       <KitPanel />
                       <Mixer />
+                      <Panel title="Effects" className="border-t border-line pt-4">
+                        <EffectsPanel />
+                      </Panel>
                     </>
                   ),
                 },
@@ -245,6 +259,9 @@ export function App() {
             <aside className="flex min-h-0 flex-col gap-8 overflow-y-auto rounded-l border border-line bg-bg-1 p-5">
               <Panel title="Hi-hat">
                 <HiHatMeter />
+              </Panel>
+              <Panel title="Effects">
+                <EffectsPanel />
               </Panel>
               <Panel title="Velocity">
                 <VelocityPanel />

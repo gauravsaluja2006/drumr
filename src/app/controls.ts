@@ -15,6 +15,7 @@ import type { MidiMessage } from '@/midi/types';
 import { nextKitId } from '@/kits/rotation';
 import { sensitivityToExponent } from '@/engine/velocity';
 import type { Group } from '@/kits/schema';
+import type { EffectId } from '@/engine/Effects';
 import { BUILTIN_PRESETS } from '@/mapping/presets';
 import { useControlsStore } from '@/state/useControlsStore';
 import { useKitStore } from '@/state/useKitStore';
@@ -129,6 +130,14 @@ function turn(action: ControlAction, value: number) {
       .setVelocity({ exponent: sensitivityToExponent(knobToRange(value, 0, 100)) });
   if (action === 'velocity.hardest')
     return useMappingStore.getState().setVelocity({ ceiling: knobToRange(value, 32, 127) });
+  if (action.startsWith('fx.')) {
+    // A knob sets the amount; all the way down switches the effect off.
+    const kitId = useKitStore.getState().currentKitId;
+    const amount = knobToRange(value, 0, 100) / 100;
+    if (kitId)
+      useSettingsStore.getState().setFx(kitId, action.slice(3) as EffectId, { amount, on: amount > 0 });
+    return;
+  }
   if (action.startsWith('mix.')) {
     const kitId = useKitStore.getState().currentKitId;
     if (kitId) useSettingsStore.getState().setGroup(kitId, action.slice(4) as Group, { db: knobToDb(value) });

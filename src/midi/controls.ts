@@ -29,6 +29,10 @@ export const KNOB_ACTIONS = [
   'mix.perc',
   'velocity.sensitivity',
   'velocity.hardest',
+  'fx.room',
+  'fx.hall',
+  'fx.plate',
+  'fx.echo',
 ] as const;
 export const ENCODER_ACTIONS = ['kitList.scroll'] as const;
 

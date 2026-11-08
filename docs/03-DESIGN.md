@@ -104,6 +104,9 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 ### 4.5 Hi-hat panel
 - Vertical meter showing CC position with the discrete bands as ticks; the active openness level is labelled ("¾ open"). CC number select and invert checkbox below.
 
+### 4.5a Effects panel (right column, between Hi-hat and Velocity; "Kit & mixer" tab on phones)
+- One row per effect (Room, Hall, Plate, Echo): a toggle button (pressed: `--accent` border, text and dot) with the amount in % on the right, and a 0–100 % slider below (dimmed while off). Several can be on at once. Moving the slider above 0 switches the effect on; to 0 switches it off. Footer: "Same on every kit", or "Saved for <kit>" with a "Use on all kits" button once this kit has its own settings. Echo is a dotted eighth at the rotation tempo (shown in its tooltip). Each amount is MIDI-learnable as a knob.
+
 ### 4.6 Velocity panel
 - 120 × 80 px SVG plot of the curve; input velocity on x, output on y; the last hit is drawn as a dot that fades. Two number inputs: exponent (1.0–4.0 step 0.1), floor (0–64).
 

@@ -38,6 +38,28 @@ export interface IDynamicsCompressorNode extends IAudioNode {
   readonly reduction: number;
 }
 
+/** A buffer the engine fills itself (reverb impulse responses). */
+export interface IAudioBuffer extends AudioBufferLike {
+  readonly numberOfChannels: number;
+  readonly length: number;
+  getChannelData(channel: number): Float32Array;
+}
+
+export interface IConvolverNode extends IAudioNode {
+  buffer: IAudioBuffer | null;
+  normalize: boolean;
+}
+
+export interface IDelayNode extends IAudioNode {
+  readonly delayTime: IAudioParam;
+}
+
+export interface IBiquadFilterNode extends IAudioNode {
+  type: BiquadFilterType;
+  readonly frequency: IAudioParam;
+  readonly Q: IAudioParam;
+}
+
 export interface IAudioContext {
   readonly currentTime: number;
   readonly sampleRate: number;
@@ -48,6 +70,10 @@ export interface IAudioContext {
   createGain(): IGainNode;
   createBufferSource(): IBufferSourceNode;
   createDynamicsCompressor(): IDynamicsCompressorNode;
+  createConvolver(): IConvolverNode;
+  createDelay(maxDelayTime?: number): IDelayNode;
+  createBiquadFilter(): IBiquadFilterNode;
+  createBuffer(numberOfChannels: number, length: number, sampleRate: number): IAudioBuffer;
   decodeAudioData(data: ArrayBuffer): Promise<AudioBufferLike>;
   resume(): Promise<void>;
 }

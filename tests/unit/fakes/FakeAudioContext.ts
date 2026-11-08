@@ -1,7 +1,11 @@
 import type {
   AudioBufferLike,
+  IAudioBuffer,
   IAudioContext,
   IAudioNode,
+  IBiquadFilterNode,
+  IConvolverNode,
+  IDelayNode,
   IAudioParam,
   IBufferSourceNode,
   IDynamicsCompressorNode,
@@ -85,6 +89,49 @@ export class FakeCompressor extends FakeNode implements IDynamicsCompressorNode 
   }
 }
 
+export class FakeConvolver extends FakeNode implements IConvolverNode {
+  buffer: IAudioBuffer | null = null;
+  normalize = true;
+  constructor() {
+    super('convolver');
+  }
+}
+
+export class FakeDelay extends FakeNode implements IDelayNode {
+  readonly delayTime = new FakeParam(0);
+  constructor(readonly maxDelayTime = 1) {
+    super('delay');
+  }
+}
+
+export class FakeBiquad extends FakeNode implements IBiquadFilterNode {
+  type: BiquadFilterType = 'lowpass';
+  readonly frequency = new FakeParam(350);
+  readonly Q = new FakeParam(1);
+  constructor() {
+    super('biquad');
+  }
+}
+
+export class FakeAudioBuffer implements IAudioBuffer {
+  readonly channels: Float32Array[];
+  constructor(
+    readonly numberOfChannels: number,
+    readonly length: number,
+    readonly sampleRate: number,
+  ) {
+    this.channels = Array.from({ length: numberOfChannels }, () => new Float32Array(length));
+  }
+  get duration() {
+    return this.length / this.sampleRate;
+  }
+  getChannelData(channel: number) {
+    const c = this.channels[channel];
+    if (!c) throw new RangeError(`no channel ${channel}`);
+    return c;
+  }
+}
+
 export class FakeBuffer implements AudioBufferLike {
   constructor(
     readonly duration: number,
@@ -102,6 +149,9 @@ export class FakeAudioContext implements IAudioContext {
   sources: FakeSource[] = [];
   gains: FakeGain[] = [];
   decoded: ArrayBuffer[] = [];
+  convolvers: FakeConvolver[] = [];
+  delays: FakeDelay[] = [];
+  filters: FakeBiquad[] = [];
   /** Byte length → tag lets tests check which buffer a voice got. */
   decodeImpl: (data: ArrayBuffer) => Promise<AudioBufferLike> = async (data) =>
     new FakeBuffer(0.5, String(data.byteLength));
@@ -121,6 +171,24 @@ export class FakeAudioContext implements IAudioContext {
   }
   createDynamicsCompressor() {
     return new FakeCompressor();
+  }
+  createConvolver() {
+    const c = new FakeConvolver();
+    this.convolvers.push(c);
+    return c;
+  }
+  createDelay(maxDelayTime?: number) {
+    const d = new FakeDelay(maxDelayTime);
+    this.delays.push(d);
+    return d;
+  }
+  createBiquadFilter() {
+    const f = new FakeBiquad();
+    this.filters.push(f);
+    return f;
+  }
+  createBuffer(numberOfChannels: number, length: number, sampleRate: number) {
+    return new FakeAudioBuffer(numberOfChannels, length, sampleRate);
   }
   decodeAudioData(data: ArrayBuffer) {
     this.decoded.push(data);

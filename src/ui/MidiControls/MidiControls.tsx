@@ -38,6 +38,10 @@ export const ACTION_LABELS: Record<ControlAction, string> = {
   'mix.perc': 'Percussion volume',
   'velocity.sensitivity': 'Sensitivity',
   'velocity.hardest': 'Hardest hit',
+  'fx.room': 'Room reverb amount',
+  'fx.hall': 'Hall reverb amount',
+  'fx.plate': 'Plate reverb amount',
+  'fx.echo': 'Echo amount',
   'kitList.scroll': 'Scroll kit list',
 };
 

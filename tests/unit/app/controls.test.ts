@@ -6,7 +6,8 @@ import { setRuntime } from '@/app/runtime';
 import { useControlsStore } from '@/state/useControlsStore';
 import { useKitStore } from '@/state/useKitStore';
 import { useMappingStore } from '@/state/useMappingStore';
-import { useSettingsStore } from '@/state/useSettingsStore';
+import { fxFor, useSettingsStore } from '@/state/useSettingsStore';
+import { DEFAULT_FX } from '@/engine/Effects';
 import { useUiStore } from '@/state/useUiStore';
 import { DEFAULT_CONTROLS } from '@/midi/controls';
 import { installFakeRuntime } from '../fakes/runtime';
@@ -82,6 +83,15 @@ describe('controller buttons and knobs', () => {
     expect(useSettingsStore.getState().masterDb).toBe(-60);
     expect(useSettingsStore.getState().mix['test-kit']?.snare?.db).toBe(6);
     expect(useMappingStore.getState().mapping.velocity).toMatchObject({ exponent: 4, ceiling: 32 });
+  });
+
+  test('effect knobs set the current kit’s effect amount; all the way down switches it off', () => {
+    useSettingsStore.setState({ fx: {}, fxDefault: DEFAULT_FX });
+    useControlsStore.getState().bind('fx.hall', { kind: 'cc', channel: 1, number: 34 });
+    handleMidi(cc(34, 127), 0);
+    expect(fxFor(useSettingsStore.getState(), 'test-kit').hall).toEqual({ on: true, amount: 1 });
+    handleMidi(cc(34, 0), 0);
+    expect(fxFor(useSettingsStore.getState(), 'test-kit').hall).toEqual({ on: false, amount: 0 });
   });
 
   test('the encoder moves the kit cursor and its push loads the highlighted kit', async () => {
