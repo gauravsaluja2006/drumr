@@ -5,7 +5,7 @@ const ITEM =
   'flex w-full items-center justify-between gap-6 rounded-s px-3 py-2 text-left text-sm text-fg-1 outline-none hover:bg-bg-3 hover:text-fg-0 focus-visible:bg-bg-3 focus-visible:text-fg-0';
 
 /**
- * Header overflow menu (docs/03-DESIGN.md §4.2): About & licences and the debug panel. Arrow keys
+ * Header overflow menu (docs/03-DESIGN.md §4.2): About & licences. Arrow keys
  * move between items, Escape or a click outside closes and returns focus to the button.
  */
 export function MoreMenu() {
@@ -14,7 +14,6 @@ export function MoreMenu() {
   const menu = useRef<HTMLDivElement>(null);
   const menuId = useId();
   const setAboutOpen = useUiStore((s) => s.setAboutOpen);
-  const setDebugOpen = useUiStore((s) => s.setDebugOpen);
 
   useEffect(() => {
     if (!open) return;
@@ -83,14 +82,6 @@ export function MoreMenu() {
             onClick={() => choose(() => setAboutOpen(true))}
           >
             About &amp; licences
-          </button>
-          <button
-            type="button"
-            role="menuitem"
-            className={ITEM}
-            onClick={() => choose(() => setDebugOpen(!useUiStore.getState().debugOpen))}
-          >
-            Debug panel <kbd className="font-mono text-xs text-fg-2">`</kbd>
           </button>
           <p className="border-t border-line px-3 pt-2 pb-1.5 text-xs text-fg-2">
             Web MIDI · Web Audio · open-licence drum samples

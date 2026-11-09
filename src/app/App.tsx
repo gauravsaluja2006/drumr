@@ -255,6 +255,13 @@ export function App() {
             Available offline
           </span>
         )}
+        <button
+          type="button"
+          onClick={() => setDebugOpen(!debugOpen)}
+          className="hidden text-fg-1 hover:text-fg-0 sm:inline"
+        >
+          Debug
+        </button>
         <span>
           v{__APP_VERSION__} · {__COMMIT__}
         </span>

@@ -62,7 +62,7 @@ Desktop (≥ 1024 px), single screen, no scrolling for the instrument (side colu
 │  Kit name and         │   M ▮ │ K  S  H  T  C  P     │               │
 │  description          │   ┃ ┃ │ ┃  ┃  ┃  ┃  ┃  ┃     │               │
 ├───────────────────────┴──────────────────────────────┴───────────────┤
-│                                       ● Available offline · v1.0.0  │  footer 32px
+│                               ● Available offline · Debug · v1.0.0  │  footer 32px
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -86,8 +86,8 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 
 ### 4.2 Status bar
 - Left: logo (36 px mark: four pads on a `--bg-2` tile, the struck pad in a `--accent-2`→`--accent` gradient with a soft glow and a strike ring; same drawing as the favicon and app icons), wordmark "Drumr" 17 px semibold, a 1 px divider and the tagline "Live drum sampler" (`--fg-2`, hidden on phones). Right: MIDI status pill (`● Connected · <device>` green; `○ No device` grey with "Choose…" if several; `⚠ Not supported` amber on Safari; clicking opens the device list), the Settings pill (§4.11) and a round "More" (⋯) button. A 1 px `--accent` at 40 % hairline fades in and out along the bottom edge.
-- More menu: "About & licences" (§4.8), "Debug panel" (§4.9), and the line "Web MIDI · Web Audio · open-licence drum samples". Arrow keys move, Escape or a click outside closes.
-- Footer (32 px): only "Available offline" when ready, and the version, right-aligned in mono 11 px.
+- More menu: "About & licences" (§4.8) and the line "Web MIDI · Web Audio · open-licence drum samples". Arrow keys move, Escape or a click outside closes.
+- Footer (32 px), right-aligned in mono 11 px: "Available offline" when ready, a "Debug" link (§4.9), and the version.
 - Audio-suspended overlay (full screen, `--bg-0` at 85 %): "Tap anywhere to start audio". Disappears on first gesture.
 
 ### 4.3 Kit loading
