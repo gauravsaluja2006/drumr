@@ -1,4 +1,5 @@
 import { DbSlider } from '@/ui/primitives/Slider';
+import { OutputMeter } from './OutputMeter';
 import { DEFAULT_GROUP, MASTER_MAX_DB, MASTER_MIN_DB, useSettingsStore } from '@/state/useSettingsStore';
 import { useKitStore } from '@/state/useKitStore';
 import { GROUPS, type Group } from '@/kits/schema';
@@ -29,14 +30,21 @@ export function Mixer({ layout = 'list' }: { layout?: 'list' | 'strip' }) {
 
   return (
     <div className={strip ? 'flex items-start justify-center gap-1' : 'flex flex-col gap-4'}>
-      <DbSlider
-        orientation={orientation}
-        label="Master"
-        value={masterDb}
-        min={MASTER_MIN_DB}
-        max={MASTER_MAX_DB}
-        onChange={setMasterDb}
-      />
+      <div className={strip ? 'flex items-start' : 'contents'}>
+        <DbSlider
+          orientation={orientation}
+          label="Master"
+          value={masterDb}
+          min={MASTER_MIN_DB}
+          max={MASTER_MAX_DB}
+          onChange={setMasterDb}
+        />
+        {strip && (
+          <div className="pt-[0.6rem]">
+            <OutputMeter />
+          </div>
+        )}
+      </div>
       {kitId && (
         <div
           className={

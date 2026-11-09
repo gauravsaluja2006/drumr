@@ -1,10 +1,13 @@
 import { GRID_COLS, GRID_ROWS } from './padLayout';
 import { Pad } from './Pad';
+import type { Group } from '@/kits/schema';
 
 export interface PadView {
   label?: string;
   note?: number;
   unavailable?: boolean;
+  /** Drum group of the sound the pad plays now; colours the dot and the hit flash. */
+  group?: Group;
 }
 
 export interface PadGridProps {

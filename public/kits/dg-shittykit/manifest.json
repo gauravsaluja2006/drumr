@@ -13,7 +13,7 @@
   },
   "sampleRate": 44100,
   "format": "flac",
-  "totalBytes": 8066777,
+  "totalBytes": 11712372,
   "groups": [
     "kick",
     "snare",
@@ -29,34 +29,58 @@
       "layers": [
         {
           "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/kick_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
           "hivel": 31,
           "samples": [
-            "samples/kick_v1_rr1.flac",
-            "samples/kick_v1_rr2.flac"
+            "samples/kick_v2_rr1.flac"
           ]
         },
         {
           "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/kick_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
           "hivel": 63,
           "samples": [
-            "samples/kick_v2_rr1.flac",
-            "samples/kick_v2_rr2.flac"
+            "samples/kick_v4_rr1.flac"
           ]
         },
         {
           "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/kick_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
           "hivel": 95,
           "samples": [
-            "samples/kick_v3_rr1.flac",
-            "samples/kick_v3_rr2.flac"
+            "samples/kick_v6_rr1.flac"
           ]
         },
         {
           "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/kick_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
           "hivel": 127,
           "samples": [
-            "samples/kick_v4_rr1.flac",
-            "samples/kick_v4_rr2.flac"
+            "samples/kick_v8_rr1.flac"
           ]
         }
       ]
@@ -68,46 +92,58 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 21,
+          "hivel": 15,
           "samples": [
             "samples/snare_center_v1_rr1.flac"
           ]
         },
         {
-          "lovel": 22,
-          "hivel": 42,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/snare_center_v2_rr1.flac"
           ]
         },
         {
-          "lovel": 43,
-          "hivel": 63,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
-            "samples/snare_center_v3_rr1.flac",
-            "samples/snare_center_v3_rr2.flac"
+            "samples/snare_center_v3_rr1.flac"
           ]
         },
         {
-          "lovel": 64,
-          "hivel": 84,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/snare_center_v4_rr1.flac"
           ]
         },
         {
-          "lovel": 85,
-          "hivel": 105,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/snare_center_v5_rr1.flac"
           ]
         },
         {
-          "lovel": 106,
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/snare_center_v6_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/snare_center_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
           "hivel": 127,
           "samples": [
-            "samples/snare_center_v6_rr1.flac",
-            "samples/snare_center_v6_rr2.flac"
+            "samples/snare_center_v8_rr1.flac"
           ]
         }
       ]
@@ -154,34 +190,58 @@
       "layers": [
         {
           "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/tom_high_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
           "hivel": 31,
           "samples": [
-            "samples/tom_high_v1_rr1.flac",
-            "samples/tom_high_v1_rr2.flac"
+            "samples/tom_high_v2_rr1.flac"
           ]
         },
         {
           "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/tom_high_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
           "hivel": 63,
           "samples": [
-            "samples/tom_high_v2_rr1.flac",
-            "samples/tom_high_v2_rr2.flac"
+            "samples/tom_high_v4_rr1.flac"
           ]
         },
         {
           "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/tom_high_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
           "hivel": 95,
           "samples": [
-            "samples/tom_high_v3_rr1.flac",
-            "samples/tom_high_v3_rr2.flac"
+            "samples/tom_high_v6_rr1.flac"
           ]
         },
         {
           "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_high_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
           "hivel": 127,
           "samples": [
-            "samples/tom_high_v4_rr1.flac",
-            "samples/tom_high_v4_rr2.flac"
+            "samples/tom_high_v8_rr1.flac"
           ]
         }
       ]
@@ -193,34 +253,58 @@
       "layers": [
         {
           "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/tom_low_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
           "hivel": 31,
           "samples": [
-            "samples/tom_low_v1_rr1.flac",
-            "samples/tom_low_v1_rr2.flac"
+            "samples/tom_low_v2_rr1.flac"
           ]
         },
         {
           "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/tom_low_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
           "hivel": 63,
           "samples": [
-            "samples/tom_low_v2_rr1.flac",
-            "samples/tom_low_v2_rr2.flac"
+            "samples/tom_low_v4_rr1.flac"
           ]
         },
         {
           "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/tom_low_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
           "hivel": 95,
           "samples": [
-            "samples/tom_low_v3_rr1.flac",
-            "samples/tom_low_v3_rr2.flac"
+            "samples/tom_low_v6_rr1.flac"
           ]
         },
         {
           "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_low_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
           "hivel": 127,
           "samples": [
-            "samples/tom_low_v4_rr1.flac",
-            "samples/tom_low_v4_rr2.flac"
+            "samples/tom_low_v8_rr1.flac"
           ]
         }
       ]
@@ -233,34 +317,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 31,
+          "hivel": 15,
           "samples": [
             "samples/hihat_closed_v1_rr1.flac",
             "samples/hihat_closed_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 32,
-          "hivel": 63,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/hihat_closed_v2_rr1.flac",
             "samples/hihat_closed_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 64,
-          "hivel": 95,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/hihat_closed_v3_rr1.flac",
             "samples/hihat_closed_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 96,
-          "hivel": 127,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/hihat_closed_v4_rr1.flac",
             "samples/hihat_closed_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/hihat_closed_v5_rr1.flac",
+            "samples/hihat_closed_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_closed_v6_rr1.flac",
+            "samples/hihat_closed_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_closed_v7_rr1.flac",
+            "samples/hihat_closed_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_closed_v8_rr1.flac",
+            "samples/hihat_closed_v8_rr2.flac"
           ]
         }
       ]
@@ -306,34 +422,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 31,
+          "hivel": 15,
           "samples": [
             "samples/hihat_open_v1_rr1.flac",
             "samples/hihat_open_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 32,
-          "hivel": 63,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/hihat_open_v2_rr1.flac",
             "samples/hihat_open_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 64,
-          "hivel": 95,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/hihat_open_v3_rr1.flac",
             "samples/hihat_open_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 96,
-          "hivel": 127,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/hihat_open_v4_rr1.flac",
             "samples/hihat_open_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/hihat_open_v5_rr1.flac",
+            "samples/hihat_open_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_open_v6_rr1.flac",
+            "samples/hihat_open_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_open_v7_rr1.flac",
+            "samples/hihat_open_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_open_v8_rr1.flac",
+            "samples/hihat_open_v8_rr2.flac"
           ]
         }
       ]
@@ -345,34 +493,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 31,
+          "hivel": 15,
           "samples": [
             "samples/ride_bow_v1_rr1.flac",
             "samples/ride_bow_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 32,
-          "hivel": 63,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/ride_bow_v2_rr1.flac",
             "samples/ride_bow_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 64,
-          "hivel": 95,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/ride_bow_v3_rr1.flac",
             "samples/ride_bow_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 96,
-          "hivel": 127,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/ride_bow_v4_rr1.flac",
             "samples/ride_bow_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/ride_bow_v5_rr1.flac",
+            "samples/ride_bow_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/ride_bow_v6_rr1.flac",
+            "samples/ride_bow_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/ride_bow_v7_rr1.flac",
+            "samples/ride_bow_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bow_v8_rr1.flac",
+            "samples/ride_bow_v8_rr2.flac"
           ]
         }
       ]
@@ -384,34 +564,58 @@
       "layers": [
         {
           "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/ride_bell_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
           "hivel": 31,
           "samples": [
-            "samples/ride_bell_v1_rr1.flac",
-            "samples/ride_bell_v1_rr2.flac"
+            "samples/ride_bell_v2_rr1.flac"
           ]
         },
         {
           "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/ride_bell_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
           "hivel": 63,
           "samples": [
-            "samples/ride_bell_v2_rr1.flac",
-            "samples/ride_bell_v2_rr2.flac"
+            "samples/ride_bell_v4_rr1.flac"
           ]
         },
         {
           "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/ride_bell_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
           "hivel": 95,
           "samples": [
-            "samples/ride_bell_v3_rr1.flac",
-            "samples/ride_bell_v3_rr2.flac"
+            "samples/ride_bell_v6_rr1.flac"
           ]
         },
         {
           "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/ride_bell_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
           "hivel": 127,
           "samples": [
-            "samples/ride_bell_v4_rr1.flac",
-            "samples/ride_bell_v4_rr2.flac"
+            "samples/ride_bell_v8_rr1.flac"
           ]
         }
       ]
@@ -423,34 +627,58 @@
       "layers": [
         {
           "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/crash_left_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
           "hivel": 31,
           "samples": [
-            "samples/crash_left_v1_rr1.flac",
-            "samples/crash_left_v1_rr2.flac"
+            "samples/crash_left_v2_rr1.flac"
           ]
         },
         {
           "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/crash_left_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
           "hivel": 63,
           "samples": [
-            "samples/crash_left_v2_rr1.flac",
-            "samples/crash_left_v2_rr2.flac"
+            "samples/crash_left_v4_rr1.flac"
           ]
         },
         {
           "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/crash_left_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
           "hivel": 95,
           "samples": [
-            "samples/crash_left_v3_rr1.flac",
-            "samples/crash_left_v3_rr2.flac"
+            "samples/crash_left_v6_rr1.flac"
           ]
         },
         {
           "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/crash_left_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
           "hivel": 127,
           "samples": [
-            "samples/crash_left_v4_rr1.flac",
-            "samples/crash_left_v4_rr2.flac"
+            "samples/crash_left_v8_rr1.flac"
           ]
         }
       ]

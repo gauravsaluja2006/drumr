@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { lastHit, openApp } from './fixtures/app';
+import { lastHit, openApp, openSettings, startAudio } from './fixtures/app';
 import { installFakeMidi } from './fixtures/fakeMidi';
 
 test('lowering "Hardest hit" makes the same soft pad hit louder', async ({ page }) => {
@@ -10,6 +10,7 @@ test('lowering "Hardest hit" makes the same soft pad hit louder', async ({ page 
     return (await lastHit(page))!.velocity;
   };
   const before = await soft();
+  await openSettings(page, 'Playing');
   const hardest = page.getByRole('slider', { name: 'Hardest hit' });
   await hardest.focus();
   for (let i = 0; i < 8; i++) await page.keyboard.press('PageDown'); // 127 → 79
@@ -18,6 +19,8 @@ test('lowering "Hardest hit" makes the same soft pad hit louder', async ({ page 
   expect(after).toBeGreaterThan(before);
   // Persists with the layout across reloads.
   await page.reload();
+  await startAudio(page);
+  await openSettings(page, 'Playing');
   await expect(page.getByRole('slider', { name: 'Hardest hit' })).toHaveAttribute(
     'aria-valuetext',
     'velocity 79',

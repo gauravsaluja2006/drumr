@@ -12,7 +12,7 @@
       ]
     },
     {
-      "output": "samples/kick_v1_rr2.flac",
+      "output": "samples/kick_v2_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Kick-002.wav",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "output": "samples/kick_v2_rr1.flac",
+      "output": "samples/kick_v3_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Kick-003.wav",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "output": "samples/kick_v2_rr2.flac",
+      "output": "samples/kick_v4_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Kick-004.wav",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "output": "samples/kick_v3_rr1.flac",
+      "output": "samples/kick_v5_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Kick-005.wav",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "output": "samples/kick_v3_rr2.flac",
+      "output": "samples/kick_v6_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Kick-006.wav",
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "output": "samples/kick_v4_rr1.flac",
+      "output": "samples/kick_v7_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Kick-007.wav",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "output": "samples/kick_v4_rr2.flac",
+      "output": "samples/kick_v8_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Kick-008.wav",
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "output": "samples/snare_center_v3_rr2.flac",
+      "output": "samples/snare_center_v4_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Sn-R-004.wav",
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "output": "samples/snare_center_v4_rr1.flac",
+      "output": "samples/snare_center_v5_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Sn-R-005.wav",
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "output": "samples/snare_center_v5_rr1.flac",
+      "output": "samples/snare_center_v6_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Sn-R-006.wav",
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "output": "samples/snare_center_v6_rr1.flac",
+      "output": "samples/snare_center_v7_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Sn-R-007.wav",
@@ -138,7 +138,7 @@
       ]
     },
     {
-      "output": "samples/snare_center_v6_rr2.flac",
+      "output": "samples/snare_center_v8_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Sn-R-008.wav",
@@ -192,7 +192,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v1_rr2.flac",
+      "output": "samples/tom_high_v2_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Tom-R-002.wav",
@@ -201,7 +201,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v2_rr1.flac",
+      "output": "samples/tom_high_v3_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Tom-R-003.wav",
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v2_rr2.flac",
+      "output": "samples/tom_high_v4_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Tom-R-004.wav",
@@ -219,7 +219,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v3_rr1.flac",
+      "output": "samples/tom_high_v5_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Tom-R-005.wav",
@@ -228,7 +228,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v3_rr2.flac",
+      "output": "samples/tom_high_v6_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Tom-R-006.wav",
@@ -237,7 +237,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v4_rr1.flac",
+      "output": "samples/tom_high_v7_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Tom-R-007.wav",
@@ -246,7 +246,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v4_rr2.flac",
+      "output": "samples/tom_high_v8_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Tom-R-008.wav",
@@ -264,7 +264,7 @@
       ]
     },
     {
-      "output": "samples/tom_low_v1_rr2.flac",
+      "output": "samples/tom_low_v2_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Floor-R-002.wav",
@@ -273,7 +273,7 @@
       ]
     },
     {
-      "output": "samples/tom_low_v2_rr1.flac",
+      "output": "samples/tom_low_v3_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Floor-R-003.wav",
@@ -282,7 +282,7 @@
       ]
     },
     {
-      "output": "samples/tom_low_v2_rr2.flac",
+      "output": "samples/tom_low_v4_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Floor-R-004.wav",
@@ -291,7 +291,7 @@
       ]
     },
     {
-      "output": "samples/tom_low_v3_rr1.flac",
+      "output": "samples/tom_low_v5_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Floor-R-005.wav",
@@ -300,7 +300,7 @@
       ]
     },
     {
-      "output": "samples/tom_low_v3_rr2.flac",
+      "output": "samples/tom_low_v6_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Floor-R-006.wav",
@@ -309,7 +309,7 @@
       ]
     },
     {
-      "output": "samples/tom_low_v4_rr1.flac",
+      "output": "samples/tom_low_v7_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Floor-R-007.wav",
@@ -318,7 +318,7 @@
       ]
     },
     {
-      "output": "samples/tom_low_v4_rr2.flac",
+      "output": "samples/tom_low_v8_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Floor-R-008.wav",
@@ -330,13 +330,31 @@
       "output": "samples/hihat_closed_v1_rr1.flac",
       "sources": [
         {
+          "path": "Instruments/Samples/HH-CL-001.wav",
+          "sha256": "5fe19d5bf9b8dda05abef500b92da584cbca8e6f387024f81ae1c22b506f5ed4"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr2.flac",
+      "sources": [
+        {
           "path": "Instruments/Samples/HH-CR-001.wav",
           "sha256": "05b704480f7852740e3d0a2b92d3b70f4057554818145a907d7c6c4569041750"
         }
       ]
     },
     {
-      "output": "samples/hihat_closed_v1_rr2.flac",
+      "output": "samples/hihat_closed_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-002.wav",
+          "sha256": "122dd6a2e8f7d5db79044e314b7d63e05494689aa46be2c174e9ba029e48eee4"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v2_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-CL-002.wav",
@@ -345,7 +363,16 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v2_rr1.flac",
+      "output": "samples/hihat_closed_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-003.wav",
+          "sha256": "58c8304954773a1cf05e02fd89c32e56d2a945e6c2f68a8179eca88900828df7"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v3_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-CR-003.wav",
@@ -354,7 +381,16 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v2_rr2.flac",
+      "output": "samples/hihat_closed_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-004.wav",
+          "sha256": "256b3b3ac1cae4bae6724d03408f246c877a98bcafef9ab6ae255f58c7f6e325"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v4_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-CR-004.wav",
@@ -363,7 +399,16 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v3_rr1.flac",
+      "output": "samples/hihat_closed_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-005.wav",
+          "sha256": "f3c72c966bde12e4147d8c6a6fc954505ab40b69a91f6515baabce95e0a695fb"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v5_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-CR-005.wav",
@@ -372,7 +417,16 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v3_rr2.flac",
+      "output": "samples/hihat_closed_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-006.wav",
+          "sha256": "1b76087993d297713e876ace4ffdc6f917fa60de433e978afe5492502b87de1e"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v6_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-CR-006.wav",
@@ -381,7 +435,16 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v4_rr1.flac",
+      "output": "samples/hihat_closed_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-007.wav",
+          "sha256": "b868932cac4e9126ac0f643c738d6e06bbd07915a5b12599e21fbedd777b9fa6"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v7_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-CL-007.wav",
@@ -390,7 +453,16 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v4_rr2.flac",
+      "output": "samples/hihat_closed_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-008.wav",
+          "sha256": "06391efa3be1d23d34012b9a11c94ec23db8df771034d90652c9166c68667230"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v8_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-CL-008.wav",
@@ -429,13 +501,31 @@
       "output": "samples/hihat_open_v1_rr1.flac",
       "sources": [
         {
+          "path": "Instruments/Samples/HH-OL-001.wav",
+          "sha256": "252238f5f6211b8424a5826f286ba7f96a80d047d5304833c42310c12e1f415a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr2.flac",
+      "sources": [
+        {
           "path": "Instruments/Samples/HH-OL-002.wav",
           "sha256": "f2eb296f8c50c7c5ab364a52ef920c6343506203c3f9c281c5c9e5cf617a7f56"
         }
       ]
     },
     {
-      "output": "samples/hihat_open_v1_rr2.flac",
+      "output": "samples/hihat_open_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-001.wav",
+          "sha256": "d04ac820a4a87fee4469eb79ea1e471ecb383ce4c7fa21be020243ed17d5f5dd"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v2_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-OR-002.wav",
@@ -444,7 +534,16 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v2_rr1.flac",
+      "output": "samples/hihat_open_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-003.wav",
+          "sha256": "38fe137028b244a3a43942ffb55c9b14d0e7d7c725c3f41def04c6b7d7484f55"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v3_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-OR-003.wav",
@@ -453,7 +552,16 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v2_rr2.flac",
+      "output": "samples/hihat_open_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-004.wav",
+          "sha256": "820850b8ff9d5d77ec24cbee6a863e7095de1547dd90b0dd03b6e339796b31ed"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v4_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-OR-004.wav",
@@ -462,7 +570,16 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v3_rr1.flac",
+      "output": "samples/hihat_open_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-005.wav",
+          "sha256": "e149adf3879b9c06391740c2a98d1c335a5f58bcd355c78800cd3e374f934d7c"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v5_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-OR-005.wav",
@@ -471,7 +588,16 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v3_rr2.flac",
+      "output": "samples/hihat_open_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-006.wav",
+          "sha256": "74e10fb4697580c4fc29afa234273230c16be7937d407666a3bc1e14b4a5a248"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v6_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-OL-007.wav",
@@ -480,7 +606,16 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v4_rr1.flac",
+      "output": "samples/hihat_open_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-007.wav",
+          "sha256": "3271258b6ee65ad646f1f5cac8de894dacbb67a08ed37b8e4f7353d64aca5e63"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v7_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-OL-006.wav",
@@ -489,7 +624,16 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v4_rr2.flac",
+      "output": "samples/hihat_open_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-008.wav",
+          "sha256": "52a286884c3b87a74d03af18e0399926f251dbbf5fc81bb0ca55161303d95871"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v8_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/HH-OL-008.wav",
@@ -501,13 +645,31 @@
       "output": "samples/ride_bow_v1_rr1.flac",
       "sources": [
         {
+          "path": "Instruments/Samples/Ride_L-001.wav",
+          "sha256": "a17094c784b5bbb5c4ce300cff8b805dea33fcc1b07e15e03ebd0108f60e294e"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v1_rr2.flac",
+      "sources": [
+        {
           "path": "Instruments/Samples/Ride-001.wav",
           "sha256": "a921d72a5080575d044bb5c5a572dec9873dae9b071e44e4427b66df93d8b6ca"
         }
       ]
     },
     {
-      "output": "samples/ride_bow_v1_rr2.flac",
+      "output": "samples/ride_bow_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-002.wav",
+          "sha256": "cb898e256d354915a3f5c644d0058ef05eb12d7fa8f3368b8f226692eb38b97c"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v2_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Ride-002.wav",
@@ -516,7 +678,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v2_rr1.flac",
+      "output": "samples/ride_bow_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-003.wav",
+          "sha256": "8be760cd476475191d57f0461eb014f28f71d39f5553be61d0bd7be77f9501c2"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v3_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Ride-003.wav",
@@ -525,7 +696,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v2_rr2.flac",
+      "output": "samples/ride_bow_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-005.wav",
+          "sha256": "7d8f4230bce718afe553361f6077dc7fdae2108d6a8d5294a531fd8b213c3860"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v4_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Ride_L-004.wav",
@@ -534,7 +714,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v3_rr1.flac",
+      "output": "samples/ride_bow_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-004.wav",
+          "sha256": "5a0e808b7fff895ba77d13de9ec5944db1ddf00e5873640224429b914dbc9ebd"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v5_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Ride_L-006.wav",
@@ -543,7 +732,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v3_rr2.flac",
+      "output": "samples/ride_bow_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-005.wav",
+          "sha256": "0d6dfa52b8c6fdc234325df7aa4c6bdcfbebe3be56e1795d7ba778b7db8a7180"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v6_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Ride_L-007.wav",
@@ -552,7 +750,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v4_rr1.flac",
+      "output": "samples/ride_bow_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-006.wav",
+          "sha256": "ef4289729cb603d07767e04c235b9fc2be4ac8e965e4c0ca5f84e76047b7b401"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v7_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Ride_L-008.wav",
@@ -561,7 +768,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v4_rr2.flac",
+      "output": "samples/ride_bow_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-007.wav",
+          "sha256": "e06127cbe5961fe6a9d826e199c2d38bc610b70190102ae66d76415d0d949ed2"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v8_rr2.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Ride-008.wav",
@@ -579,7 +795,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v1_rr2.flac",
+      "output": "samples/ride_bell_v2_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Bell-001.wav",
@@ -588,7 +804,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v2_rr1.flac",
+      "output": "samples/ride_bell_v3_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Bell_L-002.wav",
@@ -597,7 +813,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v2_rr2.flac",
+      "output": "samples/ride_bell_v4_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Bell-002.wav",
@@ -606,7 +822,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v3_rr1.flac",
+      "output": "samples/ride_bell_v5_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Bell_L-003.wav",
@@ -615,7 +831,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v3_rr2.flac",
+      "output": "samples/ride_bell_v6_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Bell-003.wav",
@@ -624,7 +840,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v4_rr1.flac",
+      "output": "samples/ride_bell_v7_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Bell-004.wav",
@@ -633,7 +849,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v4_rr2.flac",
+      "output": "samples/ride_bell_v8_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/Bell_L-004.wav",
@@ -651,7 +867,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v1_rr2.flac",
+      "output": "samples/crash_left_v2_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/CR16-002.wav",
@@ -660,7 +876,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v2_rr1.flac",
+      "output": "samples/crash_left_v3_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/CR16-003.wav",
@@ -669,7 +885,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v2_rr2.flac",
+      "output": "samples/crash_left_v4_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/CR16-004.wav",
@@ -678,7 +894,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v3_rr1.flac",
+      "output": "samples/crash_left_v5_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/CR16-005.wav",
@@ -687,7 +903,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v3_rr2.flac",
+      "output": "samples/crash_left_v6_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/CR16-006.wav",
@@ -696,7 +912,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v4_rr1.flac",
+      "output": "samples/crash_left_v7_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/CR16-007.wav",
@@ -705,7 +921,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v4_rr2.flac",
+      "output": "samples/crash_left_v8_rr1.flac",
       "sources": [
         {
           "path": "Instruments/Samples/CR16-008.wav",

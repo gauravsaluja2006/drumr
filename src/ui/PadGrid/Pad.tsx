@@ -1,4 +1,5 @@
 import type React from 'react';
+import type { Group } from '@/kits/schema';
 import { keyHintFor } from './padLayout';
 import { registerPad } from './padFlash';
 import { velocityFromPosition } from '@/input/pointer';
@@ -10,6 +11,7 @@ export interface PadProps {
   note?: number;
   disabled?: boolean;
   unavailable?: boolean;
+  group?: Group;
   selected?: boolean;
   learning?: boolean;
   onHit?: (index: number, velocity: number, eventTime: number) => void;
@@ -19,7 +21,17 @@ export interface PadProps {
  * The accessible name is built from visible text plus screen-reader-only text
  * ("Pad 5: Snare, note 25") so it always contains what sighted users see.
  */
-export function Pad({ index, label, note, disabled, unavailable, selected, learning, onHit }: PadProps) {
+export function Pad({
+  index,
+  label,
+  note,
+  disabled,
+  unavailable,
+  group,
+  selected,
+  learning,
+  onHit,
+}: PadProps) {
   const onPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
     if (disabled || e.button > 0) return;
     const rect = e.currentTarget.getBoundingClientRect();
@@ -35,6 +47,8 @@ export function Pad({ index, label, note, disabled, unavailable, selected, learn
       ref={(el) => registerPad(index, el)}
       type="button"
       data-pad={index}
+      data-group={group}
+      style={group ? ({ '--pad-color': `var(--group-${group})` } as React.CSSProperties) : undefined}
       data-unavailable={unavailable || undefined}
       data-selected={selected || undefined}
       data-learning={learning || undefined}
@@ -45,7 +59,7 @@ export function Pad({ index, label, note, disabled, unavailable, selected, learn
       onClick={onClick}
       className="pad relative aspect-square min-h-11 touch-manipulation rounded-m border border-line bg-bg-2 p-2 sm:p-3 text-left transition-[background-color,opacity] select-none hover:bg-bg-3 disabled:cursor-wait disabled:bg-bg-1 disabled:hover:bg-bg-1"
     >
-      <span className="pad-label absolute inset-x-2 top-2 z-10 line-clamp-2 text-xs leading-tight font-medium text-fg-0 sm:inset-x-3 sm:top-3 sm:text-sm">
+      <span className="pad-label absolute inset-x-2 top-2 z-10 pr-3 line-clamp-2 text-xs leading-tight font-medium text-fg-0 sm:inset-x-3 sm:top-3 sm:text-sm">
         <span className="sr-only">{`Pad ${index + 1}:`}</span>{' '}
         {label ?? <span className="text-fg-2">{index + 1}</span>}
         {label === undefined && (
@@ -67,6 +81,12 @@ export function Pad({ index, label, note, disabled, unavailable, selected, learn
           </>
         )}
       </span>
+      {group && !unavailable && (
+        <span
+          aria-hidden="true"
+          className="pad-dot absolute top-2.5 right-2.5 z-10 size-2 rounded-full sm:top-3.5 sm:right-3.5"
+        />
+      )}
       {note !== undefined && (
         <span className="absolute bottom-2 left-2 z-10 font-mono text-xs text-fg-2 sm:bottom-3 sm:left-3">
           <span className="sr-only">, note</span> {note}

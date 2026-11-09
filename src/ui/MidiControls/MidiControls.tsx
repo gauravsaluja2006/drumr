@@ -1,5 +1,4 @@
 import { useEffect, useId, useState } from 'react';
-import { Dialog } from '@/ui/primitives/Dialog';
 import { learnControl } from '@/app/controls';
 import { useControlsStore } from '@/state/useControlsStore';
 import { useMappingStore } from '@/state/useMappingStore';
@@ -137,8 +136,8 @@ function Section({
   );
 }
 
-/** Assign controller buttons, knobs and the encoder to app actions by MIDI learn. */
-export function MidiControls({ onClose }: { onClose: () => void }) {
+/** Assign controller buttons, knobs and the encoder to app actions by MIDI learn (Settings › Controller). */
+export function MidiControls() {
   const [learning, setLearning] = useState<ControlAction | null>(null);
   const programChange = useControlsStore((s) => s.programChangeSelectsKit);
   const encoderMode = useControlsStore((s) => s.encoderMode);
@@ -157,7 +156,7 @@ export function MidiControls({ onClose }: { onClose: () => void }) {
   }, [learning]);
 
   return (
-    <Dialog open title="MIDI controls" onClose={onClose}>
+    <div className="flex flex-col gap-6">
       <p className="text-sm text-fg-1">
         Use the buttons, knobs and encoder on your controller to drive the app. Press <b>Learn</b>, then press
         or turn the control. Maschine controllers must be in MIDI mode, not controlling the Maschine software.
@@ -219,6 +218,6 @@ export function MidiControls({ onClose }: { onClose: () => void }) {
           Clear all assignments
         </button>
       </div>
-    </Dialog>
+    </div>
   );
 }

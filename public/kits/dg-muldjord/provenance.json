@@ -1,9 +1,18 @@
 {
   "recipe": "dg-muldjord",
-  "kitGainDb": -3.25,
+  "kitGainDb": -4.09,
   "samples": [
     {
       "output": "samples/kick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/1-KdrumR.wav",
+          "sha256": "4700538a0b4d4f32eba79e11ce334d9e06b762834f0593816632e0efc6753e5d"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v1_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/2-KdrumR.wav",
@@ -12,7 +21,25 @@
       ]
     },
     {
-      "output": "samples/kick_v1_rr2.flac",
+      "output": "samples/kick_v1_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/3-KdrumR.wav",
+          "sha256": "6b5f70021c27d3cda314bb3f1fc9362fcc7f23cd3313cb33d296fea1cb782074"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/4-KdrumR.wav",
+          "sha256": "536cdbb23e125466594a4e24cd6837d8cdd034d86a9259dbe2570d31b06b9482"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v2_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/5-KdrumR.wav",
@@ -21,7 +48,25 @@
       ]
     },
     {
-      "output": "samples/kick_v2_rr1.flac",
+      "output": "samples/kick_v2_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/6-KdrumR.wav",
+          "sha256": "cb884c54a5712f79d3b1b86216a4e12eae6e1305b6a05fe9d5b0ed2d4d4d8348"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/7-KdrumR.wav",
+          "sha256": "6f4ad239df9fce452d242e891c83c086d4a62259494de9d8013ec3e7d4d7ab87"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v3_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/8-KdrumR.wav",
@@ -30,7 +75,25 @@
       ]
     },
     {
-      "output": "samples/kick_v2_rr2.flac",
+      "output": "samples/kick_v3_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/9-KdrumR.wav",
+          "sha256": "64350a41474fd7ed2d2f010ca2501e50a77e66eb8a55a38de31f8938535a870c"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/10-KdrumR.wav",
+          "sha256": "31a37e48af458a7053166e86e83567de43c855f1cca91213c81213b0b6d06144"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v4_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/12-KdrumR.wav",
@@ -39,7 +102,25 @@
       ]
     },
     {
-      "output": "samples/kick_v3_rr1.flac",
+      "output": "samples/kick_v4_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/13-KdrumR.wav",
+          "sha256": "6d43f3cfa4b6a252d9e74cca1ae88c21bcccc1b443f19cfdbaa391880a2d86fa"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/14-KdrumR.wav",
+          "sha256": "46b5923167fdec992d7ad335eb985bb0ded80b6d8feff712b537f977e01687ec"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v5_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/15-KdrumR.wav",
@@ -48,7 +129,25 @@
       ]
     },
     {
-      "output": "samples/kick_v3_rr2.flac",
+      "output": "samples/kick_v5_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/16-KdrumR.wav",
+          "sha256": "462c3b694126ab956454f56281c8cd5069e481bbbc2212e5d2190bf1afb29b21"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/17-KdrumR.wav",
+          "sha256": "369fb4c5d15d1f68cf342da0e20b02bbc89c4507454c124f51ccb5c8afdf97d7"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v6_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/18-KdrumR.wav",
@@ -57,7 +156,25 @@
       ]
     },
     {
-      "output": "samples/kick_v4_rr1.flac",
+      "output": "samples/kick_v6_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/19-KdrumR.wav",
+          "sha256": "4d8def8d146a800a9fb7d07759b170af89cb0f6c99fdfbe18435b4c422ef4493"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/20-KdrumR.wav",
+          "sha256": "fd8ef5d87b26fc921e76ce4b86418c88d9da98462f403f1a97f251489af2c01d"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v7_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/21-KdrumR.wav",
@@ -66,7 +183,25 @@
       ]
     },
     {
-      "output": "samples/kick_v4_rr2.flac",
+      "output": "samples/kick_v7_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/22-KdrumR.wav",
+          "sha256": "74dfa02ca115ab5175a1a5b9730a47e27c6b79a45cb5c3feba5f9fe46abf2f8b"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/23-KdrumR.wav",
+          "sha256": "89cd79f710f7840c0801a8dc3812bdef4e54dfe1dc2f291a2be19eeae92a835f"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v8_rr2.flac",
       "sources": [
         {
           "path": "KdrumR/samples/25-KdrumR.wav",
@@ -75,7 +210,25 @@
       ]
     },
     {
+      "output": "samples/kick_v8_rr3.flac",
+      "sources": [
+        {
+          "path": "KdrumR/samples/26-KdrumR.wav",
+          "sha256": "f13d4116f4cae2c53e62ebcc9c65b5c32055189676ebd837947646fd0fd3580f"
+        }
+      ]
+    },
+    {
       "output": "samples/snare_center_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/1-Snare.wav",
+          "sha256": "87c7b4582d134aceb77a9498f00450e2d5e78772b87e0fb5e01f461f5d29dc40"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v1_rr2.flac",
       "sources": [
         {
           "path": "Snare/samples/3-Snare.wav",
@@ -84,7 +237,16 @@
       ]
     },
     {
-      "output": "samples/snare_center_v1_rr2.flac",
+      "output": "samples/snare_center_v1_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/5-Snare.wav",
+          "sha256": "8d70b677b7dd2aab889d0fb01e538e12f1844e8a76cbc284893eea96d868d6cd"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v2_rr1.flac",
       "sources": [
         {
           "path": "Snare/samples/7-Snare.wav",
@@ -93,7 +255,25 @@
       ]
     },
     {
-      "output": "samples/snare_center_v2_rr1.flac",
+      "output": "samples/snare_center_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/9-Snare.wav",
+          "sha256": "8180b9a41113867c2cf9e9d6671b9f2a41cf2a8f8be0f7f8835094568db40323"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v2_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/11-Snare.wav",
+          "sha256": "bdf45f36cc24689970d7e042434eeaecefb2f3b6b0599d37afb9b9390fe1e759"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v3_rr1.flac",
       "sources": [
         {
           "path": "Snare/samples/12-Snare.wav",
@@ -102,7 +282,16 @@
       ]
     },
     {
-      "output": "samples/snare_center_v2_rr2.flac",
+      "output": "samples/snare_center_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/14-Snare.wav",
+          "sha256": "e152d86af8051d34f8197d5966b7e93a5d06902a8836f259ba0ea6566488dd41"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v3_rr3.flac",
       "sources": [
         {
           "path": "Snare/samples/16-Snare.wav",
@@ -111,16 +300,43 @@
       ]
     },
     {
-      "output": "samples/snare_center_v3_rr1.flac",
+      "output": "samples/snare_center_v4_rr1.flac",
       "sources": [
         {
-          "path": "Snare/samples/21-Snare.wav",
-          "sha256": "1d6cbd3574fb5192822e5710bf4ccdc95d9bb70747f81c320fbe656a79dc8721"
+          "path": "Snare/samples/18-Snare.wav",
+          "sha256": "eb1336876f2053eed5264a7100c207a363484d7dda2a00313b846765c3225939"
         }
       ]
     },
     {
-      "output": "samples/snare_center_v3_rr2.flac",
+      "output": "samples/snare_center_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/20-Snare.wav",
+          "sha256": "773cfca3f1427db9538f2a71f0964eccbd62a487f300666a5b87cae18c954fc7"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v4_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/22-Snare.wav",
+          "sha256": "15ec0f0398c6bb092267efd75f16903dfbdcf0214133572c49be02266d51f7cb"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/24-Snare.wav",
+          "sha256": "5720ad4495c311a2c4d5d1ba43dbd9a583469db68f41d2acbd884de1270c5d49"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v5_rr2.flac",
       "sources": [
         {
           "path": "Snare/samples/26-Snare.wav",
@@ -129,7 +345,25 @@
       ]
     },
     {
-      "output": "samples/snare_center_v4_rr1.flac",
+      "output": "samples/snare_center_v5_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/28-Snare.wav",
+          "sha256": "c5bce3d12f8977d0fa875fbc2d654e38ce7d3671e811c20a526ec70d0e0c2de7"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/29-Snare.wav",
+          "sha256": "c1731ef8a8dcf6dc17361a698b0094fcd83dd289ff193b076ea3814654461e4c"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v6_rr2.flac",
       "sources": [
         {
           "path": "Snare/samples/31-Snare.wav",
@@ -138,7 +372,16 @@
       ]
     },
     {
-      "output": "samples/snare_center_v4_rr2.flac",
+      "output": "samples/snare_center_v6_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/33-Snare.wav",
+          "sha256": "042fa9e5c0260e84571b47dd0ffd4722eccf406fb8723590b8b1e37909d21186"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v7_rr1.flac",
       "sources": [
         {
           "path": "Snare/samples/35-Snare.wav",
@@ -147,7 +390,25 @@
       ]
     },
     {
-      "output": "samples/snare_center_v5_rr1.flac",
+      "output": "samples/snare_center_v7_rr2.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/37-Snare.wav",
+          "sha256": "1140bfa4017dbb3fdfc322903760bab26518bfe51cacca2c49f43df2cae96116"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v7_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/39-Snare.wav",
+          "sha256": "9a45786ff3be50ed69c1aea4659ec36f1eeacb6b8df22552f95e83cf15aeeccf"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v8_rr1.flac",
       "sources": [
         {
           "path": "Snare/samples/40-Snare.wav",
@@ -156,7 +417,16 @@
       ]
     },
     {
-      "output": "samples/snare_center_v5_rr2.flac",
+      "output": "samples/snare_center_v8_rr2.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/42-Snare.wav",
+          "sha256": "5c681e02a688ddf1cbd3625f8515e1a70627baeee54eae2177cee9af964c17de"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v8_rr3.flac",
       "sources": [
         {
           "path": "Snare/samples/44-Snare.wav",
@@ -165,20 +435,56 @@
       ]
     },
     {
-      "output": "samples/snare_center_v6_rr1.flac",
+      "output": "samples/snare_center_v9_rr1.flac",
       "sources": [
         {
-          "path": "Snare/samples/49-Snare.wav",
-          "sha256": "4eacdb522dc750e7abbbbef0e348039dd8cbbd5b55bb8ad0de6faca788ef4aea"
+          "path": "Snare/samples/46-Snare.wav",
+          "sha256": "f8988ce06d40375751c9382a631d077da486408b767263157beb71715f2942f1"
         }
       ]
     },
     {
-      "output": "samples/snare_center_v6_rr2.flac",
+      "output": "samples/snare_center_v9_rr2.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/48-Snare.wav",
+          "sha256": "d85d555c46c60ab0c5bed59208300b1c8a57b030c53c963e76bc4d561626d699"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v9_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/50-Snare.wav",
+          "sha256": "861bd233cd5d2aae47c21ecddf295aae63652f80653ec8e54b470fb5c120e52a"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v10_rr1.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/52-Snare.wav",
+          "sha256": "f69d33375da00195d2aa8a36a78047343b13b9cb5cffb1d97d3caff45b9b19ea"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v10_rr2.flac",
       "sources": [
         {
           "path": "Snare/samples/54-Snare.wav",
           "sha256": "a5317602c7348e3ed04ab6262a5dbbfdfc3ad2e76e32b4eb7748cc9e3590234b"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v10_rr3.flac",
+      "sources": [
+        {
+          "path": "Snare/samples/56-Snare.wav",
+          "sha256": "d1f7462f4bd5a34a42328af7e9d450f3824eb7ddcb09d4f51b66bb0960c57c7b"
         }
       ]
     },
@@ -192,7 +498,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v1_rr2.flac",
+      "output": "samples/tom_high_v2_rr1.flac",
       "sources": [
         {
           "path": "Tom1/samples/2-Tom1.wav",
@@ -201,7 +507,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v2_rr1.flac",
+      "output": "samples/tom_high_v3_rr1.flac",
       "sources": [
         {
           "path": "Tom1/samples/3-Tom1.wav",
@@ -210,7 +516,16 @@
       ]
     },
     {
-      "output": "samples/tom_high_v2_rr2.flac",
+      "output": "samples/tom_high_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "Tom1/samples/4-Tom1.wav",
+          "sha256": "1fff7a349b0c68f1e9e3a2d29bfc5d86843c2f944326814a68c152ebe4fdd827"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v4_rr1.flac",
       "sources": [
         {
           "path": "Tom1/samples/5-Tom1.wav",
@@ -219,7 +534,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v3_rr1.flac",
+      "output": "samples/tom_high_v5_rr1.flac",
       "sources": [
         {
           "path": "Tom1/samples/6-Tom1.wav",
@@ -228,7 +543,16 @@
       ]
     },
     {
-      "output": "samples/tom_high_v3_rr2.flac",
+      "output": "samples/tom_high_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom1/samples/7-Tom1.wav",
+          "sha256": "d512ee870fd0ccc65099548fae3118917e1c5b612e55bcdd1cd98ccf7761bc02"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v6_rr2.flac",
       "sources": [
         {
           "path": "Tom1/samples/8-Tom1.wav",
@@ -237,7 +561,7 @@
       ]
     },
     {
-      "output": "samples/tom_high_v4_rr1.flac",
+      "output": "samples/tom_high_v7_rr1.flac",
       "sources": [
         {
           "path": "Tom1/samples/9-Tom1.wav",
@@ -246,7 +570,16 @@
       ]
     },
     {
-      "output": "samples/tom_high_v4_rr2.flac",
+      "output": "samples/tom_high_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom1/samples/10-Tom1.wav",
+          "sha256": "4427a8d45db9263473b225da0e5bcd0058c6119349879127b20c0b425bcd6b1c"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v8_rr2.flac",
       "sources": [
         {
           "path": "Tom1/samples/11-Tom1.wav",
@@ -264,7 +597,16 @@
       ]
     },
     {
-      "output": "samples/tom_highMid_v1_rr2.flac",
+      "output": "samples/tom_highMid_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom2/samples/2-Tom2.wav",
+          "sha256": "b862baa837762e5da31d0a002a666a1b91efa027a7e19abfaa8afc0941a6ecda"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v2_rr2.flac",
       "sources": [
         {
           "path": "Tom2/samples/3-Tom2.wav",
@@ -273,7 +615,7 @@
       ]
     },
     {
-      "output": "samples/tom_highMid_v2_rr1.flac",
+      "output": "samples/tom_highMid_v3_rr1.flac",
       "sources": [
         {
           "path": "Tom2/samples/4-Tom2.wav",
@@ -282,7 +624,16 @@
       ]
     },
     {
-      "output": "samples/tom_highMid_v2_rr2.flac",
+      "output": "samples/tom_highMid_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom2/samples/5-Tom2.wav",
+          "sha256": "567bd0a97e6e168963bc451dbf1ad27a3fc0c24863ba3fbd37ce56508065aff7"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v4_rr2.flac",
       "sources": [
         {
           "path": "Tom2/samples/6-Tom2.wav",
@@ -291,7 +642,7 @@
       ]
     },
     {
-      "output": "samples/tom_highMid_v3_rr1.flac",
+      "output": "samples/tom_highMid_v5_rr1.flac",
       "sources": [
         {
           "path": "Tom2/samples/7-Tom2.wav",
@@ -300,7 +651,16 @@
       ]
     },
     {
-      "output": "samples/tom_highMid_v3_rr2.flac",
+      "output": "samples/tom_highMid_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "Tom2/samples/8-Tom2.wav",
+          "sha256": "2d46927f0da4eaf23470a2d9fcbbdc0613d05b6eacbd69e7828452c3021bf2ac"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v6_rr1.flac",
       "sources": [
         {
           "path": "Tom2/samples/9-Tom2.wav",
@@ -309,7 +669,16 @@
       ]
     },
     {
-      "output": "samples/tom_highMid_v4_rr1.flac",
+      "output": "samples/tom_highMid_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom2/samples/10-Tom2.wav",
+          "sha256": "37adf97c3fd7b94af044c132aecda8909d9bcf97bbc159407951dbb4933f3de5"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v7_rr2.flac",
       "sources": [
         {
           "path": "Tom2/samples/11-Tom2.wav",
@@ -318,7 +687,16 @@
       ]
     },
     {
-      "output": "samples/tom_highMid_v4_rr2.flac",
+      "output": "samples/tom_highMid_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom2/samples/12-Tom2.wav",
+          "sha256": "3f9219a82f8d49618c9477486de211fb84873d19be1a8b4da04be1af95eb4ba4"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_highMid_v8_rr2.flac",
       "sources": [
         {
           "path": "Tom2/samples/13-Tom2.wav",
@@ -336,7 +714,16 @@
       ]
     },
     {
-      "output": "samples/tom_lowMid_v1_rr2.flac",
+      "output": "samples/tom_lowMid_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom3/samples/2-Tom3.wav",
+          "sha256": "52b1e8621661bfb255dc88ea7e40c90bd5ce2a04c0cc16666b05b694ab3a9756"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v2_rr2.flac",
       "sources": [
         {
           "path": "Tom3/samples/3-Tom3.wav",
@@ -345,7 +732,16 @@
       ]
     },
     {
-      "output": "samples/tom_lowMid_v2_rr1.flac",
+      "output": "samples/tom_lowMid_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom3/samples/4-Tom3.wav",
+          "sha256": "c7f516ceab2e0a034469dd1188f73265607b3865f14345293b1235d149b122e2"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v3_rr2.flac",
       "sources": [
         {
           "path": "Tom3/samples/5-Tom3.wav",
@@ -354,7 +750,16 @@
       ]
     },
     {
-      "output": "samples/tom_lowMid_v2_rr2.flac",
+      "output": "samples/tom_lowMid_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom3/samples/6-Tom3.wav",
+          "sha256": "f31fdd01b508d2dcbae06bf301e97586f7f566e5e8a48f16e59267fd69ce7e61"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v4_rr2.flac",
       "sources": [
         {
           "path": "Tom3/samples/7-Tom3.wav",
@@ -363,7 +768,16 @@
       ]
     },
     {
-      "output": "samples/tom_lowMid_v3_rr1.flac",
+      "output": "samples/tom_lowMid_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom3/samples/8-Tom3.wav",
+          "sha256": "9abe0bf7426fe745d1eca1c5c995942eccb99248a16350e457056082111802f9"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v5_rr2.flac",
       "sources": [
         {
           "path": "Tom3/samples/9-Tom3.wav",
@@ -372,7 +786,16 @@
       ]
     },
     {
-      "output": "samples/tom_lowMid_v3_rr2.flac",
+      "output": "samples/tom_lowMid_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom3/samples/10-Tom3.wav",
+          "sha256": "b6b434fdb19b890ec2e5590f0af8b2c29cc406db5e215f47a2961e0075f46451"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v6_rr2.flac",
       "sources": [
         {
           "path": "Tom3/samples/11-Tom3.wav",
@@ -381,7 +804,16 @@
       ]
     },
     {
-      "output": "samples/tom_lowMid_v4_rr1.flac",
+      "output": "samples/tom_lowMid_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom3/samples/12-Tom3.wav",
+          "sha256": "4ae6fa8b8216ac76236f948e583861ca4e9caa7260ff9b7b64ecc87de7f3f4af"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v7_rr2.flac",
       "sources": [
         {
           "path": "Tom3/samples/13-Tom3.wav",
@@ -390,7 +822,16 @@
       ]
     },
     {
-      "output": "samples/tom_lowMid_v4_rr2.flac",
+      "output": "samples/tom_lowMid_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom3/samples/14-Tom3.wav",
+          "sha256": "beaaf71f8370968760107b4657ab95a19d46f098eacfacf1dde5abdbc9defd09"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_lowMid_v8_rr2.flac",
       "sources": [
         {
           "path": "Tom3/samples/15-Tom3.wav",
@@ -402,13 +843,31 @@
       "output": "samples/tom_low_v1_rr1.flac",
       "sources": [
         {
+          "path": "Tom4/samples/1-Tom4.wav",
+          "sha256": "412e08294159f5f2aa950c5af711a7778aab0975ca374b3af178bcc819a5c68b"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v1_rr2.flac",
+      "sources": [
+        {
           "path": "Tom4/samples/2-Tom4.wav",
           "sha256": "342995705b28ab0fe27b5f6cd48fb9b874833b2e21c9dcd98dfb29d75fd55506"
         }
       ]
     },
     {
-      "output": "samples/tom_low_v1_rr2.flac",
+      "output": "samples/tom_low_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/3-Tom4.wav",
+          "sha256": "b271b8e7ef631539ecdd63d8f5727f64fa8726f8a252dc29a3bb65b9942f93bb"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v2_rr2.flac",
       "sources": [
         {
           "path": "Tom4/samples/4-Tom4.wav",
@@ -417,7 +876,25 @@
       ]
     },
     {
-      "output": "samples/tom_low_v2_rr1.flac",
+      "output": "samples/tom_low_v2_rr3.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/5-Tom4.wav",
+          "sha256": "b3b30c7da1c96a86b828db24849d26b339632865f36ea243bd94885c72850fdc"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/6-Tom4.wav",
+          "sha256": "3e16f3f2a53ddc92464ef3f8d49d63ee4210650b0bdd99a85a62957ffdc981ef"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v3_rr2.flac",
       "sources": [
         {
           "path": "Tom4/samples/7-Tom4.wav",
@@ -426,7 +903,16 @@
       ]
     },
     {
-      "output": "samples/tom_low_v2_rr2.flac",
+      "output": "samples/tom_low_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/8-Tom4.wav",
+          "sha256": "34d23ef9778ffd0b0cd41742b454c8186f142728debd75cb38728bc01260b6d5"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v4_rr2.flac",
       "sources": [
         {
           "path": "Tom4/samples/9-Tom4.wav",
@@ -435,7 +921,25 @@
       ]
     },
     {
-      "output": "samples/tom_low_v3_rr1.flac",
+      "output": "samples/tom_low_v4_rr3.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/10-Tom4.wav",
+          "sha256": "02ea81e1730b41be5c4eb54ba9b1f20e24cf5016dc9641db9204d0156abfae54"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/11-Tom4.wav",
+          "sha256": "c8709797a4b17067687b6c93082e4f2a5e1b80109ef3b1fd19cf1d6c42603b9b"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v5_rr2.flac",
       "sources": [
         {
           "path": "Tom4/samples/12-Tom4.wav",
@@ -444,7 +948,16 @@
       ]
     },
     {
-      "output": "samples/tom_low_v3_rr2.flac",
+      "output": "samples/tom_low_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/13-Tom4.wav",
+          "sha256": "438f9d4ee506c48f0441e6b290fc5a93f0581a6432e1f68bf0a8385e93c16b01"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v6_rr2.flac",
       "sources": [
         {
           "path": "Tom4/samples/14-Tom4.wav",
@@ -453,7 +966,25 @@
       ]
     },
     {
-      "output": "samples/tom_low_v4_rr1.flac",
+      "output": "samples/tom_low_v6_rr3.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/15-Tom4.wav",
+          "sha256": "e2719786027c635d63a5e814321c90505c6c1eff7abc01861213ce148e3071ce"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/16-Tom4.wav",
+          "sha256": "6bffaf79d6484d161cdfe9267df32b97bbe03d558bc00a954cbf9f6ce416e81b"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v7_rr2.flac",
       "sources": [
         {
           "path": "Tom4/samples/17-Tom4.wav",
@@ -462,7 +993,16 @@
       ]
     },
     {
-      "output": "samples/tom_low_v4_rr2.flac",
+      "output": "samples/tom_low_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/18-Tom4.wav",
+          "sha256": "bb1dab8b40d6c98d26812f74aeb0df1b47fe6fe995e474969549ae7aff272ae5"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v8_rr2.flac",
       "sources": [
         {
           "path": "Tom4/samples/19-Tom4.wav",
@@ -471,7 +1011,25 @@
       ]
     },
     {
+      "output": "samples/tom_low_v8_rr3.flac",
+      "sources": [
+        {
+          "path": "Tom4/samples/20-Tom4.wav",
+          "sha256": "42f139102ec7b139ff788abbf34202369cb33bc7902fa81170c83b64233c1829"
+        }
+      ]
+    },
+    {
       "output": "samples/hihat_closed_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/1-HihatClosed.wav",
+          "sha256": "49719092ef54fa6384f425d57cf1da6601269c82cec862c6c424060380ada52b"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr2.flac",
       "sources": [
         {
           "path": "HihatClosed/samples/2-HihatClosed.wav",
@@ -480,7 +1038,25 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v1_rr2.flac",
+      "output": "samples/hihat_closed_v1_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/3-HihatClosed.wav",
+          "sha256": "e7bf8a4f40fd56cbf50ba6acd01204aa02ef3a5b1f5f4d3db13d60ca7c097ace"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/4-HihatClosed.wav",
+          "sha256": "ac72f8d2da5efa05ee1a64a10b3254416a7b14d38576ddb15ecc5cd34eda1ceb"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v2_rr2.flac",
       "sources": [
         {
           "path": "HihatClosed/samples/6-HihatClosed.wav",
@@ -489,7 +1065,25 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v2_rr1.flac",
+      "output": "samples/hihat_closed_v2_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/7-HihatClosed.wav",
+          "sha256": "2d456e1e2fe4fcd6fe20c005dd89b75e65f991f324b8639fc4799584fb6a5ece"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/8-HihatClosed.wav",
+          "sha256": "30c66aca57930b478f0239ef67fac1792fcfef94d61a63bc6a0c6b8b00125bba"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v3_rr2.flac",
       "sources": [
         {
           "path": "HihatClosed/samples/9-HihatClosed.wav",
@@ -498,7 +1092,25 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v2_rr2.flac",
+      "output": "samples/hihat_closed_v3_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/10-HihatClosed.wav",
+          "sha256": "13e4d5d88d4fbd0670de0a21d647646bbdc8dfe296732db91d8bccb6269a3c68"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/11-HihatClosed.wav",
+          "sha256": "ee674cc60b923a5d62e89499b19c4d52fc41a9d40dbe9f6df8d28fe1ac4cee43"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v4_rr2.flac",
       "sources": [
         {
           "path": "HihatClosed/samples/13-HihatClosed.wav",
@@ -507,16 +1119,52 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v3_rr1.flac",
+      "output": "samples/hihat_closed_v4_rr3.flac",
       "sources": [
         {
-          "path": "HihatClosed/samples/16-HihatClosed.wav",
-          "sha256": "4bbacecc4ef8b7f60ccf7c73c19b65e63d1f96b9bf0516e3c9edded615a2f33a"
+          "path": "HihatClosed/samples/14-HihatClosed.wav",
+          "sha256": "097228b607a8301d407d2796ee35c4f50d201b2300618999a0c5a68c5087cf25"
         }
       ]
     },
     {
-      "output": "samples/hihat_closed_v3_rr2.flac",
+      "output": "samples/hihat_closed_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/15-HihatClosed.wav",
+          "sha256": "68b720c944b7cf97fa9285a4d8267e3528ae7e62a9a088a1278f3e43c0f1c467"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/17-HihatClosed.wav",
+          "sha256": "5d31e6f16a0b4741e6d8b652dd99e00cf950b4a7a2c164614493a86e1c35cb73"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v5_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/18-HihatClosed.wav",
+          "sha256": "fc7af4e267705c9b9816ef80723a344f300f9a77d8b5faf6c73f0e3d0f8da80d"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/19-HihatClosed.wav",
+          "sha256": "57ca108f907c97bc550e9ed3247c8a488da0e283244c9132dc43debde34c64ce"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v6_rr2.flac",
       "sources": [
         {
           "path": "HihatClosed/samples/20-HihatClosed.wav",
@@ -525,7 +1173,25 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v4_rr1.flac",
+      "output": "samples/hihat_closed_v6_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/21-HihatClosed.wav",
+          "sha256": "aa47823c9fa42798f40fd77a7b85f2a1029e0b5e2354347ac7931bf5e5837646"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/22-HihatClosed.wav",
+          "sha256": "83debb0cc3bd16381be53ed9e87e88fb3acc3347571898bfd04886b95a57f3d1"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v7_rr2.flac",
       "sources": [
         {
           "path": "HihatClosed/samples/24-HihatClosed.wav",
@@ -534,7 +1200,25 @@
       ]
     },
     {
-      "output": "samples/hihat_closed_v4_rr2.flac",
+      "output": "samples/hihat_closed_v7_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/25-HihatClosed.wav",
+          "sha256": "25d7598c02b43b27a3cf9346ae9708dcdfc5ed2dedf9b448ddf40b429ed6532a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/26-HihatClosed.wav",
+          "sha256": "89820a0349396fa386f0a0f5b53aebd8d5b0426e1dcbf8a4ae159671d8d5a27a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v8_rr2.flac",
       "sources": [
         {
           "path": "HihatClosed/samples/28-HihatClosed.wav",
@@ -543,7 +1227,25 @@
       ]
     },
     {
+      "output": "samples/hihat_closed_v8_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatClosed/samples/29-HihatClosed.wav",
+          "sha256": "4c43dc104740a1360d192ccd664ebe4b6b0b8e53b4f7612c717518a96b940bec"
+        }
+      ]
+    },
+    {
       "output": "samples/hihat_open_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/1-HihatOpen.wav",
+          "sha256": "c55963e4ba5cb03f46e42f3ec9fddc8fea51ce9257781f8de3df405081ba34b0"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/2-HihatOpen.wav",
@@ -552,7 +1254,25 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v1_rr2.flac",
+      "output": "samples/hihat_open_v1_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/3-HihatOpen.wav",
+          "sha256": "ffc6cdce6d02f71324c19923182cbc85140a6d936a1772209e81af59917e53b8"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/4-HihatOpen.wav",
+          "sha256": "1fedfa3f24a32c2be4f82849aababfcde698ed53d84fd47a336b055475cb8535"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v2_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/6-HihatOpen.wav",
@@ -561,7 +1281,25 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v2_rr1.flac",
+      "output": "samples/hihat_open_v2_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/7-HihatOpen.wav",
+          "sha256": "d2d317385b3bf2f01b4bbee873773a962aa6ac382408cf52f85b6a659a8f67cf"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/8-HihatOpen.wav",
+          "sha256": "5c2578c3064538f0354582fd30519198981250320a5206cc2378cf8f2c8f4c63"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v3_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/10-HihatOpen.wav",
@@ -570,7 +1308,25 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v2_rr2.flac",
+      "output": "samples/hihat_open_v3_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/11-HihatOpen.wav",
+          "sha256": "2156d8dc9632fff322f8e75e97320cfba8b9832d8c34e08619dc0f281b5e6f4d"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/12-HihatOpen.wav",
+          "sha256": "1861a39748b62ba287266403a7c5914642a035354c045dd25becaa9506af6166"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v4_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/14-HihatOpen.wav",
@@ -579,7 +1335,25 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v3_rr1.flac",
+      "output": "samples/hihat_open_v4_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/15-HihatOpen.wav",
+          "sha256": "9c8883a43b06aa5903ebea9973f4fc35a75775dd894e3f06d05ed58838a31972"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/16-HihatOpen.wav",
+          "sha256": "a12bd90dcd26889834a54e8f8629c3a562db5c1f7277cff9b93e588e3e53ec64"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v5_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/17-HihatOpen.wav",
@@ -588,7 +1362,25 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v3_rr2.flac",
+      "output": "samples/hihat_open_v5_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/18-HihatOpen.wav",
+          "sha256": "ee5e9eff95c079ed45d4ea5f96b541a3f4f3414ebb631f8a3bd86e7713133bf8"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/19-HihatOpen.wav",
+          "sha256": "33568eedc0e09ae86ef81cf57363017f44d8e3d8fa9787b7e36542ea0b43f849"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v6_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/21-HihatOpen.wav",
@@ -597,7 +1389,25 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v4_rr1.flac",
+      "output": "samples/hihat_open_v6_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/22-HihatOpen.wav",
+          "sha256": "f667524abcaf1607372d0c3305bdab0b1d715c3ce49d99f6a5db4ec74da0ac48"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/23-HihatOpen.wav",
+          "sha256": "99d8488011fbfcacd00d8f5616db2c9de7017ff4ac9e737206178160fccfa459"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v7_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/25-HihatOpen.wav",
@@ -606,11 +1416,38 @@
       ]
     },
     {
-      "output": "samples/hihat_open_v4_rr2.flac",
+      "output": "samples/hihat_open_v7_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/26-HihatOpen.wav",
+          "sha256": "6ca403d715992b67ce0022981b49c20e5d98455a8fb9e649804b4a9b0e798c0c"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/27-HihatOpen.wav",
+          "sha256": "263bae257d86e1f201fee2d841e4bd206c92061dd8938c8994add05c7e5cdb5e"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v8_rr2.flac",
       "sources": [
         {
           "path": "HihatOpen/samples/29-HihatOpen.wav",
           "sha256": "02be8e3de45016e43302d5069326a4c302008be7017d53b2159443c7cffdc3d8"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v8_rr3.flac",
+      "sources": [
+        {
+          "path": "HihatOpen/samples/30-HihatOpen.wav",
+          "sha256": "43499e7e86102d14ca3650dc758b4286da1ba8686d5ac33598145849d5782495"
         }
       ]
     },
@@ -624,7 +1461,7 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v1_rr2.flac",
+      "output": "samples/ride_bow_v2_rr1.flac",
       "sources": [
         {
           "path": "RideR/samples/2-RideR.wav",
@@ -633,7 +1470,7 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v2_rr1.flac",
+      "output": "samples/ride_bow_v3_rr1.flac",
       "sources": [
         {
           "path": "RideR/samples/3-RideR.wav",
@@ -642,7 +1479,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v2_rr2.flac",
+      "output": "samples/ride_bow_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "RideR/samples/4-RideR.wav",
+          "sha256": "74aa926f1f6a8ed04c7f0e83347c62d4ba0a5647f49b6178a9ec709f3f7af16a"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v4_rr2.flac",
       "sources": [
         {
           "path": "RideR/samples/5-RideR.wav",
@@ -651,7 +1497,7 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v3_rr1.flac",
+      "output": "samples/ride_bow_v5_rr1.flac",
       "sources": [
         {
           "path": "RideR/samples/6-RideR.wav",
@@ -660,7 +1506,7 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v3_rr2.flac",
+      "output": "samples/ride_bow_v6_rr1.flac",
       "sources": [
         {
           "path": "RideR/samples/7-RideR.wav",
@@ -669,7 +1515,7 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v4_rr1.flac",
+      "output": "samples/ride_bow_v7_rr1.flac",
       "sources": [
         {
           "path": "RideR/samples/8-RideR.wav",
@@ -678,7 +1524,16 @@
       ]
     },
     {
-      "output": "samples/ride_bow_v4_rr2.flac",
+      "output": "samples/ride_bow_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "RideR/samples/9-RideR.wav",
+          "sha256": "a5395117192630ea5d10596dc4f538bfcac4030c46e3dcf4a60ecffee0e230c0"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v8_rr2.flac",
       "sources": [
         {
           "path": "RideR/samples/10-RideR.wav",
@@ -696,7 +1551,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v1_rr2.flac",
+      "output": "samples/ride_bell_v2_rr1.flac",
       "sources": [
         {
           "path": "RideRBell/samples/2-RideRBell.wav",
@@ -705,7 +1560,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v2_rr1.flac",
+      "output": "samples/ride_bell_v3_rr1.flac",
       "sources": [
         {
           "path": "RideRBell/samples/3-RideRBell.wav",
@@ -714,7 +1569,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v2_rr2.flac",
+      "output": "samples/ride_bell_v4_rr1.flac",
       "sources": [
         {
           "path": "RideRBell/samples/4-RideRBell.wav",
@@ -723,7 +1578,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v3_rr1.flac",
+      "output": "samples/ride_bell_v5_rr1.flac",
       "sources": [
         {
           "path": "RideRBell/samples/5-RideRBell.wav",
@@ -732,7 +1587,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v3_rr2.flac",
+      "output": "samples/ride_bell_v6_rr1.flac",
       "sources": [
         {
           "path": "RideRBell/samples/6-RideRBell.wav",
@@ -741,7 +1596,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v4_rr1.flac",
+      "output": "samples/ride_bell_v7_rr1.flac",
       "sources": [
         {
           "path": "RideRBell/samples/7-RideRBell.wav",
@@ -750,7 +1605,7 @@
       ]
     },
     {
-      "output": "samples/ride_bell_v4_rr2.flac",
+      "output": "samples/ride_bell_v8_rr1.flac",
       "sources": [
         {
           "path": "RideRBell/samples/8-RideRBell.wav",
@@ -768,7 +1623,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v1_rr2.flac",
+      "output": "samples/crash_left_v2_rr1.flac",
       "sources": [
         {
           "path": "CrashL/samples/2-CrashL.wav",
@@ -777,7 +1632,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v2_rr1.flac",
+      "output": "samples/crash_left_v3_rr1.flac",
       "sources": [
         {
           "path": "CrashL/samples/3-CrashL.wav",
@@ -786,7 +1641,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v2_rr2.flac",
+      "output": "samples/crash_left_v4_rr1.flac",
       "sources": [
         {
           "path": "CrashL/samples/4-CrashL.wav",
@@ -795,7 +1650,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v3_rr1.flac",
+      "output": "samples/crash_left_v5_rr1.flac",
       "sources": [
         {
           "path": "CrashL/samples/5-CrashL.wav",
@@ -804,7 +1659,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v3_rr2.flac",
+      "output": "samples/crash_left_v6_rr1.flac",
       "sources": [
         {
           "path": "CrashL/samples/6-CrashL.wav",
@@ -813,7 +1668,7 @@
       ]
     },
     {
-      "output": "samples/crash_left_v4_rr1.flac",
+      "output": "samples/crash_left_v7_rr1.flac",
       "sources": [
         {
           "path": "CrashL/samples/7-CrashL.wav",
@@ -822,7 +1677,16 @@
       ]
     },
     {
-      "output": "samples/crash_left_v4_rr2.flac",
+      "output": "samples/crash_left_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "CrashL/samples/8-CrashL.wav",
+          "sha256": "2cba423c418ef19588a668101b91b2b5c7940786262783ab6b41cbb950cff12a"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v8_rr2.flac",
       "sources": [
         {
           "path": "CrashL/samples/9-CrashL.wav",
@@ -840,7 +1704,16 @@
       ]
     },
     {
-      "output": "samples/crash_right_v1_rr2.flac",
+      "output": "samples/crash_right_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "CrashR/samples/2-CrashR.wav",
+          "sha256": "447a8fe85fd14debb0e1465489749e1ca9b92e94ac1f2475d79b2a1d3281138a"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v2_rr2.flac",
       "sources": [
         {
           "path": "CrashR/samples/3-CrashR.wav",
@@ -849,7 +1722,7 @@
       ]
     },
     {
-      "output": "samples/crash_right_v2_rr1.flac",
+      "output": "samples/crash_right_v3_rr1.flac",
       "sources": [
         {
           "path": "CrashR/samples/4-CrashR.wav",
@@ -858,7 +1731,16 @@
       ]
     },
     {
-      "output": "samples/crash_right_v2_rr2.flac",
+      "output": "samples/crash_right_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "CrashR/samples/5-CrashR.wav",
+          "sha256": "c81b1dfe103566290f991d73a20a8944437116d858e6c12b9e9c184bb308343e"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v4_rr2.flac",
       "sources": [
         {
           "path": "CrashR/samples/6-CrashR.wav",
@@ -867,7 +1749,7 @@
       ]
     },
     {
-      "output": "samples/crash_right_v3_rr1.flac",
+      "output": "samples/crash_right_v5_rr1.flac",
       "sources": [
         {
           "path": "CrashR/samples/7-CrashR.wav",
@@ -876,7 +1758,16 @@
       ]
     },
     {
-      "output": "samples/crash_right_v3_rr2.flac",
+      "output": "samples/crash_right_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "CrashR/samples/8-CrashR.wav",
+          "sha256": "95ee6c98327a1dca97e7bdde6269fe7dfedf8b8ef6c9d56a6ad1d54e40e1967b"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v6_rr2.flac",
       "sources": [
         {
           "path": "CrashR/samples/9-CrashR.wav",
@@ -885,7 +1776,7 @@
       ]
     },
     {
-      "output": "samples/crash_right_v4_rr1.flac",
+      "output": "samples/crash_right_v7_rr1.flac",
       "sources": [
         {
           "path": "CrashR/samples/10-CrashR.wav",
@@ -894,7 +1785,16 @@
       ]
     },
     {
-      "output": "samples/crash_right_v4_rr2.flac",
+      "output": "samples/crash_right_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "CrashR/samples/11-CrashR.wav",
+          "sha256": "7614cb1379de35ebcdcf2b1294ed6ed2716caefceaa692c03ddd417b2f35b89b"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v8_rr2.flac",
       "sources": [
         {
           "path": "CrashR/samples/12-CrashR.wav",
@@ -912,7 +1812,16 @@
       ]
     },
     {
-      "output": "samples/china_v1_rr2.flac",
+      "output": "samples/china_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "China/samples/2-China.wav",
+          "sha256": "a2416dc8c53e5efbfc197ded33cc77e1c83c052e5ea6484cf26f7fa07748f549"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v2_rr2.flac",
       "sources": [
         {
           "path": "China/samples/3-China.wav",
@@ -921,7 +1830,7 @@
       ]
     },
     {
-      "output": "samples/china_v2_rr1.flac",
+      "output": "samples/china_v3_rr1.flac",
       "sources": [
         {
           "path": "China/samples/4-China.wav",
@@ -930,7 +1839,16 @@
       ]
     },
     {
-      "output": "samples/china_v2_rr2.flac",
+      "output": "samples/china_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "China/samples/5-China.wav",
+          "sha256": "36005b2086727fee250614eb4f7abed2c633230516ca44aa253a150f022c38d9"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v4_rr2.flac",
       "sources": [
         {
           "path": "China/samples/6-China.wav",
@@ -939,7 +1857,7 @@
       ]
     },
     {
-      "output": "samples/china_v3_rr1.flac",
+      "output": "samples/china_v5_rr1.flac",
       "sources": [
         {
           "path": "China/samples/7-China.wav",
@@ -948,7 +1866,16 @@
       ]
     },
     {
-      "output": "samples/china_v3_rr2.flac",
+      "output": "samples/china_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "China/samples/8-China.wav",
+          "sha256": "71912cc2fa6ed827ddbca0c931d590498f4dfc94d635433132b290a5eb0627d7"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v6_rr2.flac",
       "sources": [
         {
           "path": "China/samples/9-China.wav",
@@ -957,7 +1884,7 @@
       ]
     },
     {
-      "output": "samples/china_v4_rr1.flac",
+      "output": "samples/china_v7_rr1.flac",
       "sources": [
         {
           "path": "China/samples/10-China.wav",
@@ -966,7 +1893,16 @@
       ]
     },
     {
-      "output": "samples/china_v4_rr2.flac",
+      "output": "samples/china_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "China/samples/11-China.wav",
+          "sha256": "fe367fa7e57f47eb1cab1f3429cb4fa38320a981a7a49136bae000b79deb8a0a"
+        }
+      ]
+    },
+    {
+      "output": "samples/china_v8_rr2.flac",
       "sources": [
         {
           "path": "China/samples/12-China.wav",

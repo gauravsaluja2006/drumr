@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { lastHit, openApp, startAudio, waitForKit } from './fixtures/app';
+import { lastHit, openApp, startAudio, waitForKit, openSettings } from './fixtures/app';
 import { installFakeMidi } from './fixtures/fakeMidi';
 
 const kitId = (page: import('@playwright/test').Page) =>
@@ -51,8 +51,8 @@ test('MIDI learn: a controller button switches kits, a knob sets master volume, 
   await page.evaluate(() => window.__fakeMidi!.noteOn('mikro', 24, 100)); // connect by playing a pad
   await expect.poll(async () => (await lastHit(page))?.voice).toBe('kick');
 
-  await page.getByRole('button', { name: 'MIDI controls' }).click();
-  const dialog = page.getByRole('dialog', { name: 'MIDI controls' });
+  await openSettings(page, 'Controller');
+  const dialog = page.getByRole('dialog', { name: 'Settings' });
   await dialog.getByRole('button', { name: 'Learn Next kit' }).click();
   await expect(dialog.getByTestId('binding-kit.next')).toHaveText('Move it…');
   await page.evaluate(() => window.__fakeMidi!.cc('mikro', 102, 127));
@@ -75,6 +75,6 @@ test('MIDI learn: a controller button switches kits, a knob sets master volume, 
   await page.reload();
   await waitForKit(page);
   await startAudio(page);
-  await page.getByRole('button', { name: 'MIDI controls' }).click();
+  await openSettings(page, 'Controller');
   await expect(page.getByTestId('binding-kit.next')).toHaveText('CC 102');
 });

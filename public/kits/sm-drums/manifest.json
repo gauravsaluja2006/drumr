@@ -13,7 +13,7 @@
   },
   "sampleRate": 44100,
   "format": "flac",
-  "totalBytes": 19280572,
+  "totalBytes": 29881838,
   "groups": [
     "kick",
     "snare",
@@ -29,66 +29,98 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 15,
+          "hivel": 10,
           "samples": [
             "samples/kick_v1_rr1.flac",
             "samples/kick_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 16,
-          "hivel": 31,
+          "lovel": 11,
+          "hivel": 21,
           "samples": [
             "samples/kick_v2_rr1.flac",
             "samples/kick_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 32,
-          "hivel": 47,
+          "lovel": 22,
+          "hivel": 31,
           "samples": [
             "samples/kick_v3_rr1.flac",
             "samples/kick_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 48,
-          "hivel": 63,
+          "lovel": 32,
+          "hivel": 42,
           "samples": [
             "samples/kick_v4_rr1.flac",
             "samples/kick_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 64,
-          "hivel": 79,
+          "lovel": 43,
+          "hivel": 52,
           "samples": [
             "samples/kick_v5_rr1.flac",
             "samples/kick_v5_rr2.flac"
           ]
         },
         {
-          "lovel": 80,
-          "hivel": 95,
+          "lovel": 53,
+          "hivel": 63,
           "samples": [
             "samples/kick_v6_rr1.flac",
             "samples/kick_v6_rr2.flac"
           ]
         },
         {
-          "lovel": 96,
-          "hivel": 111,
+          "lovel": 64,
+          "hivel": 74,
           "samples": [
             "samples/kick_v7_rr1.flac",
             "samples/kick_v7_rr2.flac"
           ]
         },
         {
-          "lovel": 112,
-          "hivel": 127,
+          "lovel": 75,
+          "hivel": 84,
           "samples": [
             "samples/kick_v8_rr1.flac",
             "samples/kick_v8_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 95,
+          "samples": [
+            "samples/kick_v9_rr1.flac",
+            "samples/kick_v9_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 105,
+          "samples": [
+            "samples/kick_v10_rr1.flac",
+            "samples/kick_v10_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 106,
+          "hivel": 116,
+          "samples": [
+            "samples/kick_v11_rr1.flac",
+            "samples/kick_v11_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 117,
+          "hivel": 127,
+          "samples": [
+            "samples/kick_v12_rr1.flac",
+            "samples/kick_v12_rr2.flac"
           ]
         }
       ]
@@ -100,66 +132,98 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 15,
+          "hivel": 10,
           "samples": [
             "samples/snare_center_v1_rr1.flac",
             "samples/snare_center_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 16,
-          "hivel": 31,
+          "lovel": 11,
+          "hivel": 21,
           "samples": [
             "samples/snare_center_v2_rr1.flac",
             "samples/snare_center_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 32,
-          "hivel": 47,
+          "lovel": 22,
+          "hivel": 31,
           "samples": [
             "samples/snare_center_v3_rr1.flac",
             "samples/snare_center_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 48,
-          "hivel": 63,
+          "lovel": 32,
+          "hivel": 42,
           "samples": [
             "samples/snare_center_v4_rr1.flac",
             "samples/snare_center_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 64,
-          "hivel": 79,
+          "lovel": 43,
+          "hivel": 52,
           "samples": [
             "samples/snare_center_v5_rr1.flac",
             "samples/snare_center_v5_rr2.flac"
           ]
         },
         {
-          "lovel": 80,
-          "hivel": 95,
+          "lovel": 53,
+          "hivel": 63,
           "samples": [
             "samples/snare_center_v6_rr1.flac",
             "samples/snare_center_v6_rr2.flac"
           ]
         },
         {
-          "lovel": 96,
-          "hivel": 111,
+          "lovel": 64,
+          "hivel": 74,
           "samples": [
             "samples/snare_center_v7_rr1.flac",
             "samples/snare_center_v7_rr2.flac"
           ]
         },
         {
-          "lovel": 112,
-          "hivel": 127,
+          "lovel": 75,
+          "hivel": 84,
           "samples": [
             "samples/snare_center_v8_rr1.flac",
             "samples/snare_center_v8_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 85,
+          "hivel": 95,
+          "samples": [
+            "samples/snare_center_v9_rr1.flac",
+            "samples/snare_center_v9_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 105,
+          "samples": [
+            "samples/snare_center_v10_rr1.flac",
+            "samples/snare_center_v10_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 106,
+          "hivel": 116,
+          "samples": [
+            "samples/snare_center_v11_rr1.flac",
+            "samples/snare_center_v11_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 117,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_center_v12_rr1.flac",
+            "samples/snare_center_v12_rr2.flac"
           ]
         }
       ]
@@ -171,42 +235,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/snare_rimshot_v1_rr1.flac",
             "samples/snare_rimshot_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/snare_rimshot_v2_rr1.flac",
             "samples/snare_rimshot_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/snare_rimshot_v3_rr1.flac",
             "samples/snare_rimshot_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/snare_rimshot_v4_rr1.flac",
             "samples/snare_rimshot_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/snare_rimshot_v5_rr1.flac",
             "samples/snare_rimshot_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/snare_rimshot_v6_rr1.flac",
+            "samples/snare_rimshot_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/snare_rimshot_v7_rr1.flac",
+            "samples/snare_rimshot_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_rimshot_v8_rr1.flac",
+            "samples/snare_rimshot_v8_rr2.flac"
           ]
         }
       ]
@@ -218,42 +306,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/snare_sidestick_v1_rr1.flac",
             "samples/snare_sidestick_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/snare_sidestick_v2_rr1.flac",
             "samples/snare_sidestick_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/snare_sidestick_v3_rr1.flac",
             "samples/snare_sidestick_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/snare_sidestick_v4_rr1.flac",
             "samples/snare_sidestick_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/snare_sidestick_v5_rr1.flac",
             "samples/snare_sidestick_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/snare_sidestick_v6_rr1.flac",
+            "samples/snare_sidestick_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/snare_sidestick_v7_rr1.flac",
+            "samples/snare_sidestick_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_sidestick_v8_rr1.flac",
+            "samples/snare_sidestick_v8_rr2.flac"
           ]
         }
       ]
@@ -265,42 +377,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/tom_high_v1_rr1.flac",
             "samples/tom_high_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/tom_high_v2_rr1.flac",
             "samples/tom_high_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/tom_high_v3_rr1.flac",
             "samples/tom_high_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/tom_high_v4_rr1.flac",
             "samples/tom_high_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/tom_high_v5_rr1.flac",
             "samples/tom_high_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_high_v6_rr1.flac",
+            "samples/tom_high_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_high_v7_rr1.flac",
+            "samples/tom_high_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_high_v8_rr1.flac",
+            "samples/tom_high_v8_rr2.flac"
           ]
         }
       ]
@@ -312,42 +448,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/tom_highMid_v1_rr1.flac",
             "samples/tom_highMid_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/tom_highMid_v2_rr1.flac",
             "samples/tom_highMid_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/tom_highMid_v3_rr1.flac",
             "samples/tom_highMid_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/tom_highMid_v4_rr1.flac",
             "samples/tom_highMid_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/tom_highMid_v5_rr1.flac",
             "samples/tom_highMid_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_highMid_v6_rr1.flac",
+            "samples/tom_highMid_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_highMid_v7_rr1.flac",
+            "samples/tom_highMid_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_highMid_v8_rr1.flac",
+            "samples/tom_highMid_v8_rr2.flac"
           ]
         }
       ]
@@ -359,42 +519,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/tom_lowMid_v1_rr1.flac",
             "samples/tom_lowMid_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/tom_lowMid_v2_rr1.flac",
             "samples/tom_lowMid_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/tom_lowMid_v3_rr1.flac",
             "samples/tom_lowMid_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/tom_lowMid_v4_rr1.flac",
             "samples/tom_lowMid_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/tom_lowMid_v5_rr1.flac",
             "samples/tom_lowMid_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_lowMid_v6_rr1.flac",
+            "samples/tom_lowMid_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_lowMid_v7_rr1.flac",
+            "samples/tom_lowMid_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_lowMid_v8_rr1.flac",
+            "samples/tom_lowMid_v8_rr2.flac"
           ]
         }
       ]
@@ -406,42 +590,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/tom_low_v1_rr1.flac",
             "samples/tom_low_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/tom_low_v2_rr1.flac",
             "samples/tom_low_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/tom_low_v3_rr1.flac",
             "samples/tom_low_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/tom_low_v4_rr1.flac",
             "samples/tom_low_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/tom_low_v5_rr1.flac",
             "samples/tom_low_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_low_v6_rr1.flac",
+            "samples/tom_low_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_low_v7_rr1.flac",
+            "samples/tom_low_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_low_v8_rr1.flac",
+            "samples/tom_low_v8_rr2.flac"
           ]
         }
       ]
@@ -454,50 +662,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 21,
+          "hivel": 15,
           "samples": [
             "samples/hihat_closed_v1_rr1.flac",
             "samples/hihat_closed_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 22,
-          "hivel": 42,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/hihat_closed_v2_rr1.flac",
             "samples/hihat_closed_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 43,
-          "hivel": 63,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/hihat_closed_v3_rr1.flac",
             "samples/hihat_closed_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 64,
-          "hivel": 84,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/hihat_closed_v4_rr1.flac",
             "samples/hihat_closed_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 85,
-          "hivel": 105,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/hihat_closed_v5_rr1.flac",
             "samples/hihat_closed_v5_rr2.flac"
           ]
         },
         {
-          "lovel": 106,
-          "hivel": 127,
+          "lovel": 80,
+          "hivel": 95,
           "samples": [
             "samples/hihat_closed_v6_rr1.flac",
             "samples/hihat_closed_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_closed_v7_rr1.flac",
+            "samples/hihat_closed_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_closed_v8_rr1.flac",
+            "samples/hihat_closed_v8_rr2.flac"
           ]
         }
       ]
@@ -514,42 +738,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/hihat_half_v1_rr1.flac",
             "samples/hihat_half_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/hihat_half_v2_rr1.flac",
             "samples/hihat_half_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/hihat_half_v3_rr1.flac",
             "samples/hihat_half_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/hihat_half_v4_rr1.flac",
             "samples/hihat_half_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/hihat_half_v5_rr1.flac",
             "samples/hihat_half_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_half_v6_rr1.flac",
+            "samples/hihat_half_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_half_v7_rr1.flac",
+            "samples/hihat_half_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_half_v8_rr1.flac",
+            "samples/hihat_half_v8_rr2.flac"
           ]
         }
       ]
@@ -566,42 +814,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/hihat_open_v1_rr1.flac",
             "samples/hihat_open_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/hihat_open_v2_rr1.flac",
             "samples/hihat_open_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/hihat_open_v3_rr1.flac",
             "samples/hihat_open_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/hihat_open_v4_rr1.flac",
             "samples/hihat_open_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/hihat_open_v5_rr1.flac",
             "samples/hihat_open_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_open_v6_rr1.flac",
+            "samples/hihat_open_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_open_v7_rr1.flac",
+            "samples/hihat_open_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_open_v8_rr1.flac",
+            "samples/hihat_open_v8_rr2.flac"
           ]
         }
       ]
@@ -614,42 +886,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/hihat_pedal_v1_rr1.flac",
             "samples/hihat_pedal_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/hihat_pedal_v2_rr1.flac",
             "samples/hihat_pedal_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/hihat_pedal_v3_rr1.flac",
             "samples/hihat_pedal_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/hihat_pedal_v4_rr1.flac",
             "samples/hihat_pedal_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/hihat_pedal_v5_rr1.flac",
             "samples/hihat_pedal_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_pedal_v6_rr1.flac",
+            "samples/hihat_pedal_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_pedal_v7_rr1.flac",
+            "samples/hihat_pedal_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_pedal_v8_rr1.flac",
+            "samples/hihat_pedal_v8_rr2.flac"
           ]
         }
       ]
@@ -666,42 +962,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/hihat_splash_v1_rr1.flac",
             "samples/hihat_splash_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/hihat_splash_v2_rr1.flac",
             "samples/hihat_splash_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/hihat_splash_v3_rr1.flac",
             "samples/hihat_splash_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/hihat_splash_v4_rr1.flac",
             "samples/hihat_splash_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/hihat_splash_v5_rr1.flac",
             "samples/hihat_splash_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_splash_v6_rr1.flac",
+            "samples/hihat_splash_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_splash_v7_rr1.flac",
+            "samples/hihat_splash_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_splash_v8_rr1.flac",
+            "samples/hihat_splash_v8_rr2.flac"
           ]
         }
       ]
@@ -713,42 +1033,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/ride_bow_v1_rr1.flac",
             "samples/ride_bow_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/ride_bow_v2_rr1.flac",
             "samples/ride_bow_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/ride_bow_v3_rr1.flac",
             "samples/ride_bow_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/ride_bow_v4_rr1.flac",
             "samples/ride_bow_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/ride_bow_v5_rr1.flac",
             "samples/ride_bow_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/ride_bow_v6_rr1.flac",
+            "samples/ride_bow_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/ride_bow_v7_rr1.flac",
+            "samples/ride_bow_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bow_v8_rr1.flac",
+            "samples/ride_bow_v8_rr2.flac"
           ]
         }
       ]
@@ -760,42 +1104,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/ride_bell_v1_rr1.flac",
             "samples/ride_bell_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/ride_bell_v2_rr1.flac",
             "samples/ride_bell_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/ride_bell_v3_rr1.flac",
             "samples/ride_bell_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/ride_bell_v4_rr1.flac",
             "samples/ride_bell_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/ride_bell_v5_rr1.flac",
             "samples/ride_bell_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/ride_bell_v6_rr1.flac",
+            "samples/ride_bell_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/ride_bell_v7_rr1.flac",
+            "samples/ride_bell_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bell_v8_rr1.flac",
+            "samples/ride_bell_v8_rr2.flac"
           ]
         }
       ]
@@ -807,42 +1175,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/ride_edge_v1_rr1.flac",
             "samples/ride_edge_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/ride_edge_v2_rr1.flac",
             "samples/ride_edge_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/ride_edge_v3_rr1.flac",
             "samples/ride_edge_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/ride_edge_v4_rr1.flac",
             "samples/ride_edge_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/ride_edge_v5_rr1.flac",
             "samples/ride_edge_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/ride_edge_v6_rr1.flac",
+            "samples/ride_edge_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/ride_edge_v7_rr1.flac",
+            "samples/ride_edge_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_edge_v8_rr1.flac",
+            "samples/ride_edge_v8_rr2.flac"
           ]
         }
       ]
@@ -854,42 +1246,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/crash_left_v1_rr1.flac",
             "samples/crash_left_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/crash_left_v2_rr1.flac",
             "samples/crash_left_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/crash_left_v3_rr1.flac",
             "samples/crash_left_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/crash_left_v4_rr1.flac",
             "samples/crash_left_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/crash_left_v5_rr1.flac",
             "samples/crash_left_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/crash_left_v6_rr1.flac",
+            "samples/crash_left_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/crash_left_v7_rr1.flac",
+            "samples/crash_left_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_left_v8_rr1.flac",
+            "samples/crash_left_v8_rr2.flac"
           ]
         }
       ]
@@ -901,42 +1317,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/crash_right_v1_rr1.flac",
             "samples/crash_right_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/crash_right_v2_rr1.flac",
             "samples/crash_right_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/crash_right_v3_rr1.flac",
             "samples/crash_right_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/crash_right_v4_rr1.flac",
             "samples/crash_right_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/crash_right_v5_rr1.flac",
             "samples/crash_right_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/crash_right_v6_rr1.flac",
+            "samples/crash_right_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/crash_right_v7_rr1.flac",
+            "samples/crash_right_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_right_v8_rr1.flac",
+            "samples/crash_right_v8_rr2.flac"
           ]
         }
       ]
@@ -948,42 +1388,66 @@
       "layers": [
         {
           "lovel": 1,
-          "hivel": 25,
+          "hivel": 15,
           "samples": [
             "samples/splash_v1_rr1.flac",
             "samples/splash_v1_rr2.flac"
           ]
         },
         {
-          "lovel": 26,
-          "hivel": 50,
+          "lovel": 16,
+          "hivel": 31,
           "samples": [
             "samples/splash_v2_rr1.flac",
             "samples/splash_v2_rr2.flac"
           ]
         },
         {
-          "lovel": 51,
-          "hivel": 76,
+          "lovel": 32,
+          "hivel": 47,
           "samples": [
             "samples/splash_v3_rr1.flac",
             "samples/splash_v3_rr2.flac"
           ]
         },
         {
-          "lovel": 77,
-          "hivel": 101,
+          "lovel": 48,
+          "hivel": 63,
           "samples": [
             "samples/splash_v4_rr1.flac",
             "samples/splash_v4_rr2.flac"
           ]
         },
         {
-          "lovel": 102,
-          "hivel": 127,
+          "lovel": 64,
+          "hivel": 79,
           "samples": [
             "samples/splash_v5_rr1.flac",
             "samples/splash_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/splash_v6_rr1.flac",
+            "samples/splash_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/splash_v7_rr1.flac",
+            "samples/splash_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/splash_v8_rr1.flac",
+            "samples/splash_v8_rr2.flac"
           ]
         }
       ]

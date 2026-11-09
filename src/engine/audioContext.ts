@@ -24,6 +24,7 @@ export interface AudioBufferLike {
 
 export interface IBufferSourceNode extends IAudioNode {
   buffer: AudioBufferLike | null;
+  readonly playbackRate: IAudioParam;
   onended: ((this: never, ev: Event) => unknown) | null;
   start(when?: number): void;
   stop(when?: number): void;
@@ -60,6 +61,11 @@ export interface IBiquadFilterNode extends IAudioNode {
   readonly Q: IAudioParam;
 }
 
+export interface IAnalyserNode extends IAudioNode {
+  fftSize: number;
+  getFloatTimeDomainData(array: Float32Array<ArrayBuffer>): void;
+}
+
 export interface IAudioContext {
   readonly currentTime: number;
   readonly sampleRate: number;
@@ -73,6 +79,7 @@ export interface IAudioContext {
   createConvolver(): IConvolverNode;
   createDelay(maxDelayTime?: number): IDelayNode;
   createBiquadFilter(): IBiquadFilterNode;
+  createAnalyser(): IAnalyserNode;
   createBuffer(numberOfChannels: number, length: number, sampleRate: number): IAudioBuffer;
   decodeAudioData(data: ArrayBuffer): Promise<AudioBufferLike>;
   resume(): Promise<void>;

@@ -7,6 +7,8 @@ Policy (owner's decision): publish a kit unless its terms explicitly or clearly 
 Kits marked "no explicit licence" carry copyright risk (no licence is not a grant); remove one quickly if a
 rights holder objects.
 
+Depth (2026-11-09, ADR-40): Muldjord and ShittyKit 8 velocity layers (snare 10) × up to 3 round robins; SM Drums 8 layers (kick and snare 12) × 2. Tails: toms 3 s, hi-hats 3 s, cymbals 5 s (SM Drums 4 s to stay under the 30 MB per-kit cap). Total 61.8 MB.
+
 | Kit | Licence status | Evidence |
 |---|---|---|
 | Muldjord (DrumGizmo) | CC BY 4.0 | drumgizmo.org kit page; credit "Drum samples provided by DrumGizmo.org" |

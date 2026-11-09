@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
-import { PadGrid } from '@/ui/PadGrid/PadGrid';
+import { PadGrid, type PadView } from '@/ui/PadGrid/PadGrid';
 import { StatusBar } from '@/ui/StatusBar/StatusBar';
 import { KitPanel } from '@/ui/KitPanel/KitPanel';
 import { KitList } from '@/ui/KitList/KitList';
@@ -8,7 +8,7 @@ import { Mixer } from '@/ui/Mixer/Mixer';
 import { AudioOverlay } from '@/ui/AudioOverlay/AudioOverlay';
 import { kitBaseUrl, useKitStore } from '@/state/useKitStore';
 import { DEFAULT_GROUP, fxFor, useSettingsStore } from '@/state/useSettingsStore';
-import { EffectsPanel } from '@/ui/EffectsPanel/EffectsPanel';
+import { SoundQuick } from '@/ui/EffectsPanel/EffectsPanel';
 import { GROUPS } from '@/kits/schema';
 import { attachKeyboard } from '@/input/keyboard';
 import { getRuntime, type Runtime } from './runtime';
@@ -17,8 +17,6 @@ import { useMappingStore } from '@/state/useMappingStore';
 import { bindMidiStore } from '@/state/useMidiStore';
 import { padIndex } from '@/mapping/schema';
 import { voiceLabel } from '@/mapping/voices';
-import { VelocityPanel } from '@/ui/VelocityPanel/VelocityPanel';
-import { PresetSelect } from '@/ui/PresetSelect/PresetSelect';
 import { HiHatMeter } from '@/ui/HiHatMeter/HiHatMeter';
 import { MobilePanels } from '@/ui/MobilePanels/MobilePanels';
 import { DESKTOP, useMediaQuery } from './media';
@@ -32,9 +30,7 @@ const About = lazy(() => import('@/ui/About/About').then((m) => ({ default: m.Ab
 const MappingEditor = lazy(() =>
   import('@/ui/MappingEditor/MappingEditor').then((m) => ({ default: m.MappingEditor })),
 );
-const MidiControls = lazy(() =>
-  import('@/ui/MidiControls/MidiControls').then((m) => ({ default: m.MidiControls })),
-);
+const Settings = lazy(() => import('@/ui/Settings/Settings').then((m) => ({ default: m.Settings })));
 const DebugPanel = lazy(() => import('@/ui/DebugPanel/DebugPanel').then((m) => ({ default: m.DebugPanel })));
 
 function Panel({
@@ -72,7 +68,7 @@ export function App() {
   const masterDb = useSettingsStore((s) => s.masterDb);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [debugOpen, setDebugOpen] = useState(false);
-  const [controlsOpen, setControlsOpen] = useState(false);
+  const settingsOpen = useUiStore((s) => s.settings !== null);
   const { editing, selectedPad, learning, setEditing } = useUiStore();
   const desktop = useMediaQuery(DESKTOP, true);
 
@@ -85,6 +81,8 @@ export function App() {
       if (e.key === '`') setDebugOpen((o) => !o);
       else if (e.key === 'l' && !e.repeat) loopMain(e.timeStamp || performance.now());
       else if (e.key === 'L' && !e.repeat) loopStopPlay(e.timeStamp || performance.now());
+      else if (e.key === ',' && !document.querySelector('[role="dialog"]'))
+        useUiStore.getState().openSettings('sound');
       else if (e.key === 'm' || e.key === 'M') setEditing(!useUiStore.getState().editing);
       else if (
         e.key === 'Escape' &&
@@ -128,8 +126,13 @@ export function App() {
     for (const g of GROUPS) {
       const setting = kitMix?.[g] ?? DEFAULT_GROUP;
       runtime.engine.setGroupGainDb(g, setting.muted ? -Infinity : setting.db);
+      runtime.engine.setGroupTone(g, { tune: setting.tune ?? 0, decay: setting.decay ?? 1 });
     }
   }, [runtime, kitMix]);
+  const humanize = useSettingsStore((s) => s.humanize);
+  useEffect(() => {
+    runtime?.engine.setHumanize(humanize);
+  }, [runtime, humanize]);
 
   // Per-kit effects and the echo tempo → engine sends.
   const kitFx = useSettingsStore((s) => fxFor(s, kitId));
@@ -151,12 +154,15 @@ export function App() {
 
   const mapping = useMappingStore((s) => s.mapping);
   const pads = useMemo(() => {
-    const views: { label?: string; note?: number; unavailable?: boolean }[] = [];
+    const views: PadView[] = [];
+    const arts = useKitStore.getState().manifest?.articulations;
     for (const p of mapping.pads) {
+      const art = status === 'ready' ? resolvePadVoice(p.voice) : null;
       views[padIndex(mapping, p)] = {
         label: p.label ?? voiceLabel(p.voice),
         note: p.note,
-        unavailable: status === 'ready' && resolvePadVoice(p.voice) === null,
+        unavailable: status === 'ready' && art === null,
+        group: arts?.find((a) => a.id === art)?.group,
       };
     }
     return views;
@@ -180,7 +186,7 @@ export function App() {
         )}
         <div
           className={`flex flex-col items-center justify-center gap-4 ${
-            desktop ? '[--grid-reserve:450px] [@media(max-height:800px)]:[--grid-reserve:390px]' : ''
+            desktop ? '[--grid-reserve:400px] [@media(max-height:800px)]:[--grid-reserve:340px]' : ''
           }`}
         >
           <PadGrid
@@ -196,25 +202,6 @@ export function App() {
               <Mixer layout="strip" />
             </section>
           )}
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <PresetSelect />
-            <button
-              type="button"
-              aria-pressed={editing}
-              onClick={() => setEditing(!editing)}
-              className="rounded-m border border-line px-3 py-1.5 text-xs text-fg-1 hover:bg-bg-3 hover:text-fg-0 aria-pressed:border-accent aria-pressed:text-accent"
-            >
-              {editing ? 'Editing layout' : 'Edit layout'}{' '}
-              <span className="ml-1 hidden font-mono text-fg-2 lg:inline">M</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setControlsOpen(true)}
-              className="rounded-m border border-line px-3 py-1.5 text-xs text-fg-1 hover:bg-bg-3 hover:text-fg-0"
-            >
-              MIDI controls
-            </button>
-          </div>
           {!desktop && (
             <MobilePanels
               tabs={[
@@ -228,21 +215,16 @@ export function App() {
                       </div>
                       <KitPanel />
                       <Mixer />
-                      <Panel title="Effects" className="border-t border-line pt-4">
-                        <EffectsPanel />
+                      <Panel title="Sound" className="border-t border-line pt-4">
+                        <SoundQuick />
                       </Panel>
                     </>
                   ),
                 },
                 {
                   id: 'hihat',
-                  label: 'Hi-hat & velocity',
-                  content: (
-                    <>
-                      <HiHatMeter />
-                      <VelocityPanel />
-                    </>
-                  ),
+                  label: 'Hi-hat',
+                  content: <HiHatMeter settings={false} />,
                 },
               ]}
             />
@@ -257,14 +239,11 @@ export function App() {
         ) : (
           desktop && (
             <aside className="flex min-h-0 flex-col gap-8 overflow-y-auto rounded-l border border-line bg-bg-1 p-5">
+              <Panel title="Sound">
+                <SoundQuick />
+              </Panel>
               <Panel title="Hi-hat">
-                <HiHatMeter />
-              </Panel>
-              <Panel title="Effects">
-                <EffectsPanel />
-              </Panel>
-              <Panel title="Velocity">
-                <VelocityPanel />
+                <HiHatMeter settings={false} />
               </Panel>
             </aside>
           )
@@ -299,7 +278,7 @@ export function App() {
       <Suspense fallback={null}>
         {aboutOpen && <About open onClose={() => setAboutOpen(false)} />}
         {debugOpen && <DebugPanel onClose={() => setDebugOpen(false)} />}
-        {controlsOpen && <MidiControls onClose={() => setControlsOpen(false)} />}
+        {settingsOpen && <Settings />}
       </Suspense>
       <AudioOverlay ctx={runtime?.ctx ?? null} />
     </div>

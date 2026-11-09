@@ -1,5 +1,6 @@
 import type {
   AudioBufferLike,
+  IAnalyserNode,
   IAudioBuffer,
   IAudioContext,
   IAudioNode,
@@ -59,6 +60,7 @@ export class FakeGain extends FakeNode implements IGainNode {
 
 export class FakeSource extends FakeNode implements IBufferSourceNode {
   buffer: AudioBufferLike | null = null;
+  readonly playbackRate = new FakeParam(1);
   onended: ((this: never, ev: Event) => unknown) | null = null;
   startedAt: number | null = null;
   stoppedAt: number | null = null;
@@ -110,6 +112,19 @@ export class FakeBiquad extends FakeNode implements IBiquadFilterNode {
   readonly Q = new FakeParam(1);
   constructor() {
     super('biquad');
+  }
+}
+
+export class FakeAnalyser extends FakeNode implements IAnalyserNode {
+  fftSize = 2048;
+  /** Test hook: what the next read returns. */
+  samples = new Float32Array(0);
+  constructor() {
+    super('analyser');
+  }
+  getFloatTimeDomainData(array: Float32Array<ArrayBuffer>) {
+    array.fill(0);
+    array.set(this.samples.subarray(0, array.length));
   }
 }
 
@@ -186,6 +201,9 @@ export class FakeAudioContext implements IAudioContext {
     const f = new FakeBiquad();
     this.filters.push(f);
     return f;
+  }
+  createAnalyser() {
+    return new FakeAnalyser();
   }
   createBuffer(numberOfChannels: number, length: number, sampleRate: number) {
     return new FakeAudioBuffer(numberOfChannels, length, sampleRate);

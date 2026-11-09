@@ -21,8 +21,11 @@ const CC_OPTIONS: [number, string][] = [
   [64, 'Sustain pedal'],
 ];
 
-/** Vertical openness meter and hi-hat CC settings (docs/03-DESIGN.md §4.5). */
-export function HiHatMeter() {
+/**
+ * Vertical openness meter and hi-hat CC settings (docs/03-DESIGN.md §4.5). `settings={false}` shows
+ * the meter only (home screen; the settings live in Settings › Playing).
+ */
+export function HiHatMeter({ settings: showSettings = true }: { settings?: boolean }) {
   const settings = useMappingStore((s) => s.mapping.hihat);
   const setHihat = useMappingStore((s) => s.setHihat);
   // Re-render when the kit (and therefore its openness levels) changes.
@@ -76,39 +79,43 @@ export function HiHatMeter() {
           </p>
         </div>
       </div>
-      <label htmlFor={ccId} className="flex flex-col gap-1 text-xs text-fg-1">
-        Controller
-        <select
-          id={ccId}
-          value={settings.cc}
-          onChange={(e) => setHihat({ cc: Number(e.target.value) })}
-          className="rounded-s border border-line bg-bg-2 px-2 py-1 text-fg-0"
-        >
-          {options.map(([cc, name]) => (
-            <option key={cc} value={cc}>
-              CC {cc} · {name}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label className="flex items-center gap-2 text-xs text-fg-1">
-        <input
-          type="checkbox"
-          checked={settings.invert}
-          onChange={(e) => setHihat({ invert: e.target.checked })}
-          className="accent-[var(--accent)]"
-        />
-        High value opens the hat
-      </label>
-      <label className="flex items-center gap-2 text-xs text-fg-1">
-        <input
-          type="checkbox"
-          checked={settings.pedalOnClose}
-          onChange={(e) => setHihat({ pedalOnClose: e.target.checked })}
-          className="accent-[var(--accent)]"
-        />
-        Pedal “chick” when fully closed
-      </label>
+      {showSettings && (
+        <>
+          <label htmlFor={ccId} className="flex flex-col gap-1 text-xs text-fg-1">
+            Controller
+            <select
+              id={ccId}
+              value={settings.cc}
+              onChange={(e) => setHihat({ cc: Number(e.target.value) })}
+              className="rounded-s border border-line bg-bg-2 px-2 py-1 text-fg-0"
+            >
+              {options.map(([cc, name]) => (
+                <option key={cc} value={cc}>
+                  CC {cc} · {name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex items-center gap-2 text-xs text-fg-1">
+            <input
+              type="checkbox"
+              checked={settings.invert}
+              onChange={(e) => setHihat({ invert: e.target.checked })}
+              className="accent-[var(--accent)]"
+            />
+            High value opens the hat
+          </label>
+          <label className="flex items-center gap-2 text-xs text-fg-1">
+            <input
+              type="checkbox"
+              checked={settings.pedalOnClose}
+              onChange={(e) => setHihat({ pedalOnClose: e.target.checked })}
+              className="accent-[var(--accent)]"
+            />
+            Pedal “chick” when fully closed
+          </label>
+        </>
+      )}
     </div>
   );
 }

@@ -297,7 +297,7 @@ Required tests: none new; full suite green on the tag.
 
 ## Backlog (v2 candidates, not scheduled)
 
-Pad-level quick mute (right-click). Metronome; effects follow-ups (echo time choice, real-room IRs, per-group send levels; base reverb/echo shipped, ADR-39); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n; kit rotation synced to incoming MIDI clock; MIDI output to light controller buttons for assigned actions.
+Pad-level quick mute (right-click). Metronome; DrumGizmo power-sorted hit pool (closest-loudness picking); Maschine pad LEDs via MIDI out; effects follow-ups (echo time choice, real-room IRs, per-group send levels; base reverb/echo shipped, ADR-39); user-uploaded samples; 4×8 and 8×8 grids; MIDI note-off driven choke for cymbals; multi-mic mix slider for kits that have it; recording to WAV; Android Web MIDI testing; i18n; kit rotation synced to incoming MIDI clock; MIDI output to light controller buttons for assigned actions.
 
 ---
 
@@ -380,3 +380,8 @@ P7: visual — idle grid matches baseline
 P7: visual — phone layout matches baseline
 P7: reduced motion disables glow and scale
 ```
+
+### Test changes for ADR-40/42 (2026-11-09)
+- `tests/unit/engine/velocity.test.ts` "gainFor is linear and clamped" became "gainFor is relative to the top of the layer and clamped", and the P1 trigger test expects `(64/127)^1.5` for velocity 64 in the 64–127 layer: the velocity gain law changed on purpose (ADR-40), the assertions still pin the exact law.
+- e2e tests that used controls now in Settings (MIDI controls, Hardest hit, Edit layout, Layout select) open Settings first (`openSettings` in `tests/e2e/fixtures/app.ts`); their assertions are unchanged.
+- The effects e2e test now expects Room and Hall on by default (ADR-41).

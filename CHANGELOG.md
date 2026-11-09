@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Live playing: feel, sound and a simpler screen
+- Soft hits keep their natural loudness: velocity now shapes level only within each recorded layer, instead of turning soft samples down a second time (ADR-40).
+- Natural variation: every hit differs a touch in level (±1 dB) and pitch (±8 cents), so fast repeats never sound machine-gunned. On by default; Settings › Sound.
+- Tune (±12 semitones) and length (10 % to natural) per drum, saved per kit.
+- Deeper kits: Muldjord, ShittyKit and SM Drums rebuilt with 8–12 velocity layers, up to 3 alternate hits, and longer cymbal and tom tails.
+- Every kit starts with a little room and hall (less on drum machines). "Reset to its recommended sound" undoes your changes (ADR-41).
+- Simpler home screen: kits, pads, mixer and quick effect toggles. Everything else lives in the new Settings panel (header button or `,`): Sound, Playing and Controller tabs (ADR-42).
+- Pads show their drum colour and flash in it; an output level meter with a clip light sits beside the master fader.
+
 ### Kit browser, kit rotation, MIDI controls, looper
 - Effects: Room, Hall and Plate reverb and a tempo-synced Echo, any combination, with an amount for each. Remembered per kit, or "Use on all kits". Amounts are MIDI-learnable knobs. Reverb is sent mostly from snare, toms and cymbals and little from the kick, so the low end stays tight (ADR-39).
 - New kit set: Muldjord, ShittyKit, SM Drums, Roland TR-808, TR-909 Detroit, Hard Trap and Bounce. Black Pearl, Virtuosity Jazz and Big Rusty Rock are removed. Licence status per kit in KITS.md (ADR-38).

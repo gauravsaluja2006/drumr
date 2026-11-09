@@ -1,6 +1,5 @@
-import { useEffect, useId, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { loopClear, loopMain, loopStopPlay, loopUndo, looper, useLoopStore } from '@/app/looper';
-import { useSettingsStore } from '@/state/useSettingsStore';
 import type { LoopPhase } from '@/engine/Looper';
 
 const MAIN_LABEL: Record<LoopPhase, string> = {
@@ -63,10 +62,6 @@ function LoopClock({ phase }: { phase: LoopPhase }) {
  */
 export function LoopBar() {
   const { phase, length, layers } = useLoopStore();
-  const loopLength = useSettingsStore((s) => s.loopLength);
-  const setLoopLength = useSettingsStore((s) => s.setLoopLength);
-  const bpm = useSettingsStore((s) => s.rotation.bpm);
-  const lengthId = useId();
   const hasLoop = length > 0;
   const live = phase === 'recording' || phase === 'overdub';
 
@@ -118,24 +113,9 @@ export function LoopBar() {
           ✕ Clear
         </button>
       )}
-      {hasLoop ? (
+      {hasLoop && (
         <span className="font-mono text-fg-2" data-testid="loop-info">
           {(length / 1000).toFixed(1)} s{layers > 1 ? ` · ${layers} layers` : ''}
-        </span>
-      ) : (
-        <span className="flex items-center gap-1.5">
-          <label htmlFor={lengthId} className="text-fg-2">
-            Length
-          </label>
-          <select
-            id={lengthId}
-            value={loopLength}
-            onChange={(e) => setLoopLength(e.target.value as 'free' | 'bars')}
-            className="rounded-m border border-line bg-bg-2 px-2 py-1 text-fg-0 hover:bg-bg-3"
-          >
-            <option value="free">As played</option>
-            <option value="bars">Whole bars at {bpm} BPM</option>
-          </select>
         </span>
       )}
     </section>

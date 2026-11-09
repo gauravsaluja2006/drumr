@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import { AudioEngine, CHOKE_STOP, CHOKE_TC, GAIN_SMOOTHING, MAX_VOICES } from '@/engine/AudioEngine';
 import {
+  FakeAnalyser,
   FakeAudioContext,
   FakeBuffer,
   FakeCompressor,
@@ -47,9 +48,11 @@ describe('AudioEngine', () => {
 
     engine.trigger('kick', 64);
     expect((ctx.sources.at(-1)!.buffer as FakeBuffer).tag).toBe('kick_v2.wav');
-    expect((ctx.gains.at(-1) as FakeGain).gain.value).toBeCloseTo(64 / 127);
+    // Velocity gain is relative to the layer's top velocity (ADR-40): 64 in the 64–127 layer.
+    expect((ctx.gains.at(-1) as FakeGain).gain.value).toBeCloseTo((64 / 127) ** 1.5);
     engine.trigger('kick', 63);
     expect((ctx.sources.at(-1)!.buffer as FakeBuffer).tag).toBe('kick_v1.wav');
+    expect((ctx.gains.at(-1) as FakeGain).gain.value).toBe(1); // top of the soft layer
   });
 
   test('round robin alternates samples within a layer', () => {
@@ -283,5 +286,59 @@ describe('group gain', () => {
     // A time already in the past plays now.
     engine.trigger('kick', 100, undefined, 0.5);
     expect(lastSource(ctx).startedAt).toBe(1);
+  });
+
+  test('tune shifts pitch per group and a shorter decay fades and stops the voice early', () => {
+    const { ctx, engine } = setup();
+    engine.setGroupTone('snare', { tune: 12, decay: 0.5 });
+    engine.trigger('snare.center', 127);
+    const src = lastSource(ctx);
+    expect(src.playbackRate.value).toBe(2);
+    // 0.5 s sample at double speed = 0.25 s, half of that = 0.125 s.
+    expect(src.stoppedAt).toBeCloseTo(0.125 + 0.02);
+    const fade = (ctx.gains.at(-1) as FakeGain).gain.calls.at(-1);
+    expect(fade).toMatchObject({ kind: 'setTargetAtTime', target: 0 });
+    // Other groups are untouched; values are clamped.
+    engine.trigger('kick', 127);
+    expect(lastSource(ctx).playbackRate.value).toBe(1);
+    expect(lastSource(ctx).stoppedAt).toBeNull();
+    engine.setGroupTone('kick', { tune: 40, decay: 0 });
+    expect(engine.groupTone('kick')).toEqual({ tune: 12, decay: 0.1 });
+  });
+
+  test('humanize varies level by at most 1 dB and pitch by at most 8 cents per hit', () => {
+    const ctx = new FakeAudioContext();
+    let r = 0;
+    const seq = [0, 1]; // pitch, level (kick has one sample per layer: no round-robin draw)
+    const engine = new AudioEngine(ctx, () => 0, () => seq[r++ % 2]!);
+    engine.setKit(loadedTestKit());
+    engine.setHumanize(true);
+    engine.trigger('kick', 127);
+    expect(lastSource(ctx).playbackRate.value).toBeCloseTo(2 ** (-8 / 1200), 6);
+    expect((ctx.gains.at(-1) as FakeGain).gain.value).toBeCloseTo(10 ** (1 / 20), 6);
+  });
+
+  test('output peak reads the limiter output through an analyser created on first use', () => {
+    const ctx = new FakeAudioContext();
+    const engine = new AudioEngine(ctx);
+    const before = ctx.gains.length;
+    expect(engine.outputPeak()).toBe(0);
+    const analyser = (engine.limiter as unknown as { outputs: FakeAnalyser[] }).outputs.find(
+      (n) => n instanceof FakeAnalyser,
+    )!;
+    analyser.samples = Float32Array.from([0.1, -0.5, 0.25]);
+    expect(engine.outputPeak()).toBe(0.5);
+    expect(ctx.gains.length).toBe(before);
+  });
+
+  test('isActive while voices sound or a reverb tail may still ring', () => {
+    const { ctx, engine } = setup();
+    expect(engine.isActive()).toBe(false);
+    engine.trigger('kick', 100);
+    expect(engine.isActive()).toBe(true);
+    (ctx.sources.at(-1) as FakeSource).end();
+    expect(engine.isActive()).toBe(true); // within the tail
+    ctx.advance(5);
+    expect(engine.isActive()).toBe(false);
   });
 });

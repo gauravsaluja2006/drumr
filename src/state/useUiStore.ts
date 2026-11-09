@@ -1,6 +1,11 @@
 import { create } from 'zustand';
 
+export type SettingsTab = 'sound' | 'playing' | 'controller';
+
 interface UiState {
+  /** Open settings tab; null = closed. */
+  settings: SettingsTab | null;
+  openSettings: (tab: SettingsTab | null) => void;
   editing: boolean;
   selectedPad: number | null;
   learning: boolean;
@@ -13,6 +18,8 @@ interface UiState {
 }
 
 export const useUiStore = create<UiState>()((set) => ({
+  settings: null,
+  openSettings: (tab) => set({ settings: tab }),
   editing: false,
   selectedPad: null,
   learning: false,

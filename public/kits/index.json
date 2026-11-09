@@ -3,19 +3,19 @@
     "id": "dg-muldjord",
     "name": "Muldjord (DrumGizmo)",
     "description": "Big metal-style kit with double kick, four toms and a china. 16 mics mixed to stereo.",
-    "totalBytes": 11090813
+    "totalBytes": 18363155
   },
   {
     "id": "dg-shittykit",
     "name": "ShittyKit (DrumGizmo)",
     "description": "Cheap, characterful Stagg kit in a raw room. Close mics, overheads and M/S room.",
-    "totalBytes": 8066777
+    "totalBytes": 11712372
   },
   {
     "id": "sm-drums",
     "name": "SM Drums",
     "description": "Deeply sampled collector kit (up to 64 velocity layers in the source). Stereo mix, four toms, two rides.",
-    "totalBytes": 19280572
+    "totalBytes": 29881838
   },
   {
     "id": "dm-tr808",
