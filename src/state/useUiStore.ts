@@ -6,6 +6,10 @@ interface UiState {
   /** Open settings tab; null = closed. */
   settings: SettingsTab | null;
   openSettings: (tab: SettingsTab | null) => void;
+  aboutOpen: boolean;
+  debugOpen: boolean;
+  setAboutOpen: (open: boolean) => void;
+  setDebugOpen: (open: boolean) => void;
   editing: boolean;
   selectedPad: number | null;
   learning: boolean;
@@ -20,6 +24,10 @@ interface UiState {
 export const useUiStore = create<UiState>()((set) => ({
   settings: null,
   openSettings: (tab) => set({ settings: tab }),
+  aboutOpen: false,
+  debugOpen: false,
+  setAboutOpen: (open) => set({ aboutOpen: open }),
+  setDebugOpen: (open) => set({ debugOpen: open }),
   editing: false,
   selectedPad: null,
   learning: false,

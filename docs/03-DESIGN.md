@@ -62,7 +62,7 @@ Desktop (≥ 1024 px), single screen, no scrolling for the instrument (side colu
 │  Kit name and         │   M ▮ │ K  S  H  T  C  P     │               │
 │  description          │   ┃ ┃ │ ┃  ┃  ┃  ┃  ┃  ┃     │               │
 ├───────────────────────┴──────────────────────────────┴───────────────┤
-│ About · Sources & licenses · GitHub                      v1.0.0       │  footer 40px
+│                                       ● Available offline · v1.0.0  │  footer 32px
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -75,7 +75,7 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
 
 ### 4.1 Pad
 - Square, `--bg-2` fill, 1 px `--line` border, `--radius-m`, inner shadow `--shadow-pad`.
-- Content: label (14 px, `--fg-0`) top-left; note number (mono 12 px, `--fg-2`) bottom-left; group dot (8 px, `--group-*` of the sound the pad plays now) top-right; keyboard key hint (mono 11 px, `--fg-2`) bottom-right on desktop.
+- Content: label (14 px, `--fg-0`) top-left; note number (mono 12 px, `--fg-2`) bottom-left, preceded by a 6 px group dot (`--group-*` of the sound the pad plays now); keyboard key hint (mono 11 px, `--fg-2`) bottom-right on desktop.
 - States:
   - **idle**: as above.
   - **hit**: fill flashes to the pad's group colour (`--accent` when it has none) with opacity = `0.35 + 0.65 × velocity/127`, outer glow `0 0 24px var(--accent)` at same opacity, scale 0.97 → 1.0. Decay 180 ms ease-out. Implemented with CSS custom property `--v` set per hit and a `data-hit` attribute toggled via `requestAnimationFrame`; no React state per hit.
@@ -85,7 +85,9 @@ Phone (< 768 px): grid full width, status bar condensed to icons, columns become
   - **focused** (keyboard a11y): 2 px `--accent` outline offset 2 px.
 
 ### 4.2 Status bar
-- Left: logo dot + name. Right: MIDI status pill (kits are chosen in the kit list, §4.3a): `● Connected · <device>` green; `○ No device` grey with "Choose…" if several; `⚠ Not supported` amber on Safari. Clicking opens device list.
+- Left: logo (36 px mark: four pads on a `--bg-2` tile, the struck pad in a `--accent-2`→`--accent` gradient with a soft glow and a strike ring; same drawing as the favicon and app icons), wordmark "Drumr" 17 px semibold, a 1 px divider and the tagline "Live drum sampler" (`--fg-2`, hidden on phones). Right: MIDI status pill (`● Connected · <device>` green; `○ No device` grey with "Choose…" if several; `⚠ Not supported` amber on Safari; clicking opens the device list), the Settings pill (§4.11) and a round "More" (⋯) button. A 1 px `--accent` at 40 % hairline fades in and out along the bottom edge.
+- More menu: "About & licences" (§4.8), "Debug panel" (§4.9), and the line "Web MIDI · Web Audio · open-licence drum samples". Arrow keys move, Escape or a click outside closes.
+- Footer (32 px): only "Available offline" when ready, and the version, right-aligned in mono 11 px.
 - Audio-suspended overlay (full screen, `--bg-0` at 85 %): "Tap anywhere to start audio". Disappears on first gesture.
 
 ### 4.3 Kit loading

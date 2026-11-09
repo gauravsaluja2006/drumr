@@ -40,7 +40,8 @@ test('US-08: switching kit while playing completes without errors and old voices
 
 test('US-13: About panel lists every kit with license and link', async ({ page }) => {
   await openApp(page);
-  await page.getByRole('button', { name: /About/ }).click();
+  await page.getByRole('button', { name: 'More' }).click();
+  await page.getByRole('menuitem', { name: 'About & licences' }).click();
   const dialog = page.getByRole('dialog', { name: 'About Drumr' });
   await expect(dialog).toBeVisible();
   for (const kit of ['test-kit', 'test-kit-b']) {

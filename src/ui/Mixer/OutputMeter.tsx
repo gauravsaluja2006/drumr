@@ -71,7 +71,9 @@ export function OutputMeter() {
       />
       <div
         className="relative h-20 w-1.5 overflow-hidden rounded-full [@media(max-height:800px)]:h-10"
-        style={{ background: 'linear-gradient(to top, var(--ok) 0 70%, var(--warn) 70% 88%, var(--err) 88%)' }}
+        style={{
+          background: 'linear-gradient(to top, var(--ok) 0 70%, var(--warn) 70% 88%, var(--err) 88%)',
+        }}
       >
         <div ref={cover} className="absolute inset-0 origin-top bg-bg-3" style={{ transform: 'scaleY(1)' }} />
       </div>

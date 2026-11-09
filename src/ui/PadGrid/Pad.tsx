@@ -59,7 +59,7 @@ export function Pad({
       onClick={onClick}
       className="pad relative aspect-square min-h-11 touch-manipulation rounded-m border border-line bg-bg-2 p-2 sm:p-3 text-left transition-[background-color,opacity] select-none hover:bg-bg-3 disabled:cursor-wait disabled:bg-bg-1 disabled:hover:bg-bg-1"
     >
-      <span className="pad-label absolute inset-x-2 top-2 z-10 pr-3 line-clamp-2 text-xs leading-tight font-medium text-fg-0 sm:inset-x-3 sm:top-3 sm:text-sm">
+      <span className="pad-label absolute inset-x-2 top-2 z-10 line-clamp-2 text-xs leading-tight font-medium text-fg-0 sm:inset-x-3 sm:top-3 sm:text-sm">
         <span className="sr-only">{`Pad ${index + 1}:`}</span>{' '}
         {label ?? <span className="text-fg-2">{index + 1}</span>}
         {label === undefined && (
@@ -81,15 +81,12 @@ export function Pad({
           </>
         )}
       </span>
-      {group && !unavailable && (
-        <span
-          aria-hidden="true"
-          className="pad-dot absolute top-2.5 right-2.5 z-10 size-2 rounded-full sm:top-3.5 sm:right-3.5"
-        />
-      )}
       {note !== undefined && (
-        <span className="absolute bottom-2 left-2 z-10 font-mono text-xs text-fg-2 sm:bottom-3 sm:left-3">
-          <span className="sr-only">, note</span> {note}
+        <span className="absolute bottom-2 left-2 z-10 flex items-center gap-1.5 font-mono text-xs text-fg-2 sm:bottom-3 sm:left-3">
+          {group && !unavailable && <span aria-hidden="true" className="pad-dot size-1.5 rounded-full" />}
+          <span>
+            <span className="sr-only">, note</span> {note}
+          </span>
         </span>
       )}
       <span

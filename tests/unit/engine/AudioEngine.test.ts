@@ -310,7 +310,11 @@ describe('group gain', () => {
     const ctx = new FakeAudioContext();
     let r = 0;
     const seq = [0, 1]; // pitch, level (kick has one sample per layer: no round-robin draw)
-    const engine = new AudioEngine(ctx, () => 0, () => seq[r++ % 2]!);
+    const engine = new AudioEngine(
+      ctx,
+      () => 0,
+      () => seq[r++ % 2]!,
+    );
     engine.setKit(loadedTestKit());
     engine.setHumanize(true);
     engine.trigger('kick', 127);

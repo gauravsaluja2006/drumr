@@ -66,8 +66,7 @@ export function App() {
   const status = useKitStore((s) => s.status);
   const available = useKitStore((s) => s.available);
   const masterDb = useSettingsStore((s) => s.masterDb);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [debugOpen, setDebugOpen] = useState(false);
+  const { aboutOpen, debugOpen, setAboutOpen, setDebugOpen } = useUiStore();
   const settingsOpen = useUiStore((s) => s.settings !== null);
   const { editing, selectedPad, learning, setEditing } = useUiStore();
   const desktop = useMediaQuery(DESKTOP, true);
@@ -78,7 +77,7 @@ export function App() {
       const t = e.target as HTMLElement | null;
       if (e.ctrlKey || e.metaKey || e.altKey || (t && ['INPUT', 'TEXTAREA', 'SELECT'].includes(t.tagName)))
         return;
-      if (e.key === '`') setDebugOpen((o) => !o);
+      if (e.key === '`') setDebugOpen(!useUiStore.getState().debugOpen);
       else if (e.key === 'l' && !e.repeat) loopMain(e.timeStamp || performance.now());
       else if (e.key === 'L' && !e.repeat) loopStopPlay(e.timeStamp || performance.now());
       else if (e.key === ',' && !document.querySelector('[role="dialog"]'))
@@ -93,7 +92,7 @@ export function App() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [setEditing]);
+  }, [setEditing, setDebugOpen]);
 
   useEffect(() => {
     if (!runtime) {
@@ -249,30 +248,15 @@ export function App() {
           )
         )}
       </main>
-      <footer className="flex h-10 items-center justify-between border-t border-line px-4 text-xs text-fg-2 lg:px-6">
-        <span className="flex items-center gap-3">
-          <button type="button" onClick={() => setAboutOpen(true)} className="text-fg-1 hover:text-fg-0">
-            About · Sources &amp; licences
-          </button>
-          <span className="hidden text-fg-2 md:inline">Web MIDI · Web Audio · open-licence drum samples</span>
-        </span>
-        <span className="flex items-center gap-3 font-mono">
-          {offlineReady && (
-            <span data-testid="offline-ready" className="flex items-center gap-1.5 text-fg-1">
-              <span aria-hidden="true" className="size-1.5 rounded-full bg-ok" />
-              Available offline
-            </span>
-          )}
-          <button
-            type="button"
-            onClick={() => setDebugOpen((o) => !o)}
-            className="hidden text-fg-1 hover:text-fg-0 sm:inline"
-          >
-            Debug
-          </button>
-          <span>
-            v{__APP_VERSION__} · {__COMMIT__}
+      <footer className="flex h-8 items-center justify-end gap-3 border-t border-line px-4 font-mono text-[11px] text-fg-2 lg:px-6">
+        {offlineReady && (
+          <span data-testid="offline-ready" className="flex items-center gap-1.5 text-fg-1">
+            <span aria-hidden="true" className="size-1.5 rounded-full bg-ok" />
+            Available offline
           </span>
+        )}
+        <span>
+          v{__APP_VERSION__} · {__COMMIT__}
         </span>
       </footer>
       <Suspense fallback={null}>
