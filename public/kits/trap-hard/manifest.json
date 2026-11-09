@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "id": "trap-hard",
+  "name": "Hard Trap",
+  "description": "Distorted 808s, heavy kicks, crisp snares. 808 bass on the low tom pads.",
+  "license": {
+    "name": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "attribution": {
+    "author": "Boochi44",
+    "url": "https://github.com/Boochi44/free-drum-samples"
+  },
+  "sampleRate": 44100,
+  "format": "flac",
+  "totalBytes": 643825,
+  "groups": [
+    "kick",
+    "snare",
+    "perc",
+    "toms",
+    "hihat",
+    "cymbals"
+  ],
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/kick_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_center_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.rimshot",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_rimshot_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.sidestick",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_sidestick_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clap",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/clap_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_high_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_lowMid_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_low_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_closed_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.shank",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_shank_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed",
+        "hihat.shank"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_open_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_left_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_right_v1_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cowbell",
+      "group": "perc",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 127,
+          "samples": [
+            "samples/cowbell_v1_rr1.flac"
+          ]
+        }
+      ]
+    }
+  ],
+  "hihat": {
+    "openness": [
+      "hihat.closed",
+      "hihat.open"
+    ]
+  }
+}

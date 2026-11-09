@@ -1,7 +1,6 @@
 {
   "id": "dg-shittykit",
   "order": 13,
-  "local": true,
   "name": "ShittyKit (DrumGizmo)",
   "description": "Cheap, characterful Stagg kit in a raw room. Close mics, overheads and M/S room.",
   "license": {
@@ -9,7 +8,7 @@
     "url": "https://creativecommons.org/licenses/by/4.0/"
   },
   "attribution": {
-    "author": "DrumGizmo team",
+    "author": "Sardonicus \u00b7 Drum samples provided by DrumGizmo.org",
     "url": "https://drumgizmo.org/wiki/doku.php?id=kits:shittykit"
   },
   "source": {
@@ -24,15 +23,15 @@
   },
   "budget": {
     "maxBytes": 80000000,
-    "maxRoundRobins": 2,
-    "maxVelocityLayers": 4
+    "maxRoundRobins": 3,
+    "maxVelocityLayers": 8
   },
   "trim": {
     "maxSeconds": {
-      "default": 1.5,
-      "toms": 2.0,
-      "hihat": 2.5,
-      "cymbals": 4.0
+      "default": 2.0,
+      "toms": 3.0,
+      "hihat": 3.0,
+      "cymbals": 5.0
     }
   },
   "articulations": [
@@ -45,7 +44,7 @@
       "id": "snare.center",
       "group": "snare",
       "instrument": "snare-Dyn-RH",
-      "maxVelocityLayers": 6
+      "maxVelocityLayers": 10
     },
     {
       "id": "snare.sidestick",

@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "id": "dg-muldjord",
+  "name": "Muldjord (DrumGizmo)",
+  "description": "Big metal-style kit with double kick, four toms and a china. 16 mics mixed to stereo.",
+  "license": {
+    "name": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": {
+    "author": "Lars Muldjord · Drum samples provided by DrumGizmo.org",
+    "url": "https://drumgizmo.org/wiki/doku.php?id=kits:muldjordkit"
+  },
+  "sampleRate": 44100,
+  "format": "flac",
+  "totalBytes": 18363155,
+  "groups": [
+    "kick",
+    "snare",
+    "toms",
+    "hihat",
+    "cymbals"
+  ],
+  "articulations": [
+    {
+      "id": "kick",
+      "group": "kick",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/kick_v1_rr1.flac",
+            "samples/kick_v1_rr2.flac",
+            "samples/kick_v1_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/kick_v2_rr1.flac",
+            "samples/kick_v2_rr2.flac",
+            "samples/kick_v2_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/kick_v3_rr1.flac",
+            "samples/kick_v3_rr2.flac",
+            "samples/kick_v3_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/kick_v4_rr1.flac",
+            "samples/kick_v4_rr2.flac",
+            "samples/kick_v4_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/kick_v5_rr1.flac",
+            "samples/kick_v5_rr2.flac",
+            "samples/kick_v5_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/kick_v6_rr1.flac",
+            "samples/kick_v6_rr2.flac",
+            "samples/kick_v6_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/kick_v7_rr1.flac",
+            "samples/kick_v7_rr2.flac",
+            "samples/kick_v7_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/kick_v8_rr1.flac",
+            "samples/kick_v8_rr2.flac",
+            "samples/kick_v8_rr3.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snare.center",
+      "group": "snare",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 12,
+          "samples": [
+            "samples/snare_center_v1_rr1.flac",
+            "samples/snare_center_v1_rr2.flac",
+            "samples/snare_center_v1_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 13,
+          "hivel": 25,
+          "samples": [
+            "samples/snare_center_v2_rr1.flac",
+            "samples/snare_center_v2_rr2.flac",
+            "samples/snare_center_v2_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 26,
+          "hivel": 38,
+          "samples": [
+            "samples/snare_center_v3_rr1.flac",
+            "samples/snare_center_v3_rr2.flac",
+            "samples/snare_center_v3_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 39,
+          "hivel": 50,
+          "samples": [
+            "samples/snare_center_v4_rr1.flac",
+            "samples/snare_center_v4_rr2.flac",
+            "samples/snare_center_v4_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 51,
+          "hivel": 63,
+          "samples": [
+            "samples/snare_center_v5_rr1.flac",
+            "samples/snare_center_v5_rr2.flac",
+            "samples/snare_center_v5_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 76,
+          "samples": [
+            "samples/snare_center_v6_rr1.flac",
+            "samples/snare_center_v6_rr2.flac",
+            "samples/snare_center_v6_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 77,
+          "hivel": 88,
+          "samples": [
+            "samples/snare_center_v7_rr1.flac",
+            "samples/snare_center_v7_rr2.flac",
+            "samples/snare_center_v7_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 89,
+          "hivel": 101,
+          "samples": [
+            "samples/snare_center_v8_rr1.flac",
+            "samples/snare_center_v8_rr2.flac",
+            "samples/snare_center_v8_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 102,
+          "hivel": 114,
+          "samples": [
+            "samples/snare_center_v9_rr1.flac",
+            "samples/snare_center_v9_rr2.flac",
+            "samples/snare_center_v9_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 115,
+          "hivel": 127,
+          "samples": [
+            "samples/snare_center_v10_rr1.flac",
+            "samples/snare_center_v10_rr2.flac",
+            "samples/snare_center_v10_rr3.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.high",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/tom_high_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_high_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/tom_high_v3_rr1.flac",
+            "samples/tom_high_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_high_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/tom_high_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_high_v6_rr1.flac",
+            "samples/tom_high_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_high_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_high_v8_rr1.flac",
+            "samples/tom_high_v8_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.highMid",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/tom_highMid_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_highMid_v2_rr1.flac",
+            "samples/tom_highMid_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/tom_highMid_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_highMid_v4_rr1.flac",
+            "samples/tom_highMid_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/tom_highMid_v5_rr1.flac",
+            "samples/tom_highMid_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_highMid_v6_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_highMid_v7_rr1.flac",
+            "samples/tom_highMid_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_highMid_v8_rr1.flac",
+            "samples/tom_highMid_v8_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.lowMid",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/tom_lowMid_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_lowMid_v2_rr1.flac",
+            "samples/tom_lowMid_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/tom_lowMid_v3_rr1.flac",
+            "samples/tom_lowMid_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_lowMid_v4_rr1.flac",
+            "samples/tom_lowMid_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/tom_lowMid_v5_rr1.flac",
+            "samples/tom_lowMid_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_lowMid_v6_rr1.flac",
+            "samples/tom_lowMid_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_lowMid_v7_rr1.flac",
+            "samples/tom_lowMid_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_lowMid_v8_rr1.flac",
+            "samples/tom_lowMid_v8_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tom.low",
+      "group": "toms",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/tom_low_v1_rr1.flac",
+            "samples/tom_low_v1_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/tom_low_v2_rr1.flac",
+            "samples/tom_low_v2_rr2.flac",
+            "samples/tom_low_v2_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/tom_low_v3_rr1.flac",
+            "samples/tom_low_v3_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/tom_low_v4_rr1.flac",
+            "samples/tom_low_v4_rr2.flac",
+            "samples/tom_low_v4_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/tom_low_v5_rr1.flac",
+            "samples/tom_low_v5_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/tom_low_v6_rr1.flac",
+            "samples/tom_low_v6_rr2.flac",
+            "samples/tom_low_v6_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/tom_low_v7_rr1.flac",
+            "samples/tom_low_v7_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/tom_low_v8_rr1.flac",
+            "samples/tom_low_v8_rr2.flac",
+            "samples/tom_low_v8_rr3.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.closed",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/hihat_closed_v1_rr1.flac",
+            "samples/hihat_closed_v1_rr2.flac",
+            "samples/hihat_closed_v1_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/hihat_closed_v2_rr1.flac",
+            "samples/hihat_closed_v2_rr2.flac",
+            "samples/hihat_closed_v2_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/hihat_closed_v3_rr1.flac",
+            "samples/hihat_closed_v3_rr2.flac",
+            "samples/hihat_closed_v3_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/hihat_closed_v4_rr1.flac",
+            "samples/hihat_closed_v4_rr2.flac",
+            "samples/hihat_closed_v4_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/hihat_closed_v5_rr1.flac",
+            "samples/hihat_closed_v5_rr2.flac",
+            "samples/hihat_closed_v5_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_closed_v6_rr1.flac",
+            "samples/hihat_closed_v6_rr2.flac",
+            "samples/hihat_closed_v6_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_closed_v7_rr1.flac",
+            "samples/hihat_closed_v7_rr2.flac",
+            "samples/hihat_closed_v7_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_closed_v8_rr1.flac",
+            "samples/hihat_closed_v8_rr2.flac",
+            "samples/hihat_closed_v8_rr3.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hihat.open",
+      "group": "hihat",
+      "chokeGroup": "hihat",
+      "chokedBy": [
+        "hihat.closed"
+      ],
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/hihat_open_v1_rr1.flac",
+            "samples/hihat_open_v1_rr2.flac",
+            "samples/hihat_open_v1_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/hihat_open_v2_rr1.flac",
+            "samples/hihat_open_v2_rr2.flac",
+            "samples/hihat_open_v2_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/hihat_open_v3_rr1.flac",
+            "samples/hihat_open_v3_rr2.flac",
+            "samples/hihat_open_v3_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/hihat_open_v4_rr1.flac",
+            "samples/hihat_open_v4_rr2.flac",
+            "samples/hihat_open_v4_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/hihat_open_v5_rr1.flac",
+            "samples/hihat_open_v5_rr2.flac",
+            "samples/hihat_open_v5_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/hihat_open_v6_rr1.flac",
+            "samples/hihat_open_v6_rr2.flac",
+            "samples/hihat_open_v6_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/hihat_open_v7_rr1.flac",
+            "samples/hihat_open_v7_rr2.flac",
+            "samples/hihat_open_v7_rr3.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/hihat_open_v8_rr1.flac",
+            "samples/hihat_open_v8_rr2.flac",
+            "samples/hihat_open_v8_rr3.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.bow",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/ride_bow_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/ride_bow_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/ride_bow_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/ride_bow_v4_rr1.flac",
+            "samples/ride_bow_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/ride_bow_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/ride_bow_v6_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/ride_bow_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bow_v8_rr1.flac",
+            "samples/ride_bow_v8_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ride.bell",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/ride_bell_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/ride_bell_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/ride_bell_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/ride_bell_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/ride_bell_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/ride_bell_v6_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/ride_bell_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/ride_bell_v8_rr1.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.left",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/crash_left_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/crash_left_v2_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/crash_left_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/crash_left_v4_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/crash_left_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/crash_left_v6_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/crash_left_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_left_v8_rr1.flac",
+            "samples/crash_left_v8_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crash.right",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/crash_right_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/crash_right_v2_rr1.flac",
+            "samples/crash_right_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/crash_right_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/crash_right_v4_rr1.flac",
+            "samples/crash_right_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/crash_right_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/crash_right_v6_rr1.flac",
+            "samples/crash_right_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/crash_right_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/crash_right_v8_rr1.flac",
+            "samples/crash_right_v8_rr2.flac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "china",
+      "group": "cymbals",
+      "gainDb": 0,
+      "layers": [
+        {
+          "lovel": 1,
+          "hivel": 15,
+          "samples": [
+            "samples/china_v1_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 16,
+          "hivel": 31,
+          "samples": [
+            "samples/china_v2_rr1.flac",
+            "samples/china_v2_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 32,
+          "hivel": 47,
+          "samples": [
+            "samples/china_v3_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 48,
+          "hivel": 63,
+          "samples": [
+            "samples/china_v4_rr1.flac",
+            "samples/china_v4_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 64,
+          "hivel": 79,
+          "samples": [
+            "samples/china_v5_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 80,
+          "hivel": 95,
+          "samples": [
+            "samples/china_v6_rr1.flac",
+            "samples/china_v6_rr2.flac"
+          ]
+        },
+        {
+          "lovel": 96,
+          "hivel": 111,
+          "samples": [
+            "samples/china_v7_rr1.flac"
+          ]
+        },
+        {
+          "lovel": 112,
+          "hivel": 127,
+          "samples": [
+            "samples/china_v8_rr1.flac",
+            "samples/china_v8_rr2.flac"
+          ]
+        }
+      ]
+    }
+  ],
+  "hihat": {
+    "openness": [
+      "hihat.closed",
+      "hihat.open"
+    ]
+  }
+}

@@ -1,12 +1,11 @@
 {
   "id": "dm-tr808",
   "order": 44,
-  "local": true,
   "name": "Roland TR-808",
   "description": "The 808: boomy kick, snappy snare, cowbell, toms. Michael Fischer's recordings.",
   "license": {
-    "name": "Free, licence unclear (local only)",
-    "url": "https://github.com/oramics/sampled"
+    "name": "Free (author: \"absolutely free\"); CC0 per tidalcycles copy",
+    "url": "https://github.com/tidalcycles/sounds-tr808-fischer"
   },
   "attribution": {
     "author": "Michael Fischer (via oramics/sampled)",

@@ -1,11 +1,10 @@
 {
   "id": "sm-drums",
   "order": 20,
-  "local": true,
   "name": "SM Drums",
   "description": "Deeply sampled collector kit (up to 64 velocity layers in the source). Stereo mix, four toms, two rides.",
   "license": {
-    "name": "Public domain (verify)",
+    "name": "Public domain (per SFZ Instruments; no licence text from the authors)",
     "url": "https://sfzinstruments.github.io/drums/sm_drums"
   },
   "attribution": {
@@ -22,13 +21,13 @@
   "budget": {
     "maxBytes": 80000000,
     "maxRoundRobins": 2,
-    "maxVelocityLayers": 5
+    "maxVelocityLayers": 8
   },
   "trim": {
     "maxSeconds": {
-      "default": 1.5,
-      "toms": 2.0,
-      "hihat": 2.5,
+      "default": 2.0,
+      "toms": 3.0,
+      "hihat": 3.0,
       "cymbals": 4.0
     }
   },
@@ -37,13 +36,13 @@
       "id": "kick",
       "group": "kick",
       "glob": "SMDrum Stereo (Samples)/Kik_Stereo/RR{rr}/{layer}_*.wav",
-      "maxVelocityLayers": 8
+      "maxVelocityLayers": 12
     },
     {
       "id": "snare.center",
       "group": "snare",
       "glob": "SMDrum Stereo (Samples)/Snare65_Reg_Stereo/RR{rr}/{layer}_*.wav",
-      "maxVelocityLayers": 8
+      "maxVelocityLayers": 12
     },
     {
       "id": "snare.rimshot",
@@ -79,7 +78,7 @@
       "id": "hihat.closed",
       "group": "hihat",
       "glob": "SMD Cymbals Stereo (Samples)/Hi-Hat (Samples)/01 Hat Tight 1/RR{rr}/{layer}_*.wav",
-      "maxVelocityLayers": 6,
+      "maxVelocityLayers": 8,
       "chokeGroup": "hihat"
     },
     {

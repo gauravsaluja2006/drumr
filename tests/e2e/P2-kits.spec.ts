@@ -20,8 +20,7 @@ test('US-08: switching kit while playing completes without errors and old voices
     window.__drumr!.engine.onVoiceEnd((_v, reason) => w.__ends.push(reason));
   });
 
-  await page.getByRole('button', { name: /Kit.*Test Kit/ }).click();
-  await page.getByRole('option', { name: /Test Kit B/ }).click();
+  await page.getByRole('list', { name: 'Drum kits' }).getByRole('button', { name: 'Test Kit B' }).click();
   await waitForKit(page, 'test-kit-b');
 
   const s = await stats(page);
@@ -41,7 +40,8 @@ test('US-08: switching kit while playing completes without errors and old voices
 
 test('US-13: About panel lists every kit with license and link', async ({ page }) => {
   await openApp(page);
-  await page.getByRole('button', { name: /About/ }).click();
+  await page.getByRole('button', { name: 'More' }).click();
+  await page.getByRole('menuitem', { name: 'About & licences' }).click();
   const dialog = page.getByRole('dialog', { name: 'About Drumr' });
   await expect(dialog).toBeVisible();
   for (const kit of ['test-kit', 'test-kit-b']) {

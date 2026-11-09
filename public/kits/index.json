@@ -1,20 +1,44 @@
 [
   {
-    "id": "avl-black-pearl",
-    "name": "Black Pearl",
-    "description": "Pearl rock kit with Sabian cymbals. Small and quick to load.",
-    "totalBytes": 5756975
+    "id": "dg-muldjord",
+    "name": "Muldjord (DrumGizmo)",
+    "description": "Big metal-style kit with double kick, four toms and a china. 16 mics mixed to stereo.",
+    "totalBytes": 18363155
   },
   {
-    "id": "virtuosity-jazz",
-    "name": "Virtuosity Jazz",
-    "description": "Contemporary jazz kit played with sticks, mid-room stereo mic. Four hi-hat openings.",
-    "totalBytes": 8619880
+    "id": "dg-shittykit",
+    "name": "ShittyKit (DrumGizmo)",
+    "description": "Cheap, characterful Stagg kit in a raw room. Close mics, overheads and M/S room.",
+    "totalBytes": 11712372
   },
   {
-    "id": "big-rusty-rock",
-    "name": "Big Rusty Rock",
-    "description": "Oversized 1980s Polish rock kit: close mics blended with overheads. Six hi-hat openings.",
-    "totalBytes": 16098123
+    "id": "sm-drums",
+    "name": "SM Drums",
+    "description": "Deeply sampled collector kit (up to 64 velocity layers in the source). Stereo mix, four toms, two rides.",
+    "totalBytes": 29881838
+  },
+  {
+    "id": "dm-tr808",
+    "name": "Roland TR-808",
+    "description": "The 808: boomy kick, snappy snare, cowbell, toms. Michael Fischer's recordings.",
+    "totalBytes": 433596
+  },
+  {
+    "id": "dm-tr909-detroit",
+    "name": "TR-909 Detroit",
+    "description": "909 recorded through API and Neve: punchy house and techno.",
+    "totalBytes": 368088
+  },
+  {
+    "id": "trap-hard",
+    "name": "Hard Trap",
+    "description": "Distorted 808s, heavy kicks, crisp snares. 808 bass on the low tom pads.",
+    "totalBytes": 643825
+  },
+  {
+    "id": "trap-bounce",
+    "name": "Bounce",
+    "description": "Round 808s, tight kicks, snappy claps: West Coast bounce.",
+    "totalBytes": 371649
   }
 ]

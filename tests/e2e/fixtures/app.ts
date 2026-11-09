@@ -34,3 +34,9 @@ export async function openApp(page: Page, opts: { fakeMidi?: boolean } = {}): Pr
   await waitForKit(page);
   await startAudio(page);
 }
+
+/** Open Settings on a tab (advanced controls live there, docs/03-DESIGN.md §4.11). */
+export async function openSettings(page: Page, tab: 'Sound' | 'Playing' | 'Controller'): Promise<void> {
+  await page.getByRole('button', { name: 'Settings' }).click();
+  await page.getByRole('dialog', { name: 'Settings' }).getByRole('tab', { name: tab }).click();
+}

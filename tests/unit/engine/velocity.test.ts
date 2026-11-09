@@ -31,11 +31,15 @@ describe('velocity', () => {
     expect(() => layerFor(101, layers)).toThrow(RangeError);
   });
 
-  test('gainFor is linear and clamped', () => {
+  test('gainFor is relative to the top of the layer and clamped', () => {
     expect(gainFor(127)).toBe(1);
     expect(gainFor(0)).toBe(0);
     expect(gainFor(200)).toBe(1);
-    expect(gainFor(63.5)).toBeCloseTo(0.5);
+    // Single layer: 30·log10(v/127) dB, so half velocity is about −9 dB.
+    expect(gainFor(63.5)).toBeCloseTo(0.5 ** 1.5);
+    // The top of every layer plays at full level: its sample already carries the recorded loudness.
+    expect(gainFor(63, 63)).toBe(1);
+    expect(gainFor(32, 63)).toBeCloseTo((32 / 63) ** 1.5);
   });
 
   test('P1: pickRoundRobin never returns the same index twice in a row when >1 samples', () => {

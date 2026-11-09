@@ -1,8 +1,15 @@
-import type { IAudioContext, IBufferSourceNode, IDynamicsCompressorNode, IGainNode } from './audioContext';
+import type {
+  IAnalyserNode,
+  IAudioContext,
+  IBufferSourceNode,
+  IDynamicsCompressorNode,
+  IGainNode,
+} from './audioContext';
 import type { LoadedKit } from './Sampler';
 import { GROUPS, type Group } from '@/kits/schema';
-import { gainFor, layerFor, pickRoundRobin } from './velocity';
+import { HUMANIZE_CENTS, HUMANIZE_DB, gainFor, layerFor, pickRoundRobin } from './velocity';
 import { dbToGain, median, percentile } from '@/lib/audioMath';
+import { Effects } from './Effects';
 
 export const MAX_VOICES = 64;
 /** Time constant for gain changes from the mixer (≈10 ms, no zipper noise). */
@@ -19,6 +26,14 @@ export const IMPLICIT_CHOKES: Readonly<Record<string, string>> = {
   'crash.rightChoke': 'crash.right',
 };
 const LATENCY_SAMPLES = 256;
+
+/** Per-group sound shaping: tune in semitones, length as a fraction of the natural decay (0.1–1). */
+export interface GroupTone {
+  tune: number;
+  decay: number;
+}
+export const DEFAULT_TONE: GroupTone = { tune: 0, decay: 1 };
+export const MIN_DECAY = 0.1;
 
 export interface Voice {
   id: number;
@@ -56,6 +71,8 @@ export class AudioEngine {
   readonly master: IGainNode;
   readonly limiter: IDynamicsCompressorNode;
   readonly groups: Record<Group, IGainNode>;
+  /** Reverb and echo sends (docs/02-ARCHITECTURE.md ADR-39). */
+  readonly effects: Effects;
   /** Last requested gains in dB (AudioParam.value lags behind setTargetAtTime). */
   readonly gainDb: { master: number } & Record<Group, number> = {
     master: 0,
@@ -68,6 +85,10 @@ export class AudioEngine {
   };
 
   private kit: LoadedKit | null = null;
+  private analyser: IAnalyserNode | null = null;
+  private meterData: Float32Array<ArrayBuffer> | null = null;
+  private tones = {} as Record<Group, GroupTone>;
+  private humanize = false;
   private voices: Voice[] = [];
   private nextVoiceId = 1;
   private lastRoundRobin = new Map<string, number>();
@@ -101,6 +122,8 @@ export class AudioEngine {
       groups[g] = node;
     }
     this.groups = groups;
+    for (const g of GROUPS) this.tones[g] = DEFAULT_TONE;
+    this.effects = new Effects(ctx, groups, this.master, random);
   }
 
   setKit(kit: LoadedKit | null): void {
@@ -120,8 +143,9 @@ export class AudioEngine {
   /**
    * Play an articulation now. Synchronous by design: this is the MIDI hot path.
    * @param eventTime performance.now() when the input event arrived, for latency stats.
+   * @param at AudioContext time to start at (loop playback schedules slightly ahead); default now.
    */
-  trigger(articulationId: string, velocity: number, eventTime?: number): Voice | null {
+  trigger(articulationId: string, velocity: number, eventTime?: number, at?: number): Voice | null {
     const kit = this.kit;
     const art = kit?.articulations.get(articulationId);
     if (!kit || !art || kit.unavailable.has(articulationId) || velocity <= 0) return null;
@@ -133,14 +157,23 @@ export class AudioEngine {
     const buffer = kit.buffers.get(layer.samples[index] as string);
     if (!buffer) return null;
 
-    this.choke(art.id);
-    if (this.voices.length >= MAX_VOICES) this.steal(art.group);
+    const t = Math.max(this.ctx.currentTime, at ?? 0);
+    this.choke(art.id, t);
+    if (this.voices.length >= MAX_VOICES) this.steal(art.group, t);
 
-    const t = this.ctx.currentTime;
+    const tone = this.tones[art.group];
+    let rate = tone.tune ? 2 ** (tone.tune / 12) : 1;
+    let vary = 1;
+    if (this.humanize) {
+      rate *= 2 ** (((this.random() * 2 - 1) * HUMANIZE_CENTS) / 1200);
+      vary = dbToGain((this.random() * 2 - 1) * HUMANIZE_DB);
+    }
+
     const source = this.ctx.createBufferSource();
     source.buffer = buffer;
+    if (rate !== 1) source.playbackRate.value = rate;
     const gain = this.ctx.createGain();
-    gain.gain.value = gainFor(velocity) * dbToGain(art.gainDb);
+    gain.gain.value = gainFor(velocity, layer.hivel) * dbToGain(art.gainDb) * vary;
     source.connect(gain);
     gain.connect(this.groups[art.group]);
 
@@ -161,6 +194,12 @@ export class AudioEngine {
 
     if (eventTime !== undefined) this.recordLatency(this.now() - eventTime);
     source.start(t);
+    if (tone.decay < 1) {
+      // Shorter decay: hold the attack, then fade so the sound is ≈ −40 dB at `length`.
+      const length = (buffer.duration / rate) * Math.max(MIN_DECAY, tone.decay);
+      gain.gain.setTargetAtTime(0, t + length * 0.25, length * 0.16);
+      source.stop(t + length + 0.02);
+    }
 
     this.counters.triggers++;
     this.last = { articulationId: art.id, velocity, atTime: t };
@@ -173,10 +212,10 @@ export class AudioEngine {
    * implicit cymbal targets in IMPLICIT_CHOKES. Called on every trigger, and directly for choke-only
    * pads whose kit has no choke sample. Returns the number of voices choked.
    */
-  choke(chokerId: string): number {
+  choke(chokerId: string, at?: number): number {
     const implicit = IMPLICIT_CHOKES[chokerId];
     const victims = this.voices.filter((v) => v.chokedBy.includes(chokerId) || v.articulationId === implicit);
-    for (const v of victims) this.fadeOut(v, CHOKE_TC, CHOKE_STOP, 'choked');
+    for (const v of victims) this.fadeOut(v, CHOKE_TC, CHOKE_STOP, 'choked', at);
     this.counters.chokes += victims.length;
     return victims.length;
   }
@@ -196,9 +235,52 @@ export class AudioEngine {
     this.master.gain.setTargetAtTime(dbToGain(db), this.ctx.currentTime, GAIN_SMOOTHING);
   }
 
+  /** Tune and length for a group; applies to hits from now on (ringing voices keep theirs). */
+  setGroupTone(group: Group, tone: GroupTone): void {
+    this.tones[group] = {
+      tune: Math.min(12, Math.max(-12, tone.tune)),
+      decay: Math.min(1, Math.max(MIN_DECAY, tone.decay)),
+    };
+  }
+
+  groupTone(group: Group): GroupTone {
+    return this.tones[group];
+  }
+
+  /** Small random level (±1 dB) and pitch (±8 cents) changes per hit. Off by default (tests). */
+  setHumanize(on: boolean): void {
+    this.humanize = on;
+  }
+
   setGroupGainDb(group: Group, db: number): void {
     this.gainDb[group] = db;
     this.groups[group].gain.setTargetAtTime(dbToGain(db), this.ctx.currentTime, GAIN_SMOOTHING);
+  }
+
+  /** Whether anything may still be audible: voices sounding, or a hit within `tailSeconds` (reverb). */
+  isActive(tailSeconds = 4): boolean {
+    return this.voices.length > 0 || (!!this.last && this.ctx.currentTime - this.last.atTime < tailSeconds);
+  }
+
+  /**
+   * Peak level of the output (after the limiter) over the last ~20 ms, 0–1. The analyser is
+   * created on first call, so it costs nothing until a meter is shown.
+   */
+  outputPeak(): number {
+    if (!this.analyser) {
+      this.analyser = this.ctx.createAnalyser();
+      this.analyser.fftSize = 1024;
+      this.limiter.connect(this.analyser);
+      this.meterData = new Float32Array(this.analyser.fftSize);
+    }
+    const data = this.meterData!;
+    this.analyser.getFloatTimeDomainData(data);
+    let peak = 0;
+    for (let i = 0; i < data.length; i++) {
+      const v = Math.abs(data[i]!);
+      if (v > peak) peak = v;
+    }
+    return peak;
   }
 
   get activeVoices(): readonly Voice[] {
@@ -221,19 +303,29 @@ export class AudioEngine {
   }
 
   /** Fade and stop a voice early (stealing and choking). */
-  protected fadeOut(voice: Voice, timeConstant: number, stopAfter: number, reason: VoiceEndReason): void {
-    const t = this.ctx.currentTime;
+  protected fadeOut(
+    voice: Voice,
+    timeConstant: number,
+    stopAfter: number,
+    reason: VoiceEndReason,
+    at?: number,
+  ): void {
+    const t = Math.max(this.ctx.currentTime, at ?? 0);
     voice.gain.gain.cancelScheduledValues(t);
     voice.gain.gain.setTargetAtTime(0, t, timeConstant);
-    voice.source.stop(t + stopAfter);
+    try {
+      voice.source.stop(t + stopAfter);
+    } catch {
+      // Older engines reject a second stop() (a shortened decay already scheduled one).
+    }
     this.release(voice, reason);
   }
 
-  private steal(group: Group) {
+  private steal(group: Group, at?: number) {
     const victim = this.voices.find((v) => v.group === group) ?? this.voices[0];
     if (!victim) return;
     this.counters.steals++;
-    this.fadeOut(victim, STEAL_TC, STEAL_STOP, 'stolen');
+    this.fadeOut(victim, STEAL_TC, STEAL_STOP, 'stolen', at);
   }
 
   private release(voice: Voice, reason: VoiceEndReason) {

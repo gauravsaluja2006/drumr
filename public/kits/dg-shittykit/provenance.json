@@ -1,0 +1,969 @@
+{
+  "recipe": "dg-shittykit",
+  "kitGainDb": 0.71,
+  "samples": [
+    {
+      "output": "samples/kick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-001.wav",
+          "sha256": "b9468563a5d0d1b5b61acab1b40e74625d4b5ef1ce2f751050851bec863795a0"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-002.wav",
+          "sha256": "d7bab383e6e44e927b309be24ff788401803813e0e16ce1c966a21cf20785393"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-003.wav",
+          "sha256": "960863642f91e615330bf0be20576da88e91c3aff53014275ac7bbdb9a122265"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-004.wav",
+          "sha256": "2b42cbf2196c588cc6acc019b84b5496f3eabf2d7045190e0c9a98b65a6d7921"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-005.wav",
+          "sha256": "5ae35c2cb30c2c741a99a77033bc8b98d10bba09c44e4183409d589717e0278d"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-006.wav",
+          "sha256": "2e1d2f25a56b4a194637a7215e277561a26b2feed38267be51e3ccf38a0171e9"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-007.wav",
+          "sha256": "e74eb2585642dad628efc450783565153cbf89fa3e98555a9ae6fb7ba6b115b8"
+        }
+      ]
+    },
+    {
+      "output": "samples/kick_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Kick-008.wav",
+          "sha256": "7fa25772a84ce8adf1b259592dcc6262f989c6dcb68e9ff79f5fcf0fbd45671f"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-001.wav",
+          "sha256": "bf4d6c481857b4514239ff81bd5c142f8611a5dcbfbc408187a9dc4757d82952"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-002.wav",
+          "sha256": "443ad8c8e9ef4b993622c18dc702bb6e66748eb9a9dd6e764d8bd06becd8adc0"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-003.wav",
+          "sha256": "9d8fd5e76ef5d6576ffc60bc43b37181f30c991bb3710a65fe4a1a169226be17"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-004.wav",
+          "sha256": "161b9e2cc9ac0cf4fff96d2a5a10ac854629d1d54caa63d04b9d9d83693094bd"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-005.wav",
+          "sha256": "5deb01b2a1bcd6a8a52a52b08e95c3034ea699a2271d79e0dd6e0aaeefc134d1"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-006.wav",
+          "sha256": "426166a88cf87f2a3f81c3f6e599d2b3aa24853a0dfe0a131601047c29b95ba5"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-007.wav",
+          "sha256": "c35634410ed95963e21b2595881551d31eb002c61ea754d572d1e8c8d92de517"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_center_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Sn-R-008.wav",
+          "sha256": "aff0f4e71ac1b079ed839de2011144ac2e79e6d84d72436cb1d0ab05d07add24"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/xstick-001.wav",
+          "sha256": "0989f61448c9d785558845be2682877661ad42c9046e465bee5a79d952faa4db"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/xstick-002.wav",
+          "sha256": "ff5a51cfbe1efb0519a492f01f58bec75c600e9dc4056277779e2afa3031bf0e"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/xstick-004.wav",
+          "sha256": "c2f9d9b80312771596f72c97f6c6393fee7ae1ecb62e95aed681ad043be35036"
+        }
+      ]
+    },
+    {
+      "output": "samples/snare_sidestick_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/xstick-003.wav",
+          "sha256": "9198f320eadd6a39e6cf54d1bc3915009da9530969d22f44a6639417629771c0"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-001.wav",
+          "sha256": "9b5ff35387a26b3c6fc545578d692d8d60b2b1037c7bd2c4f61cef6f7edc4174"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-002.wav",
+          "sha256": "578882b56fb7f613b81585e2639c11c796dcf62143bfe8bbb91612905a89b291"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-003.wav",
+          "sha256": "6a637f68db09d6a9945fc8392f3a852f69c71815585c09cd17dc615d30713667"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-004.wav",
+          "sha256": "4a2942c9b4ff666eb810161cd353518c5d5a31da4dd039c1b37848f94588f4d2"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-005.wav",
+          "sha256": "0ef1b49bbf9bfec63da38eec10f13e8acd410cfbe6cb812cfff98318baf95722"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-006.wav",
+          "sha256": "1ee9551cde4bee233f4df51a84d02671e0eda9c0dd2c0579ad10c8a68eb52252"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-007.wav",
+          "sha256": "bc929bcc31e065815b7fe701a35db67512d83b91f85df2f6309aec0efdeceddc"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_high_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Tom-R-008.wav",
+          "sha256": "13a3cca85458b02168c05b83b6e6b2d45f33a6dfe1c448c4f43a088cd327e3ba"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-001.wav",
+          "sha256": "fe4b9bf579e3cd9b25238b30ba76ab28b642a560413b1a301981ef9e59015b02"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-002.wav",
+          "sha256": "333a1c8db5daf0c184e6bec42ddb7d17b6360a3e679e198bcc56023e5b53d956"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-003.wav",
+          "sha256": "f5bd27a438ec2a9e3354436cb5abaa3a9e5d17d5bed31693fb1b1ade7efa52d8"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-004.wav",
+          "sha256": "e0235278413ec7909335268e74e177bbde50f9161083e5e4f49fbef7bb8e5e40"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-005.wav",
+          "sha256": "8fed70ecb198a7b81117228034e8989f336f8a3ae1c7d2bc559aff4e6d046e15"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-006.wav",
+          "sha256": "1b3526677874297662bfbe4d53296862ac056a7d6fb2e2f0b445bdb5c941c9b9"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-007.wav",
+          "sha256": "ca976e952be5cffbbd17587851199ca6dac73245bd96075eb06900cde14e2603"
+        }
+      ]
+    },
+    {
+      "output": "samples/tom_low_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Floor-R-008.wav",
+          "sha256": "1dcb709214bf6374a0c9b0d96c918a1e3a864a4332f3556ee2e604ebf10fa182"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-001.wav",
+          "sha256": "5fe19d5bf9b8dda05abef500b92da584cbca8e6f387024f81ae1c22b506f5ed4"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-001.wav",
+          "sha256": "05b704480f7852740e3d0a2b92d3b70f4057554818145a907d7c6c4569041750"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-002.wav",
+          "sha256": "122dd6a2e8f7d5db79044e314b7d63e05494689aa46be2c174e9ba029e48eee4"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-002.wav",
+          "sha256": "a319e042d6ed19bfb75e3ee83e1c1998315ae5e23ca10b78ec39c3f4b5d905ff"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-003.wav",
+          "sha256": "58c8304954773a1cf05e02fd89c32e56d2a945e6c2f68a8179eca88900828df7"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-003.wav",
+          "sha256": "6c675d37cccadfc0f591b06412f4e846a390c79ed89a52e355e10162195d81fb"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-004.wav",
+          "sha256": "256b3b3ac1cae4bae6724d03408f246c877a98bcafef9ab6ae255f58c7f6e325"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-004.wav",
+          "sha256": "81b2e1ec73f3bcde1bb7e58a00715be9fcd6271eb3a44f9933ca4b5e866cd6d8"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-005.wav",
+          "sha256": "f3c72c966bde12e4147d8c6a6fc954505ab40b69a91f6515baabce95e0a695fb"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-005.wav",
+          "sha256": "ab6928f46239e10bd62e908aa87f58a544255b3c325a16597ebf7ea0699708ca"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-006.wav",
+          "sha256": "1b76087993d297713e876ace4ffdc6f917fa60de433e978afe5492502b87de1e"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v6_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-006.wav",
+          "sha256": "142a465b063cd508b158c9ceeb847bf0f2c0defddcd44b675217fcfd7a4fe215"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-007.wav",
+          "sha256": "b868932cac4e9126ac0f643c738d6e06bbd07915a5b12599e21fbedd777b9fa6"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v7_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-007.wav",
+          "sha256": "9ae8d4e652754c7b70720ef47ebeab8c266aa09ad260ac2e7741a9746465bb5b"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CR-008.wav",
+          "sha256": "06391efa3be1d23d34012b9a11c94ec23db8df771034d90652c9166c68667230"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_closed_v8_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-CL-008.wav",
+          "sha256": "97d0400fb0c13d2380f4283fa8c0842de7b11f9a17e85cdc7540903c6ef5c6dd"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-PED-001.wav",
+          "sha256": "f260f1f146bdb49ded9c5c64710ce121671db1910daad31e1c2736228b3ef42a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-PED-002.wav",
+          "sha256": "824427a511ef7b41ff40b6bf228be4c6585f5032709a4dbafb4fc21fb6670a8c"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_pedal_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-PED-003.wav",
+          "sha256": "30296bcabf70137a16a0cdf225fc6cc8673ee92c611b2cbcda1b73009cb2e8d4"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-001.wav",
+          "sha256": "252238f5f6211b8424a5826f286ba7f96a80d047d5304833c42310c12e1f415a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-002.wav",
+          "sha256": "f2eb296f8c50c7c5ab364a52ef920c6343506203c3f9c281c5c9e5cf617a7f56"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-001.wav",
+          "sha256": "d04ac820a4a87fee4469eb79ea1e471ecb383ce4c7fa21be020243ed17d5f5dd"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-002.wav",
+          "sha256": "815b04d41695dd0e6feea84bbacb734e89ed02605d4f95f5cafe4cb771d39d4a"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-003.wav",
+          "sha256": "38fe137028b244a3a43942ffb55c9b14d0e7d7c725c3f41def04c6b7d7484f55"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-003.wav",
+          "sha256": "dfc1597aef0555b11a81c541935a5182487b824aeb86e936c3efa3f27341ad03"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-004.wav",
+          "sha256": "820850b8ff9d5d77ec24cbee6a863e7095de1547dd90b0dd03b6e339796b31ed"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-004.wav",
+          "sha256": "7fda926ebdbda82461e19682bbed0e0fafd66c6e81c202cbda5c021f9e74b1c1"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-005.wav",
+          "sha256": "e149adf3879b9c06391740c2a98d1c335a5f58bcd355c78800cd3e374f934d7c"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-005.wav",
+          "sha256": "3853957d63d852cca77f14dc4979bc2f2d07cea818f6dc94bc4fde802000f259"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-006.wav",
+          "sha256": "74e10fb4697580c4fc29afa234273230c16be7937d407666a3bc1e14b4a5a248"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v6_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-007.wav",
+          "sha256": "bc75fd4bcb720d9fbd2ba126c5b341f97075d8b0b11c3d09043b333c7a816371"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-007.wav",
+          "sha256": "3271258b6ee65ad646f1f5cac8de894dacbb67a08ed37b8e4f7353d64aca5e63"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v7_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-006.wav",
+          "sha256": "7661cd69f272438d3c5c0e8d8c72c16d84b845c402eb7979bb2a35b4454a28e8"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OR-008.wav",
+          "sha256": "52a286884c3b87a74d03af18e0399926f251dbbf5fc81bb0ca55161303d95871"
+        }
+      ]
+    },
+    {
+      "output": "samples/hihat_open_v8_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/HH-OL-008.wav",
+          "sha256": "b863db4824d14e4a32159b3a11ec09cd7d2458ad03c2ecac26c8dc5edcc86a00"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-001.wav",
+          "sha256": "a17094c784b5bbb5c4ce300cff8b805dea33fcc1b07e15e03ebd0108f60e294e"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v1_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-001.wav",
+          "sha256": "a921d72a5080575d044bb5c5a572dec9873dae9b071e44e4427b66df93d8b6ca"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-002.wav",
+          "sha256": "cb898e256d354915a3f5c644d0058ef05eb12d7fa8f3368b8f226692eb38b97c"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v2_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-002.wav",
+          "sha256": "5d54805db89586c1c4c1c4ebbafcb4375eb479a1b41b15bbccdd18ece15911b7"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-003.wav",
+          "sha256": "8be760cd476475191d57f0461eb014f28f71d39f5553be61d0bd7be77f9501c2"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v3_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-003.wav",
+          "sha256": "95041d5d99f8020db3e5811953b21d7ea393b6ca8aebf4d6ab36c89cf85af0a6"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-005.wav",
+          "sha256": "7d8f4230bce718afe553361f6077dc7fdae2108d6a8d5294a531fd8b213c3860"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v4_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-004.wav",
+          "sha256": "c7f06c8fe5cb0a9cfefea2b3096d4d8ba4410d26c2b695dc6dbc3e835d2dad35"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-004.wav",
+          "sha256": "5a0e808b7fff895ba77d13de9ec5944db1ddf00e5873640224429b914dbc9ebd"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v5_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-006.wav",
+          "sha256": "d9cb54f2f9d41f58d9a1742bb013659c0a350c4757e97d124b1bc80378560321"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-005.wav",
+          "sha256": "0d6dfa52b8c6fdc234325df7aa4c6bdcfbebe3be56e1795d7ba778b7db8a7180"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v6_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-007.wav",
+          "sha256": "746d8126c085ba12c3218877dc4078d6b112bdb2fef63db159cd7000dec9dbee"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-006.wav",
+          "sha256": "ef4289729cb603d07767e04c235b9fc2be4ac8e965e4c0ca5f84e76047b7b401"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v7_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride_L-008.wav",
+          "sha256": "74b2706da854707aa99c6ffd9a06fd9127f972c55e50430071f1262d8042a4f4"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-007.wav",
+          "sha256": "e06127cbe5961fe6a9d826e199c2d38bc610b70190102ae66d76415d0d949ed2"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bow_v8_rr2.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Ride-008.wav",
+          "sha256": "37e3926853445b464f4798955ff360168197e4ae598fc8b79ae711b9576f6e5b"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell_L-001.wav",
+          "sha256": "76aa6d1476cb8b1e0e7a43d216d75571abff8acacde25de122ed774a017f08e0"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell-001.wav",
+          "sha256": "4470704effd8dac3429c05b5e5eba351709e55a1f5cdbbc587ff8a2d4193dd47"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell_L-002.wav",
+          "sha256": "be75283098421facce9329c5b9ba4e037df94ec2dd8e0b22b821d79f515cfd1f"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell-002.wav",
+          "sha256": "cb119b3d89e20b5f74ae622886a5d6e42fab99913f0654d11e770d3599d04ef8"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell_L-003.wav",
+          "sha256": "1ad9341ad8b4efafd2eb6997a7082cec9d825adcf9790058b8ededf72e81a867"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell-003.wav",
+          "sha256": "f828e90660cbffaa05a20a4baf6081cb875479f594e967c6c1c46492a73c301e"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell-004.wav",
+          "sha256": "2b2845fecfd38a4aa94accf75b9ea81d9a15fca5e5c68baaec10806f96b1e821"
+        }
+      ]
+    },
+    {
+      "output": "samples/ride_bell_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/Bell_L-004.wav",
+          "sha256": "f254259d9072d56247d4fb6356cc74592de4b11a67c7b783fe352f4eb91d8db9"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-001.wav",
+          "sha256": "15a3f3f242c3673fcc0aa740eae9b4b7dad70ef1dab0de8b13ddfd2e879a7da5"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-002.wav",
+          "sha256": "9cb8039d62dcfe4395261a43eccaae5319ea237c632c57afad4849ce6d951963"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-003.wav",
+          "sha256": "e327ae7ac4243f26b1aa8889461fa26f5eecea95643312275fc48e77ffab7389"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-004.wav",
+          "sha256": "b1f06ff28078daa8bab0d1a6afc0710e540138516482007ba568d08bb3cbed74"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v5_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-005.wav",
+          "sha256": "bba9151f8f2f66e062bc32ac35270d723fab8648d3e6b23e83e514ae47eaef49"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v6_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-006.wav",
+          "sha256": "2d6a0030b6f682f66a3665245689a38db1ff650fb6f0f4a429f6777f0b3afa4c"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v7_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-007.wav",
+          "sha256": "319f71ef4006194e2438872a6d8817b2b14da753524d2554f499c88f12706890"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_left_v8_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR16-008.wav",
+          "sha256": "40d08ae5e0a840a791b7536ef1aae7a69bcb7da10c1be0ef92ba1d8f690ed32a"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v1_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR18-001.wav",
+          "sha256": "5bd192c48fa75c0e90dceb5c08f876c4fb15aba041beed532ebd0e0bd6abd96a"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v2_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR18-002.wav",
+          "sha256": "8ed6f5f56f8c64577006f1fd2e2c763c35521e336287269fc0c91ef83962eea2"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v3_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR18-003.wav",
+          "sha256": "e527840b19544022aa2fbd030b3b32cca4dff6b3ed209d379b5f27d09041fc8f"
+        }
+      ]
+    },
+    {
+      "output": "samples/crash_right_v4_rr1.flac",
+      "sources": [
+        {
+          "path": "Instruments/Samples/CR18-004.wav",
+          "sha256": "643f089bf73ab59d232f0d0a4ee82dbd66588113f6090e8ea524dbb5c5bcfe32"
+        }
+      ]
+    }
+  ]
+}

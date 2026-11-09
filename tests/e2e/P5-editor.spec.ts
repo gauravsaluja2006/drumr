@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
-import { lastHit, openApp, startAudio, waitForKit } from './fixtures/app';
+import { lastHit, openApp, startAudio, waitForKit, openSettings } from './fixtures/app';
 import { installFakeMidi } from './fixtures/fakeMidi';
 
 const PAD = { id: 'maschine', name: 'Maschine Mikro MK3' };
@@ -33,6 +33,7 @@ test('US-09: learn flow end-to-end with fake MIDI, persists across reload', asyn
 
 test('US-10: export then import round-trips the mapping', async ({ page }, info) => {
   await openApp(page);
+  await openSettings(page, 'Playing');
   await page.getByRole('button', { name: /Edit layout/ }).click();
   const editor = page.getByTestId('mapping-editor');
   await page.locator('[data-pad="0"]').click();
@@ -55,10 +56,14 @@ test('US-10: export then import round-trips the mapping', async ({ page }, info)
   await waitForKit(page);
   await startAudio(page);
   await expect(page.getByRole('button', { name: /Pad 1: Crash L/ })).toBeVisible();
+  await openSettings(page, 'Playing');
   await page.getByRole('button', { name: /Edit layout/ }).click();
   await page.getByLabel('Import mapping file').setInputFiles(file);
   await expect(page.getByRole('button', { name: /Pad 1: Cowbell/ })).toBeVisible();
+  await page.keyboard.press('Escape'); // leave the editor
+  await openSettings(page, 'Playing');
   await expect(page.getByLabel('Layout', { exact: true })).toHaveValue(/custom-/);
+  await page.getByRole('button', { name: /Edit layout/ }).click(); // back into the editor
   const stored = await page.evaluate(() => window.__drumr!.mappingStore.getState().mapping);
   expect(stored).toEqual(exported);
 
